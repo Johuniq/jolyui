@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ConfettiOutline } from "../icons/conffeti";
 import XIcon from "../icons/x-icon";
-import { GithubButton } from "./github-button";
+import { GitHubStarsButton } from "./github-star-button";
 
 interface HeaderContent {
   text: string;
@@ -25,7 +25,7 @@ export function HeaderPro() {
     if (random < 0.75) {
       setContent({
         text: "Built app fast",
-        productName: "CodeSnippet Boilerplate",
+        productName: "Joly UI Pro",
         link: "#",
       });
     } else {
@@ -79,18 +79,10 @@ export function HeaderPro() {
         <Link
           href="#"
           target="_blank"
-          className="hidden group relative md:inline-flex items-center gap-2 px-1.5 py-1.5 text-sm rounded-lg bg-zinc-900 dark:bg-zinc-100 transition-colors hover:bg-zinc-800 dark:hover:bg-zinc-200"
+          className="hidden group relative md:inline-flex items-center gap-2 px-1.5 py-1.5 text-sm rounded-lg"
         >
           <div className="relative flex items-center gap-2 w-full">
-            <GithubButton
-              initialStars={8889}
-              targetStars={80890}
-              separator={true}
-              label=""
-              roundStars={true}
-              repoUrl="https://github.com/keenthemes/reui"
-              variant="outline"
-            />
+            <GitHubStarsButton username="johuniq" repo="jolyui" />
           </div>
         </Link>
         <Link

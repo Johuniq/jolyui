@@ -1,0 +1,373 @@
+---
+title: Follow Button
+description: X (Twitter) Follow button embed for your website — small widget to let users follow an account.
+icon: UserPlus
+---
+
+import {
+  XFollowButtonAnimated,
+  XFollowButtonStandard,
+} from "@/components/jolyui/x-follow-button";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+### Installation
+
+<Tabs items={["bun", "npx", "pnpm"]}>
+
+    ```bash tab="bun"
+    bunx shadcn@latest add @jolyui.dev/x-follow-button
+    ```
+
+    ```bash tab="npx"
+    npx shadcn@latest add @jolyui.dev/x-follow-button
+    ```
+
+    ```bash tab="pnpm"
+    pnpm dlx shadcn@latest add @jolyui.dev/x-follow-button
+    ```
+
+    ```bash tab="yarn"
+    yarn create shadcn@latest add @jolyui.dev/x-follow-button
+    ```
+
+</Tabs>
+
+---
+
+### X Follow Animated
+
+### X Follow Animated — large
+
+<Preview
+link="follow-button-counter-large"
+code={`
+import { XFollowButtonAnimated } from "@/components/ui/x-follow-button";
+
+<XFollowButtonAnimated
+  username="johuniq"
+  followers={987654}
+  formatted
+/>`}
+>
+<XFollowButtonAnimated username="johuniq" followers={987654} formatted />
+</Preview>
+
+---
+
+### X Follow Animated — small
+
+<Preview
+link="follow-button-counter-small"
+code={`
+import { XFollowButtonAnimated } from "@/components/ui/x-follow-button";
+
+<XFollowButtonAnimated
+  username="johuniq"
+  followers={4321}
+  formatted={false}
+/>`}
+>
+<XFollowButtonAnimated username="johuniq" followers={4321} formatted={false} />
+</Preview>
+
+---
+
+### X Follow Animated — custom transition
+
+Use the `transition` prop to control the spring animation used for the counter.
+
+<Preview
+link="follow-button-counter-transition"
+code={`
+import { XFollowButtonAnimated } from "@/components/ui/x-follow-button";
+
+<XFollowButtonAnimated
+  username="johuniq"
+  followers={15000}
+  formatted
+  transition={{ stiffness: 120, damping: 14 }}
+/>`}
+>
+<XFollowButtonAnimated
+username="johuniq"
+followers={15000}
+formatted
+transition={{ stiffness: 120, damping: 14 }}
+/>
+</Preview>
+
+---
+
+### X Follow Animated — in-view (lazy)
+
+Control whether the counter animates only when the component is in view using `inView`, `inViewMargin`, and `inViewOnce`.
+
+<Preview
+link="follow-button-counter-inview"
+code={`
+import { XFollowButtonAnimated } from "@/components/ui/x-follow-button";
+
+<XFollowButtonAnimated
+  username="johuniq"
+  followers={8000}
+  formatted
+  inView
+  inViewOnce
+  inViewMargin="-50px"
+/>`}
+>
+<XFollowButtonAnimated
+username="johuniq"
+followers={8000}
+formatted
+inView
+inViewOnce
+inViewMargin="-50px"
+/>
+</Preview>
+
+---
+
+### X Follow Standard — default
+
+<Preview
+link="x-follow/default"
+code={`
+import { XFollowButtonStandard } from "@/components/ui/x-follow-button";
+
+<XFollowButtonStandard username="johuniq" />`}
+>
+<XFollowButtonStandard username="johuniq" />
+</Preview>
+
+---
+
+### X Follow Standard — large, no label
+
+<Preview
+link="x-follow/large-no-label"
+code={`
+import { XFollowButtonStandard } from "@/components/ui/x-follow-button";
+
+<XFollowButtonStandard username="johuniq" size="large" showScreenName={false} />`}
+>
+<XFollowButtonStandard username="johuniq" size="large" showScreenName={false} />
+</Preview>
+
+---
+
+### X Follow Standard — widget (official)
+
+Enable `useWidget` to load the official X widgets script; the anchor may be transformed by the platform widget.
+
+<Preview
+link="x-follow/widget"
+code={`
+import { XFollowButtonStandard } from "@/components/ui/x-follow-button";
+
+<XFollowButtonStandard username="johuniq" size="large" useWidget />`}
+>
+<XFollowButtonStandard username="johuniq" size="large" useWidget />
+</Preview>
+
+---
+
+## Props
+
+Below are the component props (types and defaults) derived from `components/ui/x-follow-button.tsx`.
+
+### XFollowButtonAnimated
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto">
+    <thead>
+      <tr>
+        <th className="text-left align-top pr-4">Prop</th>
+        <th className="text-left align-top pr-4">Type</th>
+        <th className="text-left align-top pr-4">Default</th>
+        <th className="text-left align-top">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `username`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"johuniq"</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Target X username (without @).
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `followers`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>number?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>0</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Number used to animate the counter.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `transition`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>SpringOptions?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>{`{ stiffness: 90, damping: 50 }`}</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Spring options passed to <code>useSpring</code>.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `formatted`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>boolean?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>false</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          If true, formats large numbers using <code>k</code>, <code>M</code>,
+          etc.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `inView`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>boolean?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>false</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          If true, requires the component to be in view to animate.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `inViewMargin`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>UseInViewOptions["margin"]?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"0px"</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Margin value passed to <code>useInView</code>.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `inViewOnce`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>boolean?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>true</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          If true, in-view detection only runs once.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Note: `XFollowButtonAnimated` extends `HTMLMotionProps<"a">` so it accepts standard anchor attributes and motion props.
+
+### XFollowButtonStandard
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto">
+    <thead>
+      <tr>
+        <th className="text-left align-top pr-4">Prop</th>
+        <th className="text-left align-top pr-4">Type</th>
+        <th className="text-left align-top pr-4">Default</th>
+        <th className="text-left align-top">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `username`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"johuniq"</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Target X username (without @).
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `size`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"large" | "small"?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"small"</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          Visual size variant.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `showScreenName`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>boolean?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>true</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          When true, shows the <code>Follow @username</code> label.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `useWidget`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>boolean?</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>false</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          If true, loads official X widgets and allows the widget to transform
+          the anchor.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Note: `XFollowButtonStandard` extends `React.AnchorHTMLAttributes<HTMLAnchorElement>` so any anchor props (href/target/rel/etc.) are supported. When `useWidget` is enabled the component loads `https://platform.twitter.com/widgets.js` (once) and adds `data-` attributes for the widget.

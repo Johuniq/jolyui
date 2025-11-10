@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Preview } from "./preview";
+import Preview from "./preview";
 import { RefreshButton } from "./refresh-button";
 
 interface PreviewClientProps {

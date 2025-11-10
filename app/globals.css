@@ -30,7 +30,6 @@
   --animate-float-slow: float 8s ease-in-out infinite;
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0);
@@ -60,6 +59,40 @@
       height: 0;
     }
   }
+}
+
+pre.shiki {
+  margin: 0;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Don’t add padding on pre/code; we padded the wrapper */
+pre.shiki,
+pre.shiki code {
+  padding: 0 !important;
+}
+
+/* Optional: keep line numbers & layout tidy */
+pre.shiki code {
+  display: block;
+  counter-reset: shiki-line;
+}
+pre.shiki .line {
+  display: block;
+  position: relative;
+  padding-left: 3.25rem; /* gutter */
+  min-height: 0.5rem;
+  counter-increment: shiki-line;
+}
+pre.shiki .line::before {
+  content: counter(shiki-line);
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  text-align: right;
+  opacity: 0.45;
+  user-select: none;
 }
 
 /*

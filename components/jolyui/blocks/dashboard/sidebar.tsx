@@ -68,21 +68,21 @@ export default function Sidebar() {
       >
         <div className="h-full flex flex-col">
           <Link
-            href="https://ui.codesnipet.dev/"
+            href="https://jolyui.dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="h-16 px-6 flex items-center border-b border-gray-200 dark:border-[#1F1F23]"
           >
             <div className="flex items-center gap-3">
               <Image
-                src="https://ui.codesnipet.dev/logo.svg"
+                src="https://jolyui.dev/logo.svg"
                 alt="Acme"
                 width={32}
                 height={32}
                 className="flex-shrink-0 hidden dark:block"
               />
               <Image
-                src="https://ui.codesnipet.dev/logo-black.svg"
+                src="https://jolyui.dev/logo-black.svg"
                 alt="Acme"
                 width={32}
                 height={32}
