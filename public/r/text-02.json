@@ -1,0 +1,13 @@
+{
+  "name": "text-02",
+  "type": "registry:component",
+  "dependencies": ["motion"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { motion } from \"motion/react\";\n\ninterface TextSplitProps {\n    text: string;\n    className?: string;\n    containerClassName?: string;\n    splitSpacing?: number;\n}\n\nconst Text_02: React.FC<TextSplitProps> = ({\n    text = \"Payout fees\",\n    className = \"\",\n    containerClassName = \"\",\n    splitSpacing = 2,\n}) => {\n    return (\n        <motion.div\n            className={cn(\n                \"w-full text-center relative inline-block\",\n                containerClassName\n            )}\n            whileHover=\"hover\"\n            initial=\"default\"\n        >\n            <motion.div\n                className={cn(\"absolute w-full text-4xl -ml-0.5\", className)}\n                variants={{\n                    default: {\n                        clipPath: \"inset(0 0 50% 0)\",\n                        y: -splitSpacing / 2,\n                        opacity: 1,\n                    },\n                    hover: {\n                        clipPath: \"inset(0 0 0 0)\",\n                        y: 0,\n                        opacity: 0,\n                    },\n                }}\n                transition={{ duration: 0.1 }}\n            >\n                {text}\n            </motion.div>\n            <motion.div\n                className={cn(\"absolute w-full text-4xl\", className)}\n                variants={{\n                    default: {\n                        clipPath: \"inset(50% 0 0 0)\",\n                        y: splitSpacing / 2,\n                        opacity: 1,\n                    },\n                    hover: {\n                        clipPath: \"inset(0 0 0 0)\",\n                        y: 0,\n                        opacity: 1,\n                    },\n                }}\n                transition={{ duration: 0.1 }}\n            >\n                {text}\n            </motion.div>\n\n            {/* Hidden text for maintaining layout size */}\n            <div className={cn(\"invisible text-4xl\", className)}>{text}</div>\n        </motion.div>\n    );\n};\n\nexport default Text_02;\n",
+      "path": "/components/jolyui/text/text-02.tsx",
+      "target": "/components/jolyui/text-02.tsx"
+    }
+  ]
+}

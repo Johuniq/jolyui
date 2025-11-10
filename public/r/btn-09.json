@@ -1,0 +1,14 @@
+{
+  "name": "btn-09",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport default function Btn09({\n    className,\n    children,\n    ...props\n}: React.ButtonHTMLAttributes<HTMLButtonElement> & {\n    children: React.ReactNode;\n}) {\n    return (\n        <Button\n            {...props}\n            className={cn(\n                \"relative p-2\",\n                \"rounded-lg overflow-hidden\",\n                \"bg-linear-to-b from-zinc-50 to-zinc-100\",\n                \"dark:from-zinc-800 dark:to-zinc-900\",\n                \"border border-zinc-200 dark:border-zinc-800\",\n                \"hover:border-zinc-300 dark:hover:border-zinc-700\",\n                \"transition-all duration-300 ease-out\",\n                \"group\",\n                \"inline-flex items-center justify-center\",\n                className\n            )}\n        >\n            {children}\n            <span\n                className={cn(\n                    \"absolute inset-0\",\n                    \"bg-linear-to-r from-indigo-500/0 via-indigo-500/10 to-indigo-500/0\",\n                    \"translate-x-[-100%]\",\n                    \"group-hover:translate-x-[100%]\",\n                    \"transition-transform duration-500\",\n                    \"ease-out\"\n                )}\n            />\n        </Button>\n    );\n}\n",
+      "path": "/components/jolyui/button/btn-09.tsx",
+      "target": "/components/jolyui/btn-09.tsx"
+    }
+  ]
+}

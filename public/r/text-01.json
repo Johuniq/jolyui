@@ -1,0 +1,13 @@
+{
+  "name": "text-01",
+  "type": "registry:component",
+  "dependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "export default function Text_01() {\n    return (\n        <div className=\"flex items-center justify-center\">\n            <div className=\"relative px-4 py-2 overflow-hidden\">\n                <h1 className=\"text-4xl sm:text-3xl font-bold shimmer-text\">\n                    Classy Shimmer\n                </h1>\n            </div>\n            <style>{`\n                .shimmer-text {\n                    --shimmer-color-start: #334155;\n                    --shimmer-color-mid: #94a3b8;\n                    background: linear-gradient(\n                        90deg,\n                        var(--shimmer-color-start) 0%,\n                        var(--shimmer-color-start) 40%,\n                        var(--shimmer-color-mid) 50%,\n                        var(--shimmer-color-start) 60%,\n                        var(--shimmer-color-start) 100%\n                    );\n                    background-size: 200% 100%;\n                    -webkit-background-clip: text;\n                    background-clip: text;\n                    color: transparent;\n                    animation: shimmer 2.5s infinite linear;\n                }\n\n                @media (prefers-color-scheme: dark) {\n                    .shimmer-text {\n                        --shimmer-color-start: #f1f5f9;\n                        --shimmer-color-mid: #9333EA;\n                    }\n                }\n\n                @keyframes shimmer {\n                    0% { background-position: 100% 0; }\n                    100% { background-position: -100% 0; }\n                }\n            `}</style>\n        </div>\n    );\n}\n",
+      "path": "/components/jolyui/text/text-01.tsx",
+      "target": "/components/jolyui/text-01.tsx"
+    }
+  ]
+}

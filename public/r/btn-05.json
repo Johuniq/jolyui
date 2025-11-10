@@ -1,0 +1,14 @@
+{
+  "name": "btn-05",
+  "type": "registry:component",
+  "dependencies": ["lucide-react", "motion"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { motion, useAnimation } from \"motion/react\";\nimport { Trash2Icon } from \"lucide-react\";\nimport { useState } from \"react\";\n\ninterface Btn_05Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    holdDuration?: number;\n}\n\nexport default function Btn_05({\n    className,\n    holdDuration = 3000,\n    ...props\n}: Btn_05Props) {\n    const [isHolding, setIsHolding] = useState(false);\n    const controls = useAnimation();\n\n    async function handleHoldStart() {\n        setIsHolding(true);\n        controls.set({ width: \"0%\" });\n        await controls.start({\n            width: \"100%\",\n            transition: {\n                duration: holdDuration / 1000,\n                ease: \"linear\",\n            },\n        });\n    }\n\n    function handleHoldEnd() {\n        setIsHolding(false);\n        controls.stop();\n        controls.start({\n            width: \"0%\",\n            transition: { duration: 0.1 },\n        });\n    }\n\n    return (\n        <Button\n            className={cn(\n                \"min-w-40 relative overflow-hidden touch-none\",\n                \"bg-red-100 dark:bg-red-200\",\n                \"hover:bg-red-100 dark:hover:bg-red-200\",\n                \"text-red-500 dark:text-red-600\",\n                \"border border-red-200 dark:border-red-300\",\n                className\n            )}\n            onMouseDown={handleHoldStart}\n            onMouseUp={handleHoldEnd}\n            onMouseLeave={handleHoldEnd}\n            onTouchStart={handleHoldStart}\n            onTouchEnd={handleHoldEnd}\n            onTouchCancel={handleHoldEnd}\n            {...props}\n        >\n            <motion.div\n                initial={{ width: \"0%\" }}\n                animate={controls}\n                className={cn(\n                    \"absolute left-0 top-0 h-full\",\n                    \"bg-red-200/30\",\n                    \"dark:bg-red-300/30\"\n                )}\n            />\n            <span className=\"relative z-10 w-full flex items-center justify-center gap-2\">\n                <Trash2Icon className=\"w-4 h-4\" />\n                {!isHolding ? \"Hold me\" : \"Release\"}\n            </span>\n        </Button>\n    );\n}\n",
+      "path": "/components/jolyui/button/btn-05.tsx",
+      "target": "/components/jolyui/btn-05.tsx"
+    }
+  ]
+}

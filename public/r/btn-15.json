@@ -1,0 +1,14 @@
+{
+  "name": "btn-15",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { ArrowUpRight } from \"lucide-react\";\n\ninterface Btn15Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    label?: string;\n}\n\nexport default function Btn15({\n    className,\n    label = \"Explore Components\",\n    ...props\n}: Btn15Props) {\n    return (\n        <Button\n            className={cn(\n                \"relative h-10 px-4 overflow-hidden\",\n                \"bg-zinc-900 dark:bg-zinc-100\",\n                \"transition-all duration-200\",\n                \"group\",\n                className\n            )}\n            {...props}\n        >\n            {/* Gradient background effect */}\n            <div\n                className={cn(\n                    \"absolute inset-0\",\n                    \"bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500\",\n                    \"opacity-40 group-hover:opacity-80\",\n                    \"blur-[2.5px] transition-opacity duration-500\"\n                )}\n            />\n\n            {/* Content */}\n            <div className=\"relative flex items-center justify-center gap-2\">\n                <span className=\"text-white dark:text-zinc-900\">{label}</span>\n                <ArrowUpRight className=\"w-3.5 h-3.5 text-white/90 dark:text-zinc-900/90\" />\n            </div>\n        </Button>\n    );\n}\n",
+      "path": "/components/jolyui/button/btn-15.tsx",
+      "target": "/components/jolyui/btn-15.tsx"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "btn-11",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\nimport { ChevronRight } from \"lucide-react\";\n\ninterface Btn11Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    children?: React.ReactNode;\n    showIcon?: boolean;\n}\n\nexport default function Btn11({\n    className,\n    children = \"Button\",\n    showIcon = true,\n    ...props\n}: Btn11Props) {\n    return (\n        <Button\n            className={cn(\n                \"relative h-10 px-4\",\n                \"bg-linear-to-b from-zinc-50 to-zinc-100/80\",\n                \"dark:from-zinc-900 dark:to-zinc-800/80\",\n                \"text-zinc-800 dark:text-zinc-200\",\n                \"border border-zinc-200 dark:border-zinc-800\",\n                \"hover:border-zinc-300 dark:hover:border-zinc-700\",\n                \"shadow-xs hover:shadow-sm\",\n                \"transition-all duration-200\",\n                \"group\",\n                className\n            )}\n            {...props}\n        >\n            <div className=\"flex items-center justify-center gap-2\">\n                <span className=\"relative\">\n                    {children}\n                    <span className={cn(\n                        \"absolute -bottom-px left-0 w-full h-px\",\n                        \"bg-linear-to-r from-zinc-400/0 via-zinc-400/50 to-zinc-400/0\",\n                        \"dark:from-zinc-600/0 dark:via-zinc-600/50 dark:to-zinc-600/0\",\n                        \"opacity-0 group-hover:opacity-100\",\n                        \"transition-opacity duration-200\"\n                    )} />\n                </span>\n                {showIcon && (\n                    <ChevronRight \n                        className={cn(\n                            \"w-4 h-4\",\n                            \"transform group-hover:translate-x-0.5\",\n                            \"transition-transform duration-200\"\n                        )}\n                    />\n                )}\n            </div>\n        </Button>\n    );\n} ",
+      "path": "/components/jolyui/button/btn-11.tsx",
+      "target": "/components/jolyui/btn-11.tsx"
+    }
+  ]
+}

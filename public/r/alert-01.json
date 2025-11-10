@@ -1,0 +1,14 @@
+{
+  "name": "alert-01",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { CheckCircle2 } from \"lucide-react\";\n\nexport default function Alert01() {\n    return (\n        <div className=\"w-full max-w-xl mx-auto\">\n            <div className=\"relative bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_1px_6px_0_rgba(0,0,0,0.02)] rounded-xl p-4\">\n                <div className=\"flex gap-3\">\n                    <div className=\"p-2 rounded-full\">\n                        <div className=\"rounded-full bg-white dark:bg-zinc-900\">\n                            <CheckCircle2 className=\"h-6 w-6 text-zinc-500 dark:text-zinc-500\" />\n                        </div>\n                    </div>\n\n                    <div className=\"space-y-0.5\">\n                        <h3 className=\"text-sm font-medium text-zinc-700 dark:text-zinc-300\">\n                            CodeSnippet UI\n                        </h3>\n                        <p className=\"text-[13px] text-zinc-500 dark:text-zinc-400\">\n                            Use the CLI to install this!\n                        </p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    );\n}\n",
+      "path": "/components/jolyui/alert/alert-01.tsx",
+      "target": "/components/jolyui/alert-01.tsx"
+    }
+  ]
+}

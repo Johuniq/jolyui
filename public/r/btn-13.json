@@ -1,0 +1,14 @@
+{
+  "name": "btn-13",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\ninterface Btn13Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    icon?: string;\n    label?: string;\n    className?: string;\n}\n\nexport default function Btn13({\n    label = \"Welcome\",\n    className,\n    ...props\n}: Btn13Props) {\n    return (\n        <Button\n            variant=\"ghost\"\n            className={cn(\n                \"group relative w-1/2 h-12 px-4rounded-lg overflow-hidden transition-all duration-500\",\n                className\n            )}\n            {...props}\n        >\n            {/* Gradient border using pseudo-element */}\n            <div className=\"absolute inset-0 rounded-lg p-[2px] bg-linear-to-b from-[#336C4F] via-[#0C1F21] to-[#0D6437]\">\n                <div className=\"absolute inset-0 bg-[#0C1F21] rounded-lg opacity-90\" />\n            </div>\n\n            {/* Base dark background */}\n            <div className=\"absolute inset-[2px] bg-[#0C1F21] rounded-lg opacity-95\" />\n\n            {/* Multiple gradient layers */}\n            <div className=\"absolute inset-[2px] bg-linear-to-r from-[#0C1F21] via-[#0C1F21] to-[#0C1F21] rounded-lg opacity-90\" />\n            <div className=\"absolute inset-[2px] bg-linear-to-b from-[#347B52]/40 via-[#0C1F21] to-[#0D6437]/30 rounded-lg opacity-80\" />\n            <div className=\"absolute inset-[2px] bg-linear-to-br from-[#87F6B7]/10 via-[#0C1F21] to-[#17362A]/50 rounded-lg\" />\n\n            {/* Subtle edge glow */}\n            <div className=\"absolute inset-[2px] shadow-[inset_0_0_10px_rgba(135,246,183,0.1)] rounded-lg\" />\n\n            {/* Content wrapper */}\n            <div className=\"relative flex items-center justify-center gap-2\">\n                <span className=\"text-lg font-light bg-linear-to-b from-[#8AEECA] to-[#73F8A8] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(135,246,183,0.4)] tracking-tighter\">\n                    {label}\n                </span>\n            </div>\n\n            {/* Hover effects */}\n            <div className=\"absolute inset-[2px] opacity-0 transition-opacity duration-300 bg-linear-to-r from-[#17362A]/20 via-[#87F6B7]/10 to-[#17362A]/20 group-hover:opacity-100 rounded-lg\" />\n        </Button>\n    );\n}\n",
+      "path": "/components/jolyui/button/btn-13.tsx",
+      "target": "/components/jolyui/btn-13.tsx"
+    }
+  ]
+}

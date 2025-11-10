@@ -1,0 +1,14 @@
+{
+  "name": "alert-07",
+  "type": "registry:component",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nexport default function Alert07() {\n    return (\n        <div>\n            <div className=\"bg-white dark:bg-zinc-900/95 backdrop-blur-xs rounded-lg flex flex-col items-center justify-center gap-2 p-6 shadow-xs border border-gray-800/20 dark:border-gray-200/20\">\n                <div className=\"text-gray-900 dark:text-gray-100 my-2 font-semibold\">\n                    FREE TRIAL EXPIRED\n                </div>\n                <div className=\"flex flex-col items-center justify-center gap-6\">\n                    <p className=\"text-center text-sm text-gray-700 dark:text-gray-300\">\n                        Subscribe now to continue using our services.\n                    </p>\n                    <Button\n                        type=\"button\"\n                        className=\"relative group overflow-hidden bg-blue-700 dark:bg-blue-500 hover:bg-blue-800 dark:hover:bg-blue-600 backdrop-blur-xs border border-blue-400/30 dark:border-blue-600/30 transition-all duration-300\"\n                    >\n                        <span className=\"relative z-10 font-semibold text-sm text-white\">\n                            Subscribe Now\n                        </span>\n                        <div className=\"absolute inset-0 -translate-x-full group-hover:translate-x-0 bg-linear-to-r from-transparent via-blue-600 to-transparent dark:via-blue-400 transition-transform duration-700 ease-out\" />\n                    </Button>\n                </div>\n            </div>\n        </div>\n    );\n}\n",
+      "path": "/components/jolyui/alert/alert-07.tsx",
+      "target": "/components/jolyui/alert-07.tsx"
+    }
+  ]
+}
