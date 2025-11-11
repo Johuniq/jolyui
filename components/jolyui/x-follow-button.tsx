@@ -1,6 +1,5 @@
 "use client";
-import XIcon from "@/components/icons/x-icon";
-import { UserPlus } from "lucide-react";
+import { UserPlus, XIcon } from "lucide-react";
 import {
   AnimatePresence,
   motion,
