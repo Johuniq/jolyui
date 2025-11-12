@@ -1,0 +1,250 @@
+---
+title: Animated Badge
+description: Animated badge component with various effects.
+icon: Badge
+---
+
+import { AnimatedBadge } from "@/components/jolyui/animated-badge";
+import {
+  Tabs as MainTabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+    <MainTabs defaultValue="installation" className="mt-4">
+      <TabsList>
+        <TabsTrigger value="installation">Installation</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="installation">
+      <Tabs items={["bun", "npx", "pnpm", "yarn"]}>
+
+    ```bash tab="bun"
+    bunx shadcn@latest add @jolyui.dev/animated-badge
+    ```
+
+    ```bash tab="npx"
+    npx shadcn@latest add @jolyui.dev/animated-badge
+    ```
+
+    ```bash tab="pnpm"
+    pnpm dlx shadcn@latest add @jolyui.dev/animated-badge
+    ```
+
+    ```bash tab="yarn"
+    yarn create shadcn@latest add @jolyui.dev/animated-badge
+    ```
+
+</Tabs>
+      </TabsContent>
+
+      <TabsContent value="manual">
+
+Install the following dependencies:
+
+  <Tabs items={["bun", "npx", "pnpm", "yarn"]}>
+
+    ```bash tab="bun"
+    bun install motion
+    ```
+
+    ```bash tab="npm"
+    npm install motion
+    ```
+
+    ```bash tab="pnpm"
+    pnpm install motion
+    ```
+
+    ```bash tab="yarn"
+    yarn add motion
+    ```
+
+</Tabs>
+
+Copy and paste the following code into your project.
+
+```tsx showLineNumbers title="components/ui/animated-badge.tsx"
+"use client";
+
+import { motion } from "motion/react";
+
+interface AnimatedBadgeProps {
+  children: string;
+  variant?: "pulse" | "glow" | "bounce";
+  className?: string;
+}
+
+export function AnimatedBadge({
+  children,
+  variant = "glow",
+  className = "",
+}: AnimatedBadgeProps) {
+  const variants = {
+    pulse: {
+      scale: [1, 1.05, 1],
+    },
+    glow: {
+      boxShadow: [
+        "0 0 0px rgba(139, 92, 246, 0)",
+        "0 0 20px rgba(139, 92, 246, 0.5)",
+        "0 0 0px rgba(139, 92, 246, 0)",
+      ],
+    },
+    bounce: {
+      y: [0, -4, 0],
+    },
+  };
+
+  return (
+    <motion.div
+      animate={variants[variant]}
+      transition={{
+        duration: 2,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "easeInOut",
+      }}
+      className={`inline-block px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500 to-purple-500 text-white ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
+```
+
+</TabsContent>
+</MainTabs>
+
+---
+
+### Animated Badge
+
+### Animated Badge — pulse
+
+<Preview
+link="follow-button-counter-large"
+code={`
+import { AnimatedBadge } from "@/components/jolyui/animated-badge";
+
+<AnimatedBadge
+  children="Pulse Badge"
+  variant="pulse"
+/>`}
+>
+<AnimatedBadge
+  children="Pulse Badge"
+  variant="pulse"
+/>
+</Preview>
+
+---
+
+### Animated Badge — glow
+
+<Preview
+link="follow-button-counter-large"
+code={`
+import { AnimatedBadge } from "@/components/jolyui/animated-badge";
+
+<AnimatedBadge
+  children="Glow Badge"
+  variant="glow"
+/>`}
+>
+<AnimatedBadge
+  children="Glow Badge"
+  variant="glow"
+/>
+</Preview>
+
+---
+
+### Animated Badge — bounce
+
+<Preview
+link="follow-button-counter-large"
+code={`
+import { AnimatedBadge } from "@/components/jolyui/animated-badge";
+
+<AnimatedBadge
+  children="Bounce Badge"
+  variant="bounce"
+/>`}
+>
+<AnimatedBadge
+  children="Bounce Badge"
+  variant="bounce"
+/>
+</Preview>
+
+---
+
+## Props
+
+Below are the component props (types and defaults) derived from `components/ui/animated-badge.tsx`.
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `children`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"johuniq"</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          String content of the badge.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `variant`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>pulse | glow | bounce</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>"glow"</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Animation variant for the badge.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `className`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Additional class names for the badge.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -166,7 +166,7 @@ function GitHubStarsButton({
       whileHover={{ scale: 1.05 }}
       onClick={handleClick}
       className={cn(
-        "flex items-center gap-2 text-sm bg-primary text-primary-foreground rounded-lg px-4 py-2 h-10 has-[>svg]:px-3 cursor-pointer whitespace-nowrap font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-[18px] shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+        "flex items-center gap-2 text-sm bg-primary text-primary-foreground rounded-lg px-4 py-2 h-7 has-[>svg]:px-3 cursor-pointer whitespace-nowrap font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-[18px] shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
         className
       )}
       {...props}

@@ -8,6 +8,7 @@ import { ThemedCode } from "./themed-code";
 interface PreviewProps {
   children: React.ReactNode;
   code?: string;
+  isPremium?: boolean;
   className?: string;
   link: string;
   useIframe?: boolean;
@@ -24,6 +25,7 @@ const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
 export default async function Preview({
   children,
   code = "",
+  isPremium = false,
   className = "",
   link,
   useIframe = false,
@@ -62,6 +64,16 @@ export default async function Preview({
 
   return (
     <div className={cn("w-full overflow-hidden", className)}>
+      {isPremium && (
+        <div className="px-4 py-2 mb-4 text-sm font-medium bg-yellow-100 dark:bg-yellow-950/30 rounded-lg text-yellow-700 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800/50 shadow-xs hover:bg-yellow-200/70 dark:hover:bg-yellow-950/50 transition-colors">
+          ⭐ This is a premium component. Please{" "}
+          <a href="/pricing" className="underline">
+            upgrade
+          </a>{" "}
+          to access it.
+        </div>
+      )}
+
       <PreviewContent link={link} prePath={prePath} />
       <PreviewTabs
         preview={previewEl}

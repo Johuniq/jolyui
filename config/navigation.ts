@@ -30,18 +30,34 @@ export const navigationSections: NavSection[] = [
     title: "Components",
     items: [
       {
-        id: 1,
+        id: 16,
         title: "AI-Input",
         href: "/docs/components/ai-input",
         description: "Modern AI chat interface components",
         count: 16,
       },
       {
-        id: 1,
+        id: 17,
         title: "X Follow Button",
         href: "/docs/components/x-follow-button",
         description: "X (Twitter) follow button component",
         count: 17,
+        isNew: true,
+      },
+      {
+        id: 18,
+        title: "Animated Badge",
+        href: "/docs/components/animated-badge",
+        description: "Animated badge component with various effects",
+        count: 18,
+        isNew: true,
+      },
+      {
+        id: 18,
+        title: "Shadow Wave",
+        href: "/docs/components/shadow-wave",
+        description: "Animated wave component with various effects",
+        count: 18,
         isNew: true,
       },
       {
