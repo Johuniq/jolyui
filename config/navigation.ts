@@ -61,6 +61,14 @@ export const navigationSections: NavSection[] = [
         isNew: true,
       },
       {
+        id: 19,
+        title: "Parallax Image",
+        href: "/docs/components/parallax-image",
+        description: "Parallax effect for images based on mouse movement",
+        count: 19,
+        isNew: true,
+      },
+      {
         id: 2,
         title: "Alerts",
         href: "/docs/components/alert",

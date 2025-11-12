@@ -28,6 +28,7 @@
     "components/x-follow-button",
     "components/animated-badge",
     "components/shadow-wave",
+    "components/parallax-image",
     "---Blocks---",
     "blocks/ai-card-generation",
     "blocks/ai-chat",

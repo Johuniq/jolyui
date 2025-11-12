@@ -1,0 +1,471 @@
+---
+title: Parallax Image
+description: Parallax effect for images based on mouse movement.
+icon: Image
+---
+
+import { ParallaxImage } from "@/components/jolyui/parallax-image";
+import {
+  Tabs as MainTabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+---
+
+    <MainTabs defaultValue="installation" className="mt-4">
+      <TabsList>
+        <TabsTrigger value="installation">Installation</TabsTrigger>
+        <TabsTrigger value="manual">Manual</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="installation">
+      <Tabs items={["bun", "npx", "pnpm", "yarn"]}>
+
+    ```bash tab="bun"
+    bunx shadcn@latest add @jolyui.dev/parallax-image
+    ```
+
+    ```bash tab="npx"
+    npx shadcn@latest add @jolyui.dev/parallax-image
+    ```
+
+    ```bash tab="pnpm"
+    pnpm dlx shadcn@latest add @jolyui.dev/parallax-image
+    ```
+
+    ```bash tab="yarn"
+    yarn create shadcn@latest add @jolyui.dev/parallax-image
+    ```
+
+</Tabs>
+      </TabsContent>
+
+      <TabsContent value="manual">
+
+Copy and paste the following code into your project.
+
+```tsx showLineNumbers title="components/ui/parallax-image.tsx"
+"use client";
+import React, { useEffect, useRef } from "react";
+
+export type IconSpec = {
+  id: string;
+  src: string; // path under /public or an external url
+  left?: string; // Tailwind arbitrary or percent e.g. "12%" or "left-[12%]"
+  top?: string; // e.g. "-top-[80px]" or "-top-[100px]"
+  width?: string; // e.g. "w-[130px]"
+  height?: string; // e.g. "h-[130px]"
+  rotate?: string; // e.g. "rotate-[6deg]" or "-rotate-[10deg]"
+  factor?: number; // parallax factor
+  label?: string; // optional small label text
+  labelClassName?: string;
+  hiddenOnMobile?: boolean; // default true
+};
+
+export interface ParallaxImageProps {
+  children?: React.ReactNode;
+  className?: string;
+  icons?: IconSpec[];
+  // global multipliers to tune movement
+  xMultiplier?: number;
+  yMultiplier?: number;
+}
+
+const DEFAULT_ICONS: IconSpec[] = [
+  {
+    id: "fill",
+    src: "/fill.gif",
+    left: "12%",
+    top: "-80px",
+    width: "120px",
+    height: "120px",
+    rotate: "-10deg",
+    factor: 1.25,
+    label: "Tiny Fill",
+  },
+  {
+    id: "command",
+    src: "/command.gif",
+    left: "30%",
+    top: "-100px",
+    width: "130px",
+    height: "130px",
+    rotate: "6deg",
+    factor: 0.75,
+    label: "Command",
+  },
+  {
+    id: "face",
+    src: "/face-id.gif",
+    left: "48%",
+    top: "-140px",
+    width: "120px",
+    height: "120px",
+    rotate: "4deg",
+    factor: 0.5,
+    label: "Face ID",
+  },
+  {
+    id: "cellar",
+    src: "/cellar.gif",
+    left: "66%",
+    top: "-100px",
+    width: "130px",
+    height: "130px",
+    rotate: "-4deg",
+    factor: 1,
+    label: "Cellar",
+  },
+  {
+    id: "pay",
+    src: "/pay-bitcoin.gif",
+    left: "82%",
+    top: "-80px",
+    width: "130px",
+    height: "130px",
+    rotate: "8deg",
+    factor: 1.5,
+    label: "Pay",
+  },
+];
+
+function makePositionClass(
+  left?: string,
+  top?: string,
+  w?: string,
+  h?: string,
+  rotate?: string
+) {
+  // We'll set inline style for left/top/width/height/rotate to keep arbitrary values simple.
+  const style: React.CSSProperties = {};
+  if (left) {
+    // accept percentages like "12%" or pixel strings like "120px"
+    style.left = left.includes("%") || left.includes("px") ? left : left;
+  }
+  if (top) style.top = top.includes("%") || top.includes("px") ? top : top;
+  if (w) style.width = w;
+  if (h) style.height = h;
+  if (rotate) style.transform = `rotate(${rotate})`;
+  return style;
+}
+
+export function ParallaxImage({
+  children,
+  className = "",
+  icons = DEFAULT_ICONS,
+  xMultiplier = 60,
+  yMultiplier = 80,
+}: ParallaxImageProps) {
+  const parallaxRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!parallaxRef.current) return;
+
+    const elements = parallaxRef.current.querySelectorAll<HTMLElement>(
+      "[data-parallax-factor]"
+    );
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const x = event.clientX / window.innerWidth - 0.5;
+      const y = event.clientY / window.innerHeight - 0.5;
+
+      elements.forEach((el) => {
+        const factor = Number(
+          parseFloat(el.getAttribute("data-parallax-factor") || "1")
+        );
+        // If the element already contains a rotate transform (from inline style),
+        // we only append translate3d so rotation is preserved.
+        el.style.transform = `${el.style.transform.replace(/translate3d\([^)]*\)/, "")} translate3d(${
+          x * factor * xMultiplier
+        }px, ${y * factor * yMultiplier}px, 0)`;
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [xMultiplier, yMultiplier]);
+
+  return (
+    <div
+      ref={parallaxRef}
+      className={`relative w-full flex justify-center ${className}`}
+    >
+      {icons.map((ic) => {
+        const style = makePositionClass(
+          ic.left,
+          ic.top,
+          ic.width,
+          ic.height,
+          ic.rotate
+        );
+        // ensure initial transform doesn't wipe rotation: set it to the rotate value if present
+        if (ic.rotate) style.transform = `rotate(${ic.rotate})`;
+        const mobileHidden = ic.hiddenOnMobile ?? true;
+
+        return (
+          <div
+            key={ic.id}
+            data-parallax-factor={(ic.factor ?? 1).toString()}
+            // absolute positioned element; we use inline style for precise values
+            className={`${
+              mobileHidden ? "hidden md:flex" : "flex"
+            } absolute z-[-1] bg-no-repeat bg-center pointer-events-none items-center justify-center`}
+            style={{
+              ...style,
+              backgroundImage: `url(${ic.src})`,
+              backgroundSize: "80%",
+            }}
+            aria-hidden
+          >
+            {ic.label ? (
+              <span
+                className={`absolute top-[110%] text-sm font-medium ${ic.labelClassName ?? ""}`}
+                // label is positioned relative to its parent absolute container
+              >
+                {ic.label}
+              </span>
+            ) : null}
+          </div>
+        );
+      })}
+
+      {children && <div className="relative z-10 ">{children}</div>}
+    </div>
+  );
+}
+```
+
+</TabsContent>
+</MainTabs>
+
+---
+
+### Usage
+
+<Preview
+link="follow-button-counter-large"
+code={`
+import { ParallaxImage } from "@/components/jolyui/parallax-image";
+
+<div className="flex w-full h-screen justify-center items-center">
+     <ParallaxImage />
+    </div>
+`}
+>
+<ParallaxImage/>
+</Preview>
+
+---
+
+## Props
+
+Below are the component props (types and defaults) derived from `components/ui/parallax-image.tsx`.
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `children`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`React.ReactNode`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Content of the component.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `icons`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`IconSpec`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Array of icon specifications for the parallax images.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `xMultiplier`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>number</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>60</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Multiplier for horizontal parallax movement.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `yMultiplier`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>number</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>80</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Multiplier for vertical parallax movement.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `className`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code></code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Additional CSS classes for the component container.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+IconSpec Props
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td className="font-mono align-top break-words">`id`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">Unique identifier for the icon.</td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`src`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Path to the icon under <code>/public</code> or an external URL.
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`left`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Horizontal position (Tailwind arbitrary value or percentage).
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`top`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Vertical position (Tailwind arbitrary value or percentage).
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`width`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">Width of the icon element.</td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`height`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">Height of the icon element.</td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`rotate`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Rotation of the icon (e.g. <code>rotate-[6deg]</code> or <code>-rotate-[10deg]</code>).
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`factor`</td>
+        <td className="align-top break-words"><code>`number`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Parallax movement factor controlling icon displacement.
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`label`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Optional small text label displayed with the icon.
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`labelClassName`</td>
+        <td className="align-top break-words"><code>`string`</code></td>
+        <td className="align-top break-words"><code>—</code></td>
+        <td className="text-left align-top">
+          Custom class names for styling the label.
+        </td>
+      </tr>
+
+      <tr>
+        <td className="font-mono align-top break-words">`hiddenOnMobile`</td>
+        <td className="align-top break-words"><code>`boolean`</code></td>
+        <td className="align-top break-words"><code>true</code></td>
+        <td className="text-left align-top">
+          Whether to hide the icon on mobile devices.
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>

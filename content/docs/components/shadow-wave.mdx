@@ -361,7 +361,7 @@ import { ShadowWave } from "@/components/jolyui/shadow-wave";
 
 ## Props
 
-Below are the component props (types and defaults) derived from `components/ui/animated-badge.tsx`.
+Below are the component props (types and defaults) derived from `components/ui/shadow-wave.tsx`.
 
 <div className="overflow-x-auto">
   <table className="w-full table-auto text-center">
@@ -379,29 +379,93 @@ Below are the component props (types and defaults) derived from `components/ui/a
           `children`
         </td>
         <td className="align-top whitespace-normal break-words">
-          <code>string</code>
+          <code>`React.ReactNode`</code>
         </td>
         <td className="align-top whitespace-normal break-words">
-          <code>"johuniq"</code>
+          <code>""</code>
         </td>
         <td className="text-left align-top whitespace-normal break-words">
-          String content of the badge.
+          Content of the component.
         </td>
       </tr>
     </tbody>
     <tbody>
       <tr>
         <td className="align-top whitespace-normal break-words font-mono">
-          `variant`
+          `sizing`
         </td>
         <td className="align-top whitespace-normal break-words">
-          <code>pulse | glow | bounce</code>
+          <code>fill | stretch</code>
         </td>
         <td className="align-top whitespace-normal break-words">
-          <code>"glow"</code>
+          <code>"fill"</code>
         </td>
         <td className="text-left align-top whitespace-normal break-words">
-          Animation variant for the badge.
+          Sizing mode for the shadow wave.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `color`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          RGBA color value for the shadow wave.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `animation`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>AnimationConfig</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Scale & speed configuration for the shadow wave animation.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `noise`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>NoiseConfig</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code></code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Opacity & scale configuration for the noise overlay.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `style`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>React.CSSProperties</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code></code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Custom styles for the component.
         </td>
       </tr>
     </tbody>
@@ -417,7 +481,111 @@ Below are the component props (types and defaults) derived from `components/ui/a
           <code>""</code>
         </td>
         <td className="text-left align-top whitespace-normal break-words">
-          Additional class names for the badge.
+          Custom class name for the component.
+        </td>
+        <td>
+          <code></code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Opacity & scale configuration for the noise overlay.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+AnimationConfig Props
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `scale`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`number`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>1</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Scale of the animation effect.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `speed`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`number`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>1</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Speed of the animation effect.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+NoiseConfig Props
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `opacity`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`number`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>1</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Opacity of the noise effect.
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `scale`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>`number`</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>1</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Scale of the noise effect.
         </td>
       </tr>
     </tbody>
