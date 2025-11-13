@@ -1,6 +1,7 @@
 import Preview from "@/components/mdx/preview";
 import { PreviewClient } from "@/components/mdx/preview-client";
 import { source } from "@/lib/source";
+import { Step, Steps } from "fumadocs-ui/components/steps";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import {
   DocsBody,
@@ -8,6 +9,9 @@ import {
   DocsPage,
   DocsTitle,
 } from "fumadocs-ui/page";
+
+import CliCommands from "@/components/mdx/cli-commands";
+import { ComponentSource } from "@/components/mdx/component-source";
 import { notFound } from "next/navigation";
 
 export default async function Page(props: {
@@ -28,6 +32,10 @@ export default async function Page(props: {
             ...defaultMdxComponents,
             Preview,
             PreviewClient,
+            Steps,
+            Step,
+            CliCommands,
+            ComponentSource,
           }}
         />
       </DocsBody>

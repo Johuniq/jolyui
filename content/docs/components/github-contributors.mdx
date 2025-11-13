@@ -1,0 +1,148 @@
+---
+title: Github Contributors
+description: Display contributors for a GitHub repository.
+icon: "brands/github"
+full: true
+---
+
+import { GitHubContributors } from "@/components/jolyui/github-contributors";
+import {
+  Tabs as MainTabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+
+<MainTabs defaultValue="cli" className="mt-4">
+  <TabsList>
+    <TabsTrigger value="cli">CLI</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cli">
+    <CliCommands name="github-contributors" type="cli"/>
+
+  </TabsContent>
+
+  <TabsContent value="manual">
+   
+   <Steps>
+    
+    <Step>
+    Install the following dependencies:
+
+    <CliCommands name="motion lucide-react" type="install"/>
+    </Step>
+
+    <Step>
+    Copy and paste the following component file into your project (e.g. `components/ui/github-contributors.tsx`):
+
+    <ComponentSource name="github-contributors" />
+
+    </Step>
+
+    </Steps>
+
+  </TabsContent>
+</MainTabs>
+
+---
+
+### Usage
+
+<Preview
+link="github-contributors-demo"
+code={`
+import { GitHubContributors } from "@/components/jolyui/github-contributors";
+
+export default function Demo() {
+return ( <div className="flex flex-col gap-16 items-center justify-center w-full min-h-screen py-20"> <GitHubContributors repo="shadcn/ui" limit={24} className="my-6" /> </div>
+);
+}
+`}
+
+>
+
+<div className="flex flex-col gap-16 items-center justify-center w-full min-h-screen py-20">
+  <GitHubContributors repo="shadcn/ui" limit={24} className="my-6" />
+</div>
+
+</Preview>
+
+---
+
+## Props
+
+Below are the component props (types and defaults) derived from the component above.
+
+<div className="overflow-x-auto">
+  <table className="w-full table-auto text-center">
+    <thead>
+      <tr>
+        <th className="text-center align-middle px-4">Prop</th>
+        <th className="text-center align-middle px-4">Type</th>
+        <th className="text-center align-middle px-4">Default</th>
+        <th className="text-left align-middle">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `repo`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>—</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Repository slug, e.g. <code>vercel/next.js</code>.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `limit`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>number</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>12</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Number of avatars to show (not counting the +more tile).
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `className`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>""</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Additional classes for the container.
+        </td>
+      </tr>
+      <tr>
+        <td className="align-top whitespace-normal break-words font-mono">
+          `token`
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>string</code>
+        </td>
+        <td className="align-top whitespace-normal break-words">
+          <code>undefined</code>
+        </td>
+        <td className="text-left align-top whitespace-normal break-words">
+          Optional GitHub token to increase API rate limits.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -69,6 +69,14 @@ export const navigationSections: NavSection[] = [
         isNew: true,
       },
       {
+        id: 20,
+        title: "Github Contributors",
+        href: "/docs/components/github-contributors",
+        description: "Display contributors for a GitHub repository",
+        count: 20,
+        isNew: true,
+      },
+      {
         id: 2,
         title: "Alerts",
         href: "/docs/components/alert",

@@ -29,6 +29,7 @@
     "components/animated-badge",
     "components/shadow-wave",
     "components/parallax-image",
+    "components/github-contributors",
     "---Blocks---",
     "blocks/ai-card-generation",
     "blocks/ai-chat",
