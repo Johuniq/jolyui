@@ -1,4 +1,4 @@
-import { existsSync, promises as fs, readFileSync } from "node:fs";
+import { existsSync, promises as fs } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { cwd } from "node:process";
@@ -11,11 +11,11 @@ import { baseColors } from "../registry/registry-base-colors";
 import { colorMapping, colors } from "../registry/registry-colors";
 import { styles } from "../registry/registry-styles";
 import {
-  type Registry,
-  type RegistryItem,
-  registryItemSchema,
-  type registryItemTypeSchema,
-  registrySchema,
+    type Registry,
+    type RegistryItem,
+    registryItemSchema,
+    type registryItemTypeSchema,
+    registrySchema,
 } from "../registry/schema";
 import { createTemplate } from "./create-template.mts";
 import { fixImport } from "./fix-imports.mts";
