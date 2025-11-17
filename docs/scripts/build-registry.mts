@@ -262,8 +262,9 @@ export const Index: Record<string, any> = {
         }
 
         const sourcePath = path.join(process.cwd(), sourceFilename);
-        if (!existsSync(sourcePath)) {
-          await fs.mkdir(sourcePath, { recursive: true });
+        const sourceDir = path.dirname(sourcePath);
+        if (!existsSync(sourceDir)) {
+          await fs.mkdir(sourceDir, { recursive: true });
         }
 
         rimraf.sync(sourcePath);
@@ -366,8 +367,12 @@ export const Index: Record<string, any> = {
   );
 
   // Write style index.
-  rimraf.sync(path.join(process.cwd(), "__registry__/index.tsx"));
-  await fs.writeFile(path.join(process.cwd(), "__registry__/index.tsx"), index);
+  const registryIndexPath = path.join(process.cwd(), "__registry__");
+  if (!existsSync(registryIndexPath)) {
+    await fs.mkdir(registryIndexPath, { recursive: true });
+  }
+  rimraf.sync(path.join(registryIndexPath, "index.tsx"));
+  await fs.writeFile(path.join(registryIndexPath, "index.tsx"), index);
 }
 
 // ----------------------------------------------------------------------------
@@ -838,6 +843,18 @@ try {
   if (!result.success) {
     console.error(result.error);
     process.exit(1);
+  }
+
+  // Ensure required directories exist
+  const requiredDirs = [
+    path.join(process.cwd(), "public/r/styles/default"),
+    path.join(process.cwd(), "__registry__"),
+  ];
+  
+  for (const dir of requiredDirs) {
+    if (!existsSync(dir)) {
+      await fs.mkdir(dir, { recursive: true });
+    }
   }
 
   await buildRegistry(result.data);
