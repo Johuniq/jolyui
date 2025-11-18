@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd .. && rm -rf docs/.source docs/__registry__ docs/.next && pnpm build:packages && cd docs && pnpm build:registry && pnpm build",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "outputDirectory": "docs/.next"
+}
