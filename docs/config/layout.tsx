@@ -34,6 +34,25 @@ export const baseOptions: BaseLayoutProps = {
       </div>,
       external: true,
     },
+    {
+      type: "main",
+      url: "https://sweep.jolyui.dev/ref=jolyui",
+      text: (
+        <span className="flex items-center gap-2">
+          Gradient Generator
+          <span className="text-green-500 dark:text-green-400 border border-green-500 dark:border-green-400 rounded-lg px-1 py-0.5 text-[10px]">
+            New
+          </span>
+        </span>
+      ),
+      external: true, 
+    },
+    {
+      type: "main",
+      url: "https://www.jolyui.dev/llms-full.txt",
+      text: "llms-full.txt",
+      external: true,
+    }
   ],
 };
 
