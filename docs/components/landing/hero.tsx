@@ -28,14 +28,14 @@ export const Hero = () => {
         >
           <div className="mb-8 rounded-full bg-accent py-1 pl-1 pr-3 text-sm flex items-center gap-2">
             <Link
-              href="/docs/components/avatar-group"
+              href="/docs/components/github-contributors"
               className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400"
             >
               <span className="h-6 px-2 bg-primary text-xs text-primary-foreground rounded-full flex gap-1 items-center justify-center">
                 New
                 <PartyPopper className="size-4" />
               </span>{' '}
-              <span>Avatar Group</span>
+              <span>Github Contributors</span>
             </Link>
           </div>
         </MotionEffect>
