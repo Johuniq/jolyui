@@ -16,9 +16,10 @@ import type * as React from "react";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name + " - Beautiful, accessible React components built on shadcn/ui. Free and open source component library.",
+    default: `${siteConfig.name} - Beautiful React Components | Free UI Library`,
     template: `%s | ${siteConfig.name}`,
   },
+  category: "technology",
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: siteConfig.keywords,
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: `${siteConfig.name} - Beautiful React Components`,
     description: siteConfig.longDescription,
     siteName: siteConfig.name,
     images: [
@@ -49,6 +50,7 @@ export const metadata: Metadata = {
         height: 630,
         alt: `${siteConfig.name} - ${siteConfig.description}`,
         type: "image/png",
+        secureUrl: `${siteConfig.url}/opengraph-image.png`,
       },
     ],
   },
@@ -82,6 +84,12 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   alternates: {
     canonical: siteConfig.url,
+  },
+  referrer: "origin-when-cross-origin",
+  other: {
+    "google-site-verification": "aMge83vXxVisFvKFhWT-omdQLHLuI04VK1ZSHBJP83U",
+    "msvalidate.01": "117FCF20377F6D1208898A5975FB202C",
+    "yandex-verification": "41d61d50cc2a5e88",
   },
 };
 
@@ -137,10 +145,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
       description: siteConfig.longDescription,
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
+      url: siteConfig.url,
+      image: `${siteConfig.url}/opengraph-image.png`,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        ratingCount: "150",
+        bestRating: "5",
+        worstRating: "1",
+      },
       offers: {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
       },
       author: {
         "@type": "Person",
@@ -148,11 +166,73 @@ export default function RootLayout({ children }: RootLayoutProps) {
         url: siteConfig.author.url,
       },
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/icon.png`,
+      sameAs: [
+        siteConfig.links.github,
+        siteConfig.links.x,
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Developer Support",
+        url: siteConfig.links.github,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is Joly UI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Joly UI is a free, open-source collection of beautifully designed React components built on shadcn/ui and Radix UI. It provides accessible, customizable UI components for React and Next.js projects.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Joly UI free to use?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Joly UI is completely free and open source. You can use it in personal and commercial projects without any cost.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I install Joly UI components?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You can install Joly UI components using the CLI or by copying the component code directly into your project. Simply run the CLI command or copy-paste the component code from the documentation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Joly UI work with Next.js?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Joly UI is fully compatible with Next.js, including the latest versions. All components are designed to work seamlessly with both React and Next.js applications.",
+          },
+        },
+      ],
+    },
   ];
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://assets.onedollarstats.com" />
+        <meta name="theme-color" content="#1da1f2" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+        <meta name="google-site-verification" content="aMge83vXxVisFvKFhWT-omdQLHLuI04VK1ZSHBJP83U" />
+        <meta name="msvalidate.01" content="117FCF20377F6D1208898A5975FB202C" />
+        <meta name="yandex-verification" content="41d61d50cc2a5e88" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

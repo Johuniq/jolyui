@@ -10,8 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 1,
+      changeFrequency: "daily",
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/docs`,
@@ -24,12 +24,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const docRoutes: MetadataRoute.Sitemap = source.getPages().map((page) => {
     // Higher priority for component pages
     const isComponentPage = page.slugs[0] === "components";
+    const isGettingStarted = page.slugs.includes("getting-started");
+    
+    let priority = 0.6;
+    if (isComponentPage) priority = 0.8;
+    if (isGettingStarted) priority = 0.85;
     
     return {
-      url: `${baseUrl}/docs/${page.slugs.join("/")}`,
+      url: `${baseUrl}${page.url}`,
       lastModified: currentDate,
       changeFrequency: isComponentPage ? "weekly" : "monthly",
-      priority: isComponentPage ? 0.8 : 0.6,
+      priority,
     };
   });
 

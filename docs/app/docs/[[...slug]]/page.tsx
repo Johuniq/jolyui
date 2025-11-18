@@ -6,10 +6,10 @@ import { Separator } from "@/components/ui/separator";
 import { onRateAction } from "@/lib/on-rate-action";
 import { source } from "@/lib/source";
 import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
+    DocsBody,
+    DocsDescription,
+    DocsPage,
+    DocsTitle,
 } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -34,9 +34,35 @@ export async function generateMetadata(
 
   if (!page) return {};
 
+  const pageUrl = `https://jolyui.dev${page.url}`;
+  const ogImage = `https://jolyui.dev/api/og?title=${encodeURIComponent(page.data.title)}`;
+
   return {
     title: page.data.title,
     description: page.data.description,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      url: pageUrl,
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -49,9 +75,41 @@ export default async function DocPage(props: DocPageParams) {
   const docLink = page.data.links?.doc;
   const apiLink = page.data.links?.api;
 
+  // Breadcrumb structured data
+  const breadcrumbItems = [
+    { name: "Home", url: "https://jolyui.dev" },
+    { name: "Docs", url: "https://jolyui.dev/docs" },
+  ];
+
+  if (params.slug && params.slug.length > 0) {
+    params.slug.forEach((slug, index) => {
+      const url = `https://jolyui.dev/docs/${params.slug!.slice(0, index + 1).join("/")}`;
+      breadcrumbItems.push({
+        name: slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, " "),
+        url,
+      });
+    });
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <div className="flex flex-col gap-2">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <DocsPage toc={page.data.toc} full={page.data.full}>
+        <div className="flex flex-col gap-2">
         <DocsTitle>{page.data.title}</DocsTitle>
         <DocsDescription className="mb-2.5">
           {page.data.description}
@@ -78,6 +136,7 @@ export default async function DocPage(props: DocPageParams) {
        <Feedback
         onRateAction={onRateAction}
       />
-    </DocsPage>
+      </DocsPage>
+    </>
   );
 }
