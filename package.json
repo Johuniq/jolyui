@@ -15,7 +15,7 @@
     "build:registry": "pnpm --filter=docs build:registry --loglevel silent",
     "cleanup:registry": "pnpm --filter=docs cleanup:registry --loglevel silent",
     "build:packages": "turbo run build --filter='./packages/*'",
-    "dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --concurrency=4",
+    "dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --concurrency=5",
     "docs:dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --filter=docs",
     "lint": "biome check .",
     "lint:fix": "biome check . --write",
@@ -42,5 +42,8 @@
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^4.0.9"
+  },
+  "dependencies": {
+    "motion": "^12.23.24"
   }
 }

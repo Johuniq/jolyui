@@ -13,6 +13,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "button",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-slot", "class-variance-authority", "motion"],
+    files: [
+      {
+        path: "ui/button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "github-contributors",
     type: "registry:ui",
     dependencies: [

@@ -47,6 +47,51 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "button-demo",
+    type: "registry:example",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "examples/button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-variants-demo",
+    type: "registry:example",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "examples/button-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-sizes-demo",
+    type: "registry:example",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "examples/button-sizes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-icon-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "examples/button-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "github-contributors-demo",
     type: "registry:example",
     registryDependencies: ["github-contributors"],
