@@ -46,4 +46,37 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "github-contributors-demo",
+    type: "registry:example",
+    registryDependencies: ["github-contributors"],
+    files: [
+      {
+        path: "examples/github-contributors-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "github-contributors-limit-demo",
+    type: "registry:example",
+    registryDependencies: ["github-contributors"],
+    files: [
+      {
+        path: "examples/github-contributors-limit-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "github-contributors-multiple-demo",
+    type: "registry:example",
+    registryDependencies: ["github-contributors"],
+    files: [
+      {
+        path: "examples/github-contributors-multiple-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

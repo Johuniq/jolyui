@@ -12,4 +12,21 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "github-contributors",
+    type: "registry:ui",
+    dependencies: [
+      "@jolyui/github-contributors",
+      "@radix-ui/react-tooltip",
+      "lucide-react",
+      "motion",
+    ],
+    registryDependencies: ["card", "skeleton", "tooltip"],
+    files: [
+      {
+        path: "ui/github-contributors.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

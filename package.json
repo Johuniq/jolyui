@@ -15,7 +15,7 @@
     "build:registry": "pnpm --filter=docs build:registry --loglevel silent",
     "cleanup:registry": "pnpm --filter=docs cleanup:registry --loglevel silent",
     "build:packages": "turbo run build --filter='./packages/*'",
-    "dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --concurrency=3",
+    "dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --concurrency=4",
     "docs:dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo run dev --filter=docs",
     "lint": "biome check .",
     "lint:fix": "biome check . --write",

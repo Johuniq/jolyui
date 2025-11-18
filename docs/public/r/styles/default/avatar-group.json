@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "ui/avatar-group.tsx",
-      "content": "import { AvatarGroup as AvatarGroupPrimitive } from \"@jolyui/avatar-group\";\nimport { cn } from \"@/lib/utils\";\n\n// Re-export with cn utility integrated\nexport function AvatarGroup({ className, ...props }: React.ComponentProps<typeof AvatarGroupPrimitive>) {\n  return <AvatarGroupPrimitive className={cn(className)} {...props} />;\n}\n\nexport type { AvatarGroupProps } from \"@jolyui/avatar-group\";\n",
+      "content": "import { cn } from \"@/lib/utils\";\nimport {\n  AvatarGroup as AvatarGroupPrimitive,\n  type AvatarGroupProps,\n} from \"@jolyui/avatar-group\";\n\n// Re-export with cn utility integrated\nexport function AvatarGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarGroupPrimitive>) {\n  return <AvatarGroupPrimitive className={cn(className)} {...props} />;\n}\n\nexport type { AvatarGroupProps };\n",
       "type": "registry:ui",
       "target": ""
     }
