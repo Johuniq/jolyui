@@ -1,0 +1,92 @@
+---
+title: Button
+description: A versatile button component with multiple variants and sizes for any action in your application.
+preview: true
+links:
+ api: /docs/buttons/button#api-reference
+---
+
+<ComponentTabs name="button-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/button"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     @radix-ui/react-slot class-variance-authority
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="button" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+<Button>Click me</Button>
+```
+
+## Examples
+
+### Variants
+
+The Button component supports multiple visual variants with modern animations and effects.
+
+<ComponentTabs name="button-variants-demo" />
+
+**Available variants:**
+- `default` - Gradient background with hover glow and radial mouse tracking
+- `destructive` - Red gradient for dangerous actions
+- `outline` - Bordered with backdrop blur
+- `secondary` - Secondary gradient style
+- `ghost` - Transparent with subtle hover
+- `link` - Text link style
+- `shimmer` - Animated shimmer effect on hover
+- `glow` - Purple gradient with glowing border effect
+
+### Sizes
+
+Choose from different sizes to match your design needs.
+
+<ComponentTabs name="button-sizes-demo" />
+
+### With Icons
+
+Combine buttons with icons for enhanced visual communication.
+
+<ComponentTabs name="button-icon-demo" />
+
+## API Reference
+
+### Button
+
+A flexible button component that can be rendered as any element using the `asChild` prop.
+
+<AutoTypeTable
+  path="./types/docs/button.ts"
+  name="ButtonProps"
+/>
+
+## Notes
+
+- Use `variant="default"` for primary actions
+- Use `variant="destructive"` for dangerous actions like delete
+- Use `variant="outline"` for secondary actions
+- Use `variant="ghost"` for tertiary actions
+- Use `variant="link"` for navigation
+- The `asChild` prop allows polymorphic rendering with Radix UI's Slot component

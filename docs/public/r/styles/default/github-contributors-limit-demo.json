@@ -1,0 +1,15 @@
+{
+  "name": "github-contributors-limit-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "github-contributors"
+  ],
+  "files": [
+    {
+      "path": "examples/github-contributors-limit-demo.tsx",
+      "content": "import { GitHubContributors } from \"@/registry/default/ui/github-contributors\";\n\nexport default function GitHubContributorsLimitDemo() {\n  return (\n    <div className=\"flex flex-col gap-8\">\n      <div className=\"flex flex-col gap-3\">\n        <h3 className=\"font-medium text-sm\">Limited to 6 contributors</h3>\n        <GitHubContributors repo=\"facebook/react\" limit={6} />\n      </div>\n      <div className=\"flex flex-col gap-3\">\n        <h3 className=\"font-medium text-sm\">Limited to 18 contributors</h3>\n        <GitHubContributors repo=\"microsoft/vscode\" limit={18} />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

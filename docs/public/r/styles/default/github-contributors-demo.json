@@ -1,0 +1,15 @@
+{
+  "name": "github-contributors-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "github-contributors"
+  ],
+  "files": [
+    {
+      "path": "examples/github-contributors-demo.tsx",
+      "content": "import { GitHubContributors } from \"@/registry/default/ui/github-contributors\";\n\nexport default function GitHubContributorsDemo() {\n  return (\n    <div className=\"flex flex-col gap-8\">\n      <div className=\"flex flex-col gap-3\">\n        <h3 className=\"font-medium text-sm\">GitHub Contributors</h3>\n        <GitHubContributors repo=\"vercel/next.js\" limit={12} />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

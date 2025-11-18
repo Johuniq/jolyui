@@ -1,0 +1,15 @@
+{
+  "name": "github-contributors-multiple-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "github-contributors"
+  ],
+  "files": [
+    {
+      "path": "examples/github-contributors-multiple-demo.tsx",
+      "content": "import { GitHubContributors } from \"@/registry/default/ui/github-contributors\";\n\nexport default function GitHubContributorsMultipleDemo() {\n  return (\n    <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-6\">\n      <GitHubContributors repo=\"shadcn-ui/ui\" limit={12} />\n      <GitHubContributors repo=\"nuxt/nuxt\" limit={12} />\n      <GitHubContributors repo=\"denoland/deno\" limit={12} />\n      <GitHubContributors repo=\"sveltejs/svelte\" limit={12} />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

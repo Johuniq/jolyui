@@ -1,0 +1,62 @@
+---
+title: GitHub Contributors
+description: A beautiful component that displays GitHub repository contributors with rich tooltips, animations, and contribution statistics.
+preview: true
+links:
+ api: /docs/components/github-contributors#api-reference
+---
+
+<ComponentTabs name="github-contributors-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/github-contributors"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+    @radix-ui/react-tooltip lucide-react motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="github-contributors" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { GitHubContributors } from "@/components/ui/github-contributors";
+
+<GitHubContributors repo="vercel/next.js" limit={12} />
+```
+
+## API Reference
+
+### GitHubContributors
+
+The main component that fetches and displays GitHub contributors.
+
+<AutoTypeTable
+  path="./types/docs/github-contributors.ts"
+  name="GitHubContributorsProps"
+/>
+
+## Notes
+
+- The component uses GitHub's public API which has rate limits
+- Without authentication: 60 requests per hour per IP
+- With token: 5,000 requests per hour
+- Contributors are sorted by contribution count
+- The top contributor gets a special star badge
+- Tooltips show detailed contribution statistics
