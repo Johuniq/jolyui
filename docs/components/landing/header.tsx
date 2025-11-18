@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/lib/theme-toggle";
-import { ArrowUpRight, Flame, PartyPopper } from "lucide-react";
+import { ArrowUpRight, PartyPopper } from "lucide-react";
 import { Link as ViewTransitionsLink } from "next-view-transitions";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Header() {
@@ -54,7 +55,8 @@ export function Header() {
                 {/* Logo Section with Navigation Links */}
                 <div className="flex items-center gap-6">
                   <Link href="/" className="flex items-center gap-2">
-                    <Flame className="w-6 h-6 text-green-500 dark:text-green-400" />
+                            <Image src={"/icon.png"} alt="Site Icon" width={24} height={24} />
+                    
 
                     <span className="hidden sm:block font-semibold">
                       Joly UI

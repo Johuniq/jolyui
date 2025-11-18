@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky",
     "clean": "rimraf --glob **/node_modules **/dist **/.source **/.turbo **/.next **/pnpm-lock.yaml **/.tsbuildinfo",
     "build": "turbo run build",
     "build:docs": "cd docs && pnpm build:registry && pnpm build",
@@ -21,7 +22,8 @@
     "typecheck": "turbo typecheck",
     "check": "turbo lint typecheck",
     "test": "turbo run test",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "knip": "knip"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",
@@ -32,7 +34,9 @@
     "@types/node": "^24.10.1",
     "@vitejs/plugin-react": "^5.1.1",
     "expect-type": "^1.2.2",
+    "husky": "^9.1.7",
     "jsdom": "^27.2.0",
+    "knip": "^5.69.1",
     "rimraf": "^6.1.0",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3",

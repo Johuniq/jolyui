@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+# Only add template for new commits (not amend, merge, squash, etc.)
+if [ -z "$COMMIT_SOURCE" ]; then
+  # Check if message is empty or only contains comments
+  if ! grep -qv '^#' "$COMMIT_MSG_FILE"; then
+    cat .gitmessage > "$COMMIT_MSG_FILE"
+  fi
+fi
