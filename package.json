@@ -23,7 +23,7 @@
     "check": "turbo lint typecheck",
     "test": "turbo run test",
     "release": "changeset publish",
-    "knip": "knip"
+    "knip": "knip --exclude exports,types"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",
