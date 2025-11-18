@@ -24,6 +24,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@hookform/resolvers": "^5.2.2",
+    "@jolyui/avatar-group": "workspace:*",
     "@mux/mux-video-react": "^0.27.2",
     "@number-flow/react": "^0.5.10",
     "@radix-ui/react-avatar": "^1.1.11",

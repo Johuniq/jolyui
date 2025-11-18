@@ -77,6 +77,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.66.0(react@19.2.0))
+      '@jolyui/avatar-group':
+        specifier: workspace:*
+        version: link:../packages/avatar-group
       '@mux/mux-video-react':
         specifier: ^0.27.2
         version: 0.27.2(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -310,157 +313,32 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
 
-  packages/checkbox-group:
+  packages/avatar-group:
     dependencies:
-      '@diceui/shared':
-        specifier: workspace:*
-        version: link:../shared
+      '@radix-ui/react-slot':
+        specifier: ^1.1.1
+        version: 1.2.4(@types/react@19.2.5)(react@19.2.0)
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
+    devDependencies:
       '@types/react':
-        specifier: '*'
+        specifier: ^19.0.11
         version: 19.2.5
       '@types/react-dom':
-        specifier: '*'
+        specifier: ^19.0.3
         version: 19.2.3(@types/react@19.2.5)
       react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+        specifier: ^19.2.0
         version: 19.2.0
       react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+        specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
-    devDependencies:
       tsup:
-        specifier: ^8.3.6
+        specifier: ^8.4.2
         version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
       typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/combobox:
-    dependencies:
-      '@diceui/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@floating-ui/react':
-        specifier: ^0.27.4
-        version: 0.27.16(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@types/react':
-        specifier: '*'
-        version: 19.2.5
-      '@types/react-dom':
-        specifier: '*'
-        version: 19.2.3(@types/react@19.2.5)
-      react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0
-      react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      tsup:
-        specifier: ^8.3.6
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/listbox:
-    dependencies:
-      '@types/react':
-        specifier: '*'
-        version: 19.2.5
-      '@types/react-dom':
-        specifier: '*'
-        version: 19.2.3(@types/react@19.2.5)
-      react:
-        specifier: ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0
-      react-dom:
-        specifier: ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      tsup:
-        specifier: ^8.3.6
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/mention:
-    dependencies:
-      '@diceui/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@floating-ui/react':
-        specifier: ^0.27.4
-        version: 0.27.16(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@types/react':
-        specifier: '*'
-        version: 19.2.5
-      '@types/react-dom':
-        specifier: '*'
-        version: 19.2.3(@types/react@19.2.5)
-      react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0
-      react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      tsup:
-        specifier: ^8.3.6
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/shared:
-    dependencies:
-      '@floating-ui/react':
-        specifier: ^0.27.4
-        version: 0.27.16(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@types/react':
-        specifier: '*'
-        version: 19.2.5
-      '@types/react-dom':
-        specifier: '*'
-        version: 19.2.3(@types/react@19.2.5)
-      react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0
-      react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      tsup:
-        specifier: ^8.3.6
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/tags-input:
-    dependencies:
-      '@diceui/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@types/react':
-        specifier: '*'
-        version: 19.2.5
-      '@types/react-dom':
-        specifier: '*'
-        version: 19.2.3(@types/react@19.2.5)
-      react:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0
-      react-dom:
-        specifier: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-        version: 19.2.0(react@19.2.0)
-    devDependencies:
-      tsup:
-        specifier: ^8.3.6
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)
-      typescript:
-        specifier: ^5.7.3
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -1187,12 +1065,6 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
-
-  '@floating-ui/react@0.27.16':
-    resolution: {integrity: sha512-9O8N4SeG2z++TSM8QA/KTeKFBVCNEz/AGS7gWPJf6KFRzmRWixFRnCnkPHRDwSVZW6QPDO6uT0P2SpWNKCc9/g==}
-    peerDependencies:
-      react: '>=17.0.0'
-      react-dom: '>=17.0.0'
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
@@ -5383,9 +5255,6 @@ packages:
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
-  tabbable@6.3.0:
-    resolution: {integrity: sha512-EIHvdY5bPLuWForiR/AN2Bxngzpuwn1is4asboytXtpTgsArc+WmSJKVLlhdh71u7jFcryDqB2A8lQvj78MkyQ==}
-
   tailwind-merge@3.4.0:
     resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
 
@@ -6636,14 +6505,6 @@ snapshots:
       '@floating-ui/dom': 1.7.4
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
-
-  '@floating-ui/react@0.27.16(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
-    dependencies:
-      '@floating-ui/react-dom': 2.1.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      '@floating-ui/utils': 0.2.10
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
-      tabbable: 6.3.0
 
   '@floating-ui/utils@0.2.10': {}
 
@@ -11227,8 +11088,6 @@ snapshots:
       ts-interface-checker: 0.1.13
 
   symbol-tree@3.2.4: {}
-
-  tabbable@6.3.0: {}
 
   tailwind-merge@3.4.0: {}
 

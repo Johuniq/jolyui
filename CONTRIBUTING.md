@@ -6,18 +6,27 @@ Thank you for your interest in contributing to Joly UI! This guide will help you
 
 Joly UI is organized into multiple packages and documentation:
 
-- `/packages/*` - Component packages
-  - `@jolyui/combobox` - Combobox component
-  - `@jolyui/mention` - Mention component
-  - `@jolyui/tags-input` - Tags Input component
-  - `@jolyui/checkbox-group` - Checkbox Group component
-  - `@jolyui/shared` - Shared utilities and types
+- `/packages/*` - Component packages (publishable to npm)
+  - `@jolyui/avatar-group` - Avatar Group component
+  - _More components coming soon..._
 - `/docs/*` - Documentation website
   - `/app/*` - Next.js App Router pages
   - `/content/docs/*` - MDX documentation files
   - `/components/*` - React components used in documentation
-  - `/registry/*` - Component examples and demos
+  - `/registry/*` - Component registry that imports from packages
   - `/styles/*` - Global styles and Tailwind CSS configurations
+
+## Best Practices
+
+**Packages vs Registry:**
+- **Packages** (`/packages/*`) contain the actual component source code that can be published to npm
+- **Registry** (`/docs/registry/*`) imports from packages and provides styled wrappers and examples
+- This dual approach allows both npm installation and copy-paste usage
+
+**Why This Structure?**
+1. **Packages** are framework-agnostic, headless components
+2. **Registry** provides styled, ready-to-use examples with your design system
+3. Users can either `npm install @jolyui/component` or copy-paste from registry
 
 ## Development Setup
 
@@ -54,48 +63,58 @@ Joly UI is organized into multiple packages and documentation:
 1. Create a new directory in `packages/` with your component name
 2. Initialize the package with required files:
 
-   - `package.json`
-   - `README.md`
-   - `tsconfig.json`
-   - `tsup.config.ts`
-   - `src/` directory
-   - `test/` directory
+   - `package.json` - Package configuration
+   - `README.md` - Package documentation
+   - `tsconfig.json` - TypeScript configuration
+   - `tsup.config.ts` - Build configuration
+   - `src/` directory - Source code
+   - `src/index.ts` - Main export file
+   - `src/your-component.tsx` - Component implementation
 
 ### Package Structure Example
 
 ```text
-packages/your-component/
+packages/avatar-group/
 ├── src/
-│   ├── index.ts
-│   ├── your-component-root.tsx
-│   ├── your-component-content.tsx
-│   └── types.ts
-├── test/
-│   └── your-component.test.ts
+│   ├── index.ts              # Main export
+│   └── avatar-group.tsx      # Component implementation
+├── package.json
+├── README.md
 ├── tsconfig.json
 └── tsup.config.ts
 ```
 
-| Path | Description |
-| --- | --- |
-| `packages/your-component/` | Component package directory |
-| `src/` | Component source files |
-| `index.ts` | Entry point for the component |
-| `your-component-root.tsx` | Root component file |
-| `test/` | Test source files |
-| `your-component.test.ts` | Test file for the component |
-| `tsconfig.json` | TypeScript configuration |
-| `tsup.config.ts` | Tsup configuration |
+### Connecting Package to Registry
 
-### Write Documentation
+After creating a package:
 
-- Navigate to the `/docs` directory
-- Add the package name into `package.json`, and run `pnpm install`
-- Create a new file in the `/types/` directory, and import the types from the component package
-- Place new documentation in the appropriate directory under `/content/docs/`
-- Use MDX format for documentation files
-- Include proper frontmatter with title, description, and other metadata
-- Follow the existing documentation style and structure
+1. Add the package to docs dependencies:
+   ```json
+   {
+     "dependencies": {
+       "@jolyui/your-component": "workspace:*"
+     }
+   }
+   ```
+
+2. Create a registry wrapper in `/docs/registry/default/ui/your-component.tsx`:
+   ```tsx
+   import { YourComponent as YourComponentPrimitive } from "@jolyui/your-component";
+   import { cn } from "@/lib/utils";
+
+   export function YourComponent({ className, ...props }) {
+     return <YourComponentPrimitive className={cn(className)} {...props} />;
+   }
+   
+   export type { YourComponentProps } from "@jolyui/your-component";
+   ```
+
+3. Add examples in `/docs/registry/default/examples/your-component-demo.tsx`
+
+4. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
 ### Component Guidelines
 
