@@ -32,7 +32,7 @@ export default function AvatarGroupRtlDemo() {
         <AvatarGroup dir="rtl">
           {avatars.map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}
@@ -43,7 +43,7 @@ export default function AvatarGroupRtlDemo() {
         <AvatarGroup dir="rtl" reverse>
           {avatars.map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}
@@ -55,7 +55,7 @@ export default function AvatarGroupRtlDemo() {
           <AvatarGroup orientation="vertical" dir="rtl">
             {avatars.map((avatar, index) => (
               <Avatar key={index}>
-                <AvatarImage src={avatar.src} />
+                <AvatarImage src={avatar.src} alt={avatar.name} />
                 <AvatarFallback>{avatar.fallback}</AvatarFallback>
               </Avatar>
             ))}
@@ -68,7 +68,7 @@ export default function AvatarGroupRtlDemo() {
           <AvatarGroup orientation="vertical" dir="rtl" reverse>
             {avatars.map((avatar, index) => (
               <Avatar key={index}>
-                <AvatarImage src={avatar.src} />
+                <AvatarImage src={avatar.src} alt={avatar.name} />
                 <AvatarFallback>{avatar.fallback}</AvatarFallback>
               </Avatar>
             ))}

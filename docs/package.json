@@ -26,6 +26,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@jolyui/avatar-group": "workspace:*",
     "@jolyui/github-contributors": "workspace:*",
+    "@jolyui/phone-card": "workspace:*",
     "@mux/mux-video-react": "^0.27.2",
     "@number-flow/react": "^0.5.10",
     "@paper-design/shaders-react": "^0.0.63",

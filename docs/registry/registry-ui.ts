@@ -4,7 +4,7 @@ export const ui: Registry["items"] = [
   {
     name: "avatar-group",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
+    dependencies: ["@radix-ui/react-slot", "class-variance-authority", "motion"],
     files: [
       {
         path: "ui/avatar-group.tsx",
@@ -35,6 +35,17 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/github-contributors.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "phone-card",
+    type: "registry:ui",
+    dependencies: ["@jolyui/phone-card"],
+    files: [
+      {
+        path: "ui/phone-card.tsx",
         type: "registry:ui",
       },
     ],

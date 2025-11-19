@@ -1,4 +1,3 @@
-import type * as React from "react";
 import type {
   CompositionProps,
   Direction,
@@ -35,4 +34,10 @@ export interface AvatarGroupProps extends EmptyProps<"div">, CompositionProps {
    * @default false
    */
   reverse?: boolean;
+
+  /**
+   * Position of the tooltip when hovering over avatars.
+   * @default "top"
+   */
+  tooltipPlacement?: "top" | "bottom" | "left" | "right";
 }

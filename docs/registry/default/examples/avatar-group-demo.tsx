@@ -42,7 +42,7 @@ export default function AvatarGroupDemo() {
         <AvatarGroup>
           {avatars.slice(0, 4).map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}
@@ -55,7 +55,7 @@ export default function AvatarGroupDemo() {
         <AvatarGroup max={4}>
           {avatars.map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}

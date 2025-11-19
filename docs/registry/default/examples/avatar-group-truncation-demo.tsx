@@ -52,7 +52,7 @@ export default function AvatarGroupTruncationDemo() {
         <AvatarGroup max={3}>
           {avatars.map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}
@@ -63,7 +63,7 @@ export default function AvatarGroupTruncationDemo() {
         <AvatarGroup max={5}>
           {avatars.map((avatar, index) => (
             <Avatar key={index}>
-              <AvatarImage src={avatar.src} />
+              <AvatarImage src={avatar.src} alt={avatar.name} />
               <AvatarFallback>{avatar.fallback}</AvatarFallback>
             </Avatar>
           ))}

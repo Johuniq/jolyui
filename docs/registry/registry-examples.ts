@@ -114,12 +114,23 @@ export const examples: Registry["items"] = [
     ],
   },
   {
-    name: "github-contributors-multiple-demo",
+    name: "phone-card-demo",
     type: "registry:example",
-    registryDependencies: ["github-contributors"],
+    registryDependencies: ["phone-card"],
     files: [
       {
-        path: "examples/github-contributors-multiple-demo.tsx",
+        path: "examples/phone-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "phone-card-image-demo",
+    type: "registry:example",
+    registryDependencies: ["phone-card"],
+    files: [
+      {
+        path: "examples/phone-card-image-demo.tsx",
         type: "registry:example",
       },
     ],

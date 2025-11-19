@@ -3,7 +3,8 @@
   "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-slot",
-    "class-variance-authority"
+    "class-variance-authority",
+    "motion"
   ],
   "files": [
     {
