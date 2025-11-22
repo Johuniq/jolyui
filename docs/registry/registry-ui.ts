@@ -27,7 +27,6 @@ export const ui: Registry["items"] = [
     name: "github-contributors",
     type: "registry:ui",
     dependencies: [
-      "@jolyui/github-contributors",
       "@radix-ui/react-tooltip",
       "lucide-react",
       "motion",
@@ -42,7 +41,6 @@ export const ui: Registry["items"] = [
   {
     name: "phone-card",
     type: "registry:ui",
-    dependencies: ["@jolyui/phone-card"],
     registryDependencies: ["lazy-video"],
     files: [
       {

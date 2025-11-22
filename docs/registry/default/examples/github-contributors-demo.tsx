@@ -1,4 +1,4 @@
-import { GitHubContributors } from "@/registry/default/ui/github-contributors";
+import { GitHubContributors } from "../ui/github-contributors";
 
 export default function GitHubContributorsDemo() {
   return (

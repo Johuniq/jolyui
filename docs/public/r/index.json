@@ -33,7 +33,6 @@
     "name": "github-contributors",
     "type": "registry:ui",
     "dependencies": [
-      "@jolyui/github-contributors",
       "@radix-ui/react-tooltip",
       "lucide-react",
       "motion"
@@ -48,9 +47,6 @@
   {
     "name": "phone-card",
     "type": "registry:ui",
-    "dependencies": [
-      "@jolyui/phone-card"
-    ],
     "registryDependencies": [
       "lazy-video"
     ],

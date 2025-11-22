@@ -3,19 +3,28 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { GitHubContributors as GitHubContributorsHook } from "@jolyui/github-contributors";
 import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+
+interface Contributor {
+  id: number;
+  login: string;
+  avatar_url: string;
+  html_url: string;
+  contributions: number;
+}
 
 interface GitHubContributorsProps {
-  repo: string;
-  limit?: number;
+  repo: string; // e.g. "vercel/next.js"
+  limit?: number; // number of avatars to show (not counting the +more tile)
   className?: string;
-  token?: string;
+  token?: string; // optional GitHub token to increase rate limit
 }
 
 export function GitHubContributors({
@@ -24,17 +33,82 @@ export function GitHubContributors({
   className = "",
   token,
 }: GitHubContributorsProps) {
-  const {
-    contributors,
-    loading,
-    error,
-    totalCount,
-    shown,
-    remaining,
-    maxContrib,
-    repoUrl,
-    contributorsUrl,
-  } = GitHubContributorsHook({ repo, limit, token });
+  const [contributors, setContributors] = useState<Contributor[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [totalCount, setTotalCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!repo) return;
+    setLoading(true);
+    setError(null);
+    setTotalCount(null);
+
+    const headers: Record<string, string> = {
+      Accept: "application/vnd.github.v3+json",
+    };
+    if (token) headers.Authorization = `token ${token}`;
+
+    const fetchList = async () => {
+      try {
+        const listRes = await fetch(
+          `https://api.github.com/repos/${repo}/contributors?per_page=${limit}`,
+          { headers }
+        );
+        if (!listRes.ok)
+          throw new Error(
+            `GitHub API: ${listRes.status} ${listRes.statusText}`
+          );
+        const listData: Contributor[] = await listRes.json();
+        setContributors(listData.slice(0, limit));
+
+        // Probe for total contributors (per_page=1 -> last page = total count)
+        try {
+          const probeRes = await fetch(
+            `https://api.github.com/repos/${repo}/contributors?per_page=1`,
+            { headers }
+          );
+          if (probeRes.ok) {
+            const link = probeRes.headers.get("link");
+            if (link) {
+              const m = link.match(
+                /<[^>]+[?&]page=(\d+)[^>]*>\s*;\s*rel="last"/
+              );
+              if (m && m[1]) {
+                const lastPage = parseInt(m[1], 10);
+                if (Number.isFinite(lastPage)) setTotalCount(lastPage);
+              }
+            } else {
+              const probeData = await probeRes.json();
+              if (Array.isArray(probeData)) setTotalCount(probeData.length);
+            }
+          }
+        } catch {
+          // ignore probe errors
+        }
+      } catch (err: any) {
+        setError(err.message || "Failed to load contributors");
+        setContributors([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchList();
+  }, [repo, limit, token]);
+
+  const shown = contributors.length;
+  const remaining =
+    totalCount !== null ? Math.max(0, totalCount - shown) : null;
+
+  // compute max contributions among shown contributors to render the progress bar
+  const maxContrib = useMemo(() => {
+    if (!contributors || contributors.length === 0) return 1;
+    return Math.max(...contributors.map((c) => c.contributions), 1);
+  }, [contributors]);
+
+  const repoUrl = `https://github.com/${repo}`;
+  const contributorsUrl = `${repoUrl}/graphs/contributors`;
 
   return (
     <Card
@@ -88,9 +162,11 @@ export function GitHubContributors({
                           onClick={(e) => e.stopPropagation()}
                           aria-label={`${c.login} GitHub profile`}
                         >
-                          <img
+                          <Image
                             src={c.avatar_url}
                             alt={c.login}
+                            width={40}
+                            height={40}
                             className="object-cover h-full w-full"
                           />
                           {/* subtle ring on hover via pseudo element class; already handled by tailwind tokens */}
@@ -112,10 +188,12 @@ export function GitHubContributors({
                         >
                           <div className="flex items-center gap-3">
                             <div className="h-12 w-12 rounded-md overflow-hidden border flex-shrink-0">
-                              <img
+                              <Image
                                 src={c.avatar_url}
                                 alt={c.login}
-                                className="object-cover w-full h-full"
+                                width={48}
+                                height={48}
+                                className="object-cover"
                               />
                             </div>
 

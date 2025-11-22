@@ -2,6 +2,16 @@
 
 import { LazyVideo } from "./lazy-video";
 
+export interface PhoneCardProps {
+  title?: string;
+  sub?: string;
+  tone?: string;
+  gradient?: string;
+  videoSrc?: string;
+  imageSrc?: string;
+  mediaType?: "video" | "image";
+}
+
 export function PhoneCard({
   title = "8°",
   sub = "Clear night. Great for render farm runs.",
@@ -10,15 +20,7 @@ export function PhoneCard({
   videoSrc = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4",
   imageSrc = "https://www.jakala.com/hs-fs/hubfs/Vercel%20header-1.jpg?width=800&height=800&name=Vercel%20header-1.jpg",
   mediaType = "video",
-}: {
-  title?: string;
-  sub?: string;
-  tone?: string;
-  gradient?: string;
-  videoSrc?: string;
-  imageSrc?: string;
-  mediaType?: "video" | "image";
-}) {
+}: PhoneCardProps) {
   return (
     <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
