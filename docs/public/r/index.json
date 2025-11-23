@@ -66,5 +66,15 @@
         "type": "registry:ui"
       }
     ]
+  },
+  {
+    "name": "vercel-tabs",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/vercel-tabs.tsx",
+        "type": "registry:ui"
+      }
+    ]
   }
 ]

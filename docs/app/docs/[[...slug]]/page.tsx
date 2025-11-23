@@ -6,10 +6,11 @@ import { Separator } from "@/components/ui/separator";
 import { onRateAction } from "@/lib/on-rate-action";
 import { source } from "@/lib/source";
 import {
-    DocsBody,
-    DocsDescription,
-    DocsPage,
-    DocsTitle,
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+  EditOnGitHub,
 } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -123,6 +124,10 @@ export default async function DocPage(props: DocPageParams) {
               className="data-[orientation=vertical]:h-6"
             />
           )}
+          <EditOnGitHub
+          className="border-0 [&_svg]:text-fd-muted-foreground"
+          href={`https://github.com/Johuniq/jolyui/tree/main/docs/content/docs/${params.slug ? `${params.slug.join('/')}.mdx` : 'index.mdx'}`}
+        />
           <CopyMarkdownButton markdownUrl={`${page.url}.mdx`} />
           <ViewOptions
             markdownUrl={`${page.url}.mdx`}

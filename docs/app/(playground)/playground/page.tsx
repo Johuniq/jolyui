@@ -1,54 +1,81 @@
 "use client"
 
-import { PhoneCard } from "@/registry/default/ui/phone-card"
+import { Card, CardContent } from "@/components/ui/card"
+import { VercelTabs } from "@/registry/default/ui/vercel-tabs"
 
-export default function PlayGroundPage() {
-  return  <div className="mt-10 grid w-full gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-            {phoneData.map((p, i) => {
-              const visibility = i <= 2 ? "block" : i === 3 ? "hidden md:block" : i === 4 ? "hidden xl:block" : "hidden"
+export default function Frame() {
+  const tabsData = [
+    {
+      label: "Overview",
+      value: "Overview",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Overview Content</h2>
+          <p className="text-muted-foreground">
+            This is the content area for the Overview tab. You can pass any React components or content here.
+          </p>
+        </div>
+      ),
+    },
+    {
+      label: "Integrations",
+      value: "Integrations",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Integrations</h2>
+          <p className="text-muted-foreground">Connect your favorite tools and services.</p>
+        </div>
+      ),
+    },
+    {
+      label: "Activity",
+      value: "Activity",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Activity Log</h2>
+          <p className="text-muted-foreground">View the latest activity on your account.</p>
+        </div>
+      ),
+    },
+    {
+      label: "Domains",
+      value: "Domains",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Domains</h2>
+          <p className="text-muted-foreground">Manage your custom domains and DNS settings.</p>
+        </div>
+      ),
+    },
+    {
+      label: "Usage",
+      value: "Usage",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Usage Statistics</h2>
+          <p className="text-muted-foreground">Check your resource usage and limits.</p>
+        </div>
+      ),
+    },
+    {
+      label: "Monitoring",
+      value: "Monitoring",
+      content: (
+        <div className="p-6 rounded-lg border border-gray-200 bg-white text-black dark:border-[#333] dark:bg-[#1c1c1c] dark:text-white">
+          <h2 className="text-2xl font-bold mb-2">Monitoring</h2>
+          <p className="text-muted-foreground">Real-time performance monitoring.</p>
+        </div>
+      ),
+    },
+  ];
 
-              return (
-                <div key={i} className={visibility}>
-                  <PhoneCard title={p.title} sub={p.sub} tone={p.tone} gradient={p.gradient} videoSrc={p.videoSrc} />
-                </div>
-              )
-            })}
-          </div>
+  return (
+    <div className="flex justify-center items-center w-full min-h-screen transition-colors duration-300 bg-white dark:bg-[#0e0f11]">
+      <Card className="w-full max-w-[1200px] min-h-[400px] border-none shadow-none relative flex flex-col items-center justify-start pt-10 bg-transparent">
+        <CardContent className="p-0 w-full flex flex-col items-center">
+          <VercelTabs tabs={tabsData} defaultTab="Overview" />
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
-
-const phoneData = [
-  {
-    title: "Conversions",
-    sub: "Turn clicks into paying customers.",
-    tone: "results",
-    gradient: "from-[#0b0b0b] via-[#0f172a] to-[#020617]",
-    videoSrc:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4",
-  },
-  {
-    title: "Speed",
-    sub: "Launch in days, not weeks.",
-    tone: "speed",
-    gradient: "from-[#0b1a0b] via-[#052e16] to-[#022c22]",
-  },
-  {
-    title: "Social-Ready",
-    sub: "Made for IG, TikTok, and Meta.",
-    tone: "social",
-    gradient: "from-[#001028] via-[#0b355e] to-[#052e5e]",
-    videoSrc:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Timeline%201-Ku3Y2Hgaw8hCiFEFg1ELtYp631rSzR.webm",
-  },
-  {
-    title: "Standout",
-    sub: "Be the product no one scrolls past.",
-    tone: "standout",
-    gradient: "from-[#0b0b0b] via-[#1f2937] to-[#0b1220]",
-  },
-  {
-    title: "Premium",
-    sub: "Look like the market leader.",
-    tone: "premium",
-    gradient: "from-[#0b0b0b] via-[#111827] to-[#052e16]",
-  },
-]

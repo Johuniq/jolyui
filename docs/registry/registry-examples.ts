@@ -135,4 +135,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "vercel-tabs-demo",
+    type: "registry:example",
+    registryDependencies: ["vercel-tabs"],
+    files: [
+      {
+        path: "examples/vercel-tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

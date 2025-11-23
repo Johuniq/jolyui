@@ -1,8 +1,9 @@
+"use client"
 import { ThemeToggle } from "@/lib/theme-toggle";
 import { ArrowUpRight, PartyPopper } from "lucide-react";
 import { Link as ViewTransitionsLink } from "next-view-transitions";
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "../logo";
 
 export function Header() {
   return (
@@ -55,7 +56,7 @@ export function Header() {
                 {/* Logo Section with Navigation Links */}
                 <div className="flex items-center gap-6">
                   <Link href="/" className="flex items-center gap-2">
-                            <Image src={"/icon.png"} alt="Site Icon" width={24} height={24} />
+                           <Logo/>
                     
 
                     <span className="hidden sm:block font-semibold">

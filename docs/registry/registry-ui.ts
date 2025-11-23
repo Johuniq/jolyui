@@ -59,4 +59,14 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "vercel-tabs",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/vercel-tabs.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

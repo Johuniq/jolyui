@@ -20,6 +20,15 @@ const nextConfig: NextConfig = {
       {
         hostname: "9jxzamsunn.ufs.sh",
       },
+      {
+        hostname: 'ui.aceternity.com',
+      },
+      {
+        hostname: 'ui.paceui.com',
+      },
+      {
+        hostname: 'images.pexels.com',
+      },
     ],
   },
   async redirects() {
