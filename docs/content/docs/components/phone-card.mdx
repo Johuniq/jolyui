@@ -1,0 +1,95 @@
+---
+title: Phone Card
+description: A beautiful phone mockup card component with lazy-loading video support.
+preview: true
+links:
+ api: /docs/components/phone-card#api-reference
+---
+
+<ComponentTabs name="phone-card-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/phone-card"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project ```component/ui/lazy-video.tsx```
+
+    <ComponentSource name="lazy-video" />
+  </Step>
+  <Step>
+    Copy and paste the following code into your project ```component/ui/phone-card.tsx```
+
+    <ComponentSource name="phone-card" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { PhoneCard } from "@/components/ui/phone-card";
+
+export default function App() {
+  return (
+    <PhoneCard
+      title="8°"
+      sub="Clear night. Great for render farm runs."
+      tone="calm"
+      gradient="from-[#0f172a] via-[#14532d] to-[#052e16]"
+      videoSrc="https://example.com/video.mp4"
+      mediaType="video"
+    />
+  );
+}
+```
+
+## Examples
+
+### Image Mode
+
+Use static images instead of video for better performance or when video isn't needed.
+
+<ComponentTabs name="phone-card-image-demo" />
+
+## API Reference
+
+### PhoneCard
+
+The main component that displays a phone mockup with media content.
+
+<AutoTypeTable
+  path="./types/docs/phone-card.ts"
+  name="PhoneCardProps"
+/>
+
+## Advanced
+
+The component uses the `LazyVideo` component internally, which provides:
+
+- Intersection Observer for lazy loading
+- Automatic pause/play based on visibility
+- Support for prefers-reduced-motion
+- Data saver mode detection
+- Tab visibility handling
+
+You can also use `LazyVideo` standalone:
+
+```tsx
+import { LazyVideo } from "@/components/ui/lazy-video";
+
+<LazyVideo
+  src="video.mp4"
+  autoPlay={true}
+  loop={true}
+  muted={true}
+  className="w-full h-full object-cover"
+/>
+```
+

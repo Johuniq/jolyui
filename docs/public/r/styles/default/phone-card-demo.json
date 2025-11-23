@@ -1,0 +1,15 @@
+{
+  "name": "phone-card-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "phone-card"
+  ],
+  "files": [
+    {
+      "path": "examples/phone-card-demo.tsx",
+      "content": "import { PhoneCard } from \"@/registry/default/ui/phone-card\";\n\nexport default function PhoneCardDemo() {\n  return (\n    <div className=\"flex items-center min-h-screen justify-center p-8\">\n      <PhoneCard\n        title=\"8°\"\n        sub=\"Clear night. Great for render farm runs.\"\n        tone=\"calm\"\n        gradient=\"from-[#0f172a] via-[#14532d] to-[#052e16]\"\n        videoSrc=\"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4\"\n        mediaType=\"video\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

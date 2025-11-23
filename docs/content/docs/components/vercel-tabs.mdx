@@ -1,0 +1,68 @@
+---
+title: Vercel Tabs
+description: A tab component with animated active and hover indicators, inspired by Vercel's dashboard UI.
+preview: true
+links:
+ api: /docs/components/vercel-tabs#api-reference
+---
+
+<ComponentTabs name="vercel-tabs-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/vercel-tabs"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project `component/ui/vercel-tabs.tsx`
+    <ComponentSource name="vercel-tabs" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { VercelTabs } from "@/components/ui/vercel-tabs";
+
+const tabsData = [
+  { label: "Overview", value: "Overview", content: <div>Overview Content</div> },
+  { label: "Integrations", value: "Integrations", content: <div>Integrations Content</div> },
+];
+
+<VercelTabs tabs={tabsData} defaultTab="Overview" />
+```
+
+## Examples
+
+### Basic
+
+<ComponentTabs name="vercel-tabs-demo" />
+
+## API Reference
+
+### VercelTabs Props
+
+<AutoTypeTable
+  path="./types/docs/vercel-tabs.ts"
+  name="VercelTabsProps"
+/>
+
+### TabData Type
+
+<AutoTypeTable
+  path="./types/docs/vercel-tabs.ts"
+  name="TabData"
+/>
+
+
+## Notes
+
+- Animated hover and active indicators
+- Fully customizable tab data and content
+- Uses Tailwind CSS for styling

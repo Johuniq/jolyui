@@ -1,0 +1,15 @@
+{
+  "name": "phone-card",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "lazy-video"
+  ],
+  "files": [
+    {
+      "path": "ui/phone-card.tsx",
+      "content": "\"use client\";\n\nimport { LazyVideo } from \"./lazy-video\";\n\nexport interface PhoneCardProps {\n  title?: string;\n  sub?: string;\n  tone?: string;\n  gradient?: string;\n  videoSrc?: string;\n  imageSrc?: string;\n  mediaType?: \"video\" | \"image\";\n}\n\nexport function PhoneCard({\n  title = \"8°\",\n  sub = \"Clear night. Great for render farm runs.\",\n  tone = \"calm\",\n  gradient = \"from-[#0f172a] via-[#14532d] to-[#052e16]\",\n  videoSrc = \"https://hebbkx1anhila5yf.public.blob.vercel-storage.com/A%20new%20chapter%20in%20the%20story%20of%20success.__Introducing%20the%20new%20TAG%20Heuer%20Carrera%20Day-Date%20collection%2C%20reimagined%20with%20bold%20colors%2C%20refined%20finishes%2C%20and%20upgraded%20functionality%20to%20keep%20you%20focused%20on%20your%20goals.%20__Six%20-nDNoRQyFaZ8oaaoty4XaQz8W8E5bqA.mp4\",\n  imageSrc = \"https://www.jakala.com/hs-fs/hubfs/Vercel%20header-1.jpg?width=800&height=800&name=Vercel%20header-1.jpg\",\n  mediaType = \"video\",\n}: PhoneCardProps) {\n  return (\n    <div className=\"relative rounded-[28px] glass-border bg-neutral-900 p-2\">\n      <div className=\"relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black\">\n        {mediaType === \"video\" ? (\n          <LazyVideo\n            src={videoSrc!}\n            className=\"absolute inset-0 h-full w-full object-cover\"\n            autoPlay={true}\n            loop={true}\n            muted={true}\n            playsInline={true}\n            aria-label={`${title} - ${sub}`}\n          />\n        ) : (\n          <img\n            src={imageSrc}\n            alt={`${title} - ${sub}`}\n            className=\"absolute inset-0 h-full w-full object-cover\"\n          />\n        )}\n\n        {/* Gradient overlay */}\n        <div\n          className={`absolute inset-0 bg-gradient-to-b ${gradient} opacity-60 mix-blend-overlay`}\n        />\n\n        <div className=\"relative z-10 p-3\">\n          <div className=\"mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20\" />\n          <div className=\"space-y-1 px-1\">\n            <div className=\"text-3xl font-bold leading-snug text-white/90\">\n              {title}\n            </div>\n            <p className=\"text-xs text-white/70\">{sub}</p>\n            <div className=\"mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300\">\n              {tone === \"calm\" ? \"Joly UI\" : tone}\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

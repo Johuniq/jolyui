@@ -1,0 +1,53 @@
+---
+title: Installation
+description: How to install dependencies and structure your app.
+---
+
+<Callout>
+  **Note:** We use installation process as
+  [shadcn/ui](https://ui.shadcn.com/docs/installation).
+</Callout>
+
+<Steps>
+<Step>
+
+### Initialize shadcn/ui
+
+Run the `init` command to create a new project with shadcn/ui or setup an existing one.
+
+```package-install
+npx shadcn@latest init"
+```
+
+</Step>
+<Step>
+
+### Add Components
+
+Run the `add` command to add a component to your project.
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/vercel-tabs"
+```
+
+</Step>
+<Step>
+
+### Import Components
+
+Import the component to your project.
+
+```tsx
+import { Button } from '@/components/ui/button';
+
+export default function Home() {
+  return (
+    <div>
+      <Button />
+    </div>
+  );
+}
+```
+
+</Step>
+</Steps>
