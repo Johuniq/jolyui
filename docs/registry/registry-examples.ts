@@ -146,4 +146,125 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "magnetic-demo",
+    type: "registry:example",
+    registryDependencies: ["magnetic"],
+    files: [
+      {
+        path: "examples/magnetic-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "magnetic-intensity-demo",
+    type: "registry:example",
+    registryDependencies: ["magnetic"],
+    files: [
+      {
+        path: "examples/magnetic-intensity-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "magnetic-range-demo",
+    type: "registry:example",
+    registryDependencies: ["magnetic"],
+    files: [
+      {
+        path: "examples/magnetic-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "magnetic-action-area-demo",
+    type: "registry:example",
+    registryDependencies: ["magnetic"],
+    files: [
+      {
+        path: "examples/magnetic-action-area-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "magnetic-cards-demo",
+    type: "registry:example",
+    registryDependencies: ["magnetic"],
+    files: [
+      {
+        path: "examples/magnetic-cards-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-compact-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-compact-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-playlist-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-playlist-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-callbacks-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-callbacks-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-quality-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-quality-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "video-player-captions-demo",
+    type: "registry:example",
+    registryDependencies: ["video-player"],
+    files: [
+      {
+        path: "examples/video-player-captions-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

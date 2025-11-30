@@ -121,7 +121,7 @@ export function GitHubContributors({
         )}
 
         {loading ? (
-          <div className="grid grid-cols-6 gap-3 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12">
+          <div className="grid grid-cols-5 gap-3 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12">
             {Array.from({ length: limit }).map((_, i) => (
               <div key={i} className="flex items-center justify-center">
                 <Skeleton className="h-10 w-10 rounded-full" />
@@ -130,7 +130,7 @@ export function GitHubContributors({
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-6 gap-3 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-11 items-center">
+            <div className="grid grid-cols-5 gap-3 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-11 items-center">
               {contributors.map((c, idx) => {
                 const pct = Math.round((c.contributions / maxContrib) * 100);
                 const isTop = idx === 0; // highlight the top contributor in shown list

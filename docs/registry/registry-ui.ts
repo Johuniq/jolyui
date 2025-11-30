@@ -69,4 +69,26 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "magnetic",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/magnetic.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "video-player",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion"],
+    files: [
+      {
+        path: "ui/video-player.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

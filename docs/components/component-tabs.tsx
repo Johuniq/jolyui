@@ -68,7 +68,7 @@ export function ComponentTabs({
         />
         <div
           className={cn(
-            "flex h-[420px] w-full justify-center p-10",
+            "flex min-h-[420px] w-full justify-center p-10",
             {
               "items-start": align === "start",
               "items-center": align === "center",
