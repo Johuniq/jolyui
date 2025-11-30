@@ -1,0 +1,82 @@
+---
+title: Magnetic
+description: A component that creates a magnetic attraction effect, making elements follow the cursor with smooth spring animations.
+preview: true
+links:
+ api: /docs/components/magnetic#api-reference
+---
+
+<ComponentTabs name="magnetic-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/magnetic"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="magnetic" />
+  </Step>
+</Steps>
+
+## Layout
+
+```tsx
+import { Magnetic } from "@/components/ui/magnetic";
+
+<Magnetic>
+  <button>Hover Me</button>
+</Magnetic>
+```
+
+## Examples
+
+### Intensity
+
+Control the strength of the magnetic effect with the `intensity` prop. Higher values create stronger attraction.
+
+<ComponentTabs name="magnetic-intensity-demo" />
+
+### Range
+
+Adjust the activation distance with the `range` prop. This defines how far from the element the effect begins.
+
+<ComponentTabs name="magnetic-range-demo" />
+
+### Action Area
+
+Define where the magnetic effect should be triggered using the `actionArea` prop.
+
+<ComponentTabs name="magnetic-action-area-demo" />
+
+### Cards Example
+
+A practical example showing the magnetic effect applied to card components.
+
+<ComponentTabs name="magnetic-cards-demo" />
+
+## API Reference
+
+### Magnetic
+
+The main magnetic wrapper component that applies smooth cursor-following animations to its children.
+
+<AutoTypeTable
+  path="./types/docs/magnetic.ts"
+  name="MagneticProps"
+/>

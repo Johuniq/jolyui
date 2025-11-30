@@ -1,0 +1,104 @@
+---
+title: Video Player
+description: A feature-rich, customizable video player component with advanced controls, keyboard shortcuts, and smooth animations.
+preview: true
+links:
+ api: /docs/components/video-player#api-reference
+---
+
+<ComponentTabs name="video-player-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/video-player"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     lucide-react motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="video-player" />
+  </Step>
+</Steps>
+
+## Layout
+
+```tsx
+import { VideoPlayer } from "@/components/ui/video-player";
+
+<VideoPlayer
+  src="https://example.com/video.mp4"
+  poster="https://example.com/poster.jpg"
+  title="Video Title"
+  description="Video description"
+/>
+```
+
+## Features
+
+The Video Player component includes:
+
+- **Advanced Controls**: Play/pause, volume, progress bar, fullscreen, picture-in-picture
+- **Keyboard Shortcuts**: Space (play/pause), M (mute), F (fullscreen), J/L (skip), P (PiP), C (captions)
+- **Quality & Speed Control**: Adjustable playback quality and speed settings
+- **Theater Mode**: Immersive viewing experience
+- **Playlist Support**: Navigate between multiple videos
+- **Custom Callbacks**: Track playback progress and events
+- **Smooth Animations**: Powered by Framer Motion
+- **Responsive Design**: Works on all screen sizes
+
+## Examples
+
+### Compact Mode
+
+Use the `compact` prop for a minimal player with essential controls only.
+
+<ComponentTabs name="video-player-compact-demo" />
+
+### Playlist
+
+Create a playlist by managing video state and using navigation callbacks.
+
+<ComponentTabs name="video-player-playlist-demo" />
+
+### With Callbacks
+
+Track playback progress and implement custom behaviors using the `onTimeUpdate` callback.
+
+<ComponentTabs name="video-player-callbacks-demo" />
+
+## Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `Space` | Play/Pause |
+| `M` | Mute/Unmute |
+| `F` | Toggle Fullscreen |
+| `J` | Skip backward 10 seconds |
+| `L` | Skip forward 10 seconds |
+| `P` | Toggle Picture-in-Picture |
+| `C` | Toggle Captions |
+
+## API Reference
+
+### VideoPlayer
+
+A comprehensive video player with advanced features and controls.
+
+<AutoTypeTable
+  path="./types/docs/video-player.ts"
+  name="VideoPlayerProps"
+/>
