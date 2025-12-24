@@ -47,6 +47,94 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "animated-table-basic-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-basic-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-sort-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-sort-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-search-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-search-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-select-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-select-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-expand-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-expand-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-column-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-column-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-pagination-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-pagination-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-table-full-demo",
+    type: "registry:example",
+    registryDependencies: ["animated-table"],
+    files: [
+      {
+        path: "examples/animated-table-full-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "button-demo",
     type: "registry:example",
     registryDependencies: ["button"],
@@ -87,6 +175,17 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/button-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "file-tree-demo",
+    type: "registry:example",
+    registryDependencies: ["file-tree"],
+    files: [
+      {
+        path: "examples/file-tree-demo.tsx",
         type: "registry:example",
       },
     ],

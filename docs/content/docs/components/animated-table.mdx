@@ -1,0 +1,95 @@
+---
+title: Animated Table
+description: A feature-rich, animated data table component with sorting, selection, search, pagination, and expandable rows.
+preview: true
+links:
+ api: /docs/components/animated-table#api-reference
+---
+
+## Basic Table
+
+<ComponentTabs name="animated-table-basic-demo" />
+
+## Sorting
+
+<ComponentTabs name="animated-table-sort-demo" />
+
+## Search
+
+<ComponentTabs name="animated-table-search-demo" />
+
+## Selection
+
+<ComponentTabs name="animated-table-select-demo" />
+
+## Expandable Rows
+
+<ComponentTabs name="animated-table-expand-demo" />
+
+## Column Visibility
+
+<ComponentTabs name="animated-table-column-demo" />
+
+## Pagination
+
+<ComponentTabs name="animated-table-pagination-demo" />
+
+## Full Featured
+
+<ComponentTabs name="animated-table-full-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/animated-table"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     lucide-react motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="animated-table" />
+  </Step>
+</Steps>
+
+
+## API Reference
+
+### AnimatedTable
+
+The main animated table component with comprehensive features.
+
+<AutoTypeTable
+  path="./types/docs/animated-table.ts"
+  name="AnimatedTableProps"
+/>
+
+### ColumnDef
+
+Configuration for table columns.
+
+<AutoTypeTable
+  path="./types/docs/animated-table.ts"
+  name="ColumnDef"
+/>
+
+### PaginationConfig
+
+Configuration for pagination functionality.
+
+<AutoTypeTable
+  path="./types/docs/animated-table.ts"
+  name="PaginationConfig"
+/>

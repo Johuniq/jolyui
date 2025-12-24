@@ -13,12 +13,34 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "animated-table",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion"],
+    files: [
+      {
+        path: "ui/animated-table.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slot", "class-variance-authority", "motion"],
     files: [
       {
         path: "ui/button.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "file-tree",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion"],
+    files: [
+      {
+        path: "ui/file-tree.tsx",
         type: "registry:ui",
       },
     ],

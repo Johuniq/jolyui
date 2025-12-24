@@ -37,6 +37,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "animated-table": {
+      name: "animated-table",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/animated-table.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/animated-table.tsx")),
+      source: "",
+      chunks: []
+    },
     "button": {
       name: "button",
       description: "",
@@ -48,6 +62,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/button.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree": {
+      name: "file-tree",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/file-tree.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/file-tree.tsx")),
       source: "",
       chunks: []
     },
@@ -219,6 +247,118 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "animated-table-basic-demo": {
+      name: "animated-table-basic-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-basic-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-basic-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-sort-demo": {
+      name: "animated-table-sort-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-sort-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-sort-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-search-demo": {
+      name: "animated-table-search-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-search-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-search-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-select-demo": {
+      name: "animated-table-select-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-select-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-select-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-expand-demo": {
+      name: "animated-table-expand-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-expand-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-expand-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-column-demo": {
+      name: "animated-table-column-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-column-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-column-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-pagination-demo": {
+      name: "animated-table-pagination-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-pagination-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-pagination-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-table-full-demo": {
+      name: "animated-table-full-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-table"],
+      files: [{
+        path: "registry/default/examples/animated-table-full-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-table-full-demo.tsx")),
+      source: "",
+      chunks: []
+    },
     "button-demo": {
       name: "button-demo",
       description: "",
@@ -272,6 +412,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/button-icon-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "file-tree-demo": {
+      name: "file-tree-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["file-tree"],
+      files: [{
+        path: "registry/default/examples/file-tree-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/file-tree-demo.tsx")),
       source: "",
       chunks: []
     },

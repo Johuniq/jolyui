@@ -1,0 +1,55 @@
+---
+title: File Tree
+description: A component for displaying hierarchical file structures with expandable folders and selectable items.
+preview: true
+links:
+ api: /docs/components/file-tree#api-reference
+---
+
+<ComponentTabs name="file-tree-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/file-tree"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     lucide-react motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="file-tree" />
+  </Step>
+</Steps>
+
+## API Reference
+
+### FileTree
+
+The main file tree component that renders a hierarchical structure of files and folders.
+
+<AutoTypeTable
+  path="./types/docs/file-tree.ts"
+  name="FileTreeProps"
+/>
+
+### TreeNode
+
+The data structure for individual nodes in the file tree.
+
+<AutoTypeTable
+  path="./types/docs/file-tree.ts"
+  name="TreeNode"
+/>
