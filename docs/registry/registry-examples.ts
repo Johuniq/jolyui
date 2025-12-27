@@ -401,6 +401,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "bento-grid-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["bento-grid"],
+    files: [
+      {
+        path: "examples/bento-grid-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "bento-grid-portfolio-demo",
+    type: "registry:example",
+    registryDependencies: ["bento-grid"],
+    files: [
+      {
+        path: "examples/bento-grid-portfolio-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "button-demo",
     type: "registry:example",
     registryDependencies: ["button"],
@@ -1036,6 +1058,72 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/scroll-text-slide-left-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-theme-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-theme-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-logo-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-logo-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-controlled-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-controlled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-button-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["segmented-button"],
+    files: [
+      {
+        path: "examples/segmented-button-custom-demo.tsx",
         type: "registry:example",
       },
     ],

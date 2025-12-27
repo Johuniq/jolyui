@@ -27,6 +27,16 @@
     ]
   },
   {
+    "name": "bento-grid",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/bento-grid.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "button",
     "type": "registry:ui",
     "dependencies": [
@@ -288,6 +298,19 @@
     "files": [
       {
         "path": "ui/scroll-text.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "segmented-button",
+    "type": "registry:ui",
+    "dependencies": [
+      "motion"
+    ],
+    "files": [
+      {
+        "path": "ui/segmented-button.tsx",
         "type": "registry:ui"
       }
     ]

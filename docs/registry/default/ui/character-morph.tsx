@@ -22,7 +22,7 @@ const CharacterMorph = React.forwardRef<HTMLDivElement, CharacterMorphProps>(
     ref
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
-    const currentText = texts[currentIndex];
+    const currentText = texts[currentIndex] || "";
 
     React.useEffect(() => {
       const timer = setInterval(() => {

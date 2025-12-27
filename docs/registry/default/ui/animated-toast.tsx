@@ -369,7 +369,7 @@ export function NotificationToast({ open, onClose, title, message, avatar, time 
 }
 
 // Stacked Notifications
-interface StackedToast {
+export interface StackedToast {
   id: string;
   title: string;
   message: string;

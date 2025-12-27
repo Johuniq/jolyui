@@ -1,13 +1,13 @@
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import * as React from "react";
 
 interface AnimatedBeamProps {
   /** Reference to the container element */
-  containerRef: React.RefObject<HTMLElement>;
+  containerRef: React.RefObject<HTMLElement | null>;
   /** Reference to the start element */
-  fromRef: React.RefObject<HTMLElement>;
+  fromRef: React.RefObject<HTMLElement | null>;
   /** Reference to the end element */
-  toRef: React.RefObject<HTMLElement>;
+  toRef: React.RefObject<HTMLElement | null>;
   /** Curvature of the beam (-1 to 1, 0 is straight) */
   curvature?: number;
   /** Animation duration in seconds */
@@ -239,10 +239,11 @@ const BeamNode = React.forwardRef<HTMLDivElement, BeamNodeProps>(
 BeamNode.displayName = "BeamNode";
 
 export {
-  AnimatedBeam,
-  BeamContainer,
-  BeamNode,
-  type AnimatedBeamProps,
-  type BeamContainerProps,
-  type BeamNodeProps,
+    AnimatedBeam,
+    BeamContainer,
+    BeamNode,
+    type AnimatedBeamProps,
+    type BeamContainerProps,
+    type BeamNodeProps
 };
+

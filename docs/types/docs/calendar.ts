@@ -33,7 +33,7 @@ export interface AnimatedCalendarProps extends Omit<React.ComponentProps<typeof 
    * The layout of the caption.
    * @default "label"
    */
-  captionLayout?: "label" | "dropdown" | "dropdown-buttons";
+  captionLayout?: "label" | "dropdown" | "dropdown-months" | "dropdown-years";
 
   /**
    * Additional CSS classes.

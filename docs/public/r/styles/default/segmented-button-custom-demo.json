@@ -1,0 +1,15 @@
+{
+  "name": "segmented-button-custom-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "segmented-button"
+  ],
+  "files": [
+    {
+      "path": "examples/segmented-button-custom-demo.tsx",
+      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonCustomDemo() {\n  return (\n    <SegmentedButton\n      buttons={[\n        { id: \"primary\", label: \"Primary\" },\n        { id: \"secondary\", label: \"Secondary\" },\n        { id: \"tertiary\", label: \"Tertiary\" },\n      ]}\n      defaultActive=\"primary\"\n      className=\"bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-1\"\n    />\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

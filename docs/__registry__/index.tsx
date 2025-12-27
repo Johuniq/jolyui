@@ -51,6 +51,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "bento-grid": {
+      name: "bento-grid",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/bento-grid.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/bento-grid.tsx")),
+      source: "",
+      chunks: []
+    },
     "button": {
       name: "button",
       description: "",
@@ -328,6 +342,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/scroll-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button": {
+      name: "segmented-button",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/segmented-button.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/segmented-button.tsx")),
       source: "",
       chunks: []
     },
@@ -902,6 +930,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/animated-table-full-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "bento-grid-custom-demo": {
+      name: "bento-grid-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["bento-grid"],
+      files: [{
+        path: "registry/default/examples/bento-grid-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/bento-grid-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "bento-grid-portfolio-demo": {
+      name: "bento-grid-portfolio-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["bento-grid"],
+      files: [{
+        path: "registry/default/examples/bento-grid-portfolio-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/bento-grid-portfolio-demo.tsx")),
       source: "",
       chunks: []
     },
@@ -1714,6 +1770,90 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/scroll-text-slide-left-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-demo": {
+      name: "segmented-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-theme-demo": {
+      name: "segmented-button-theme-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-theme-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-theme-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-logo-demo": {
+      name: "segmented-button-logo-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-logo-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-logo-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-controlled-demo": {
+      name: "segmented-button-controlled-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-controlled-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-controlled-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-custom-demo": {
+      name: "segmented-button-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "segmented-button-custom-demo": {
+      name: "segmented-button-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["segmented-button"],
+      files: [{
+        path: "registry/default/examples/segmented-button-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/segmented-button-custom-demo.tsx")),
       source: "",
       chunks: []
     },

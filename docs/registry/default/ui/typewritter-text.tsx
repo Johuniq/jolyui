@@ -28,7 +28,7 @@ const TypewriterText = React.forwardRef<HTMLSpanElement, TypewriterTextProps>(
     const [isDeleting, setIsDeleting] = React.useState(false);
 
     React.useEffect(() => {
-      const currentWord = words[currentWordIndex];
+      const currentWord = words[currentWordIndex] || "";
 
       const timeout = setTimeout(
         () => {

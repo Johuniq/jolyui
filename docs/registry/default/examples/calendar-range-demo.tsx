@@ -2,7 +2,7 @@ import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
 
 export default function CalendarRangeDemo() {
-  const [dateRange, setDateRange] = useState<{ from?: Date; to?: Date }>();
+  const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>();
 
   return (
     <div className="flex flex-col gap-3">

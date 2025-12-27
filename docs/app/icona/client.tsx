@@ -238,6 +238,8 @@ export default function IconaClient() {
     name: string;
     svg: string;
     category: string;
+    width: number;
+    height: number;
   } | null>(null);
 
   // Debounce search for better performance

@@ -1,5 +1,6 @@
 {
   "animated-table": "Animated Table",
+  "bento-grid": "Bento Grid",
   "calendar": "Calendar",
   "character-morph": "Character Morph",
   "file-tree": "File Tree",
@@ -8,6 +9,8 @@
   "magnetic": "Magnetic",
   "phone-card": "Phone Card",
   "rotate-text": "Rotate Text",
+  "scroll-text": "Scroll Text",
+  "segmented-button": "Segmented Button",
   "text-morphing": "Text Morphing",
   "typewritter-text": "Typewriter Text",
   "velocity-morph": "Velocity Morph",

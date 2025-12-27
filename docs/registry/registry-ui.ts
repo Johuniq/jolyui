@@ -24,6 +24,16 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "bento-grid",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/bento-grid.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slot", "class-variance-authority", "motion"],
@@ -241,6 +251,17 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/scroll-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "segmented-button",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/segmented-button.tsx",
         type: "registry:ui",
       },
     ],

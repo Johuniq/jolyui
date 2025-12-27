@@ -1,0 +1,53 @@
+---
+title: Bento Grid
+description: A responsive grid layout component perfect for creating bento box style dashboards and content displays.
+preview: true
+links:
+ api: /docs/components/bento-grid#api-reference
+---
+
+<ComponentTabs name="bento-grid-custom-demo" />
+
+## Examples
+
+### Dashboard Layout
+
+<ComponentTabs name="bento-grid-custom-demo" />
+
+### Portfolio Layout
+
+<ComponentTabs name="bento-grid-portfolio-demo" />
+
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/bento-grid"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/bento-grid.tsx```
+
+    <ComponentSource name="bento-grid" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/bento-grid.ts"
+  name="BentoGridProps"
+/>
+
+## Notes
+
+- Responsive grid that adapts from 1 column on mobile to 3 columns on large screens
+- Uses CSS Grid with auto-rows for consistent item heights
+- Perfect for dashboard layouts, portfolio displays, and content grids
+- Items can span multiple columns and rows using standard CSS Grid classes
+- Supports all standard div props and custom className for styling

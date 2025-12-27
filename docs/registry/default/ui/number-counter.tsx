@@ -40,7 +40,7 @@ const formatNumber = (
   const fixed = value.toFixed(decimals);
   const [intPart, decPart] = fixed.split(".");
 
-  const formattedInt = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  const formattedInt = (intPart || "").replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
   return decPart ? `${formattedInt}${decimalSeparator}${decPart}` : formattedInt;
 };
@@ -168,9 +168,9 @@ const NumberCounter = React.forwardRef<HTMLSpanElement, NumberCounterProps>(
       const endTime = startTime + duration * 1000;
 
       // Cubic bezier easing function
-      const bezier = easingFunctions[easing];
+      const bezier = easingFunctions[easing] || easingFunctions.linear;
       const cubicBezier = (t: number): number => {
-        const [x1, y1, x2, y2] = bezier;
+        const [x1 = 0, y1 = 0, x2 = 1, y2 = 1] = bezier;
         // Simplified cubic bezier approximation
         const cx = 3 * x1;
         const bx = 3 * (x2 - x1) - cx;
@@ -398,10 +398,10 @@ const StatCounter = React.forwardRef<HTMLDivElement, StatCounterProps>(
 StatCounter.displayName = "StatCounter";
 
 export {
-  CircularCounter, formatNumber, NumberCounter, RollingCounter, SpringCounter, StatCounter
+    CircularCounter, formatNumber, NumberCounter, RollingCounter, SpringCounter, StatCounter
 };
 export type {
-  CircularCounterProps, EasingType, NumberCounterProps,
-  RollingCounterProps, StatCounterProps
+    CircularCounterProps, EasingType, NumberCounterProps,
+    RollingCounterProps, StatCounterProps
 };
 

@@ -8,7 +8,7 @@ export default function VelocityMorphCustomDemo() {
       <div className="text-center">
         <h3 className="mb-4 text-lg font-semibold">Fast Morphing</h3>
         <VelocityMorph
-          texts={["Code", "Build", "Deploy", "Scale"]}
+          texts={["CODE", "BUILD", "DEPLOY", "SCALE"]}
           interval={1500}
           className="text-2xl font-mono text-primary"
         />
@@ -17,7 +17,7 @@ export default function VelocityMorphCustomDemo() {
       <div className="text-center">
         <h3 className="mb-4 text-lg font-semibold">Slow Morphing</h3>
         <VelocityMorph
-          texts={["Design", "Create", "Innovate", "Inspire"]}
+          texts={["DESIGN", "CREATE", "INNOVATE", "INSPIRE"]}
           interval={5000}
           className="text-3xl font-bold text-destructive"
         />

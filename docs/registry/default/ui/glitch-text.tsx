@@ -12,7 +12,7 @@ const GlitchText = React.forwardRef<HTMLSpanElement, GlitchTextProps>(
   ({ words, className, interval = 3000, glitchDuration = 300 }, ref) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [isGlitching, setIsGlitching] = React.useState(false);
-    const [displayText, setDisplayText] = React.useState(words[0]);
+    const [displayText, setDisplayText] = React.useState(words[0] || "");
 
     const glitchChars = "!<>-_\\/[]{}—=+*^?#________";
 
@@ -21,7 +21,7 @@ const GlitchText = React.forwardRef<HTMLSpanElement, GlitchTextProps>(
         setIsGlitching(true);
 
         const nextIndex = (currentIndex + 1) % words.length;
-        const targetWord = words[nextIndex];
+        const targetWord = words[nextIndex] || "";
         const iterations = 10;
         let iteration = 0;
 

@@ -264,7 +264,7 @@ const ScrollReveal = React.forwardRef<HTMLDivElement, ScrollRevealProps>(
     React.useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
+          if (entry && entry.isIntersecting) {
             setIsInView(true);
             if (once && containerRef.current) {
               observer.unobserve(containerRef.current);

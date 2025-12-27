@@ -1,0 +1,15 @@
+{
+  "name": "segmented-button-controlled-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "segmented-button"
+  ],
+  "files": [
+    {
+      "path": "examples/segmented-button-controlled-demo.tsx",
+      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\nimport { useState } from \"react\";\n\nexport default function SegmentedButtonControlledDemo() {\n  const [activeTab, setActiveTab] = useState(\"settings\");\n\n  const tabs = [\n    { id: \"overview\", label: \"Overview\" },\n    { id: \"analytics\", label: \"Analytics\" },\n    { id: \"settings\", label: \"Settings\" },\n  ];\n\n  return (\n    <div className=\"space-y-4\">\n      <p className=\"text-sm text-muted-foreground\">\n        Active tab: <span className=\"font-mono\">{activeTab}</span>\n      </p>\n      <SegmentedButton\n        buttons={tabs}\n        defaultActive={activeTab}\n        onChange={setActiveTab}\n      />\n    </div>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

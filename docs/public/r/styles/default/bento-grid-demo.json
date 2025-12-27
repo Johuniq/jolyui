@@ -1,0 +1,15 @@
+{
+  "name": "bento-grid-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "bento-grid"
+  ],
+  "files": [
+    {
+      "path": "examples/bento-grid-demo.tsx",
+      "content": "\"use client\";\n\nimport { BentoGrid } from \"@/registry/default/ui/bento-grid\";\n\nexport default function BentoGridDemo() {\n  return (\n    <BentoGrid className=\"max-w-4xl mx-auto\">\n      <div className=\"bg-primary/10 p-6 rounded-lg\">\n        <h3 className=\"text-lg font-semibold mb-2\">Item 1</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          This is a standard grid item that spans one column.\n        </p>\n      </div>\n      <div className=\"bg-secondary/10 p-6 rounded-lg\">\n        <h3 className=\"text-lg font-semibold mb-2\">Item 2</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Another grid item with content.\n        </p>\n      </div>\n      <div className=\"bg-accent/10 p-6 rounded-lg\">\n        <h3 className=\"text-lg font-semibold mb-2\">Item 3</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Third item in the grid layout.\n        </p>\n      </div>\n    </BentoGrid>\n  );\n}",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 'use client';
+import { cva } from 'class-variance-authority';
+import {
+    Collapsible,
+    CollapsibleContent,
+} from 'fumadocs-ui/components/ui/collapsible';
+import { ThumbsDown, ThumbsUp } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { type SyntheticEvent, useEffect, useState, useTransition } from 'react';
 import { cn } from '../lib/cn';
 import { buttonVariants } from './ui/button';
-import { ThumbsDown, ThumbsUp } from 'lucide-react';
-import { type SyntheticEvent, useEffect, useState, useTransition } from 'react';
-import {
-  Collapsible,
-  CollapsibleContent,
-} from 'fumadocs-ui/components/ui/collapsible';
-import { cva } from 'class-variance-authority';
-import { usePathname } from 'next/navigation';
 
 const rateButtonVariants = cva(
   'inline-flex items-center gap-2 px-3 py-2 rounded-full font-medium border text-sm [&_svg]:size-4 disabled:cursor-not-allowed',
@@ -135,7 +135,7 @@ export function Feedback({
                 target="_blank"
                 className={cn(
                   buttonVariants({
-                    color: 'primary',
+                    variant: 'default',
                   }),
                   'text-xs',
                 )}
@@ -146,7 +146,7 @@ export function Feedback({
               <button
                 className={cn(
                   buttonVariants({
-                    color: 'secondary',
+                    variant: 'outline',
                   }),
                   'text-xs',
                 )}
@@ -176,7 +176,7 @@ export function Feedback({
             />
             <button
               type="submit"
-              className={cn(buttonVariants({ color: 'outline' }), 'w-fit px-3')}
+              className={cn(buttonVariants({ variant: 'outline' }), 'w-fit px-3')}
               disabled={isPending}
             >
               Submit

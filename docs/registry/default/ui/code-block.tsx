@@ -631,10 +631,10 @@ const CodeCompare = React.forwardRef<HTMLDivElement, CodeCompareProps>(
     const afterLines = after.trim().split("\n");
     
     const removedLines = showDiff 
-      ? beforeLines.map((_, i) => i + 1).filter((_, i) => !afterLines.includes(beforeLines[i]))
+      ? beforeLines.map((_, i) => i + 1).filter((_, i) => beforeLines[i] && !afterLines.includes(beforeLines[i]))
       : [];
     const addedLines = showDiff
-      ? afterLines.map((_, i) => i + 1).filter((_, i) => !beforeLines.includes(afterLines[i]))
+      ? afterLines.map((_, i) => i + 1).filter((_, i) => afterLines[i] && !beforeLines.includes(afterLines[i]))
       : [];
 
     return (
@@ -715,8 +715,8 @@ const CodeTabs = React.forwardRef<HTMLDivElement, CodeTabsProps>(
             transition={{ duration: 0.2 }}
           >
             <CodeBlock
-              code={tabs[activeTab].code}
-              language={tabs[activeTab].language || "typescript"}
+              code={tabs[activeTab]?.code || ""}
+              language={tabs[activeTab]?.language || "typescript"}
               showLineNumbers={true}
               variant="minimal"
               animation="none"
@@ -801,7 +801,7 @@ TerminalBlock.displayName = "TerminalBlock";
 
 export { CodeBlock, CodeCompare, CodeTabs, InlineCode, supportedLanguages, TerminalBlock, themeMap };
 export type {
-  AnimationType, CodeBlockProps, CodeBlockVariant, CodeCompareProps,
-  CodeTabsProps, InlineCodeProps, TerminalBlockProps, ThemeType
+    AnimationType, CodeBlockProps, CodeBlockVariant, CodeCompareProps,
+    CodeTabsProps, InlineCodeProps, TerminalBlockProps, ThemeType
 };
 

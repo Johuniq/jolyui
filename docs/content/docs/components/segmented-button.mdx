@@ -1,0 +1,94 @@
+---
+title: Segmented Button
+description: An animated segmented button component with smooth transitions and customizable styling for navigation and selection.
+preview: true
+links:
+ api: /docs/components/segmented-button#api-reference
+---
+
+<ComponentTabs name="segmented-button-demo" />
+
+## Examples
+
+### Basic Navigation
+
+<ComponentTabs name="segmented-button-demo" />
+
+### Theme Selector
+
+<ComponentTabs name="segmented-button-theme-demo" />
+
+### With Logo Integration
+
+<ComponentTabs name="segmented-button-logo-demo" />
+
+### Controlled State
+
+<ComponentTabs name="segmented-button-controlled-demo" />
+
+### Custom Styling
+
+<ComponentTabs name="segmented-button-custom-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/segmented-button"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/segmented-button.tsx```
+
+    <ComponentSource name="segmented-button" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/segmented-button.ts"
+  name="SegmentedButtonProps"
+/>
+
+## Usage
+
+```tsx
+import SegmentedButton from "@/components/ui/segmented-button";
+
+const tabs = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
+export default function MyComponent() {
+  return (
+    <SegmentedButton
+      buttons={tabs}
+      defaultActive="home"
+      onChange={(activeId) => console.log("Active:", activeId)}
+    />
+  );
+}
+```
+
+## Features
+
+- **Smooth Animations**: Powered by Motion.js for fluid transitions
+- **Logo Support**: Built-in support for logo buttons with custom SVG
+- **Controlled State**: Full control over active state with callbacks
+- **Customizable**: Accepts custom className for styling
+- **Responsive**: Works seamlessly on mobile and desktop
+- **TypeScript**: Fully typed with comprehensive interfaces
+
+## Notes
+
+- The component uses Motion.js for smooth animations
+- Logo buttons use a predefined SVG that matches the design system
+- The active indicator smoothly animates between button positions
+- Hover effects provide visual feedback for better UX
