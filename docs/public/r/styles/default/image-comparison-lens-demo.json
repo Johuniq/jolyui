@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/image-comparison-lens-demo.tsx",
-      "content": "import { ImageComparisonLens } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonLensDemo() {\n  return (\n    <ImageComparisonLens\n      beforeImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop\"\n      className=\"aspect-video w-full\"\n      lensSize={180}\n    />\n  );\n}",
+      "content": "import { ImageComparisonLens } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonLensDemo() {\n  return (\n    <ImageComparisonLens\n      beforeImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop\"\n      className=\"aspect-video w-full\"\n      lensSize={180}\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

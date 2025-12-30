@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/segmented-button-demo.tsx",
-      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonDemo() {\n  const navigationTabs = [\n    { id: \"home\", label: \"Home\" },\n    { id: \"about\", label: \"About\" },\n    { id: \"contact\", label: \"Contact\" },\n  ];\n\n  return (\n    <div className=\"space-y-4\">\n      <SegmentedButton\n        buttons={navigationTabs}\n        defaultActive=\"home\"\n        onChange={(activeId) => console.log(\"Active tab:\", activeId)}\n      />\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonBasicDemo() {\n  const navigationTabs = [\n    { id: \"home\", label: \"Home\" },\n    { id: \"about\", label: \"About\" },\n    { id: \"contact\", label: \"Contact\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={navigationTabs}\n      defaultActive=\"home\"\n      onChange={(activeId) => console.log(\"Active tab:\", activeId)}\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

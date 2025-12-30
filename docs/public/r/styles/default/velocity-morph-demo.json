@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/velocity-morph-demo.tsx",
-      "content": "\"use client\";\n\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\n\nexport default function VelocityMorphDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <VelocityMorph\n        texts={[\"Hello\", \"World\", \"Velocity\", \"Morph\"]}\n        className=\"text-4xl font-bold text-foreground\"\n      />\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\n\nexport default function VelocityMorphDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <VelocityMorph\n        texts={[\"Hello\", \"World\", \"Velocity\", \"Morph\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

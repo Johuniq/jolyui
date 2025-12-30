@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/scroll-text-slide-left-demo.tsx",
-      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextSlideLeftDemo() {\n  return (\n    <div className=\"flex items-center justify-center h-[400px] w-full\">\n      <ScrollText effect=\"slideLeft\" className=\"text-4xl font-bold\">\n        Slide Left Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextSlideLeftDemo() {\n  return (\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\n      <ScrollText effect=\"slideLeft\" className=\"font-bold text-4xl\">\n        Slide Left Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

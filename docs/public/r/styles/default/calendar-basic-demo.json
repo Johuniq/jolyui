@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/calendar-basic-demo.tsx",
-      "content": "import { AnimatedCalendar } from \"@/registry/default/ui/calender\";\nimport { useState } from \"react\";\n\nexport default function CalendarBasicDemo() {\n  const [date, setDate] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Basic Calendar</h3>\n      <AnimatedCalendar\n        mode=\"single\"\n        value={date}\n        onChange={setDate}\n        placeholder=\"Select a date\"\n      />\n      {date && (\n        <p className=\"text-sm text-muted-foreground\">\n          Selected: {date.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}",
+      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarBasicDemo() {\n  const [date, setDate] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Basic Calendar</h3>\n      <AnimatedCalendar\n        mode=\"single\"\n        value={date}\n        onChange={setDate}\n        placeholder=\"Select a date\"\n      />\n      {date && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {date.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

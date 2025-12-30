@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/calendar-multiple-demo.tsx",
-      "content": "import { AnimatedCalendar } from \"@/registry/default/ui/calender\";\nimport { useState } from \"react\";\n\nexport default function CalendarMultipleDemo() {\n  const [dates, setDates] = useState<Date[]>([]);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Multiple Date Selection</h3>\n      <AnimatedCalendar\n        mode=\"multiple\"\n        value={dates}\n        onChange={setDates}\n        placeholder=\"Select multiple dates\"\n      />\n      {dates.length > 0 && (\n        <p className=\"text-sm text-muted-foreground\">\n          Selected {dates.length} date{dates.length !== 1 ? 's' : ''}: {dates.map(d => d.toLocaleDateString()).join(', ')}\n        </p>\n      )}\n    </div>\n  );\n}",
+      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarMultipleDemo() {\n  const [dates, setDates] = useState<Date[]>([]);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Multiple Date Selection</h3>\n      <AnimatedCalendar\n        mode=\"multiple\"\n        value={dates}\n        onChange={setDates}\n        placeholder=\"Select multiple dates\"\n      />\n      {dates.length > 0 && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected {dates.length} date{dates.length !== 1 ? \"s\" : \"\"}:{\" \"}\n          {dates.map((d) => d.toLocaleDateString()).join(\", \")}\n        </p>\n      )}\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

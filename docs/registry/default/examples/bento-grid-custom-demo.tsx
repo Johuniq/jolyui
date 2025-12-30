@@ -1,179 +1,160 @@
 "use client";
 
-import {
-  Activity,
-  BarChart3,
-  Calendar,
-  DollarSign,
-  MessageSquare,
-  Star,
-  TrendingUp,
-  Users,
-} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { BentoGrid } from "@/registry/default/ui/bento-grid";
+import {
+    ArrowUpRight,
+    Brain,
+    Cpu,
+    Globe,
+    Layers,
+    Sparkles
+} from "lucide-react";
 
 export default function BentoGridCustomDemo() {
   return (
-    <BentoGrid className="mx-auto max-w-7xl gap-6">
-      {/* Hero Stats Card - Large */}
-      <Card className="border-primary/20 bg-gradient-to-br from-primary/10 via-primary/5 to-background md:col-span-2 lg:row-span-2">
-        <CardHeader className="pb-4">
+    <BentoGrid className="mx-auto max-w-7xl gap-4 p-4">
+      {/* Main AI Intelligence Card */}
+      <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-background md:col-span-2 lg:row-span-2">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+        <CardHeader className="relative z-10 pb-2">
           <div className="flex items-center justify-between">
-            <CardTitle className="font-bold text-2xl">
-              Dashboard Overview
-            </CardTitle>
-            <Badge variant="secondary" className="bg-primary/10 text-primary">
-              Live
+            <Badge variant="outline" className="border-primary/30 bg-primary/10 text-primary">
+              <Brain className="mr-1 h-3 w-3" />
+              AI Core v2.4
             </Badge>
+            <span className="text-muted-foreground text-xs">Updated 2m ago</span>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Users className="h-4 w-4" />
-                Total Users
-              </div>
-              <div className="font-bold text-3xl">12,847</div>
-              <div className="flex items-center gap-1 text-sm">
-                <TrendingUp className="h-3 w-3 text-green-500" />
-                <span className="text-green-500">+12.5%</span>
-                <span className="text-muted-foreground">from last month</span>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <DollarSign className="h-4 w-4" />
-                Revenue
-              </div>
-              <div className="font-bold text-3xl">$48,392</div>
-              <div className="flex items-center gap-1 text-sm">
-                <TrendingUp className="h-3 w-3 text-green-500" />
-                <span className="text-green-500">+8.2%</span>
-                <span className="text-muted-foreground">from last month</span>
-              </div>
-            </div>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-              <span>Monthly Goal</span>
-              <span>84%</span>
-            </div>
-            <Progress value={84} className="h-2" />
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Activity Feed */}
-      <Card>
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Activity className="h-5 w-5" />
-            Recent Activity
+          <CardTitle className="mt-4 font-bold text-3xl tracking-tight">
+            Neural Network <br />
+            <span className="text-primary">Intelligence Hub</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="flex items-start gap-3">
-            <div className="mt-2 h-2 w-2 rounded-full bg-primary"></div>
-            <div className="flex-1 space-y-1">
-              <p className="font-medium text-sm">New user registration</p>
-              <p className="text-muted-foreground text-xs">2 minutes ago</p>
+        <CardContent className="relative z-10 space-y-8">
+          <p className="max-w-md text-muted-foreground">
+            Real-time processing of over 1.2M data points per second with predictive modeling and automated anomaly detection.
+          </p>
+          
+          <div className="grid grid-cols-2 gap-6">
+            <div className="space-y-1">
+              <p className="text-muted-foreground text-xs uppercase tracking-wider">Accuracy</p>
+              <p className="font-mono font-bold text-2xl text-emerald-500">99.98%</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-muted-foreground text-xs uppercase tracking-wider">Latency</p>
+              <p className="font-mono font-bold text-2xl text-blue-500">14ms</p>
             </div>
           </div>
-          <div className="flex items-start gap-3">
-            <div className="mt-2 h-2 w-2 rounded-full bg-green-500"></div>
-            <div className="flex-1 space-y-1">
-              <p className="font-medium text-sm">Payment processed</p>
-              <p className="text-muted-foreground text-xs">5 minutes ago</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="mt-2 h-2 w-2 rounded-full bg-blue-500"></div>
-            <div className="flex-1 space-y-1">
-              <p className="font-medium text-sm">Report generated</p>
-              <p className="text-muted-foreground text-xs">12 minutes ago</p>
-            </div>
+
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" className="shadow-lg shadow-primary/20">
+              Deploy Model
+              <ArrowUpRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button size="sm" variant="outline">View Logs</Button>
           </div>
         </CardContent>
       </Card>
 
-      {/* Quick Actions */}
-      <Card>
-        <CardHeader className="pb-3">
-          <CardTitle className="text-lg">Quick Actions</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          <Button className="w-full justify-start" variant="outline">
-            <BarChart3 className="mr-2 h-4 w-4" />
-            View Analytics
-          </Button>
-          <Button className="w-full justify-start" variant="outline">
-            <Users className="mr-2 h-4 w-4" />
-            Manage Users
-          </Button>
-          <Button className="w-full justify-start" variant="outline">
-            <MessageSquare className="mr-2 h-4 w-4" />
-            Send Message
-          </Button>
-        </CardContent>
-      </Card>
-
-      {/* Performance Metrics */}
-      <Card className="md:col-span-2">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Star className="h-5 w-5" />
-            Performance Metrics
+      {/* Real-time Traffic */}
+      <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center gap-2 text-sm font-medium">
+            <Globe className="h-4 w-4 text-blue-500" />
+            Global Traffic
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="space-y-2 text-center">
-              <div className="font-bold text-2xl text-green-500">98.5%</div>
-              <div className="text-muted-foreground text-xs">Uptime</div>
-            </div>
-            <div className="space-y-2 text-center">
-              <div className="font-bold text-2xl text-blue-500">1.2s</div>
-              <div className="text-muted-foreground text-xs">Avg Response</div>
-            </div>
-            <div className="space-y-2 text-center">
-              <div className="font-bold text-2xl text-purple-500">4.8</div>
-              <div className="text-muted-foreground text-xs">User Rating</div>
-            </div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-2xl font-bold">42.8k</span>
+            <span className="text-xs text-emerald-500 font-medium">+12%</span>
+          </div>
+          <div className="mt-4 flex h-12 items-end gap-1">
+            {[40, 70, 45, 90, 65, 80, 50, 95, 75, 60].map((h, i) => (
+              <div 
+                key={i} 
+                className="flex-1 rounded-t-sm bg-blue-500/20 transition-all hover:bg-blue-500" 
+                style={{ height: `${h}%` }} 
+              />
+            ))}
           </div>
         </CardContent>
       </Card>
 
-      {/* Calendar/Events */}
-      <Card>
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Calendar className="h-5 w-5" />
-            Upcoming Events
+      {/* System Health */}
+      <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center gap-2 text-sm font-medium">
+            <Cpu className="h-4 w-4 text-purple-500" />
+            System Health
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-muted-foreground">CPU Load</span>
+            <span className="font-medium">24%</span>
+          </div>
+          <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+            <div className="h-full bg-purple-500 transition-all" style={{ width: '24%' }} />
+          </div>
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-muted-foreground">Memory</span>
+            <span className="font-medium">4.2GB / 16GB</span>
+          </div>
+          <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+            <div className="h-full bg-blue-500 transition-all" style={{ width: '35%' }} />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Active Agents */}
+      <Card className="md:col-span-2 border-border/50 bg-card/50 backdrop-blur-sm">
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardTitle className="flex items-center gap-2 text-sm font-medium">
+              <Layers className="h-4 w-4 text-amber-500" />
+              Active AI Agents
+            </CardTitle>
+            <Button variant="ghost" size="sm" className="h-8 text-xs">Manage All</Button>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { name: "DataScout", status: "Running", color: "bg-emerald-500" },
+              { name: "TrendBot", status: "Idle", color: "bg-slate-400" },
+              { name: "SecuritySentinel", status: "Running", color: "bg-emerald-500" },
+            ].map((agent) => (
+              <div key={agent.name} className="flex items-center gap-3 rounded-lg border bg-background/50 p-3">
+                <div className={`h-2 w-2 rounded-full ${agent.color}`} />
+                <div className="flex-1 overflow-hidden">
+                  <p className="truncate text-sm font-medium">{agent.name}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase">{agent.status}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Recent Insights */}
+      <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center gap-2 text-sm font-medium">
+            <Sparkles className="h-4 w-4 text-rose-500" />
+            AI Insights
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-sm">Team Meeting</span>
-              <Badge variant="outline" className="text-xs">
-                Today
-              </Badge>
-            </div>
-            <p className="text-muted-foreground text-xs">2:00 PM - 3:00 PM</p>
+          <div className="rounded-md bg-rose-500/5 p-2 text-[11px] border border-rose-500/10">
+            <p className="font-medium text-rose-600 dark:text-rose-400">Anomaly Detected</p>
+            <p className="text-muted-foreground">Unusual traffic spike from Asia-Pacific region.</p>
           </div>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-sm">Product Review</span>
-              <Badge variant="outline" className="text-xs">
-                Tomorrow
-              </Badge>
-            </div>
-            <p className="text-muted-foreground text-xs">10:00 AM - 11:00 AM</p>
+          <div className="rounded-md bg-emerald-500/5 p-2 text-[11px] border border-emerald-500/10">
+            <p className="font-medium text-emerald-600 dark:text-emerald-400">Optimization Tip</p>
+            <p className="text-muted-foreground">Reduce cache TTL for faster data propagation.</p>
           </div>
         </CardContent>
       </Card>

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/image-comparison-demo.tsx",
-      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonDemo() {\n  return (\n    <ImageComparison\n      beforeImage=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop\"\n      beforeLabel=\"Grayscale\"\n      afterLabel=\"Color\"\n      className=\"aspect-video w-full\"\n    />\n  );\n}",
+      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonDemo() {\n  return (\n    <ImageComparison\n      beforeImage=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop\"\n      beforeLabel=\"Grayscale\"\n      afterLabel=\"Color\"\n      className=\"aspect-video w-full\"\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

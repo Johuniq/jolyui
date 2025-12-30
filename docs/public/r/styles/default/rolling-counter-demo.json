@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/rolling-counter-demo.tsx",
-      "content": "import { RollingCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function RollingCounterDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 py-20 w-full\">\n      <div className=\"text-center\">\n        <h3 className=\"text-sm font-medium text-muted-foreground mb-4\">Rolling Counter</h3>\n        <RollingCounter\n          value={98765}\n          prefix=\"$\"\n          className=\"text-6xl font-black tracking-tight\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { RollingCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function RollingCounterDemo() {\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-8 py-20\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-medium text-muted-foreground text-sm\">\n          Rolling Counter\n        </h3>\n        <RollingCounter\n          value={98765}\n          prefix=\"$\"\n          className=\"font-black text-6xl tracking-tight\"\n        />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

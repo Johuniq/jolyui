@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/calendar-range-demo.tsx",
-      "content": "import { AnimatedCalendar } from \"@/registry/default/ui/calender\";\nimport { useState } from \"react\";\n\nexport default function CalendarRangeDemo() {\n  const [dateRange, setDateRange] = useState<{ from?: Date; to?: Date }>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date Range Selection</h3>\n      <AnimatedCalendar\n        mode=\"range\"\n        value={dateRange}\n        onChange={setDateRange}\n        placeholder=\"Select date range\"\n      />\n      {dateRange?.from && dateRange?.to && (\n        <p className=\"text-sm text-muted-foreground\">\n          Selected: {dateRange.from.toLocaleDateString()} - {dateRange.to.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}",
+      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarRangeDemo() {\n  const [dateRange, setDateRange] = useState<{\n    from: Date | undefined;\n    to: Date | undefined;\n  }>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date Range Selection</h3>\n      <AnimatedCalendar\n        mode=\"range\"\n        value={dateRange}\n        onChange={setDateRange}\n        placeholder=\"Select date range\"\n      />\n      {dateRange?.from && dateRange?.to && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {dateRange.from.toLocaleDateString()} -{\" \"}\n          {dateRange.to.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

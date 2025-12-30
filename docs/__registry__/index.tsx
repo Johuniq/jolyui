@@ -415,6 +415,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "command-palette": {
+      name: "command-palette",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/command-palette.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/command-palette.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -1350,6 +1364,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/video-player-timestamp-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "command-palette-demo": {
+      name: "command-palette-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["command-palette"],
+      files: [{
+        path: "registry/default/examples/command-palette-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/command-palette-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "command-palette-custom-demo": {
+      name: "command-palette-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["command-palette"],
+      files: [{
+        path: "registry/default/examples/command-palette-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/command-palette-custom-demo.tsx")),
       source: "",
       chunks: []
     },

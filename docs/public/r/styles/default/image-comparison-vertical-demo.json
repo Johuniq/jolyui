@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/image-comparison-vertical-demo.tsx",
-      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonVerticalDemo() {\n  return (\n    <div className=\"mx-auto max-w-md\">\n      <ImageComparison\n        beforeImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop&sat=-100\"\n        afterImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop\"\n        beforeLabel=\"Top\"\n        afterLabel=\"Bottom\"\n        orientation=\"vertical\"\n        className=\"aspect-[3/4] w-full\"\n      />\n    </div>\n  );\n}",
+      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonVerticalDemo() {\n  return (\n    <div className=\"mx-auto max-w-md\">\n      <ImageComparison\n        beforeImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop&sat=-100\"\n        afterImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop\"\n        beforeLabel=\"Top\"\n        afterLabel=\"Bottom\"\n        orientation=\"vertical\"\n        className=\"aspect-[3/4] w-full\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/video-player-demo.tsx",
-      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\n\nexport default function VideoPlayerDemo() {\n  return (\n    <div className=\"w-full max-w-4xl mx-auto\">\n      <VideoPlayer\n        src=\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\"\n        poster=\"https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217\"\n        title=\"Big Buck Bunny\"\n        description=\"A large and lovable rabbit deals with three tiny bullies, led by a flying squirrel, who are determined to squelch his happiness.\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\n\nexport default function VideoPlayerDemo() {\n  return (\n    <div className=\"mx-auto w-full max-w-4xl\">\n      <VideoPlayer\n        src=\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\"\n        poster=\"https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217\"\n        title=\"Big Buck Bunny\"\n        description=\"A large and lovable rabbit deals with three tiny bullies, led by a flying squirrel, who are determined to squelch his happiness.\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

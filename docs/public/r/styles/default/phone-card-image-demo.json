@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/phone-card-image-demo.tsx",
-      "content": "import { PhoneCard } from \"@/registry/default/ui/phone-card\";\n\n\nexport default function PhoneCardImageDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <PhoneCard\n        title=\"Design\"\n        sub=\"Beautiful UI components for modern applications\"\n        tone=\"creative\"\n        gradient=\"from-[#1e1b4b] via-[#312e81] to-[#4c1d95]\"\n        imageSrc=\"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop\"\n        mediaType=\"image\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { PhoneCard } from \"@/registry/default/ui/phone-card\";\n\nexport default function PhoneCardImageDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <PhoneCard\n        title=\"Design\"\n        sub=\"Beautiful UI components for modern applications\"\n        tone=\"creative\"\n        gradient=\"from-[#1e1b4b] via-[#312e81] to-[#4c1d95]\"\n        imageSrc=\"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop\"\n        mediaType=\"image\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

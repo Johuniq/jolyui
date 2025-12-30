@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/scroll-text-scale-demo.tsx",
-      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextScaleDemo() {\n  return (\n    <div className=\"flex items-center justify-center h-[400px] w-full\">\n      <ScrollText effect=\"scale\" className=\"text-4xl font-bold\">\n        Scale Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextScaleDemo() {\n  return (\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\n      <ScrollText effect=\"scale\" className=\"font-bold text-4xl\">\n        Scale Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

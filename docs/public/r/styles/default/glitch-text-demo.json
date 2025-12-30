@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/glitch-text-demo.tsx",
-      "content": "\"use client\";\n\nimport { GlitchText } from \"@/registry/default/ui/glitch-text\";\n\nexport default function GlitchTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <GlitchText\n        words={[\"Hello\", \"World\", \"Glitch\", \"Effect\"]}\n        className=\"text-4xl font-bold text-foreground\"\n      />\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { GlitchText } from \"@/registry/default/ui/glitch-text\";\n\nexport default function GlitchTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <GlitchText\n        words={[\"Hello\", \"World\", \"Glitch\", \"Effect\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

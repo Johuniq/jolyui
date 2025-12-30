@@ -1,0 +1,18 @@
+{
+  "name": "command-palette-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "command-palette"
+  ],
+  "files": [
+    {
+      "path": "examples/command-palette-demo.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { CommandPalette } from \"@/registry/default/ui/command-palette\";\nimport {\n  Calculator,\n  Calendar,\n  CreditCard,\n  Settings,\n  Smile,\n  User,\n} from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function CommandPaletteDemo() {\n  const [open, setOpen] = useState(false);\n\n  const groups = [\n    {\n      id: \"suggestions\",\n      heading: \"Suggestions\",\n      items: [\n        {\n          id: \"calendar\",\n          label: \"Calendar\",\n          icon: Calendar,\n          onSelect: () => console.log(\"Calendar selected\"),\n        },\n        {\n          id: \"search-emoji\",\n          label: \"Search Emoji\",\n          icon: Smile,\n          onSelect: () => console.log(\"Search Emoji selected\"),\n        },\n        {\n          id: \"calculator\",\n          label: \"Calculator\",\n          icon: Calculator,\n          onSelect: () => console.log(\"Calculator selected\"),\n        },\n      ],\n    },\n    {\n      id: \"settings\",\n      heading: \"Settings\",\n      items: [\n        {\n          id: \"profile\",\n          label: \"Profile\",\n          icon: User,\n          shortcut: [\"⌘\", \"P\"],\n          onSelect: () => console.log(\"Profile selected\"),\n        },\n        {\n          id: \"billing\",\n          label: \"Billing\",\n          icon: CreditCard,\n          shortcut: [\"⌘\", \"B\"],\n          onSelect: () => console.log(\"Billing selected\"),\n        },\n        {\n          id: \"settings\",\n          label: \"Settings\",\n          icon: Settings,\n          shortcut: [\"⌘\", \"S\"],\n          onSelect: () => console.log(\"Settings selected\"),\n        },\n      ],\n    },\n  ];\n\n  return (\n    <div className=\"flex flex-col items-center justify-center min-h-[400px] gap-4\">\n      <p className=\"text-sm text-muted-foreground\">\n        Press <kbd className=\"px-1.5 py-0.5 rounded bg-muted font-mono text-xs\">⌘K</kbd> to open the command palette\n      </p>\n      <Button onClick={() => setOpen(true)}>Open Command Palette</Button>\n      \n      <CommandPalette\n        open={open}\n        onOpenChange={setOpen}\n        groups={groups}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

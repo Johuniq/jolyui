@@ -310,4 +310,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "command-palette",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "motion"],
+    files: [
+      {
+        path: "ui/command-palette.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

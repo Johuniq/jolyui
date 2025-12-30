@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/sticky-scroll-text-demo.tsx",
-      "content": "import { StickyScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function StickyScrollTextDemo() {\n  return (\n    <div className=\"w-full\">\n      <StickyScrollText height=\"150vh\" effect=\"scale\">\n        <h2 className=\"text-6xl font-bold text-center\">\n          Scale Effect\n        </h2>\n      </StickyScrollText>\n      \n      <StickyScrollText height=\"150vh\" effect=\"blur\">\n        <h2 className=\"text-6xl font-bold text-center\">\n          Blur Effect\n        </h2>\n      </StickyScrollText>\n      \n      <StickyScrollText height=\"150vh\" effect=\"color\">\n        <h2 className=\"text-6xl font-bold text-center\">\n          Color Effect\n        </h2>\n      </StickyScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { StickyScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function StickyScrollTextDemo() {\n  return (\n    <div className=\"w-full\">\n      <StickyScrollText height=\"150vh\" effect=\"scale\">\n        <h2 className=\"text-center font-bold text-6xl\">Scale Effect</h2>\n      </StickyScrollText>\n\n      <StickyScrollText height=\"150vh\" effect=\"blur\">\n        <h2 className=\"text-center font-bold text-6xl\">Blur Effect</h2>\n      </StickyScrollText>\n\n      <StickyScrollText height=\"150vh\" effect=\"color\">\n        <h2 className=\"text-center font-bold text-6xl\">Color Effect</h2>\n      </StickyScrollText>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

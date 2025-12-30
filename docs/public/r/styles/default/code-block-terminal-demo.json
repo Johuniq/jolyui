@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/code-block-terminal-demo.tsx",
-      "content": "import { TerminalBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <TerminalBlock\n        title=\"Terminal\"\n        commands={[\n          { command: \"npm install jolyui\", output: \"added 1 package in 2.3s\" },\n          { command: \"npm run dev\", output: \"VITE v5.0.0 ready in 300 ms\\n\\n➜  Local: http://localhost:5173/\" },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { TerminalBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <TerminalBlock\n        title=\"Terminal\"\n        commands={[\n          { command: \"npm install jolyui\", output: \"added 1 package in 2.3s\" },\n          {\n            command: \"npm run dev\",\n            output:\n              \"VITE v5.0.0 ready in 300 ms\\n\\n➜  Local: http://localhost:5173/\",\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

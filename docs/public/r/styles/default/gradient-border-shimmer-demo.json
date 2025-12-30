@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/gradient-border-shimmer-demo.tsx",
-      "content": "\"use client\";\n\nimport { ShimmerBorder } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderShimmerDemo() {\n  return (\n    <div className=\"h-full\">\n      <ShimmerBorder className=\"h-full\">\n        <div className=\"p-6\">\n          <h3 className=\"mb-2 font-semibold\">Shimmer Border</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            A single rotating shimmer highlight around the border\n          </p>\n        </div>\n      </ShimmerBorder>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { ShimmerBorder } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderShimmerDemo() {\n  return (\n    <div className=\"h-full\">\n      <ShimmerBorder className=\"h-full\">\n        <div className=\"p-6\">\n          <h3 className=\"mb-2 font-semibold\">Shimmer Border</h3>\n          <p className=\"text-muted-foreground text-sm\">\n            A single rotating shimmer highlight around the border\n          </p>\n        </div>\n      </ShimmerBorder>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

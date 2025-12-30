@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/calendar-time-demo.tsx",
-      "content": "import { AnimatedCalendar } from \"@/registry/default/ui/calender\";\nimport { useState } from \"react\";\n\nexport default function CalendarTimeDemo() {\n  const [dateTime, setDateTime] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date & Time Selection</h3>\n      <AnimatedCalendar\n        mode=\"single\"\n        value={dateTime}\n        onChange={setDateTime}\n        showTime\n        placeholder=\"Select date and time\"\n      />\n      {dateTime && (\n        <p className=\"text-sm text-muted-foreground\">\n          Selected: {dateTime.toLocaleString()}\n        </p>\n      )}\n    </div>\n  );\n}",
+      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarTimeDemo() {\n  const [dateTime, setDateTime] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date & Time Selection</h3>\n      <AnimatedCalendar\n        mode=\"single\"\n        value={dateTime}\n        onChange={setDateTime}\n        showTime\n        placeholder=\"Select date and time\"\n      />\n      {dateTime && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {dateTime.toLocaleString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

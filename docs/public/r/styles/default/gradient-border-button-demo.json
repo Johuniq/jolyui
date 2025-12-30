@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/gradient-border-button-demo.tsx",
-      "content": "\"use client\";\n\nimport { GradientBorderButton } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <GradientBorderButton>Get Started</GradientBorderButton>\n      <GradientBorderButton\n        colors={[\"#22c55e\", \"#10b981\", \"#14b8a6\", \"#22c55e\"]}\n      >\n        Subscribe\n      </GradientBorderButton>\n      <GradientBorderButton\n        colors={[\"#f59e0b\", \"#f97316\", \"#ef4444\", \"#f59e0b\"]}\n        duration={1.5}\n      >\n        Upgrade Now\n      </GradientBorderButton>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { GradientBorderButton } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      <GradientBorderButton>Get Started</GradientBorderButton>\n      <GradientBorderButton\n        colors={[\"#22c55e\", \"#10b981\", \"#14b8a6\", \"#22c55e\"]}\n      >\n        Subscribe\n      </GradientBorderButton>\n      <GradientBorderButton\n        colors={[\"#f59e0b\", \"#f97316\", \"#ef4444\", \"#f59e0b\"]}\n        duration={1.5}\n      >\n        Upgrade Now\n      </GradientBorderButton>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

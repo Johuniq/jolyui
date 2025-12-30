@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/stat-counter-demo.tsx",
-      "content": "import { StatCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function StatCounterDemo() {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8 py-20 w-full max-w-4xl mx-auto\">\n      <StatCounter\n        value={15000}\n        label=\"Active Users\"\n        prefix=\"+\"\n        className=\"p-6 bg-secondary/20 rounded-xl\"\n      />\n      <StatCounter\n        value={98.5}\n        label=\"Satisfaction Rate\"\n        suffix=\"%\"\n        decimals={1}\n        className=\"p-6 bg-secondary/20 rounded-xl\"\n      />\n      <StatCounter\n        value={2500}\n        label=\"Revenue\"\n        prefix=\"$\"\n        className=\"p-6 bg-secondary/20 rounded-xl\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { StatCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function StatCounterDemo() {\n  return (\n    <div className=\"mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 py-20 md:grid-cols-3\">\n      <StatCounter\n        value={15000}\n        label=\"Active Users\"\n        prefix=\"+\"\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n      <StatCounter\n        value={98.5}\n        label=\"Satisfaction Rate\"\n        suffix=\"%\"\n        decimals={1}\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n      <StatCounter\n        value={2500}\n        label=\"Revenue\"\n        prefix=\"$\"\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

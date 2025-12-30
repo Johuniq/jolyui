@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/segmented-button-logo-demo.tsx",
-      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonLogoDemo() {\n  const logoTabs = [\n    { id: \"dashboard\", label: \"Dashboard\" },\n    { id: \"logo\", isLogo: true },\n    { id: \"profile\", label: \"Profile\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={logoTabs}\n      defaultActive=\"dashboard\"\n      onChange={(activeId) => console.log(\"Active section:\", activeId)}\n    />\n  );\n}",
+      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonLogoDemo() {\n  const logoTabs = [\n    { id: \"dashboard\", label: \"Dashboard\" },\n    { id: \"logo\", isLogo: true },\n    { id: \"profile\", label: \"Profile\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={logoTabs}\n      defaultActive=\"dashboard\"\n      onChange={(activeId) => console.log(\"Active section:\", activeId)}\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

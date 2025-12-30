@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/horizontal-scroll-text-demo.tsx",
-      "content": "import { HorizontalScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function HorizontalScrollTextDemo() {\n  return (\n    <div className=\"py-20 w-full overflow-hidden\">\n      <HorizontalScrollText className=\"text-6xl font-black uppercase\" speed={0.5}>\n        Scroll Text • Animation • Motion • React •\n      </HorizontalScrollText>\n      \n      <div className=\"h-10\" />\n      \n      <HorizontalScrollText className=\"text-6xl font-black uppercase text-primary\" direction=\"right\" speed={0.5}>\n        Creative • Innovative • Dynamic • Powerful •\n      </HorizontalScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { HorizontalScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function HorizontalScrollTextDemo() {\n  return (\n    <div className=\"w-full overflow-hidden py-20\">\n      <HorizontalScrollText\n        className=\"font-black text-6xl uppercase\"\n        speed={0.5}\n      >\n        Scroll Text • Animation • Motion • React •\n      </HorizontalScrollText>\n\n      <div className=\"h-10\" />\n\n      <HorizontalScrollText\n        className=\"font-black text-6xl text-primary uppercase\"\n        direction=\"right\"\n        speed={0.5}\n      >\n        Creative • Innovative • Dynamic • Powerful •\n      </HorizontalScrollText>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

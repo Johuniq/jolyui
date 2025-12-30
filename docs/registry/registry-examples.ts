@@ -733,6 +733,30 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "command-palette-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["command-palette"],
+    files: [
+      {
+        path: "examples/command-palette-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "command-palette-custom-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["command-palette"],
+    files: [
+      {
+        path: "examples/command-palette-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "calendar-basic-demo",
     type: "registry:example",
     registryDependencies: ["calender"],

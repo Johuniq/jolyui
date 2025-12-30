@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/animated-tooltip-rich-demo.tsx",
-      "content": "\"use client\";\n\nimport { RichTooltip } from \"@/components/ui/animated-tooltip\";\n\nexport default function AnimatedTooltipRichDemo() {\n  return (\n    <div className=\"flex justify-center\">\n      <RichTooltip\n        title=\"Mountain Vista\"\n        description=\"A beautiful landscape view from the top of the mountain during golden hour.\"\n        image=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=150&fit=crop\"\n        placement=\"bottom\"\n      >\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90\">\n          Hover for Rich Tooltip\n        </button>\n      </RichTooltip>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { RichTooltip } from \"@/components/ui/animated-tooltip\";\n\nexport default function AnimatedTooltipRichDemo() {\n  return (\n    <div className=\"flex justify-center\">\n      <RichTooltip\n        title=\"Mountain Vista\"\n        description=\"A beautiful landscape view from the top of the mountain during golden hour.\"\n        image=\"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=150&fit=crop\"\n        placement=\"bottom\"\n      >\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90\">\n          Hover for Rich Tooltip\n        </button>\n      </RichTooltip>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/highlight-text-demo.tsx",
-      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center py-20\">\n      <h1 className=\"text-4xl font-bold tracking-tight text-center max-w-2xl leading-relaxed\">\n        Make your text <HighlightText>stand out</HighlightText> with animated highlights.\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center py-20\">\n      <h1 className=\"max-w-2xl text-center font-bold text-4xl leading-relaxed tracking-tight\">\n        Make your text <HighlightText>stand out</HighlightText> with animated\n        highlights.\n      </h1>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

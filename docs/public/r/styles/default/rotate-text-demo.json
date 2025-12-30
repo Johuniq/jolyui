@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/rotate-text-demo.tsx",
-      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\n\nexport default function RotateTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <RotatingText\n        words={[\"Hello\", \"World\", \"Rotate\", \"Text\"]}\n        className=\"text-4xl font-bold text-foreground\"\n      />\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\n\nexport default function RotateTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <RotatingText\n        words={[\"Hello\", \"World\", \"Rotate\", \"Text\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

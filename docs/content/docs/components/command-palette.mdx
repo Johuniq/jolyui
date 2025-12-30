@@ -1,0 +1,74 @@
+---
+title: Command Palette
+description: A powerful, searchable command palette with fuzzy matching, keyboard navigation, and custom shortcuts.
+preview: true
+links:
+  api: /docs/components/command-palette#api-reference
+---
+
+## Basic Usage
+
+The Command Palette is a versatile component that allows users to quickly access commands, search through content, and perform actions using their keyboard.
+
+<ComponentTabs name="command-palette-demo" />
+
+## Features
+
+- **Fuzzy Search**: Intelligent searching that matches characters even if they aren't consecutive.
+- **Keyboard Navigation**: Full support for arrow keys, Enter to select, and Escape to close.
+- **Shortcuts**: Support for global shortcuts (default ⌘K) and individual command shortcuts.
+- **Groups**: Organize commands into logical sections with headings.
+- **Descriptions**: Optional sub-text for commands to provide more context.
+- **Icons**: Support for Lucide icons for better visual recognition.
+
+## Customization
+
+You can customize the placeholder, empty message, and the global shortcut used to toggle the palette.
+
+<ComponentTabs name="command-palette-custom-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/command-palette"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Install the following dependencies:
+
+    ```package-install
+    lucide-react
+    ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/command-palette.tsx```
+
+    <ComponentSource name="command-palette" />
+  </Step>
+</Steps>
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/command-palette.ts"
+  name="CommandPaletteProps"
+/>
+
+### CommandGroup
+
+<AutoTypeTable
+  path="./types/docs/command-palette.ts"
+  name="CommandGroup"
+/>
+
+### CommandItem
+
+<AutoTypeTable
+  path="./types/docs/command-palette.ts"
+  name="CommandItem"
+/>

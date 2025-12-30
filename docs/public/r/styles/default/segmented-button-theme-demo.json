@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/segmented-button-theme-demo.tsx",
-      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonThemeDemo() {\n  const themeTabs = [\n    { id: \"light\", label: \"Light\" },\n    { id: \"dark\", label: \"Dark\" },\n    { id: \"system\", label: \"System\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={themeTabs}\n      defaultActive=\"system\"\n      onChange={(activeId) => console.log(\"Selected theme:\", activeId)}\n    />\n  );\n}",
+      "content": "\"use client\";\n\nimport { useTheme } from \"next-themes\";\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonThemeDemo() {\n  const { theme, setTheme } = useTheme();\n\n  const themeTabs = [\n    { id: \"light\", label: \"Light\" },\n    { id: \"dark\", label: \"Dark\" },\n    { id: \"system\", label: \"System\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={themeTabs}\n      defaultActive={theme || \"system\"}\n      onChange={(activeId) => setTheme(activeId)}\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

@@ -1,7 +1,7 @@
 import {
-    AnimatedBeam,
-    BeamContainer,
-    BeamNode,
+  AnimatedBeam,
+  BeamContainer,
+  BeamNode,
 } from "@/registry/default/ui/animated-beam";
 import { Database, Layout, Lock, Package, Server, Smartphone } from "lucide-react";
 import React from "react";
@@ -77,7 +77,7 @@ export default function AnimatedBeamMultipleDemo() {
         fromRef={clientRef}
         toRef={gatewayRef}
         duration={3}
-        curvature={0.2}
+        curvature={0}
         gradientStartColor="#3b82f6"
         gradientStopColor="#8b5cf6"
       />
@@ -99,7 +99,7 @@ export default function AnimatedBeamMultipleDemo() {
         toRef={ordersRef}
         duration={3}
         delay={0.4}
-        curvature={0.1}
+        curvature={0}
         gradientStartColor="#8b5cf6"
         gradientStopColor="#f59e0b"
       />
@@ -131,7 +131,7 @@ export default function AnimatedBeamMultipleDemo() {
         toRef={dbRef}
         duration={3}
         delay={1.2}
-        curvature={0.1}
+        curvature={0}
         gradientStartColor="#f59e0b"
         gradientStopColor="#64748b"
       />

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/image-comparison-split-demo.tsx",
-      "content": "import { ImageComparisonSplit } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonSplitDemo() {\n  return (\n    <ImageComparisonSplit\n      beforeImage=\"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=350&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=350&fit=crop\"\n      beforeLabel=\"Original\"\n      afterLabel=\"Enhanced\"\n      className=\"aspect-[2/1] w-full\"\n      gap={8}\n    />\n  );\n}",
+      "content": "import { ImageComparisonSplit } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonSplitDemo() {\n  return (\n    <ImageComparisonSplit\n      beforeImage=\"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=350&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=350&fit=crop\"\n      beforeLabel=\"Original\"\n      afterLabel=\"Enhanced\"\n      className=\"aspect-[2/1] w-full\"\n      gap={8}\n    />\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/video-player-compact-demo.tsx",
-      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\n\nexport default function VideoPlayerCompactDemo() {\n  return (\n    <div className=\"w-full max-w-2xl mx-auto\">\n      <VideoPlayer\n        src=\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\"\n        poster=\"https://download.blender.org/ED/cover_art/elephants_dream_1024.jpg\"\n        title=\"Elephants Dream\"\n        description=\"A short film about two strange characters exploring a cavernous labyrinth.\"\n        compact={true}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\n\nexport default function VideoPlayerCompactDemo() {\n  return (\n    <div className=\"mx-auto w-full max-w-2xl\">\n      <VideoPlayer\n        src=\"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\"\n        poster=\"https://download.blender.org/ED/cover_art/elephants_dream_1024.jpg\"\n        title=\"Elephants Dream\"\n        description=\"A short film about two strange characters exploring a cavernous labyrinth.\"\n        compact={true}\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

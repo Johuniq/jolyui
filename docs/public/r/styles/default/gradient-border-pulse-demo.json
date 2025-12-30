@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/gradient-border-pulse-demo.tsx",
-      "content": "\"use client\";\n\nimport { PulseBorder } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderPulseDemo() {\n  return (\n    <div className=\"h-full\">\n      <PulseBorder color=\"hsl(var(--primary))\">\n        <div className=\"rounded-xl border bg-card p-6\">\n          <h3 className=\"mb-2 font-semibold\">Pulse Border</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Pulsing border with outer glow effect\n          </p>\n        </div>\n      </PulseBorder>\n    </div>\n  );\n}",
+      "content": "\"use client\";\n\nimport { PulseBorder } from \"@/registry/default/ui/gradient-border\";\n\nexport default function GradientBorderPulseDemo() {\n  return (\n    <div className=\"h-full\">\n      <PulseBorder color=\"hsl(var(--primary))\">\n        <div className=\"rounded-xl border bg-card p-6\">\n          <h3 className=\"mb-2 font-semibold\">Pulse Border</h3>\n          <p className=\"text-muted-foreground text-sm\">\n            Pulsing border with outer glow effect\n          </p>\n        </div>\n      </PulseBorder>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

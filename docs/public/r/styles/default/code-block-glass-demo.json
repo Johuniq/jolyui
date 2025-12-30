@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/code-block-glass-demo.tsx",
-      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeBlock\n                  code={`const greeting = \"Hello, jolyui!\";\nconsole.log(greeting);\n\n// Supports multiple themes!`}\n                  language=\"typescript\"\n                  variant=\"glass\"\n                  theme=\"dracula\"\n                  animation=\"highlight\"\n                />\n    </div>\n  );\n}\n",
+      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeBlock\n        code={`const greeting = \"Hello, jolyui!\";\nconsole.log(greeting);\n\n// Supports multiple themes!`}\n        language=\"typescript\"\n        variant=\"glass\"\n        theme=\"dracula\"\n        animation=\"highlight\"\n      />\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }
