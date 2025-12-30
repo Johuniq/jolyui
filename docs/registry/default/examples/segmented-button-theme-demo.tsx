@@ -1,7 +1,7 @@
 "use client";
 
-import SegmentedButton from "@/registry/default/ui/segmented-button";
 import { useTheme } from "next-themes";
+import SegmentedButton from "@/registry/default/ui/segmented-button";
 
 export default function SegmentedButtonThemeDemo() {
   const { theme, setTheme } = useTheme();

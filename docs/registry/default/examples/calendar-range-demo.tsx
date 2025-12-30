@@ -1,8 +1,11 @@
-import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
+import { AnimatedCalendar } from "@/registry/default/ui/calender";
 
 export default function CalendarRangeDemo() {
-  const [dateRange, setDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>();
+  const [dateRange, setDateRange] = useState<{
+    from: Date | undefined;
+    to: Date | undefined;
+  }>();
 
   return (
     <div className="flex flex-col gap-3">
@@ -14,8 +17,9 @@ export default function CalendarRangeDemo() {
         placeholder="Select date range"
       />
       {dateRange?.from && dateRange?.to && (
-        <p className="text-sm text-muted-foreground">
-          Selected: {dateRange.from.toLocaleDateString()} - {dateRange.to.toLocaleDateString()}
+        <p className="text-muted-foreground text-sm">
+          Selected: {dateRange.from.toLocaleDateString()} -{" "}
+          {dateRange.to.toLocaleDateString()}
         </p>
       )}
     </div>

@@ -2,7 +2,7 @@ import { PhoneCard } from "@/registry/default/ui/phone-card";
 
 export default function PhoneCardDemo() {
   return (
-    <div className="flex items-center min-h-screen justify-center p-8">
+    <div className="flex min-h-screen items-center justify-center p-8">
       <PhoneCard
         title="8°"
         sub="Clear night. Great for render farm runs."

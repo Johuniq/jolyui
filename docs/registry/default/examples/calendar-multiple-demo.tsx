@@ -1,5 +1,5 @@
-import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
+import { AnimatedCalendar } from "@/registry/default/ui/calender";
 
 export default function CalendarMultipleDemo() {
   const [dates, setDates] = useState<Date[]>([]);
@@ -14,8 +14,9 @@ export default function CalendarMultipleDemo() {
         placeholder="Select multiple dates"
       />
       {dates.length > 0 && (
-        <p className="text-sm text-muted-foreground">
-          Selected {dates.length} date{dates.length !== 1 ? 's' : ''}: {dates.map(d => d.toLocaleDateString()).join(', ')}
+        <p className="text-muted-foreground text-sm">
+          Selected {dates.length} date{dates.length !== 1 ? "s" : ""}:{" "}
+          {dates.map((d) => d.toLocaleDateString()).join(", ")}
         </p>
       )}
     </div>

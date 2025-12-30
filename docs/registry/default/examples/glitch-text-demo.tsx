@@ -7,7 +7,7 @@ export default function GlitchTextDemo() {
     <div className="flex items-center justify-center">
       <GlitchText
         words={["Hello", "World", "Glitch", "Effect"]}
-        className="text-4xl font-bold text-foreground"
+        className="font-bold text-4xl text-foreground"
       />
     </div>
   );

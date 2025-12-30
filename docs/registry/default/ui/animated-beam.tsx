@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface AnimatedBeamProps {
   /** Reference to the container element */
@@ -49,7 +49,10 @@ const AnimatedBeam = ({
   className,
 }: AnimatedBeamProps) => {
   const [pathD, setPathD] = React.useState("");
-  const [svgDimensions, setSvgDimensions] = React.useState({ width: 0, height: 0 });
+  const [svgDimensions, setSvgDimensions] = React.useState({
+    width: 0,
+    height: 0,
+  });
   const uniqueId = React.useId();
 
   const updatePath = React.useCallback(() => {
@@ -59,10 +62,14 @@ const AnimatedBeam = ({
     const fromRect = fromRef.current.getBoundingClientRect();
     const toRect = toRef.current.getBoundingClientRect();
 
-    const startX = fromRect.left - containerRect.left + fromRect.width / 2 + startXOffset;
-    const startY = fromRect.top - containerRect.top + fromRect.height / 2 + startYOffset;
-    const endX = toRect.left - containerRect.left + toRect.width / 2 + endXOffset;
-    const endY = toRect.top - containerRect.top + toRect.height / 2 + endYOffset;
+    const startX =
+      fromRect.left - containerRect.left + fromRect.width / 2 + startXOffset;
+    const startY =
+      fromRect.top - containerRect.top + fromRect.height / 2 + startYOffset;
+    const endX =
+      toRect.left - containerRect.left + toRect.width / 2 + endXOffset;
+    const endY =
+      toRect.top - containerRect.top + toRect.height / 2 + endYOffset;
 
     const midX = (startX + endX) / 2;
     const midY = (startY + endY) / 2;
@@ -79,7 +86,16 @@ const AnimatedBeam = ({
       width: containerRect.width,
       height: containerRect.height,
     });
-  }, [containerRef, fromRef, toRef, curvature, startXOffset, startYOffset, endXOffset, endYOffset]);
+  }, [
+    containerRef,
+    fromRef,
+    toRef,
+    curvature,
+    startXOffset,
+    startYOffset,
+    endXOffset,
+    endYOffset,
+  ]);
 
   React.useEffect(() => {
     updatePath();
@@ -99,7 +115,10 @@ const AnimatedBeam = ({
 
   return (
     <svg
-      className={cn("pointer-events-none absolute left-0 top-0 h-full w-full", className)}
+      className={cn(
+        "pointer-events-none absolute top-0 left-0 h-full w-full",
+        className,
+      )}
       width={svgDimensions.width}
       height={svgDimensions.height}
       viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
@@ -138,7 +157,13 @@ const AnimatedBeam = ({
         </linearGradient>
 
         {/* Glow filter */}
-        <filter id={`beam-glow-${uniqueId}`} x="-50%" y="-50%" width="200%" height="200%">
+        <filter
+          id={`beam-glow-${uniqueId}`}
+          x="-50%"
+          y="-50%"
+          width="200%"
+          height="200%"
+        >
           <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
@@ -163,7 +188,13 @@ const AnimatedBeam = ({
           />
         </mask>
 
-        <linearGradient id="beam-mask-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient
+          id="beam-mask-gradient"
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="0%"
+        >
           <stop offset="0%" stopColor="black" />
           <stop offset="25%" stopColor="white" />
           <stop offset="75%" stopColor="white" />
@@ -212,7 +243,7 @@ const BeamContainer = React.forwardRef<HTMLDivElement, BeamContainerProps>(
         {children}
       </div>
     );
-  }
+  },
 );
 BeamContainer.displayName = "BeamContainer";
 
@@ -227,23 +258,22 @@ const BeamNode = React.forwardRef<HTMLDivElement, BeamNodeProps>(
         ref={ref}
         className={cn(
           "relative z-10 flex items-center justify-center rounded-xl border bg-background p-3 shadow-sm",
-          className
+          className,
         )}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 BeamNode.displayName = "BeamNode";
 
 export {
-    AnimatedBeam,
-    BeamContainer,
-    BeamNode,
-    type AnimatedBeamProps,
-    type BeamContainerProps,
-    type BeamNodeProps
+  AnimatedBeam,
+  BeamContainer,
+  BeamNode,
+  type AnimatedBeamProps,
+  type BeamContainerProps,
+  type BeamNodeProps,
 };
-

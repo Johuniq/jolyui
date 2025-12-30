@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { flushSync } from 'react-dom';
+import { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 interface IconResult {
   name: string;
@@ -29,7 +29,7 @@ interface CategoryResponse {
 export function useGlobalIconSearch(
   query: string,
   categories: string[],
-  enabled: boolean
+  enabled: boolean,
 ) {
   const [results, setResults] = useState<IconResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -79,8 +79,13 @@ export function useGlobalIconSearch(
             const data: CategoryResponse = await response.json();
 
             // Get default dimensions from response
-            const defaultWidth = data.width ?? data.info?.displayHeight ?? data.info?.height ?? 16;
-            const defaultHeight = data.height ?? data.info?.displayHeight ?? data.info?.height ?? 16;
+            const defaultWidth =
+              data.width ?? data.info?.displayHeight ?? data.info?.height ?? 16;
+            const defaultHeight =
+              data.height ??
+              data.info?.displayHeight ??
+              data.info?.height ??
+              16;
 
             // Filter icons matching the search query
             const matchingIcons = Object.entries(data.icons || {})
@@ -92,9 +97,9 @@ export function useGlobalIconSearch(
                 height: icon.height ?? defaultHeight,
                 category: category!,
                 categoryDisplay: category!
-                  .split('-')
-                  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' '),
+                  .split("-")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" "),
               }));
 
             categoriesSearched++;
@@ -102,11 +107,11 @@ export function useGlobalIconSearch(
             flushSync(() => {
               setSearchedCategories(categoriesSearched);
               if (matchingIcons.length > 0) {
-                setResults(prev => [...prev, ...matchingIcons]);
+                setResults((prev) => [...prev, ...matchingIcons]);
               }
             });
           } catch (error) {
-            if (error instanceof Error && error.name === 'AbortError') {
+            if (error instanceof Error && error.name === "AbortError") {
               return;
             }
 

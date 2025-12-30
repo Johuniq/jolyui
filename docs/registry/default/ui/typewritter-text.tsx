@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface TypewriterTextProps {
   words: string[];
@@ -21,7 +21,7 @@ const TypewriterText = React.forwardRef<HTMLSpanElement, TypewriterTextProps>(
       pauseDuration = 1500,
       cursorClassName,
     },
-    ref
+    ref,
   ) => {
     const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
     const [currentText, setCurrentText] = React.useState("");
@@ -47,7 +47,7 @@ const TypewriterText = React.forwardRef<HTMLSpanElement, TypewriterTextProps>(
             }
           }
         },
-        isDeleting ? deletingSpeed : typingSpeed
+        isDeleting ? deletingSpeed : typingSpeed,
       );
 
       return () => clearTimeout(timeout);
@@ -66,12 +66,19 @@ const TypewriterText = React.forwardRef<HTMLSpanElement, TypewriterTextProps>(
         {currentText}
         <motion.span
           animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-          className={cn("inline-block w-[2px] h-[1em] bg-current ml-0.5 align-middle", cursorClassName)}
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className={cn(
+            "ml-0.5 inline-block h-[1em] w-[2px] bg-current align-middle",
+            cursorClassName,
+          )}
         />
       </span>
     );
-  }
+  },
 );
 TypewriterText.displayName = "TypewriterText";
 

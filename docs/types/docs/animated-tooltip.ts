@@ -14,7 +14,15 @@ export interface AnimatedTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "top"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
   /**
    * Animation type for the tooltip appearance
    * @default "fade"
@@ -79,7 +87,15 @@ export interface RichTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "top"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
   /**
    * Additional CSS classes
    */
@@ -102,7 +118,15 @@ export interface IconTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "top"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
   /**
    * Optional keyboard shortcut to display
    */
@@ -125,7 +149,15 @@ export interface HoverCardTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "bottom"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
   /**
    * Additional CSS classes
    */
@@ -156,7 +188,15 @@ export interface ConfirmTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "top"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
   /**
    * Text for the confirm button
    * @default "Confirm"
@@ -243,5 +283,13 @@ export interface StatusTooltipProps {
    * Position of the tooltip relative to the trigger
    * @default "top"
    */
-  placement?: "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end";
 }

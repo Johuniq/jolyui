@@ -1,18 +1,20 @@
 "use client";
 
-import { VideoPlayer } from "@/registry/default/ui/video-player";
 import { useState } from "react";
+import { VideoPlayer } from "@/registry/default/ui/video-player";
 
 const playlist = [
   {
     src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    poster: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217",
+    poster:
+      "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217",
     title: "Big Buck Bunny",
     description: "A large and lovable rabbit deals with three tiny bullies.",
   },
   {
     src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-    poster: "https://download.blender.org/ED/cover_art/elephants_dream_1024.jpg",
+    poster:
+      "https://download.blender.org/ED/cover_art/elephants_dream_1024.jpg",
     title: "Elephants Dream",
     description: "Two strange characters exploring a cavernous labyrinth.",
   },
@@ -43,7 +45,7 @@ export default function VideoPlayerPlaylistDemo() {
   if (!currentVideo) return null;
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-4">
+    <div className="mx-auto w-full max-w-4xl space-y-4">
       <VideoPlayer
         src={currentVideo.src}
         poster={currentVideo.poster}
@@ -54,7 +56,7 @@ export default function VideoPlayerPlaylistDemo() {
         onNextVideo={handleNext}
         onPrevVideo={handlePrev}
       />
-      
+
       <div className="flex gap-2 overflow-x-auto pb-2">
         {playlist.map((video, index) => (
           <button
@@ -66,16 +68,16 @@ export default function VideoPlayerPlaylistDemo() {
                 : "border-transparent hover:border-gray-300"
             }`}
           >
-            <div className="w-40 h-24 relative overflow-hidden rounded-md bg-muted">
+            <div className="relative h-24 w-40 overflow-hidden rounded-md bg-muted">
               {video.poster && (
                 <img
                   src={video.poster}
                   alt={video.title}
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               )}
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <p className="text-white text-xs font-medium px-2 text-center">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                <p className="px-2 text-center font-medium text-white text-xs">
                   {video.title}
                 </p>
               </div>

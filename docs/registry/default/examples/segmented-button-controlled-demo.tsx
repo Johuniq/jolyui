@@ -1,7 +1,7 @@
 "use client";
 
-import SegmentedButton from "@/registry/default/ui/segmented-button";
 import { useState } from "react";
+import SegmentedButton from "@/registry/default/ui/segmented-button";
 
 export default function SegmentedButtonControlledDemo() {
   const [activeTab, setActiveTab] = useState("settings");
@@ -14,7 +14,7 @@ export default function SegmentedButtonControlledDemo() {
 
   return (
     <div className="space-y-4">
-      <p className="text-sm text-muted-foreground">
+      <p className="text-muted-foreground text-sm">
         Active tab: <span className="font-mono">{activeTab}</span>
       </p>
       <SegmentedButton

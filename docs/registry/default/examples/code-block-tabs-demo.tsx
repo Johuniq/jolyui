@@ -1,5 +1,5 @@
-import { CodeTabs } from "@/registry/default/ui/code-block";
 import { FileJson, FileType } from "lucide-react";
+import { CodeTabs } from "@/registry/default/ui/code-block";
 
 const tsCode = `interface User {
   id: number;

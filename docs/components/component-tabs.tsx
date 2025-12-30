@@ -1,13 +1,13 @@
 "use client";
 
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import * as React from "react";
 import { Index } from "@/__registry__";
 import { OpenInV0Button } from "@/components/open-in-v0";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useConfig } from "@/hooks/use-config";
 import { cn } from "@/lib/utils";
 import { styles } from "@/registry/registry-styles";
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import * as React from "react";
 
 interface ComponentTabsProps extends React.ComponentPropsWithoutRef<"div"> {
   name: string;
@@ -64,7 +64,7 @@ export function ComponentTabs({
       >
         <OpenInV0Button
           name={`styles/default/${name}`}
-          className="absolute right-4 top-4 z-10"
+          className="absolute top-4 right-4 z-10"
         />
         <div
           className={cn(

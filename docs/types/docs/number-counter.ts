@@ -1,5 +1,10 @@
-
-export type EasingType = "linear" | "easeOut" | "easeIn" | "easeInOut" | "spring" | "bounce";
+export type EasingType =
+  | "linear"
+  | "easeOut"
+  | "easeIn"
+  | "easeInOut"
+  | "spring"
+  | "bounce";
 
 export interface NumberCounterProps {
   /**

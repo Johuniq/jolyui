@@ -8,7 +8,7 @@ export default function GradientBorderShimmerDemo() {
       <ShimmerBorder className="h-full">
         <div className="p-6">
           <h3 className="mb-2 font-semibold">Shimmer Border</h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             A single rotating shimmer highlight around the border
           </p>
         </div>

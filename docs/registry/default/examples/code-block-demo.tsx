@@ -16,10 +16,10 @@ export default HelloWorld;`;
 export default function CodeBlockDemo() {
   return (
     <div className="w-full max-w-3xl">
-      <CodeBlock 
-        code={code} 
-        language="tsx" 
-        title="HelloWorld.tsx" 
+      <CodeBlock
+        code={code}
+        language="tsx"
+        title="HelloWorld.tsx"
         highlightLines={[6]}
       />
     </div>

@@ -1,16 +1,16 @@
-import * as React from "react";
+import type * as React from "react";
 
-export type ScrollEffect = 
-  | "fadeIn" 
-  | "fadeUp" 
-  | "fadeDown" 
-  | "parallax" 
-  | "scale" 
-  | "scaleUp" 
+export type ScrollEffect =
+  | "fadeIn"
+  | "fadeUp"
+  | "fadeDown"
+  | "parallax"
+  | "scale"
+  | "scaleUp"
   | "scaleDown"
-  | "rotate" 
-  | "blur" 
-  | "slideLeft" 
+  | "rotate"
+  | "blur"
+  | "slideLeft"
   | "slideRight"
   | "skew"
   | "flip"

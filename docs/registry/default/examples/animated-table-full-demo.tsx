@@ -1,6 +1,10 @@
-import { AnimatedTable, ColumnDef, SortDirection } from "@/registry/default/ui/animated-table";
 import { Mail, MapPin, Phone, User } from "lucide-react";
 import { useMemo, useState } from "react";
+import {
+  AnimatedTable,
+  type ColumnDef,
+  type SortDirection,
+} from "@/registry/default/ui/animated-table";
 
 interface UserData {
   id: string;
@@ -15,16 +19,116 @@ interface UserData {
 }
 
 const generateData = (): UserData[] => [
-  { id: "1", name: "Alice Johnson", email: "alice@example.com", role: "Admin", status: "active", department: "Engineering", joinDate: "2024-01-15", location: "New York, NY", phone: "+1 555-0101" },
-  { id: "2", name: "Bob Smith", email: "bob@example.com", role: "Developer", status: "active", department: "Engineering", joinDate: "2024-02-20", location: "San Francisco, CA", phone: "+1 555-0102" },
-  { id: "3", name: "Carol White", email: "carol@example.com", role: "Designer", status: "pending", department: "Design", joinDate: "2024-03-10", location: "Los Angeles, CA", phone: "+1 555-0103" },
-  { id: "4", name: "David Brown", email: "david@example.com", role: "Developer", status: "inactive", department: "Engineering", joinDate: "2023-11-05", location: "Chicago, IL", phone: "+1 555-0104" },
-  { id: "5", name: "Emma Davis", email: "emma@example.com", role: "Manager", status: "active", department: "Management", joinDate: "2023-08-22", location: "Boston, MA", phone: "+1 555-0105" },
-  { id: "6", name: "Frank Miller", email: "frank@example.com", role: "Developer", status: "active", department: "Engineering", joinDate: "2024-04-01", location: "Seattle, WA", phone: "+1 555-0106" },
-  { id: "7", name: "Grace Lee", email: "grace@example.com", role: "Designer", status: "active", department: "Design", joinDate: "2024-01-30", location: "Austin, TX", phone: "+1 555-0107" },
-  { id: "8", name: "Henry Wilson", email: "henry@example.com", role: "Developer", status: "pending", department: "Engineering", joinDate: "2024-05-15", location: "Denver, CO", phone: "+1 555-0108" },
-  { id: "9", name: "Ivy Chen", email: "ivy@example.com", role: "Manager", status: "active", department: "Management", joinDate: "2023-06-12", location: "Portland, OR", phone: "+1 555-0109" },
-  { id: "10", name: "Jack Taylor", email: "jack@example.com", role: "Developer", status: "active", department: "Engineering", joinDate: "2024-02-28", location: "Miami, FL", phone: "+1 555-0110" },
+  {
+    id: "1",
+    name: "Alice Johnson",
+    email: "alice@example.com",
+    role: "Admin",
+    status: "active",
+    department: "Engineering",
+    joinDate: "2024-01-15",
+    location: "New York, NY",
+    phone: "+1 555-0101",
+  },
+  {
+    id: "2",
+    name: "Bob Smith",
+    email: "bob@example.com",
+    role: "Developer",
+    status: "active",
+    department: "Engineering",
+    joinDate: "2024-02-20",
+    location: "San Francisco, CA",
+    phone: "+1 555-0102",
+  },
+  {
+    id: "3",
+    name: "Carol White",
+    email: "carol@example.com",
+    role: "Designer",
+    status: "pending",
+    department: "Design",
+    joinDate: "2024-03-10",
+    location: "Los Angeles, CA",
+    phone: "+1 555-0103",
+  },
+  {
+    id: "4",
+    name: "David Brown",
+    email: "david@example.com",
+    role: "Developer",
+    status: "inactive",
+    department: "Engineering",
+    joinDate: "2023-11-05",
+    location: "Chicago, IL",
+    phone: "+1 555-0104",
+  },
+  {
+    id: "5",
+    name: "Emma Davis",
+    email: "emma@example.com",
+    role: "Manager",
+    status: "active",
+    department: "Management",
+    joinDate: "2023-08-22",
+    location: "Boston, MA",
+    phone: "+1 555-0105",
+  },
+  {
+    id: "6",
+    name: "Frank Miller",
+    email: "frank@example.com",
+    role: "Developer",
+    status: "active",
+    department: "Engineering",
+    joinDate: "2024-04-01",
+    location: "Seattle, WA",
+    phone: "+1 555-0106",
+  },
+  {
+    id: "7",
+    name: "Grace Lee",
+    email: "grace@example.com",
+    role: "Designer",
+    status: "active",
+    department: "Design",
+    joinDate: "2024-01-30",
+    location: "Austin, TX",
+    phone: "+1 555-0107",
+  },
+  {
+    id: "8",
+    name: "Henry Wilson",
+    email: "henry@example.com",
+    role: "Developer",
+    status: "pending",
+    department: "Engineering",
+    joinDate: "2024-05-15",
+    location: "Denver, CO",
+    phone: "+1 555-0108",
+  },
+  {
+    id: "9",
+    name: "Ivy Chen",
+    email: "ivy@example.com",
+    role: "Manager",
+    status: "active",
+    department: "Management",
+    joinDate: "2023-06-12",
+    location: "Portland, OR",
+    phone: "+1 555-0109",
+  },
+  {
+    id: "10",
+    name: "Jack Taylor",
+    email: "jack@example.com",
+    role: "Developer",
+    status: "active",
+    department: "Engineering",
+    joinDate: "2024-02-28",
+    location: "Miami, FL",
+    phone: "+1 555-0110",
+  },
 ];
 
 const allData = generateData();
@@ -37,8 +141,12 @@ const StatusBadge = ({ status }: { status: UserData["status"] }) => {
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${styles[status]}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${status === "active" ? "bg-green-400" : status === "inactive" ? "bg-red-400" : "bg-yellow-400"}`} />
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-medium text-xs ${styles[status]}`}
+    >
+      <span
+        className={`h-1.5 w-1.5 rounded-full ${status === "active" ? "bg-green-400" : status === "inactive" ? "bg-red-400" : "bg-yellow-400"}`}
+      />
       {status.charAt(0).toUpperCase() + status.slice(1)}
     </span>
   );
@@ -128,7 +236,9 @@ export default function AnimatedTableFullDemo() {
   const [searchValue, setSearchValue] = useState("");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
-  const [visibleColumns, setVisibleColumns] = useState<string[]>(columns.map((c) => c.id));
+  const [visibleColumns, setVisibleColumns] = useState<string[]>(
+    columns.map((c) => c.id),
+  );
 
   const handleSort = (columnId: string, direction: SortDirection) => {
     setSortColumn(columnId);
@@ -144,7 +254,7 @@ export default function AnimatedTableFullDemo() {
         row.name.toLowerCase().includes(search) ||
         row.email.toLowerCase().includes(search) ||
         row.role.toLowerCase().includes(search) ||
-        row.department.toLowerCase().includes(search)
+        row.department.toLowerCase().includes(search),
     );
   }, [searchValue]);
 
@@ -218,7 +328,7 @@ export default function AnimatedTableFullDemo() {
         }}
       />
       {selectedIds.length > 0 && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           {selectedIds.length} row{selectedIds.length > 1 ? "s" : ""} selected
         </p>
       )}

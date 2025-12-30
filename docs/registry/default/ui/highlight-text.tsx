@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 const highlightVariants = cva("relative inline-block", {
   variants: {
@@ -11,10 +11,14 @@ const highlightVariants = cva("relative inline-block", {
       marker: "",
     },
     color: {
-      primary: "[--highlight-color:hsl(var(--highlight-primary))] [&_path]:[stroke:var(--highlight-color)]",
-      secondary: "[--highlight-color:hsl(var(--highlight-secondary))] [&_path]:[stroke:var(--highlight-color)]",
-      accent: "[--highlight-color:hsl(var(--highlight-accent))] [&_path]:[stroke:var(--highlight-color)]",
-      destructive: "[--highlight-color:hsl(var(--highlight-destructive))] [&_path]:[stroke:var(--highlight-color)]",
+      primary:
+        "[--highlight-color:hsl(var(--highlight-primary))] [&_path]:[stroke:var(--highlight-color)]",
+      secondary:
+        "[--highlight-color:hsl(var(--highlight-secondary))] [&_path]:[stroke:var(--highlight-color)]",
+      accent:
+        "[--highlight-color:hsl(var(--highlight-accent))] [&_path]:[stroke:var(--highlight-color)]",
+      destructive:
+        "[--highlight-color:hsl(var(--highlight-destructive))] [&_path]:[stroke:var(--highlight-color)]",
     },
   },
   defaultVariants: {
@@ -50,7 +54,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
       animate = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [isVisible, setIsVisible] = React.useState(!animate);
     const [dimensions, setDimensions] = React.useState({ width: 0, height: 0 });
@@ -68,7 +72,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
       };
 
       updateDimensions();
-      
+
       const resizeObserver = new ResizeObserver(updateDimensions);
       resizeObserver.observe(element);
 
@@ -91,7 +95,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
             observer.disconnect();
           }
         },
-        { threshold: 0.5, rootMargin: "0px 0px -50px 0px" }
+        { threshold: 0.5, rootMargin: "0px 0px -50px 0px" },
       );
 
       observer.observe(element);
@@ -130,7 +134,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
           const y = svgHeight - padding + 2;
           const pathLength = width + 10;
           const d = `M ${padding - 2} ${y} Q ${padding + width * 0.25} ${y - 3} ${padding + width * 0.5} ${y} T ${padding + width + 2} ${y}`;
-          
+
           return (
             <svg style={baseStyles} aria-hidden="true">
               <path
@@ -176,7 +180,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
           const rx = width / 2 + 6;
           const ry = height / 2 + 6;
           const pathLength = Math.PI * 2 * Math.max(rx, ry);
-          
+
           // Hand-drawn ellipse using bezier curves
           const d = `
             M ${cx - rx} ${cy}
@@ -204,7 +208,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
           const markerHeight = height + 4;
           const y1 = padding - 2;
           const y2 = padding + markerHeight;
-          
+
           return (
             <svg style={baseStyles} aria-hidden="true">
               <rect
@@ -231,7 +235,9 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
     return (
       <span
         ref={(node) => {
-          (containerRef as React.MutableRefObject<HTMLSpanElement | null>).current = node;
+          (
+            containerRef as React.MutableRefObject<HTMLSpanElement | null>
+          ).current = node;
           if (typeof ref === "function") {
             ref(node);
           } else if (ref) {
@@ -245,7 +251,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
         <span className="relative z-10">{children}</span>
       </span>
     );
-  }
+  },
 );
 
 HighlightText.displayName = "HighlightText";

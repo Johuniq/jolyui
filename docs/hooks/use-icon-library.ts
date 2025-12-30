@@ -36,7 +36,10 @@ interface IconSet {
 export function useIconLibrary(category: string) {
   const [icons, setIcons] = useState<Record<string, IconData> | null>(null);
   const [info, setInfo] = useState<IconSet["info"] | null>(null);
-  const [defaultDimensions, setDefaultDimensions] = useState<{ width: number; height: number }>({ width: 1000, height: 1000 });
+  const [defaultDimensions, setDefaultDimensions] = useState<{
+    width: number;
+    height: number;
+  }>({ width: 1000, height: 1000 });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -63,12 +66,14 @@ export function useIconLibrary(category: string) {
           setInfo(data.info);
           // Set default dimensions from the icon set
           // Priority: root level width/height > info.height > default 16x16 (most icons are square)
-          const width = data.width || data.info?.height || data.info?.displayHeight || 16;
-          const height = data.height || data.info?.height || data.info?.displayHeight || 16;
-          
+          const width =
+            data.width || data.info?.height || data.info?.displayHeight || 16;
+          const height =
+            data.height || data.info?.height || data.info?.displayHeight || 16;
+
           setDefaultDimensions({
             width,
-            height
+            height,
           });
           setLoading(false);
         }

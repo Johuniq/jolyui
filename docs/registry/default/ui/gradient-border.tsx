@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface GradientBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -23,7 +23,7 @@ const GradientBorder = React.forwardRef<HTMLDivElement, GradientBorderProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     const gradientColors = colors.join(", ");
 
@@ -36,7 +36,7 @@ const GradientBorder = React.forwardRef<HTMLDivElement, GradientBorderProps>(
       >
         {/* Animated gradient background */}
         <motion.div
-          className="absolute inset-0 -z-10"
+          className="-z-10 absolute inset-0"
           style={{
             borderRadius,
             background: `linear-gradient(var(--gradient-angle, 0deg), ${gradientColors})`,
@@ -70,7 +70,7 @@ const GradientBorder = React.forwardRef<HTMLDivElement, GradientBorderProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 GradientBorder.displayName = "GradientBorder";
 
@@ -96,7 +96,7 @@ const GradientBorderCard = React.forwardRef<
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     const gradientColors = colors.join(", ");
 
@@ -110,7 +110,7 @@ const GradientBorderCard = React.forwardRef<
         {/* Glow effect */}
         {glowEffect && (
           <motion.div
-            className="absolute inset-0 -z-20 blur-xl"
+            className="-z-20 absolute inset-0 blur-xl"
             style={{
               borderRadius,
               background: `linear-gradient(var(--gradient-angle, 0deg), ${gradientColors})`,
@@ -136,7 +136,7 @@ const GradientBorderCard = React.forwardRef<
         )}
         {/* Gradient border */}
         <motion.div
-          className="absolute inset-0 -z-10"
+          className="-z-10 absolute inset-0"
           style={{
             borderRadius,
             background: `linear-gradient(var(--gradient-angle, 0deg), ${gradientColors})`,
@@ -152,10 +152,10 @@ const GradientBorderCard = React.forwardRef<
           transition={
             animated
               ? {
-                    duration,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }
+                  duration,
+                  repeat: Infinity,
+                  ease: "linear",
+                }
               : undefined
           }
         />
@@ -170,7 +170,7 @@ const GradientBorderCard = React.forwardRef<
         </div>
       </div>
     );
-  }
+  },
 );
 GradientBorderCard.displayName = "GradientBorderCard";
 
@@ -199,7 +199,7 @@ const GradientBorderButton = React.forwardRef<
       type = "button",
       ...props
     },
-    ref
+    ref,
   ) => {
     const gradientColors = colors.join(", ");
 
@@ -211,7 +211,7 @@ const GradientBorderButton = React.forwardRef<
         disabled={disabled}
         className={cn(
           "relative inline-flex items-center justify-center overflow-hidden rounded-lg font-medium transition-transform hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-50",
-          className
+          className,
         )}
         style={{ padding: borderWidth }}
         {...props}
@@ -241,7 +241,7 @@ const GradientBorderButton = React.forwardRef<
         />
         {/* Button content */}
         <span
-          className="relative z-10 flex items-center gap-2 rounded-md bg-background px-6 py-2.5 text-sm font-medium transition-colors hover:bg-background/90"
+          className="relative z-10 flex items-center gap-2 rounded-md bg-background px-6 py-2.5 font-medium text-sm transition-colors hover:bg-background/90"
           style={{
             borderRadius: `calc(0.5rem - ${borderWidth}px)`,
           }}
@@ -250,7 +250,7 @@ const GradientBorderButton = React.forwardRef<
         </span>
       </button>
     );
-  }
+  },
 );
 GradientBorderButton.displayName = "GradientBorderButton";
 
@@ -273,7 +273,7 @@ const ShimmerBorder = React.forwardRef<HTMLDivElement, ShimmerBorderProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div
@@ -283,10 +283,7 @@ const ShimmerBorder = React.forwardRef<HTMLDivElement, ShimmerBorderProps>(
         {...props}
       >
         {/* Static border */}
-        <div
-          className="absolute inset-0 bg-border"
-          style={{ borderRadius }}
-        />
+        <div className="absolute inset-0 bg-border" style={{ borderRadius }} />
         {/* Shimmer effect */}
         <motion.div
           className="absolute inset-0"
@@ -311,7 +308,7 @@ const ShimmerBorder = React.forwardRef<HTMLDivElement, ShimmerBorderProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 ShimmerBorder.displayName = "ShimmerBorder";
 
@@ -334,7 +331,7 @@ const PulseBorder = React.forwardRef<HTMLDivElement, PulseBorderProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div
@@ -345,7 +342,7 @@ const PulseBorder = React.forwardRef<HTMLDivElement, PulseBorderProps>(
       >
         {/* Pulsing border */}
         <motion.div
-          className="absolute inset-0 -z-10"
+          className="-z-10 absolute inset-0"
           style={{
             borderRadius,
             border: `${borderWidth}px solid ${color}`,
@@ -362,7 +359,7 @@ const PulseBorder = React.forwardRef<HTMLDivElement, PulseBorderProps>(
         />
         {/* Outer glow */}
         <motion.div
-          className="absolute inset-0 -z-20 blur-md"
+          className="-z-20 absolute inset-0 blur-md"
           style={{
             borderRadius,
             border: `${borderWidth * 2}px solid ${color}`,
@@ -380,11 +377,14 @@ const PulseBorder = React.forwardRef<HTMLDivElement, PulseBorderProps>(
         <div className="relative h-full w-full">{children}</div>
       </div>
     );
-  }
+  },
 );
 PulseBorder.displayName = "PulseBorder";
 
 export {
-    GradientBorder, GradientBorderButton, GradientBorderCard, PulseBorder, ShimmerBorder
+  GradientBorder,
+  GradientBorderButton,
+  GradientBorderCard,
+  PulseBorder,
+  ShimmerBorder,
 };
-

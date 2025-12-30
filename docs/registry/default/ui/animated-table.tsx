@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import {
   Check,
   ChevronDown,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 // Types
 export type SortDirection = "asc" | "desc" | null;
@@ -79,13 +79,13 @@ const TableSearch = ({
   placeholder?: string;
 }) => (
   <div className="relative">
-    <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+    <Search className="-translate-y-1/2 absolute top-1/2 left-3 h-4 w-4 text-muted-foreground" />
     <input
       type="text"
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="h-9 w-full rounded-md border border-table-border bg-background pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+      className="h-9 w-full rounded-md border border-table-border bg-background pr-8 pl-9 text-foreground text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
     />
     <AnimatePresence>
       {value && (
@@ -94,7 +94,7 @@ const TableSearch = ({
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={() => onChange("")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="-translate-y-1/2 absolute top-1/2 right-2 rounded p-0.5 text-muted-foreground hover:bg-muted hover:text-foreground"
         >
           <X className="h-3.5 w-3.5" />
         </motion.button>
@@ -118,7 +118,10 @@ const ColumnVisibilityDropdown = <T,>({
 
   React.useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setOpen(false);
       }
     };
@@ -143,8 +146,8 @@ const ColumnVisibilityDropdown = <T,>({
       <button
         onClick={() => setOpen(!open)}
         className={cn(
-          "flex h-9 items-center gap-2 rounded-md border border-table-border bg-background px-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-          open && "border-primary text-foreground"
+          "flex h-9 items-center gap-2 rounded-md border border-table-border bg-background px-3 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground",
+          open && "border-primary text-foreground",
         )}
       >
         <Columns3 className="h-4 w-4" />
@@ -157,7 +160,7 @@ const ColumnVisibilityDropdown = <T,>({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full z-20 mt-2 min-w-[180px] rounded-lg border border-table-border bg-card p-1 shadow-lg"
+            className="absolute top-full right-0 z-20 mt-2 min-w-[180px] rounded-lg border border-table-border bg-card p-1 shadow-lg"
           >
             {hideableColumns.map((column) => (
               <button
@@ -170,10 +173,12 @@ const ColumnVisibilityDropdown = <T,>({
                     "flex h-4 w-4 items-center justify-center rounded border transition-all",
                     visibleColumns.includes(column.id)
                       ? "border-primary bg-primary text-primary-foreground"
-                      : "border-muted-foreground/40"
+                      : "border-muted-foreground/40",
                   )}
                 >
-                  {visibleColumns.includes(column.id) && <Check className="h-3 w-3" strokeWidth={3} />}
+                  {visibleColumns.includes(column.id) && (
+                    <Check className="h-3 w-3" strokeWidth={3} />
+                  )}
                 </div>
                 <span className="text-foreground">{column.header}</span>
               </button>
@@ -202,8 +207,8 @@ const TablePagination = ({
   const canGoNext = page < totalPages;
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 border-t border-table-border bg-table-header px-4 py-3">
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <div className="flex flex-wrap items-center justify-between gap-4 border-table-border border-t bg-table-header px-4 py-3">
+      <div className="flex items-center gap-2 text-muted-foreground text-sm">
         <span>Rows per page:</span>
         <select
           value={pageSize}
@@ -218,9 +223,11 @@ const TablePagination = ({
         </select>
       </div>
 
-      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+      <div className="flex items-center gap-1 text-muted-foreground text-sm">
         <span>
-          {totalItems > 0 ? `${startItem}-${endItem} of ${totalItems}` : "0 items"}
+          {totalItems > 0
+            ? `${startItem}-${endItem} of ${totalItems}`
+            : "0 items"}
         </span>
       </div>
 
@@ -232,7 +239,9 @@ const TablePagination = ({
           onClick={() => onPageChange(1)}
           className={cn(
             "flex h-8 w-8 items-center justify-center rounded border border-table-border transition-colors",
-            canGoPrev ? "hover:bg-muted text-foreground" : "cursor-not-allowed text-muted-foreground/40"
+            canGoPrev
+              ? "text-foreground hover:bg-muted"
+              : "cursor-not-allowed text-muted-foreground/40",
           )}
         >
           <ChevronsLeft className="h-4 w-4" />
@@ -244,7 +253,9 @@ const TablePagination = ({
           onClick={() => onPageChange(page - 1)}
           className={cn(
             "flex h-8 w-8 items-center justify-center rounded border border-table-border transition-colors",
-            canGoPrev ? "hover:bg-muted text-foreground" : "cursor-not-allowed text-muted-foreground/40"
+            canGoPrev
+              ? "text-foreground hover:bg-muted"
+              : "cursor-not-allowed text-muted-foreground/40",
           )}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -273,7 +284,7 @@ const TablePagination = ({
                   "flex h-8 w-8 items-center justify-center rounded text-sm transition-colors",
                   page === pageNum
                     ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 {pageNum}
@@ -289,7 +300,9 @@ const TablePagination = ({
           onClick={() => onPageChange(page + 1)}
           className={cn(
             "flex h-8 w-8 items-center justify-center rounded border border-table-border transition-colors",
-            canGoNext ? "hover:bg-muted text-foreground" : "cursor-not-allowed text-muted-foreground/40"
+            canGoNext
+              ? "text-foreground hover:bg-muted"
+              : "cursor-not-allowed text-muted-foreground/40",
           )}
         >
           <ChevronRight className="h-4 w-4" />
@@ -301,7 +314,9 @@ const TablePagination = ({
           onClick={() => onPageChange(totalPages)}
           className={cn(
             "flex h-8 w-8 items-center justify-center rounded border border-table-border transition-colors",
-            canGoNext ? "hover:bg-muted text-foreground" : "cursor-not-allowed text-muted-foreground/40"
+            canGoNext
+              ? "text-foreground hover:bg-muted"
+              : "cursor-not-allowed text-muted-foreground/40",
           )}
         >
           <ChevronsRight className="h-4 w-4" />
@@ -320,7 +335,7 @@ const AnimatedTableRoot = React.forwardRef<
     ref={ref}
     className={cn(
       "relative w-full overflow-hidden rounded-lg border border-table-border bg-card",
-      className
+      className,
     )}
     {...props}
   />
@@ -363,7 +378,7 @@ const TableHeader = React.forwardRef<
     className={cn(
       "bg-table-header",
       sticky && "sticky top-0 z-10 shadow-sm",
-      className
+      className,
     )}
     {...props}
   />
@@ -403,16 +418,16 @@ const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
       transition={{ duration: 0.2, delay: index * 0.03 }}
       onClick={onClick}
       className={cn(
-        "group border-b border-table-border transition-colors",
+        "group border-table-border border-b transition-colors",
         "hover:bg-table-row-hover",
         isSelected && "bg-table-row-selected",
         striped && index % 2 === 1 && "bg-table-row-stripe",
-        className
+        className,
       )}
     >
       {children}
     </motion.tr>
-  )
+  ),
 );
 TableRow.displayName = "TableRow";
 
@@ -429,7 +444,7 @@ const ExpandedRow = ({
     animate={{ opacity: 1, height: "auto" }}
     exit={{ opacity: 0, height: 0 }}
     transition={{ duration: 0.2 }}
-    className="border-b border-table-border bg-muted/30"
+    className="border-table-border border-b bg-muted/30"
   >
     <td colSpan={colSpan} className="p-0">
       <motion.div
@@ -475,7 +490,18 @@ interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
 }
 
 const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
-  ({ className, children, sortable, sortDirection, onSort, align = "left", ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      sortable,
+      sortDirection,
+      onSort,
+      align = "left",
+      ...props
+    },
+    ref,
+  ) => {
     const alignClass = {
       left: "text-left",
       center: "text-center",
@@ -489,7 +515,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
           "h-12 px-4 font-medium text-muted-foreground",
           alignClass,
           sortable && "cursor-pointer select-none hover:text-foreground",
-          className
+          className,
         )}
         onClick={sortable ? onSort : undefined}
         {...props}
@@ -498,7 +524,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
           className={cn(
             "flex items-center gap-2",
             align === "center" && "justify-center",
-            align === "right" && "justify-end"
+            align === "right" && "justify-end",
           )}
         >
           <span>{children}</span>
@@ -508,9 +534,9 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
               animate={sortDirection ? { scale: 1 } : { scale: 0.9 }}
             >
               {sortDirection === "asc" ? (
-                <ChevronUp className="h-4 w-4 text-table-sort-active animate-sort-bounce" />
+                <ChevronUp className="h-4 w-4 animate-sort-bounce text-table-sort-active" />
               ) : sortDirection === "desc" ? (
-                <ChevronDown className="h-4 w-4 text-table-sort-active animate-sort-bounce" />
+                <ChevronDown className="h-4 w-4 animate-sort-bounce text-table-sort-active" />
               ) : (
                 <ChevronsUpDown className="h-4 w-4 opacity-40 group-hover:opacity-70" />
               )}
@@ -519,7 +545,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
         </div>
       </th>
     );
-  }
+  },
 );
 TableHead.displayName = "TableHead";
 
@@ -543,7 +569,7 @@ const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
         {...props}
       />
     );
-  }
+  },
 );
 TableCell.displayName = "TableCell";
 
@@ -554,7 +580,11 @@ interface CheckboxCellProps {
   onChange: () => void;
 }
 
-const CheckboxCell = ({ checked, indeterminate, onChange }: CheckboxCellProps) => (
+const CheckboxCell = ({
+  checked,
+  indeterminate,
+  onChange,
+}: CheckboxCellProps) => (
   <div
     role="checkbox"
     aria-checked={indeterminate ? "mixed" : checked}
@@ -573,7 +603,7 @@ const CheckboxCell = ({ checked, indeterminate, onChange }: CheckboxCellProps) =
       "flex h-4 w-4 cursor-pointer items-center justify-center rounded border transition-all duration-150",
       checked || indeterminate
         ? "border-primary bg-primary text-primary-foreground"
-        : "border-muted-foreground/40 hover:border-muted-foreground"
+        : "border-muted-foreground/40 hover:border-muted-foreground",
     )}
   >
     <AnimatePresence mode="wait">
@@ -596,26 +626,32 @@ const CheckboxCell = ({ checked, indeterminate, onChange }: CheckboxCellProps) =
 );
 
 // Skeleton Row for Loading State
-const SkeletonRow = ({ columns, index }: { columns: number; index: number }) => (
+const SkeletonRow = ({
+  columns,
+  index,
+}: {
+  columns: number;
+  index: number;
+}) => (
   <motion.tr
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ delay: index * 0.05 }}
-    className="border-b border-table-border"
+    className="border-table-border border-b"
   >
     <td colSpan={columns} className="p-4">
       <div className="flex items-center gap-4">
-        <div className="h-4 w-4 rounded bg-muted animate-pulse" />
+        <div className="h-4 w-4 animate-pulse rounded bg-muted" />
         <div className="flex-1 space-y-2">
           <div
-            className="h-4 rounded bg-muted animate-pulse"
+            className="h-4 animate-pulse rounded bg-muted"
             style={{ width: `${60 + Math.random() * 30}%` }}
           />
         </div>
         {Array.from({ length: columns - 2 }).map((_, i) => (
           <div
             key={i}
-            className="h-4 rounded bg-muted animate-pulse"
+            className="h-4 animate-pulse rounded bg-muted"
             style={{ width: `${40 + Math.random() * 40}px` }}
           />
         ))}
@@ -625,7 +661,13 @@ const SkeletonRow = ({ columns, index }: { columns: number; index: number }) => 
 );
 
 // Empty State
-const EmptyState = ({ message, colSpan }: { message: React.ReactNode; colSpan: number }) => (
+const EmptyState = ({
+  message,
+  colSpan,
+}: {
+  message: React.ReactNode;
+  colSpan: number;
+}) => (
   <motion.tr
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -668,18 +710,23 @@ export function AnimatedTable<T extends { id: string | number }>({
   visibleColumns: controlledVisibleColumns,
   onVisibleColumnsChange,
 }: AnimatedTableProps<T>) {
-  const [expandedRows, setExpandedRows] = React.useState<Set<string | number>>(new Set());
-  const [internalVisibleColumns, setInternalVisibleColumns] = React.useState<string[]>(
-    columns.map((col) => col.id)
+  const [expandedRows, setExpandedRows] = React.useState<Set<string | number>>(
+    new Set(),
   );
+  const [internalVisibleColumns, setInternalVisibleColumns] = React.useState<
+    string[]
+  >(columns.map((col) => col.id));
 
   const visibleColumns = controlledVisibleColumns || internalVisibleColumns;
   const setVisibleColumns = onVisibleColumnsChange || setInternalVisibleColumns;
 
-  const displayedColumns = columns.filter((col) => visibleColumns.includes(col.id));
+  const displayedColumns = columns.filter((col) =>
+    visibleColumns.includes(col.id),
+  );
 
   const allSelected = data.length > 0 && selectedIds.length === data.length;
-  const someSelected = selectedIds.length > 0 && selectedIds.length < data.length;
+  const someSelected =
+    selectedIds.length > 0 && selectedIds.length < data.length;
 
   const handleSelectAll = () => {
     if (onSelectionChange) {
@@ -694,7 +741,9 @@ export function AnimatedTable<T extends { id: string | number }>({
   const handleSelectRow = (id: string | number) => {
     if (onSelectionChange) {
       if (selectedIds.includes(id)) {
-        onSelectionChange(selectedIds.filter((selectedId) => selectedId !== id));
+        onSelectionChange(
+          selectedIds.filter((selectedId) => selectedId !== id),
+        );
       } else {
         onSelectionChange([...selectedIds, id]);
       }
@@ -738,7 +787,7 @@ export function AnimatedTable<T extends { id: string | number }>({
     <AnimatedTableRoot className={className}>
       {/* Toolbar */}
       {showToolbar && (
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-table-border bg-table-header p-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-table-border border-b bg-table-header p-3">
           {searchable && (
             <div className="w-full sm:w-64">
               <TableSearch
@@ -764,7 +813,7 @@ export function AnimatedTable<T extends { id: string | number }>({
       <TableScrollContainer stickyHeader={stickyHeader}>
         <TableElement>
           <TableHeader sticky={stickyHeader}>
-            <tr className="border-b border-table-border">
+            <tr className="border-table-border border-b">
               {expandable && <TableHead className="w-10" />}
               {selectable && (
                 <TableHead className="w-12">
@@ -779,7 +828,9 @@ export function AnimatedTable<T extends { id: string | number }>({
                 <TableHead
                   key={column.id}
                   sortable={column.sortable && !!onSort}
-                  sortDirection={sortColumn === column.id ? sortDirection : null}
+                  sortDirection={
+                    sortColumn === column.id ? sortDirection : null
+                  }
                   onSort={() => handleSort(column.id)}
                   align={column.align}
                   style={{ width: column.width }}
@@ -793,7 +844,11 @@ export function AnimatedTable<T extends { id: string | number }>({
             <AnimatePresence mode="popLayout">
               {loading ? (
                 Array.from({ length: loadingRows }).map((_, index) => (
-                  <SkeletonRow key={`skeleton-${index}`} columns={totalColumns} index={index} />
+                  <SkeletonRow
+                    key={`skeleton-${index}`}
+                    columns={totalColumns}
+                    index={index}
+                  />
                 ))
               ) : data.length === 0 ? (
                 <EmptyState message={emptyMessage} colSpan={totalColumns} />
@@ -828,17 +883,19 @@ export function AnimatedTable<T extends { id: string | number }>({
                           {column.cell
                             ? column.cell(row, index)
                             : column.accessorKey
-                            ? String(row[column.accessorKey] ?? "")
-                            : null}
+                              ? String(row[column.accessorKey] ?? "")
+                              : null}
                         </TableCell>
                       ))}
                     </TableRow>
                     <AnimatePresence>
-                      {expandable && expandedRows.has(row.id) && renderExpandedRow && (
-                        <ExpandedRow colSpan={totalColumns}>
-                          {renderExpandedRow(row)}
-                        </ExpandedRow>
-                      )}
+                      {expandable &&
+                        expandedRows.has(row.id) &&
+                        renderExpandedRow && (
+                          <ExpandedRow colSpan={totalColumns}>
+                            {renderExpandedRow(row)}
+                          </ExpandedRow>
+                        )}
                     </AnimatePresence>
                   </React.Fragment>
                 ))
@@ -855,6 +912,20 @@ export function AnimatedTable<T extends { id: string | number }>({
 }
 
 export {
-  AnimatedTableRoot, CheckboxCell, ColumnVisibilityDropdown, EmptyState, ExpandButton, ExpandedRow, SkeletonRow, TableBody, TableCell, TableElement, TableHead, TableHeader, TablePagination, TableRow, TableScrollContainer, TableSearch
+  AnimatedTableRoot,
+  CheckboxCell,
+  ColumnVisibilityDropdown,
+  EmptyState,
+  ExpandButton,
+  ExpandedRow,
+  SkeletonRow,
+  TableBody,
+  TableCell,
+  TableElement,
+  TableHead,
+  TableHeader,
+  TablePagination,
+  TableRow,
+  TableScrollContainer,
+  TableSearch,
 };
-

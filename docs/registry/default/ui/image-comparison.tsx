@@ -1,7 +1,8 @@
-import { cn } from "@/lib/utils";
 import { GripHorizontal, GripVertical } from "lucide-react";
 import { motion, useMotionValue, useTransform } from "motion/react";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 // Basic Comparison Slider
 interface ImageComparisonProps {
@@ -46,7 +47,7 @@ export function ImageComparison({
 
       setPosition(Math.max(0, Math.min(100, newPosition)));
     },
-    [orientation]
+    [orientation],
   );
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -95,7 +96,7 @@ export function ImageComparison({
       ref={containerRef}
       className={cn(
         "relative select-none overflow-hidden rounded-xl",
-        className
+        className,
       )}
     >
       {/* After Image (Background) */}
@@ -129,8 +130,8 @@ export function ImageComparison({
         className={cn(
           "absolute z-10",
           orientation === "horizontal"
-            ? "top-0 h-full w-0.5 -translate-x-1/2"
-            : "left-0 h-0.5 w-full -translate-y-1/2"
+            ? "-translate-x-1/2 top-0 h-full w-0.5"
+            : "-translate-y-1/2 left-0 h-0.5 w-full",
         )}
         style={{
           [orientation === "horizontal" ? "left" : "top"]: `${position}%`,
@@ -144,12 +145,14 @@ export function ImageComparison({
         className={cn(
           "absolute z-20 flex cursor-grab items-center justify-center rounded-full border-2 bg-background shadow-lg active:cursor-grabbing",
           orientation === "horizontal"
-            ? "h-10 w-10 -translate-x-1/2 -translate-y-1/2"
-            : "h-10 w-10 -translate-x-1/2 -translate-y-1/2"
+            ? "-translate-x-1/2 -translate-y-1/2 h-10 w-10"
+            : "-translate-x-1/2 -translate-y-1/2 h-10 w-10",
         )}
         style={{
-          [orientation === "horizontal" ? "left" : "left"]: orientation === "horizontal" ? `${position}%` : "50%",
-          [orientation === "horizontal" ? "top" : "top"]: orientation === "horizontal" ? "50%" : `${position}%`,
+          [orientation === "horizontal" ? "left" : "left"]:
+            orientation === "horizontal" ? `${position}%` : "50%",
+          [orientation === "horizontal" ? "top" : "top"]:
+            orientation === "horizontal" ? "50%" : `${position}%`,
           borderColor: sliderColor,
         }}
         onMouseDown={handleMouseDown}
@@ -169,16 +172,18 @@ export function ImageComparison({
         <>
           <div
             className={cn(
-              "absolute rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm",
-              orientation === "horizontal" ? "left-3 top-3" : "left-3 top-3"
+              "absolute rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm",
+              orientation === "horizontal" ? "top-3 left-3" : "top-3 left-3",
             )}
           >
             {beforeLabel}
           </div>
           <div
             className={cn(
-              "absolute rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm",
-              orientation === "horizontal" ? "right-3 top-3" : "bottom-3 left-3"
+              "absolute rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm",
+              orientation === "horizontal"
+                ? "top-3 right-3"
+                : "bottom-3 left-3",
             )}
           >
             {afterLabel}
@@ -226,7 +231,7 @@ export function ImageComparisonHover({
       ref={containerRef}
       className={cn(
         "relative cursor-ew-resize select-none overflow-hidden rounded-xl",
-        className
+        className,
       )}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -264,10 +269,10 @@ export function ImageComparisonHover({
       {/* Labels */}
       {showLabels && (
         <>
-          <div className="absolute left-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+          <div className="absolute top-3 left-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
             {beforeLabel}
           </div>
-          <div className="absolute right-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+          <div className="absolute top-3 right-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
             {afterLabel}
           </div>
         </>
@@ -295,7 +300,10 @@ export function ImageComparisonSplit({
   gap = 4,
 }: ImageComparisonSplitProps) {
   return (
-    <div className={cn("flex overflow-hidden rounded-xl", className)} style={{ gap }}>
+    <div
+      className={cn("flex overflow-hidden rounded-xl", className)}
+      style={{ gap }}
+    >
       <div className="relative flex-1 overflow-hidden">
         <img
           src={beforeImage}
@@ -303,7 +311,7 @@ export function ImageComparisonSplit({
           className="h-full w-full object-cover"
           draggable={false}
         />
-        <div className="absolute bottom-3 left-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+        <div className="absolute bottom-3 left-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
           {beforeLabel}
         </div>
       </div>
@@ -314,7 +322,7 @@ export function ImageComparisonSplit({
           className="h-full w-full object-cover"
           draggable={false}
         />
-        <div className="absolute bottom-3 right-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+        <div className="absolute right-3 bottom-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
           {afterLabel}
         </div>
       </div>
@@ -346,7 +354,7 @@ export function ImageComparisonFade({
     <div
       className={cn(
         "group relative cursor-pointer select-none overflow-hidden rounded-xl",
-        className
+        className,
       )}
       onClick={() => setShowBefore(!showBefore)}
     >
@@ -375,7 +383,7 @@ export function ImageComparisonFade({
       {/* Label */}
       {showLabels && (
         <motion.div
-          className="absolute left-1/2 top-3 -translate-x-1/2 rounded-md bg-background/80 px-3 py-1.5 text-sm font-medium backdrop-blur-sm"
+          className="-translate-x-1/2 absolute top-3 left-1/2 rounded-md bg-background/80 px-3 py-1.5 font-medium text-sm backdrop-blur-sm"
           key={showBefore ? "before" : "after"}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -386,7 +394,7 @@ export function ImageComparisonFade({
       )}
 
       {/* Click hint */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-md bg-background/80 px-2 py-1 text-xs text-muted-foreground opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+      <div className="-translate-x-1/2 absolute bottom-3 left-1/2 rounded-md bg-background/80 px-2 py-1 text-muted-foreground text-xs opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
         Click to toggle
       </div>
     </div>
@@ -419,8 +427,15 @@ export function ImageComparisonSwipe({
     }
   }, []);
 
-  const clipPath = useTransform(x, [-containerWidth / 2, containerWidth / 2], [0, 100]);
-  const displayClipPath = useTransform(clipPath, (v) => `inset(0 ${100 - (50 + v / 2)}% 0 0)`);
+  const clipPath = useTransform(
+    x,
+    [-containerWidth / 2, containerWidth / 2],
+    [0, 100],
+  );
+  const displayClipPath = useTransform(
+    clipPath,
+    (v) => `inset(0 ${100 - (50 + v / 2)}% 0 0)`,
+  );
   const linePosition = useTransform(clipPath, (v) => `${50 + v / 2}%`);
 
   return (
@@ -428,7 +443,7 @@ export function ImageComparisonSwipe({
       ref={containerRef}
       className={cn(
         "relative select-none overflow-hidden rounded-xl",
-        className
+        className,
       )}
     >
       {/* After Image */}
@@ -440,7 +455,10 @@ export function ImageComparisonSwipe({
       />
 
       {/* Before Image */}
-      <motion.div className="absolute inset-0 overflow-hidden" style={{ clipPath: displayClipPath }}>
+      <motion.div
+        className="absolute inset-0 overflow-hidden"
+        style={{ clipPath: displayClipPath }}
+      >
         <img
           src={beforeImage}
           alt={beforeLabel}
@@ -452,14 +470,21 @@ export function ImageComparisonSwipe({
       {/* Slider Line */}
       <motion.div
         className="absolute top-0 h-full w-0.5 bg-background"
-        style={{ left: linePosition, transform: "translateX(-50%)", boxShadow: "0 0 10px rgba(0,0,0,0.3)" }}
+        style={{
+          left: linePosition,
+          transform: "translateX(-50%)",
+          boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+        }}
       />
 
       {/* Draggable Handle */}
       <motion.div
-        className="absolute left-1/2 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 cursor-grab items-center justify-center rounded-full border-2 border-background bg-background shadow-lg active:cursor-grabbing"
+        className="-translate-y-1/2 absolute top-1/2 left-1/2 z-20 flex h-12 w-12 cursor-grab items-center justify-center rounded-full border-2 border-background bg-background shadow-lg active:cursor-grabbing"
         drag="x"
-        dragConstraints={{ left: -containerWidth / 2 + 20, right: containerWidth / 2 - 20 }}
+        dragConstraints={{
+          left: -containerWidth / 2 + 20,
+          right: containerWidth / 2 - 20,
+        }}
         dragElastic={0}
         style={{ x }}
         whileHover={{ scale: 1.1 }}
@@ -469,10 +494,10 @@ export function ImageComparisonSwipe({
       </motion.div>
 
       {/* Labels */}
-      <div className="absolute left-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+      <div className="absolute top-3 left-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
         {beforeLabel}
       </div>
-      <div className="absolute right-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+      <div className="absolute top-3 right-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
         {afterLabel}
       </div>
     </div>
@@ -510,7 +535,7 @@ export function ImageComparisonLens({
       ref={containerRef}
       className={cn(
         "relative cursor-none select-none overflow-hidden rounded-xl",
-        className
+        className,
       )}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
@@ -549,10 +574,10 @@ export function ImageComparisonLens({
       </motion.div>
 
       {/* Labels */}
-      <div className="absolute left-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+      <div className="absolute top-3 left-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
         Before
       </div>
-      <div className="absolute right-3 top-3 rounded-md bg-background/80 px-2 py-1 text-xs font-medium backdrop-blur-sm">
+      <div className="absolute top-3 right-3 rounded-md bg-background/80 px-2 py-1 font-medium text-xs backdrop-blur-sm">
         Hover to see After
       </div>
     </div>
@@ -560,6 +585,10 @@ export function ImageComparisonLens({
 }
 
 export type {
-  ImageComparisonFadeProps, ImageComparisonHoverProps, ImageComparisonLensProps, ImageComparisonProps, ImageComparisonSplitProps, ImageComparisonSwipeProps
+  ImageComparisonFadeProps,
+  ImageComparisonHoverProps,
+  ImageComparisonLensProps,
+  ImageComparisonProps,
+  ImageComparisonSplitProps,
+  ImageComparisonSwipeProps,
 };
-

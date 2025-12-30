@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useTheme } from 'next-themes';
-import * as React from 'react';
+import { useTheme } from "next-themes";
+import * as React from "react";
 
-import { CopyButton } from '@/components/copy-button';
+import { CopyButton } from "@/components/copy-button";
 import {
-    Tabs,
-    TabsContent,
-    TabsContents,
-    TabsHighlight,
-    TabsHighlightItem,
-    TabsList,
-    TabsTrigger,
-    type TabsProps,
-} from '@/components/radix-tabs';
-import { cn } from '@/lib/utils';
+  Tabs,
+  TabsContent,
+  TabsContents,
+  TabsHighlight,
+  TabsHighlightItem,
+  TabsList,
+  type TabsProps,
+  TabsTrigger,
+} from "@/components/radix-tabs";
+import { cn } from "@/lib/utils";
 
 type CodeTabsProps = {
   codes: Record<string, string>;
@@ -22,14 +22,14 @@ type CodeTabsProps = {
   themes?: { light: string; dark: string };
   copyButton?: boolean;
   onCopiedChange?: (copied: boolean, content?: string) => void;
-} & Omit<TabsProps, 'children'>;
+} & Omit<TabsProps, "children">;
 
 function CodeTabs({
   codes,
-  lang = 'bash',
+  lang = "bash",
   themes = {
-    light: 'github-light',
-    dark: 'github-dark',
+    light: "github-light",
+    dark: "github-dark",
   },
   className,
   defaultValue,
@@ -46,13 +46,13 @@ function CodeTabs({
     string
   > | null>(null);
   const [selectedCode, setSelectedCode] = React.useState<string>(
-    value ?? defaultValue ?? Object.keys(codes)[0] ?? '',
+    value ?? defaultValue ?? Object.keys(codes)[0] ?? "",
   );
 
   React.useEffect(() => {
     async function loadHighlightedCode() {
       try {
-        const { codeToHtml } = await import('shiki');
+        const { codeToHtml } = await import("shiki");
         const newHighlightedCodes: Record<string, string> = {};
 
         for (const [command, val] of Object.entries(codes)) {
@@ -62,7 +62,7 @@ function CodeTabs({
               light: themes.light,
               dark: themes.dark,
             },
-            defaultColor: resolvedTheme === 'dark' ? 'dark' : 'light',
+            defaultColor: resolvedTheme === "dark" ? "dark" : "light",
           });
 
           newHighlightedCodes[command] = highlighted;
@@ -70,7 +70,7 @@ function CodeTabs({
 
         setHighlightedCodes(newHighlightedCodes);
       } catch (error) {
-        console.error('Error highlighting codes', error);
+        console.error("Error highlighting codes", error);
         setHighlightedCodes(codes);
       }
     }
@@ -81,7 +81,7 @@ function CodeTabs({
     <Tabs
       data-slot="install-tabs"
       className={cn(
-        'w-full gap-0 bg-accent rounded-xl overflow-hidden',
+        "w-full gap-0 overflow-hidden rounded-xl bg-accent",
         className,
       )}
       {...props}
@@ -91,12 +91,12 @@ function CodeTabs({
         onValueChange?.(val);
       }}
     >
-      <TabsHighlight className="absolute z-0 inset-0 rounded-none shadow-none bg-transparent after:content-[''] after:absolute after:inset-x-0 after:h-0.5 after:bottom-0 dark:after:bg-white after:bg-black after:rounded-t-full">
+      <TabsHighlight className="absolute inset-0 z-0 rounded-none bg-transparent shadow-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:rounded-t-full after:bg-black after:content-[''] dark:after:bg-white">
         <TabsList
           data-slot="install-tabs-list"
-          className="w-full relative flex items-center justify-between rounded-none h-10 text-current py-0 pl-5 pr-4.5"
+          className="relative flex h-10 w-full items-center justify-between rounded-none py-0 pr-4.5 pl-5 text-current"
         >
-          <div className="flex gap-x-3 h-full">
+          <div className="flex h-full gap-x-3">
             {highlightedCodes &&
               Object.keys(highlightedCodes).map((code) => (
                 <TabsHighlightItem
@@ -107,7 +107,7 @@ function CodeTabs({
                   <TabsTrigger
                     key={code}
                     value={code}
-                    className="text-muted-foreground h-full text-sm font-medium data-[state=active]:text-current px-0"
+                    className="h-full px-0 font-medium text-muted-foreground text-sm data-[state=active]:text-current"
                   >
                     {code}
                   </TabsTrigger>
@@ -130,7 +130,7 @@ function CodeTabs({
       <div className="px-1.5 pb-1.5">
         <TabsContents
           data-slot="install-tabs-contents"
-          className="bg-background rounded-md"
+          className="rounded-md bg-background"
         >
           {highlightedCodes &&
             Object.entries(highlightedCodes).map(([code, val]) => (
@@ -141,7 +141,7 @@ function CodeTabs({
                 value={code}
               >
                 <div
-                  className="w-full text-sm overflow-auto flex items-center p-4 [&>pre,_&_code]:!bg-transparent [&_code_.line]:!px-0 [&>pre,_&_code]:[background:transparent_!important] [&>pre,_&_code]:border-none [&_code]:!text-[13px]"
+                  className="[&>pre,_&_code]:!bg-transparent [&_code_.line]:!px-0 [&_code]:!text-[13px] flex w-full items-center overflow-auto p-4 text-sm [&>pre,_&_code]:border-none [&>pre,_&_code]:[background:transparent_!important]"
                   dangerouslySetInnerHTML={{ __html: val }}
                 />
               </TabsContent>

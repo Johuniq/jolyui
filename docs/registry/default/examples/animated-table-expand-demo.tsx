@@ -1,5 +1,8 @@
-import { AnimatedTable, ColumnDef } from "@/registry/default/ui/animated-table";
 import { Mail, MapPin, Phone, User } from "lucide-react";
+import {
+  AnimatedTable,
+  type ColumnDef,
+} from "@/registry/default/ui/animated-table";
 
 interface UserData {
   id: string;
@@ -12,9 +15,33 @@ interface UserData {
 }
 
 const data: UserData[] = [
-  { id: "1", name: "Alice Johnson", email: "alice@example.com", role: "Admin", status: "active", location: "New York, NY", phone: "+1 555-0101" },
-  { id: "2", name: "Bob Smith", email: "bob@example.com", role: "Developer", status: "active", location: "San Francisco, CA", phone: "+1 555-0102" },
-  { id: "3", name: "Carol White", email: "carol@example.com", role: "Designer", status: "pending", location: "Los Angeles, CA", phone: "+1 555-0103" },
+  {
+    id: "1",
+    name: "Alice Johnson",
+    email: "alice@example.com",
+    role: "Admin",
+    status: "active",
+    location: "New York, NY",
+    phone: "+1 555-0101",
+  },
+  {
+    id: "2",
+    name: "Bob Smith",
+    email: "bob@example.com",
+    role: "Developer",
+    status: "active",
+    location: "San Francisco, CA",
+    phone: "+1 555-0102",
+  },
+  {
+    id: "3",
+    name: "Carol White",
+    email: "carol@example.com",
+    role: "Designer",
+    status: "pending",
+    location: "Los Angeles, CA",
+    phone: "+1 555-0103",
+  },
 ];
 
 const StatusBadge = ({ status }: { status: UserData["status"] }) => {
@@ -25,8 +52,12 @@ const StatusBadge = ({ status }: { status: UserData["status"] }) => {
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${styles[status]}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${status === "active" ? "bg-green-400" : status === "inactive" ? "bg-red-400" : "bg-yellow-400"}`} />
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-medium text-xs ${styles[status]}`}
+    >
+      <span
+        className={`h-1.5 w-1.5 rounded-full ${status === "active" ? "bg-green-400" : status === "inactive" ? "bg-red-400" : "bg-yellow-400"}`}
+      />
       {status.charAt(0).toUpperCase() + status.slice(1)}
     </span>
   );

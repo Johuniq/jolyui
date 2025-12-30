@@ -7,6 +7,7 @@ export interface TabsDataProps {
    */
   tabs: TabData[];
 }
+
 import type React from "react";
 
 /**

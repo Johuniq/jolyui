@@ -1,7 +1,7 @@
 "use client";
 
-import { VideoPlayer } from "@/registry/default/ui/video-player";
 import { useState } from "react";
+import { VideoPlayer } from "@/registry/default/ui/video-player";
 
 export default function VideoPlayerCallbacksDemo() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -15,15 +15,15 @@ export default function VideoPlayerCallbacksDemo() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-4">
+    <div className="mx-auto w-full max-w-4xl space-y-4">
       <VideoPlayer
         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
         title="Big Buck Bunny"
         onTimeUpdate={handleTimeUpdate}
       />
-      
-      <div className="rounded-lg border bg-card p-4 space-y-3">
+
+      <div className="space-y-3 rounded-lg border bg-card p-4">
         <h3 className="font-semibold text-sm">Playback Information</h3>
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
@@ -35,9 +35,9 @@ export default function VideoPlayerCallbacksDemo() {
             <span className="font-mono">{watchedPercentage.toFixed(1)}%</span>
           </div>
         </div>
-        <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+        <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
           <div
-            className="bg-gradient-to-r from-blue-500 to-cyan-400 h-full transition-all duration-300"
+            className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300"
             style={{ width: `${watchedPercentage}%` }}
           />
         </div>

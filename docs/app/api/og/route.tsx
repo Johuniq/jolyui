@@ -1,5 +1,5 @@
-import { siteConfig } from "@/config/site";
 import { ImageResponse } from "next/og";
+import { siteConfig } from "@/config/site";
 
 // Use edge runtime for better performance
 export const runtime = "edge";

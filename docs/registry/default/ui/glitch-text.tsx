@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface GlitchTextProps {
   words: string[];
@@ -31,9 +31,11 @@ const GlitchText = React.forwardRef<HTMLSpanElement, GlitchTextProps>(
               .split("")
               .map((char, i) => {
                 if (i < iteration) return char;
-                return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                return glitchChars[
+                  Math.floor(Math.random() * glitchChars.length)
+                ];
               })
-              .join("")
+              .join(""),
           );
 
           iteration += 1;
@@ -55,13 +57,13 @@ const GlitchText = React.forwardRef<HTMLSpanElement, GlitchTextProps>(
         className={cn(
           "inline-block font-mono",
           isGlitching && "text-primary",
-          className
+          className,
         )}
       >
         {displayText}
       </span>
     );
-  }
+  },
 );
 GlitchText.displayName = "GlitchText";
 

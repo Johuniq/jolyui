@@ -1,3 +1,4 @@
+import type { Registry } from "shadcn/schema";
 import { blocks } from "@/registry/registry-blocks";
 import { components } from "@/registry/registry-components";
 import { examples } from "@/registry/registry-examples";
@@ -6,7 +7,6 @@ import { internal } from "@/registry/registry-internal";
 import { lib } from "@/registry/registry-lib";
 import { themes } from "@/registry/registry-themes";
 import { ui } from "@/registry/registry-ui";
-import type { Registry } from "shadcn/schema";
 
 export const registry = {
   name: "jolyui/ui",

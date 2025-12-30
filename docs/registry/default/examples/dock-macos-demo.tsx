@@ -1,26 +1,31 @@
-import { Dock, DockIcon, DockItem, DockLabel, DockSeparator } from "@/registry/default/ui/dock";
 import {
-    Calculator,
-    Calendar,
-    Camera,
-    ChromeIcon,
-    Clock,
-    Image,
-    Mail,
-    MessageSquare,
-    Music,
-    Notebook,
-    Settings,
-    Store,
-    Terminal,
-    Trash2
+  Calculator,
+  Calendar,
+  Camera,
+  ChromeIcon,
+  Clock,
+  Image,
+  Mail,
+  MessageSquare,
+  Music,
+  Notebook,
+  Settings,
+  Store,
+  Terminal,
+  Trash2,
 } from "lucide-react";
+import {
+  Dock,
+  DockIcon,
+  DockItem,
+  DockLabel,
+  DockSeparator,
+} from "@/registry/default/ui/dock";
 
 export default function DockMacosDemo() {
   return (
     <div className="flex h-32 items-end justify-center">
       <Dock magnification={80} distance={150}>
-
         <DockItem>
           <DockIcon>
             <ChromeIcon />

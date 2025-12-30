@@ -897,7 +897,7 @@ export const examples: Registry["items"] = [
       },
     ],
   },
-    {
+  {
     name: "code-block-glass-demo",
     type: "registry:example",
     registryDependencies: ["code-block"],

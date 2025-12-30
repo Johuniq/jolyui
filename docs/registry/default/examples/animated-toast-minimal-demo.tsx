@@ -1,12 +1,14 @@
 "use client";
 
-import { MinimalToast } from "@/registry/default/ui/animated-toast";
 import { useState } from "react";
+import { MinimalToast } from "@/registry/default/ui/animated-toast";
 
 export default function AnimatedToastMinimalDemo() {
   const [showToast, setShowToast] = useState(false);
 
-  const triggerToast = (type: "success" | "error" | "warning" | "info" | "default") => {
+  const triggerToast = (
+    type: "success" | "error" | "warning" | "info" | "default",
+  ) => {
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
@@ -16,31 +18,31 @@ export default function AnimatedToastMinimalDemo() {
       <div className="flex flex-wrap gap-4">
         <button
           onClick={() => triggerToast("success")}
-          className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+          className="rounded-md bg-green-500 px-4 py-2 text-white transition-colors hover:bg-green-600"
         >
           Success
         </button>
         <button
           onClick={() => triggerToast("error")}
-          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+          className="rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600"
         >
           Error
         </button>
         <button
           onClick={() => triggerToast("warning")}
-          className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition-colors"
+          className="rounded-md bg-yellow-500 px-4 py-2 text-white transition-colors hover:bg-yellow-600"
         >
           Warning
         </button>
         <button
           onClick={() => triggerToast("info")}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+          className="rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
         >
           Info
         </button>
         <button
           onClick={() => triggerToast("default")}
-          className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors"
+          className="rounded-md bg-gray-500 px-4 py-2 text-white transition-colors hover:bg-gray-600"
         >
           Default
         </button>

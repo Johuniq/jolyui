@@ -1,5 +1,5 @@
-import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
+import { AnimatedCalendar } from "@/registry/default/ui/calender";
 
 export default function CalendarBasicDemo() {
   const [date, setDate] = useState<Date>();
@@ -14,7 +14,7 @@ export default function CalendarBasicDemo() {
         placeholder="Select a date"
       />
       {date && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Selected: {date.toLocaleDateString()}
         </p>
       )}

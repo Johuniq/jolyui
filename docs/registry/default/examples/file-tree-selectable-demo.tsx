@@ -1,5 +1,5 @@
-import { FileTree, TreeNode } from "@/registry/default/ui/file-tree";
 import { useState } from "react";
+import { FileTree, type TreeNode } from "@/registry/default/ui/file-tree";
 
 const selectableTreeData: TreeNode[] = [
   {
@@ -35,7 +35,7 @@ export default function FileTreeSelectableDemo() {
       <h3 className="font-medium text-sm">Selectable File Tree</h3>
       <FileTree data={selectableTreeData} onSelect={handleSelect} />
       {selectedNode && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Selected: {selectedNode.name} ({selectedNode.type})
         </p>
       )}

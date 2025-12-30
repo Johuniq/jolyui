@@ -8,7 +8,7 @@ export default function GradientBorderPulseDemo() {
       <PulseBorder color="hsl(var(--primary))">
         <div className="rounded-xl border bg-card p-6">
           <h3 className="mb-2 font-semibold">Pulse Border</h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Pulsing border with outer glow effect
           </p>
         </div>

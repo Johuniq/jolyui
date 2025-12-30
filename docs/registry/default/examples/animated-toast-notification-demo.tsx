@@ -1,7 +1,7 @@
 "use client";
 
-import { NotificationToast } from "@/registry/default/ui/animated-toast";
 import { useState } from "react";
+import { NotificationToast } from "@/registry/default/ui/animated-toast";
 
 export default function AnimatedToastNotificationDemo() {
   const [showToast, setShowToast] = useState(false);
@@ -14,7 +14,7 @@ export default function AnimatedToastNotificationDemo() {
     <div className="p-8">
       <button
         onClick={showNotification}
-        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+        className="rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
       >
         Show Notification
       </button>

@@ -1,12 +1,36 @@
-import { cn } from "@/lib/utils";
-import { Check, Copy, Download, FileCode, Maximize2, Minimize2, Terminal, WrapText } from "lucide-react";
+import {
+  Check,
+  Copy,
+  Download,
+  FileCode,
+  Maximize2,
+  Minimize2,
+  Terminal,
+  WrapText,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { Highlight, themes, type Language } from "prism-react-renderer";
+import { Highlight, type Language, themes } from "prism-react-renderer";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
-type CodeBlockVariant = "default" | "terminal" | "minimal" | "gradient" | "glass";
+type CodeBlockVariant =
+  | "default"
+  | "terminal"
+  | "minimal"
+  | "gradient"
+  | "glass";
 type AnimationType = "none" | "fadeIn" | "slideIn" | "typewriter" | "highlight";
-type ThemeType = "oneDark" | "dracula" | "github" | "nightOwl" | "oceanicNext" | "palenight" | "shadesOfPurple" | "synthwave84" | "vsDark" | "vsLight";
+type ThemeType =
+  | "oneDark"
+  | "dracula"
+  | "github"
+  | "nightOwl"
+  | "oceanicNext"
+  | "palenight"
+  | "shadesOfPurple"
+  | "synthwave84"
+  | "vsDark"
+  | "vsLight";
 
 // Theme mapping
 const themeMap: Record<ThemeType, typeof themes.oneDark> = {
@@ -24,11 +48,45 @@ const themeMap: Record<ThemeType, typeof themes.oneDark> = {
 
 // Supported languages list
 const supportedLanguages = [
-  "javascript", "typescript", "jsx", "tsx", "python", "bash", "shell",
-  "css", "scss", "html", "json", "yaml", "markdown", "sql", "graphql",
-  "rust", "go", "java", "c", "cpp", "csharp", "php", "ruby", "swift",
-  "kotlin", "scala", "r", "lua", "perl", "haskell", "elixir", "clojure",
-  "dockerfile", "toml", "ini", "xml", "diff", "makefile", "regex"
+  "javascript",
+  "typescript",
+  "jsx",
+  "tsx",
+  "python",
+  "bash",
+  "shell",
+  "css",
+  "scss",
+  "html",
+  "json",
+  "yaml",
+  "markdown",
+  "sql",
+  "graphql",
+  "rust",
+  "go",
+  "java",
+  "c",
+  "cpp",
+  "csharp",
+  "php",
+  "ruby",
+  "swift",
+  "kotlin",
+  "scala",
+  "r",
+  "lua",
+  "perl",
+  "haskell",
+  "elixir",
+  "clojure",
+  "dockerfile",
+  "toml",
+  "ini",
+  "xml",
+  "diff",
+  "makefile",
+  "regex",
 ] as const;
 
 interface CodeBlockProps {
@@ -57,7 +115,13 @@ interface CodeBlockProps {
 }
 
 // Copy button component
-const CopyButton = ({ code, className }: { code: string; className?: string }) => {
+const CopyButton = ({
+  code,
+  className,
+}: {
+  code: string;
+  className?: string;
+}) => {
   const [copied, setCopied] = React.useState(false);
 
   const handleCopy = async () => {
@@ -75,7 +139,7 @@ const CopyButton = ({ code, className }: { code: string; className?: string }) =
       onClick={handleCopy}
       className={cn(
         "rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
-        className
+        className,
       )}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -110,7 +174,15 @@ const CopyButton = ({ code, className }: { code: string; className?: string }) =
 };
 
 // Download button component
-const DownloadButton = ({ code, fileName, language }: { code: string; fileName?: string; language: string }) => {
+const DownloadButton = ({
+  code,
+  fileName,
+  language,
+}: {
+  code: string;
+  fileName?: string;
+  language: string;
+}) => {
   const handleDownload = () => {
     const extension = getFileExtension(language);
     const name = fileName || `code.${extension}`;
@@ -207,7 +279,9 @@ const getLanguageDisplayName = (language: string): string => {
     xml: "XML",
     diff: "Diff",
   };
-  return names[language] || language.charAt(0).toUpperCase() + language.slice(1);
+  return (
+    names[language] || language.charAt(0).toUpperCase() + language.slice(1)
+  );
 };
 
 // Typewriter code animation component
@@ -247,7 +321,10 @@ const TypewriterCode = ({
       <Highlight theme={theme} code={displayedCode || " "} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
-            className={cn(className, "font-mono text-sm leading-relaxed !bg-transparent")}
+            className={cn(
+              className,
+              "!bg-transparent font-mono text-sm leading-relaxed",
+            )}
             style={{ ...style, background: "transparent" }}
           >
             {tokens.map((line, i) => {
@@ -259,11 +336,12 @@ const TypewriterCode = ({
                   {...getLineProps({ line })}
                   className={cn(
                     "flex",
-                    isHighlighted && "bg-primary/10 -mx-4 px-4 border-l-2 border-primary"
+                    isHighlighted &&
+                      "-mx-4 border-primary border-l-2 bg-primary/10 px-4",
                   )}
                 >
                   {showLineNumbers && (
-                    <span className="mr-4 inline-block w-8 select-none text-right text-muted-foreground/50 shrink-0">
+                    <span className="mr-4 inline-block w-8 shrink-0 select-none text-right text-muted-foreground/50">
                       {lineNumber}
                     </span>
                   )}
@@ -280,7 +358,7 @@ const TypewriterCode = ({
       </Highlight>
       {currentIndex < code.length && (
         <motion.span
-          className="inline-block h-4 w-2 bg-primary absolute"
+          className="absolute inline-block h-4 w-2 bg-primary"
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.5, repeat: Infinity }}
         />
@@ -316,7 +394,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
       startingLineNumber = 1,
       caption,
     },
-    ref
+    ref,
   ) => {
     const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
     const [isExpanded, setIsExpanded] = React.useState(false);
@@ -328,7 +406,8 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
       default: "bg-card border border-border shadow-sm",
       terminal: "bg-[#1a1b26] border border-border shadow-lg",
       minimal: "bg-muted/50",
-      gradient: "bg-gradient-to-br from-card via-card to-primary/5 border border-border shadow-md",
+      gradient:
+        "bg-gradient-to-br from-card via-card to-primary/5 border border-border shadow-md",
       glass: "bg-card/80 backdrop-blur-xl border border-border/50 shadow-xl",
     };
 
@@ -368,7 +447,8 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
       },
     };
 
-    const currentAnimation = containerAnimation[animation] || containerAnimation.fadeIn;
+    const currentAnimation =
+      containerAnimation[animation] || containerAnimation.fadeIn;
 
     return (
       <motion.div
@@ -377,7 +457,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
           "overflow-hidden rounded-lg",
           variantStyles[variant],
           isExpanded && "fixed inset-4 z-50",
-          className
+          className,
         )}
         initial={currentAnimation.initial}
         animate={currentAnimation.animate}
@@ -387,19 +467,19 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
         <div
           className={cn(
             "flex items-center justify-between px-4 py-2",
-            headerStyles[variant]
+            headerStyles[variant],
           )}
         >
           <div className="flex items-center gap-3">
             {/* Window controls */}
             <div className="flex gap-1.5">
-              <div className="h-3 w-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors" />
-              <div className="h-3 w-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors" />
+              <div className="h-3 w-3 rounded-full bg-red-500/80 transition-colors hover:bg-red-500" />
+              <div className="h-3 w-3 rounded-full bg-yellow-500/80 transition-colors hover:bg-yellow-500" />
+              <div className="h-3 w-3 rounded-full bg-green-500/80 transition-colors hover:bg-green-500" />
             </div>
 
             {/* Title or language */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-muted-foreground text-sm">
               {variant === "terminal" ? (
                 <Terminal className="h-4 w-4" />
               ) : (
@@ -418,7 +498,9 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
               onClick={() => setWordWrap(!wordWrap)}
               className={cn(
                 "rounded-md p-2 transition-colors hover:bg-muted",
-                wordWrap ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                wordWrap
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground",
               )}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -460,7 +542,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
             {collapsible && (
               <motion.button
                 onClick={() => setIsCollapsed(!isCollapsed)}
-                className="rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="rounded-md px-2 py-1 text-muted-foreground text-xs transition-colors hover:bg-muted hover:text-foreground"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -480,7 +562,7 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
               transition={{ duration: 0.2 }}
               className={cn(
                 "overflow-auto p-4",
-                wordWrap && "whitespace-pre-wrap break-words"
+                wordWrap && "whitespace-pre-wrap break-words",
               )}
               style={maxHeight && !isExpanded ? { maxHeight } : undefined}
             >
@@ -499,17 +581,24 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
                   code={trimmedCode}
                   language={language as Language}
                 >
-                  {({ className: preClassName, style, tokens, getLineProps, getTokenProps }) => (
+                  {({
+                    className: preClassName,
+                    style,
+                    tokens,
+                    getLineProps,
+                    getTokenProps,
+                  }) => (
                     <pre
                       className={cn(
                         preClassName,
-                        "font-mono text-sm leading-relaxed !bg-transparent"
+                        "!bg-transparent font-mono text-sm leading-relaxed",
                       )}
                       style={{ ...style, background: "transparent" }}
                     >
                       {tokens.map((line, i) => {
                         const lineNumber = i + startingLineNumber;
-                        const isHighlighted = highlightLines.includes(lineNumber);
+                        const isHighlighted =
+                          highlightLines.includes(lineNumber);
                         const isAdded = addedLines.includes(lineNumber);
                         const isRemoved = removedLines.includes(lineNumber);
 
@@ -519,25 +608,49 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
                             {...getLineProps({ line })}
                             className={cn(
                               "flex",
-                              isHighlighted && "bg-primary/10 -mx-4 px-4 border-l-2 border-primary",
-                              isAdded && "bg-green-500/10 -mx-4 px-4 border-l-2 border-green-500",
-                              isRemoved && "bg-red-500/10 -mx-4 px-4 border-l-2 border-red-500 line-through opacity-60"
+                              isHighlighted &&
+                                "-mx-4 border-primary border-l-2 bg-primary/10 px-4",
+                              isAdded &&
+                                "-mx-4 border-green-500 border-l-2 bg-green-500/10 px-4",
+                              isRemoved &&
+                                "-mx-4 border-red-500 border-l-2 bg-red-500/10 px-4 line-through opacity-60",
                             )}
-                            initial={animation === "slideIn" ? { opacity: 0, x: -10 } : animation === "highlight" ? { backgroundColor: "hsl(var(--primary) / 0.2)" } : {}}
-                            animate={animation === "slideIn" ? { opacity: 1, x: 0 } : animation === "highlight" ? { backgroundColor: "transparent" } : {}}
+                            initial={
+                              animation === "slideIn"
+                                ? { opacity: 0, x: -10 }
+                                : animation === "highlight"
+                                  ? {
+                                      backgroundColor:
+                                        "hsl(var(--primary) / 0.2)",
+                                    }
+                                  : {}
+                            }
+                            animate={
+                              animation === "slideIn"
+                                ? { opacity: 1, x: 0 }
+                                : animation === "highlight"
+                                  ? { backgroundColor: "transparent" }
+                                  : {}
+                            }
                             transition={{
                               duration: 0.3,
                               delay: animationDelay + i * 0.03,
                             }}
                           >
                             {showLineNumbers && (
-                              <span className="mr-4 inline-block w-8 select-none text-right text-muted-foreground/50 shrink-0">
-                                {isAdded && <span className="text-green-500 mr-1">+</span>}
-                                {isRemoved && <span className="text-red-500 mr-1">-</span>}
+                              <span className="mr-4 inline-block w-8 shrink-0 select-none text-right text-muted-foreground/50">
+                                {isAdded && (
+                                  <span className="mr-1 text-green-500">+</span>
+                                )}
+                                {isRemoved && (
+                                  <span className="mr-1 text-red-500">-</span>
+                                )}
                                 {lineNumber}
                               </span>
                             )}
-                            <span className={cn("flex-1", wordWrap && "break-all")}>
+                            <span
+                              className={cn("flex-1", wordWrap && "break-all")}
+                            >
                               {line.map((token, key) => (
                                 <span key={key} {...getTokenProps({ token })} />
                               ))}
@@ -555,13 +668,13 @@ const CodeBlock = React.forwardRef<HTMLDivElement, CodeBlockProps>(
 
         {/* Caption */}
         {caption && (
-          <div className="border-t border-border px-4 py-2 text-xs text-muted-foreground">
+          <div className="border-border border-t px-4 py-2 text-muted-foreground text-xs">
             {caption}
           </div>
         )}
       </motion.div>
     );
-  }
+  },
 );
 
 CodeBlock.displayName = "CodeBlock";
@@ -589,13 +702,13 @@ const InlineCode = React.forwardRef<HTMLSpanElement, InlineCodeProps>(
         className={cn(
           "rounded-md px-1.5 py-0.5 font-mono text-sm",
           variantStyles[variant],
-          className
+          className,
         )}
       >
         {children}
       </code>
     );
-  }
+  },
 );
 
 InlineCode.displayName = "InlineCode";
@@ -624,17 +737,25 @@ const CodeCompare = React.forwardRef<HTMLDivElement, CodeCompareProps>(
       theme = "oneDark",
       showDiff = false,
     },
-    ref
+    ref,
   ) => {
     // Simple diff calculation for line additions/removals
     const beforeLines = before.trim().split("\n");
     const afterLines = after.trim().split("\n");
-    
-    const removedLines = showDiff 
-      ? beforeLines.map((_, i) => i + 1).filter((_, i) => beforeLines[i] && !afterLines.includes(beforeLines[i]))
+
+    const removedLines = showDiff
+      ? beforeLines
+          .map((_, i) => i + 1)
+          .filter(
+            (_, i) => beforeLines[i] && !afterLines.includes(beforeLines[i]),
+          )
       : [];
     const addedLines = showDiff
-      ? afterLines.map((_, i) => i + 1).filter((_, i) => afterLines[i] && !beforeLines.includes(afterLines[i]))
+      ? afterLines
+          .map((_, i) => i + 1)
+          .filter(
+            (_, i) => afterLines[i] && !beforeLines.includes(afterLines[i]),
+          )
       : [];
 
     return (
@@ -660,7 +781,7 @@ const CodeCompare = React.forwardRef<HTMLDivElement, CodeCompareProps>(
         />
       </div>
     );
-  }
+  },
 );
 
 CodeCompare.displayName = "CodeCompare";
@@ -683,20 +804,29 @@ const CodeTabs = React.forwardRef<HTMLDivElement, CodeTabsProps>(
     const [activeTab, setActiveTab] = React.useState(defaultTab);
 
     return (
-      <div ref={ref} className={cn("overflow-hidden rounded-lg border border-border bg-card shadow-sm", className)}>
+      <div
+        ref={ref}
+        className={cn(
+          "overflow-hidden rounded-lg border border-border bg-card shadow-sm",
+          className,
+        )}
+      >
         {/* Tab headers */}
-        <div className="flex overflow-x-auto border-b border-border bg-muted/50">
+        <div className="flex overflow-x-auto border-border border-b bg-muted/50">
           {tabs.map((tab, index) => (
             <motion.button
               key={index}
               onClick={() => setActiveTab(index)}
               className={cn(
-                "flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-colors whitespace-nowrap",
+                "flex items-center gap-2 whitespace-nowrap px-4 py-2.5 font-medium text-sm transition-colors",
                 activeTab === index
-                  ? "border-b-2 border-primary text-primary bg-background/50"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  ? "border-primary border-b-2 bg-background/50 text-primary"
+                  : "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
               )}
-              whileHover={{ backgroundColor: activeTab === index ? undefined : "hsl(var(--muted) / 0.5)" }}
+              whileHover={{
+                backgroundColor:
+                  activeTab === index ? undefined : "hsl(var(--muted) / 0.5)",
+              }}
               whileTap={{ scale: 0.98 }}
             >
               {tab.icon}
@@ -721,14 +851,14 @@ const CodeTabs = React.forwardRef<HTMLDivElement, CodeTabsProps>(
               variant="minimal"
               animation="none"
               copyable={true}
-              className="border-0 rounded-none"
+              className="rounded-none border-0"
               theme={theme}
             />
           </motion.div>
         </AnimatePresence>
       </div>
     );
-  }
+  },
 );
 
 CodeTabs.displayName = "CodeTabs";
@@ -750,21 +880,21 @@ const TerminalBlock = React.forwardRef<HTMLDivElement, TerminalBlockProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "overflow-hidden rounded-lg bg-[#1a1b26] border border-border shadow-lg",
-          className
+          "overflow-hidden rounded-lg border border-border bg-[#1a1b26] shadow-lg",
+          className,
         )}
         initial={animated ? { opacity: 0, y: 20 } : {}}
         animate={animated ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
       >
         {/* Header */}
-        <div className="flex items-center gap-3 px-4 py-2 border-b border-border bg-[#16161e]">
+        <div className="flex items-center gap-3 border-border border-b bg-[#16161e] px-4 py-2">
           <div className="flex gap-1.5">
             <div className="h-3 w-3 rounded-full bg-red-500/80" />
             <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
             <div className="h-3 w-3 rounded-full bg-green-500/80" />
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-muted-foreground text-sm">
             <Terminal className="h-4 w-4" />
             <span>{title}</span>
           </div>
@@ -785,7 +915,7 @@ const TerminalBlock = React.forwardRef<HTMLDivElement, TerminalBlockProps>(
                 <span className="text-foreground">{item.command}</span>
               </div>
               {item.output && (
-                <div className="mt-1 pl-4 text-muted-foreground whitespace-pre-wrap">
+                <div className="mt-1 whitespace-pre-wrap pl-4 text-muted-foreground">
                   {item.output}
                 </div>
               )}
@@ -794,14 +924,27 @@ const TerminalBlock = React.forwardRef<HTMLDivElement, TerminalBlockProps>(
         </div>
       </motion.div>
     );
-  }
+  },
 );
 
 TerminalBlock.displayName = "TerminalBlock";
 
-export { CodeBlock, CodeCompare, CodeTabs, InlineCode, supportedLanguages, TerminalBlock, themeMap };
-export type {
-    AnimationType, CodeBlockProps, CodeBlockVariant, CodeCompareProps,
-    CodeTabsProps, InlineCodeProps, TerminalBlockProps, ThemeType
+export {
+  CodeBlock,
+  CodeCompare,
+  CodeTabs,
+  InlineCode,
+  supportedLanguages,
+  TerminalBlock,
+  themeMap,
 };
-
+export type {
+  AnimationType,
+  CodeBlockProps,
+  CodeBlockVariant,
+  CodeCompareProps,
+  CodeTabsProps,
+  InlineCodeProps,
+  TerminalBlockProps,
+  ThemeType,
+};

@@ -1,6 +1,18 @@
-import { type DayPicker } from "react-day-picker";
+import type { DayPicker } from "react-day-picker";
 
-export interface AnimatedCalendarProps extends Omit<React.ComponentProps<typeof DayPicker>, "mode" | "onDayKeyUp" | "onDayKeyPress" | "onDayPointerEnter" | "onDayPointerLeave" | "onDayTouchCancel" | "onDayTouchEnd" | "onDayTouchMove" | "onDayTouchStart"> {
+export interface AnimatedCalendarProps
+  extends Omit<
+    React.ComponentProps<typeof DayPicker>,
+    | "mode"
+    | "onDayKeyUp"
+    | "onDayKeyPress"
+    | "onDayPointerEnter"
+    | "onDayPointerLeave"
+    | "onDayTouchCancel"
+    | "onDayTouchEnd"
+    | "onDayTouchMove"
+    | "onDayTouchStart"
+  > {
   /**
    * The selection mode for the calendar.
    * @default "single"
@@ -21,7 +33,13 @@ export interface AnimatedCalendarProps extends Omit<React.ComponentProps<typeof 
    * The variant of the buttons in the calendar.
    * @default "ghost"
    */
-  buttonVariant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  buttonVariant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
 
   /**
    * Whether to show days from the previous or next month.

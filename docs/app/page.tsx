@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { Footer } from '@/components/landing/footer';
-import { Header } from '@/components/landing/header';
-import { Hero } from '@/components/landing/hero';
-import { Spotlight } from '@/components/landing/spotlight';
-import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { Footer } from "@/components/landing/footer";
+import { Header } from "@/components/landing/header";
+import { Hero } from "@/components/landing/hero";
+import { Spotlight } from "@/components/landing/spotlight";
+import { cn } from "@/lib/utils";
 
 const CONTENT_VARIANTS = {
   hidden: {
@@ -14,7 +14,7 @@ const CONTENT_VARIANTS = {
   },
   visible: {
     opacity: 1,
-    transition: { type: 'spring', stiffness: 100, damping: 30 },
+    transition: { type: "spring", stiffness: 100, damping: 30 },
   },
 } as const;
 
@@ -32,21 +32,21 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className={cn('relative h-dvh', !isLoaded && 'overflow-y-hidden')}>
-          <Spotlight
-        className="-top-40 left-0 md:-top-20 md:left-60"
+    <main className={cn("relative h-dvh", !isLoaded && "overflow-y-hidden")}>
+      <Spotlight
+        className="-top-40 md:-top-20 left-0 md:left-60"
         fill="white"
       />
       <Header />
 
-      <div className="h-dvh w-full flex flex-col justify-between">
+      <div className="flex h-dvh w-full flex-col justify-between">
         {transition && (
           <>
             <div>
               <motion.div
                 variants={CONTENT_VARIANTS}
                 initial="hidden"
-                animate={transition ? 'visible' : 'hidden'}
+                animate={transition ? "visible" : "hidden"}
                 className="w-full"
               >
                 <Hero key={String(transition)} />

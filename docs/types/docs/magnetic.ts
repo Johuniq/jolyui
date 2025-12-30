@@ -1,5 +1,5 @@
-import type { EmptyProps } from "@/types";
 import type { SpringOptions } from "motion/react";
+import type { EmptyProps } from "@/types";
 
 export interface MagneticProps extends EmptyProps<"div"> {
   /**

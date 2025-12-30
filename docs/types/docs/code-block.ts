@@ -1,9 +1,29 @@
-import { type Language } from "prism-react-renderer";
-import * as React from "react";
+import type { Language } from "prism-react-renderer";
+import type * as React from "react";
 
-export type CodeBlockVariant = "default" | "terminal" | "minimal" | "gradient" | "glass";
-export type AnimationType = "none" | "fadeIn" | "slideIn" | "typewriter" | "highlight";
-export type ThemeType = "oneDark" | "dracula" | "github" | "nightOwl" | "oceanicNext" | "palenight" | "shadesOfPurple" | "synthwave84" | "vsDark" | "vsLight";
+export type CodeBlockVariant =
+  | "default"
+  | "terminal"
+  | "minimal"
+  | "gradient"
+  | "glass";
+export type AnimationType =
+  | "none"
+  | "fadeIn"
+  | "slideIn"
+  | "typewriter"
+  | "highlight";
+export type ThemeType =
+  | "oneDark"
+  | "dracula"
+  | "github"
+  | "nightOwl"
+  | "oceanicNext"
+  | "palenight"
+  | "shadesOfPurple"
+  | "synthwave84"
+  | "vsDark"
+  | "vsLight";
 
 export interface CodeBlockProps {
   /**

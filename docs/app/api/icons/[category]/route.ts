@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ category: string }> }
+  { params }: { params: Promise<{ category: string }> },
 ) {
   const { category } = await params;
 
@@ -16,13 +16,13 @@ export async function GET(
         next: {
           revalidate: 3600, // Cache for 1 hour
         },
-      }
+      },
     );
 
     if (!response.ok) {
       return NextResponse.json(
         { error: "Failed to fetch icons" },
-        { status: response.status }
+        { status: response.status },
       );
     }
 
@@ -37,7 +37,7 @@ export async function GET(
     console.error("Error fetching icons:", error);
     return NextResponse.json(
       { error: "Failed to fetch icons" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

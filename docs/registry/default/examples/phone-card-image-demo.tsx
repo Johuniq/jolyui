@@ -1,6 +1,5 @@
 import { PhoneCard } from "@/registry/default/ui/phone-card";
 
-
 export default function PhoneCardImageDemo() {
   return (
     <div className="flex items-center justify-center p-8">

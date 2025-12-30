@@ -1,5 +1,5 @@
-import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
+import { AnimatedCalendar } from "@/registry/default/ui/calender";
 
 export default function CalendarTimeDemo() {
   const [dateTime, setDateTime] = useState<Date>();
@@ -15,7 +15,7 @@ export default function CalendarTimeDemo() {
         placeholder="Select date and time"
       />
       {dateTime && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Selected: {dateTime.toLocaleString()}
         </p>
       )}

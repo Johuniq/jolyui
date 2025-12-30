@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { Databuddy } from '@databuddy/sdk/react';
+import { Databuddy } from "@databuddy/sdk/react";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -74,12 +74,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
   alternates: {
@@ -172,10 +168,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       name: siteConfig.name,
       url: siteConfig.url,
       logo: `${siteConfig.url}/icon.png`,
-      sameAs: [
-        siteConfig.links.github,
-        siteConfig.links.x,
-      ],
+      sameAs: [siteConfig.links.github, siteConfig.links.x],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "Developer Support",
@@ -228,9 +221,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://assets.onedollarstats.com" />
-        <meta name="theme-color" content="#1da1f2" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
-        <meta name="google-site-verification" content="aMge83vXxVisFvKFhWT-omdQLHLuI04VK1ZSHBJP83U" />
+        <meta
+          name="theme-color"
+          content="#1da1f2"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#0a0a0a"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="google-site-verification"
+          content="aMge83vXxVisFvKFhWT-omdQLHLuI04VK1ZSHBJP83U"
+        />
         <meta name="msvalidate.01" content="117FCF20377F6D1208898A5975FB202C" />
         <meta name="yandex-verification" content="41d61d50cc2a5e88" />
         <script
@@ -276,10 +280,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           {children}
           <Analytics />
-          <Databuddy
-        clientId="D0oKAXYLs73J3RyJh4Gt-"
-        enableBatching={true}
-      />
+          <Databuddy clientId="D0oKAXYLs73J3RyJh4Gt-" enableBatching={true} />
         </Providers>
       </body>
     </html>

@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { BadgeCheck, Heart, MessageCircle, Repeat2, Share } from "lucide-react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 export interface TweetCardProps extends React.HTMLAttributes<HTMLDivElement> {
   author: {
@@ -38,7 +38,7 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
       onLike,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [isLiked, setIsLiked] = React.useState(liked);
     const [likeCount, setLikeCount] = React.useState(metrics.likes || 0);
@@ -54,9 +54,9 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
         ref={ref}
         className={cn(
           "tweet-card group relative w-full max-w-xl rounded-2xl border border-tweet-border bg-tweet p-4 transition-all duration-300",
-          "hover:border-tweet-border-hover hover:shadow-tweet-glow hover:scale-[1.02]",
+          "hover:scale-[1.02] hover:border-tweet-border-hover hover:shadow-tweet-glow",
           "animate-tweet-enter",
-          className
+          className,
         )}
         {...props}
       >
@@ -72,12 +72,12 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
                 alt={author.name}
                 className="h-12 w-12 rounded-full object-cover ring-2 ring-tweet-border transition-all duration-300 group-hover:ring-tweet-accent/50"
               />
-              <div className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-tweet-success ring-2 ring-tweet opacity-0 transition-all duration-300 group-hover:opacity-100" />
+              <div className="-bottom-1 -right-1 absolute h-4 w-4 rounded-full bg-tweet-success opacity-0 ring-2 ring-tweet transition-all duration-300 group-hover:opacity-100" />
             </div>
 
-            <div className="flex-1 min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
-                <span className="font-semibold text-tweet-foreground truncate">
+                <span className="truncate font-semibold text-tweet-foreground">
                   {author.name}
                 </span>
                 {author.verified && (
@@ -101,7 +101,7 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
           </div>
 
           {/* Content */}
-          <p className="mt-3 text-tweet-foreground leading-relaxed whitespace-pre-wrap">
+          <p className="mt-3 whitespace-pre-wrap text-tweet-foreground leading-relaxed">
             {content}
           </p>
 
@@ -109,12 +109,16 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
           <div className="mt-4 flex items-center justify-between text-tweet-muted">
             <button className="tweet-action group/action flex items-center gap-2 rounded-full px-2 py-1.5 transition-all duration-200 hover:bg-tweet-accent/10 hover:text-tweet-accent">
               <MessageCircle className="h-4 w-4 transition-transform duration-200 group-hover/action:scale-110" />
-              <span className="text-sm">{formatNumber(metrics.replies || 0)}</span>
+              <span className="text-sm">
+                {formatNumber(metrics.replies || 0)}
+              </span>
             </button>
 
             <button className="tweet-action group/action flex items-center gap-2 rounded-full px-2 py-1.5 transition-all duration-200 hover:bg-tweet-success/10 hover:text-tweet-success">
               <Repeat2 className="h-4 w-4 transition-transform duration-200 group-hover/action:scale-110" />
-              <span className="text-sm">{formatNumber(metrics.retweets || 0)}</span>
+              <span className="text-sm">
+                {formatNumber(metrics.retweets || 0)}
+              </span>
             </button>
 
             <button
@@ -123,14 +127,14 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
                 "tweet-action group/action flex items-center gap-2 rounded-full px-2 py-1.5 transition-all duration-200",
                 isLiked
                   ? "text-tweet-like"
-                  : "hover:bg-tweet-like/10 hover:text-tweet-like"
+                  : "hover:bg-tweet-like/10 hover:text-tweet-like",
               )}
             >
               <Heart
                 className={cn(
                   "h-4 w-4 transition-all duration-200",
-                  isLiked && "fill-tweet-like animate-like-pop",
-                  "group-hover/action:scale-110"
+                  isLiked && "animate-like-pop fill-tweet-like",
+                  "group-hover/action:scale-110",
                 )}
               />
               <span className="text-sm">{formatNumber(likeCount)}</span>
@@ -143,7 +147,7 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 TweetCard.displayName = "TweetCard";

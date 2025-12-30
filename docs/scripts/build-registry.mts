@@ -11,11 +11,11 @@ import { baseColors } from "../registry/registry-base-colors";
 import { colorMapping, colors } from "../registry/registry-colors";
 import { styles } from "../registry/registry-styles";
 import {
-    type Registry,
-    type RegistryItem,
-    registryItemSchema,
-    type registryItemTypeSchema,
-    registrySchema,
+  type Registry,
+  type RegistryItem,
+  registryItemSchema,
+  type registryItemTypeSchema,
+  registrySchema,
 } from "../registry/schema";
 import { createTemplate } from "./create-template.mts";
 import { fixImport } from "./fix-imports.mts";
@@ -850,7 +850,7 @@ try {
     path.join(process.cwd(), "public/r/styles/default"),
     path.join(process.cwd(), "__registry__"),
   ];
-  
+
   for (const dir of requiredDirs) {
     if (!existsSync(dir)) {
       await fs.mkdir(dir, { recursive: true });

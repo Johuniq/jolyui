@@ -1,5 +1,5 @@
-import { AnimatedCalendar } from "@/registry/default/ui/calender";
 import { useState } from "react";
+import { AnimatedCalendar } from "@/registry/default/ui/calender";
 
 export default function CalendarConstraintsDemo() {
   const [date, setDate] = useState<Date>();
@@ -11,7 +11,7 @@ export default function CalendarConstraintsDemo() {
   return (
     <div className="flex flex-col gap-3">
       <h3 className="font-medium text-sm">Calendar with Constraints</h3>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-muted-foreground text-xs">
         Weekends and past dates are disabled
       </p>
       <AnimatedCalendar
@@ -23,7 +23,7 @@ export default function CalendarConstraintsDemo() {
         placeholder="Select a weekday"
       />
       {date && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Selected: {date.toLocaleDateString()}
         </p>
       )}

@@ -7,7 +7,11 @@ export default function CodeBlockTerminalDemo() {
         title="Terminal"
         commands={[
           { command: "npm install jolyui", output: "added 1 package in 2.3s" },
-          { command: "npm run dev", output: "VITE v5.0.0 ready in 300 ms\n\n➜  Local: http://localhost:5173/" },
+          {
+            command: "npm run dev",
+            output:
+              "VITE v5.0.0 ready in 300 ms\n\n➜  Local: http://localhost:5173/",
+          },
         ]}
       />
     </div>

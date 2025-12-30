@@ -1,5 +1,10 @@
-import { Dock, DockIcon, DockItem, DockLabel } from "@/registry/default/ui/dock";
 import { Calculator, Calendar, Compass, Mail, Music } from "lucide-react";
+import {
+  Dock,
+  DockIcon,
+  DockItem,
+  DockLabel,
+} from "@/registry/default/ui/dock";
 
 export default function DockDemo() {
   return (

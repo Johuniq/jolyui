@@ -1,6 +1,12 @@
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+} from "motion/react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
 
 // Basic Cursor Follower
 interface CursorFollowerProps {
@@ -36,8 +42,8 @@ export function CursorFollower({
   return (
     <motion.div
       className={cn(
-        "fixed top-0 left-0 pointer-events-none z-[9999] rounded-full mix-blend-difference",
-        className
+        "pointer-events-none fixed top-0 left-0 z-[9999] rounded-full mix-blend-difference",
+        className,
       )}
       style={{
         x: cursorXSpring,
@@ -90,7 +96,12 @@ export function CursorRing({
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === "A" || target.tagName === "BUTTON" || target.closest("a") || target.closest("button")) {
+      if (
+        target.tagName === "A" ||
+        target.tagName === "BUTTON" ||
+        target.closest("a") ||
+        target.closest("button")
+      ) {
         setIsHovering(true);
       }
     };
@@ -109,7 +120,12 @@ export function CursorRing({
   }, [dotX, dotY, ringX, ringY, dotSize, ringSize]);
 
   return (
-    <div className={cn("fixed top-0 left-0 pointer-events-none z-[9999]", className)}>
+    <div
+      className={cn(
+        "pointer-events-none fixed top-0 left-0 z-[9999]",
+        className,
+      )}
+    >
       {/* Dot */}
       <motion.div
         className="absolute rounded-full"
@@ -156,7 +172,9 @@ export function CursorTrail({
   color = "hsl(var(--primary))",
   className,
 }: CursorTrailProps) {
-  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>(
+    [],
+  );
   const idRef = useRef(0);
 
   useEffect(() => {
@@ -170,7 +188,12 @@ export function CursorTrail({
   }, [trailLength]);
 
   return (
-    <div className={cn("fixed top-0 left-0 pointer-events-none z-[9999]", className)}>
+    <div
+      className={cn(
+        "pointer-events-none fixed top-0 left-0 z-[9999]",
+        className,
+      )}
+    >
       {trail.map((point, index) => {
         const scale = (index + 1) / trail.length;
         const opacity = scale * 0.8;
@@ -233,7 +256,10 @@ export function CursorSpotlight({
 
   return (
     <motion.div
-      className={cn("fixed top-0 left-0 pointer-events-none z-[9998] rounded-full", className)}
+      className={cn(
+        "pointer-events-none fixed top-0 left-0 z-[9998] rounded-full",
+        className,
+      )}
       style={{
         x: xSpring,
         y: ySpring,
@@ -276,7 +302,9 @@ export function CursorText({
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const cursorTextElement = target.closest("[data-cursor-text]") as HTMLElement;
+      const cursorTextElement = target.closest(
+        "[data-cursor-text]",
+      ) as HTMLElement;
       if (cursorTextElement) {
         setCurrentText(cursorTextElement.dataset.cursorText || text);
         setIsVisible(true);
@@ -306,8 +334,8 @@ export function CursorText({
       {isVisible && (
         <motion.div
           className={cn(
-            "fixed top-0 left-0 pointer-events-none z-[9999] rounded-full flex items-center justify-center bg-primary text-primary-foreground text-sm font-medium",
-            className
+            "pointer-events-none fixed top-0 left-0 z-[9999] flex items-center justify-center rounded-full bg-primary font-medium text-primary-foreground text-sm",
+            className,
           )}
           style={{
             x: xSpring,
@@ -385,8 +413,8 @@ export function CursorMorph({
   return (
     <motion.div
       className={cn(
-        "fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference",
-        className
+        "pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference",
+        className,
       )}
       style={{
         x: xSpring,
@@ -431,7 +459,7 @@ export function CursorEmoji({
       const dx = e.clientX - lastX;
       const dy = e.clientY - lastY;
       const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-      
+
       x.set(e.clientX);
       y.set(e.clientY);
       setRotation(angle + 90);
@@ -447,8 +475,8 @@ export function CursorEmoji({
   return (
     <motion.div
       className={cn(
-        "fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center",
-        className
+        "pointer-events-none fixed top-0 left-0 z-[9999] flex items-center justify-center",
+        className,
       )}
       style={{
         x: xSpring,
@@ -511,7 +539,12 @@ export function CursorMagnetic({
 }
 
 export type {
-    CursorEmojiProps, CursorFollowerProps, CursorMagneticProps, CursorMorphProps, CursorRingProps, CursorSpotlightProps,
-    CursorTextProps, CursorTrailProps
+  CursorEmojiProps,
+  CursorFollowerProps,
+  CursorMagneticProps,
+  CursorMorphProps,
+  CursorRingProps,
+  CursorSpotlightProps,
+  CursorTextProps,
+  CursorTrailProps,
 };
-

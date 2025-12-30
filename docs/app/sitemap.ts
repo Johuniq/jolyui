@@ -1,6 +1,6 @@
+import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { source } from "@/lib/source";
-import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -25,11 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Higher priority for component pages
     const isComponentPage = page.slugs[0] === "components";
     const isGettingStarted = page.slugs.includes("getting-started");
-    
+
     let priority = 0.6;
     if (isComponentPage) priority = 0.8;
     if (isGettingStarted) priority = 0.85;
-    
+
     return {
       url: `${baseUrl}${page.url}`,
       lastModified: currentDate,

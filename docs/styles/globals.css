@@ -92,16 +92,16 @@
       transform: translateY(0px);
     }
   }
-@keyframes spotlight {
-  0% {
-    opacity: 0;
-    transform: translate(-72%, -62%) scale(0.5);
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -40%) scale(1);
+    }
   }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -40%) scale(1);
-  }
-}
   @keyframes spin-around {
     0% {
       transform: rotate(-90deg);
@@ -219,11 +219,11 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
-      /* Highlight colors */
-    --highlight-primary: 250 84% 54%;
-    --highlight-secondary: 340 82% 52%;
-    --highlight-accent: 160 84% 39%;
-    --highlight-destructive: 25 95% 53%;
+  /* Highlight colors */
+  --highlight-primary: 250 84% 54%;
+  --highlight-secondary: 340 82% 52%;
+  --highlight-accent: 160 84% 39%;
+  --highlight-destructive: 25 95% 53%;
 }
 
 .dark {
@@ -260,15 +260,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-      /* Highlight colors */
-    --highlight-primary: 250 84% 54%;
-    --highlight-secondary: 340 82% 52%;
-    --highlight-accent: 160 84% 39%;
-    --highlight-destructive: 25 95% 53%;
+  /* Highlight colors */
+  --highlight-primary: 250 84% 54%;
+  --highlight-secondary: 340 82% 52%;
+  --highlight-accent: 160 84% 39%;
+  --highlight-destructive: 25 95% 53%;
 }
 
 @layer base {
-
   body {
     @apply bg-background text-foreground;
   }
@@ -319,7 +318,6 @@
     will-change: stroke-dashoffset;
   }
 }
-
 
 @utility container {
   margin-inline: auto;
@@ -406,7 +404,7 @@
   }
 
   .bg-grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
     background-size: 20px 20px;

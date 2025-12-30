@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface CharacterMorphProps {
   texts: string[];
@@ -19,7 +19,7 @@ const CharacterMorph = React.forwardRef<HTMLDivElement, CharacterMorphProps>(
       staggerDelay = 0.03,
       charDuration = 0.5,
     },
-    ref
+    ref,
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const currentText = texts[currentIndex] || "";
@@ -35,7 +35,10 @@ const CharacterMorph = React.forwardRef<HTMLDivElement, CharacterMorphProps>(
     const maxLength = Math.max(...texts.map((t) => t.length));
 
     return (
-      <div ref={ref} className={cn("relative inline-flex whitespace-nowrap", className)}>
+      <div
+        ref={ref}
+        className={cn("relative inline-flex whitespace-nowrap", className)}
+      >
         <AnimatePresence mode="popLayout">
           {currentText.split("").map((char, i) => (
             <motion.span
@@ -56,12 +59,10 @@ const CharacterMorph = React.forwardRef<HTMLDivElement, CharacterMorphProps>(
           ))}
         </AnimatePresence>
         {/* Maintain minimum width */}
-        <span className="invisible absolute">
-          {"M".repeat(maxLength)}
-        </span>
+        <span className="invisible absolute">{"M".repeat(maxLength)}</span>
       </div>
     );
-  }
+  },
 );
 
 CharacterMorph.displayName = "CharacterMorph";

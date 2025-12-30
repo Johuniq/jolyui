@@ -1,8 +1,17 @@
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
-type Placement = "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end";
+type Placement =
+  | "top"
+  | "bottom"
+  | "left"
+  | "right"
+  | "top-start"
+  | "top-end"
+  | "bottom-start"
+  | "bottom-end";
 type Animation = "fade" | "scale" | "slide" | "spring";
 
 // Animated Tooltip
@@ -114,22 +123,38 @@ export function AnimatedTooltip({
 
   const getAnimationVariants = () => {
     const baseDirection = placement.split("-")[0];
-    
+
     switch (animation) {
       case "scale":
         return {
           hidden: { opacity: 0, scale: 0.8 },
           visible: { opacity: 1, scale: 1 },
         };
-      case "slide":
+      case "slide": {
         const slideOffset = 10;
         const slideVariants = {
-          top: { hidden: { opacity: 0, y: slideOffset }, visible: { opacity: 1, y: 0 } },
-          bottom: { hidden: { opacity: 0, y: -slideOffset }, visible: { opacity: 1, y: 0 } },
-          left: { hidden: { opacity: 0, x: slideOffset }, visible: { opacity: 1, x: 0 } },
-          right: { hidden: { opacity: 0, x: -slideOffset }, visible: { opacity: 1, x: 0 } },
+          top: {
+            hidden: { opacity: 0, y: slideOffset },
+            visible: { opacity: 1, y: 0 },
+          },
+          bottom: {
+            hidden: { opacity: 0, y: -slideOffset },
+            visible: { opacity: 1, y: 0 },
+          },
+          left: {
+            hidden: { opacity: 0, x: slideOffset },
+            visible: { opacity: 1, x: 0 },
+          },
+          right: {
+            hidden: { opacity: 0, x: -slideOffset },
+            visible: { opacity: 1, x: 0 },
+          },
         };
-        return slideVariants[baseDirection as keyof typeof slideVariants] || slideVariants.top;
+        return (
+          slideVariants[baseDirection as keyof typeof slideVariants] ||
+          slideVariants.top
+        );
+      }
       case "spring":
         return {
           hidden: { opacity: 0, scale: 0.5 },
@@ -150,19 +175,30 @@ export function AnimatedTooltip({
 
     const arrowClasses = {
       top: "bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-t-foreground border-x-transparent border-b-transparent",
-      bottom: "top-0 left-1/2 -translate-x-1/2 -translate-y-full border-b-foreground border-x-transparent border-t-transparent",
+      bottom:
+        "top-0 left-1/2 -translate-x-1/2 -translate-y-full border-b-foreground border-x-transparent border-t-transparent",
       left: "right-0 top-1/2 -translate-y-1/2 translate-x-full border-l-foreground border-y-transparent border-r-transparent",
-      right: "left-0 top-1/2 -translate-y-1/2 -translate-x-full border-r-foreground border-y-transparent border-l-transparent",
+      right:
+        "left-0 top-1/2 -translate-y-1/2 -translate-x-full border-r-foreground border-y-transparent border-l-transparent",
     };
 
     let alignmentClass = "";
     if (alignment === "start") {
-      alignmentClass = baseDirection === "top" || baseDirection === "bottom" ? "left-4 -translate-x-0" : "";
+      alignmentClass =
+        baseDirection === "top" || baseDirection === "bottom"
+          ? "left-4 -translate-x-0"
+          : "";
     } else if (alignment === "end") {
-      alignmentClass = baseDirection === "top" || baseDirection === "bottom" ? "left-auto right-4 translate-x-0" : "";
+      alignmentClass =
+        baseDirection === "top" || baseDirection === "bottom"
+          ? "left-auto right-4 translate-x-0"
+          : "";
     }
 
-    return cn(arrowClasses[baseDirection as keyof typeof arrowClasses], alignmentClass);
+    return cn(
+      arrowClasses[baseDirection as keyof typeof arrowClasses],
+      alignmentClass,
+    );
   };
 
   return (
@@ -183,8 +219,8 @@ export function AnimatedTooltip({
           <motion.div
             ref={tooltipRef}
             className={cn(
-              "fixed z-50 max-w-xs rounded-md bg-foreground px-3 py-1.5 text-sm text-background shadow-lg",
-              contentClassName
+              "fixed z-50 max-w-xs rounded-md bg-foreground px-3 py-1.5 text-background text-sm shadow-lg",
+              contentClassName,
             )}
             style={{ left: position.x, top: position.y }}
             variants={getAnimationVariants()}
@@ -200,10 +236,7 @@ export function AnimatedTooltip({
             {content}
             {arrow && (
               <div
-                className={cn(
-                  "absolute h-0 w-0 border-4",
-                  getArrowPosition()
-                )}
+                className={cn("absolute h-0 w-0 border-4", getArrowPosition())}
               />
             )}
           </motion.div>
@@ -239,16 +272,22 @@ export function RichTooltip({
       className={className}
       contentClassName="p-0 overflow-hidden max-w-[280px]"
       content={
-        <div className="bg-card text-card-foreground border rounded-lg shadow-xl">
+        <div className="rounded-lg border bg-card text-card-foreground shadow-xl">
           {image && (
             <div className="h-32 w-full overflow-hidden">
-              <img src={image} alt={title} className="h-full w-full object-cover" />
+              <img
+                src={image}
+                alt={title}
+                className="h-full w-full object-cover"
+              />
             </div>
           )}
           <div className="p-3">
             <p className="font-semibold text-foreground">{title}</p>
             {description && (
-              <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+              <p className="mt-1 text-muted-foreground text-sm">
+                {description}
+              </p>
             )}
           </div>
         </div>
@@ -282,7 +321,7 @@ export function IconTooltip({
         <div className="flex items-center gap-2">
           <span>{label}</span>
           {shortcut && (
-            <kbd className="rounded bg-background/20 px-1.5 py-0.5 text-xs font-mono">
+            <kbd className="rounded bg-background/20 px-1.5 py-0.5 font-mono text-xs">
               {shortcut}
             </kbd>
           )}
@@ -316,7 +355,7 @@ export function HoverCardTooltip({
       arrow={false}
       contentClassName={cn(
         "p-0 bg-card text-card-foreground border rounded-xl shadow-2xl max-w-sm",
-        className
+        className,
       )}
       content={content}
     >
@@ -359,7 +398,10 @@ export function ConfirmTooltip({
 
   return (
     <>
-      <div onClick={() => setIsOpen(!isOpen)} className="inline-block cursor-pointer">
+      <div
+        onClick={() => setIsOpen(!isOpen)}
+        className="inline-block cursor-pointer"
+      >
         {children}
       </div>
 
@@ -387,13 +429,13 @@ export function ConfirmTooltip({
               <div className="flex justify-end gap-2">
                 <button
                   onClick={handleCancel}
-                  className="rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent"
+                  className="rounded-md px-3 py-1.5 text-muted-foreground text-sm hover:bg-accent"
                 >
                   {cancelText}
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className="rounded-md bg-primary px-3 py-1.5 text-sm text-primary-foreground hover:bg-primary/90"
+                  className="rounded-md bg-primary px-3 py-1.5 text-primary-foreground text-sm hover:bg-primary/90"
                 >
                   {confirmText}
                 </button>
@@ -421,7 +463,12 @@ interface TooltipGroupProps {
 
 export function TooltipGroup({ items, className }: TooltipGroupProps) {
   return (
-    <div className={cn("inline-flex items-center gap-1 rounded-lg border bg-card p-1", className)}>
+    <div
+      className={cn(
+        "inline-flex items-center gap-1 rounded-lg border bg-card p-1",
+        className,
+      )}
+    >
       {items.map((item, index) => (
         <IconTooltip key={index} label={item.label} shortcut={item.shortcut}>
           <button
@@ -443,7 +490,11 @@ interface FloatingLabelProps {
   className?: string;
 }
 
-export function FloatingLabel({ children, label, className }: FloatingLabelProps) {
+export function FloatingLabel({
+  children,
+  label,
+  className,
+}: FloatingLabelProps) {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
@@ -451,7 +502,7 @@ export function FloatingLabel({ children, label, className }: FloatingLabelProps
       <AnimatePresence>
         {isFocused && (
           <motion.div
-            className="absolute -top-6 left-0 text-xs font-medium text-primary"
+            className="-top-6 absolute left-0 font-medium text-primary text-xs"
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 5 }}
@@ -511,6 +562,14 @@ export function StatusTooltip({
 }
 
 export type {
-    AnimatedTooltipProps, Animation, ConfirmTooltipProps, FloatingLabelProps, HoverCardTooltipProps, IconTooltipProps, Placement, RichTooltipProps, StatusTooltipProps, TooltipGroupProps
+  AnimatedTooltipProps,
+  Animation,
+  ConfirmTooltipProps,
+  FloatingLabelProps,
+  HoverCardTooltipProps,
+  IconTooltipProps,
+  Placement,
+  RichTooltipProps,
+  StatusTooltipProps,
+  TooltipGroupProps,
 };
-

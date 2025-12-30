@@ -1,7 +1,8 @@
 /**
  * Props for the GradientBorder component
  */
-export interface GradientBorderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface GradientBorderProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The content to be wrapped by the gradient border
    */
@@ -52,7 +53,8 @@ export interface GradientBorderCardProps extends GradientBorderProps {
 /**
  * Props for the GradientBorderButton component
  */
-export interface GradientBorderButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface GradientBorderButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Array of colors for the gradient border
    * @default ["#f43f5e", "#8b5cf6", "#3b82f6", "#22c55e", "#f43f5e"]
@@ -78,7 +80,8 @@ export interface GradientBorderButtonProps extends React.ButtonHTMLAttributes<HT
 /**
  * Props for the ShimmerBorder component
  */
-export interface ShimmerBorderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ShimmerBorderProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The content to be wrapped by the shimmer border
    */

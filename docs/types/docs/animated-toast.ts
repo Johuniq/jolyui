@@ -2,7 +2,13 @@
  * Types for toast notifications
  */
 export type ToastType = "success" | "error" | "warning" | "info" | "default";
-export type ToastPosition = "top-right" | "top-left" | "top-center" | "bottom-right" | "bottom-left" | "bottom-center";
+export type ToastPosition =
+  | "top-right"
+  | "top-left"
+  | "top-center"
+  | "bottom-right"
+  | "bottom-left"
+  | "bottom-center";
 
 /**
  * Toast data structure

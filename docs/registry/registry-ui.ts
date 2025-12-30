@@ -36,7 +36,11 @@ export const ui: Registry["items"] = [
   {
     name: "button",
     type: "registry:ui",
-    dependencies: ["@radix-ui/react-slot", "class-variance-authority", "motion"],
+    dependencies: [
+      "@radix-ui/react-slot",
+      "class-variance-authority",
+      "motion",
+    ],
     files: [
       {
         path: "ui/button.tsx",
@@ -113,11 +117,7 @@ export const ui: Registry["items"] = [
   {
     name: "github-contributors",
     type: "registry:ui",
-    dependencies: [
-      "@radix-ui/react-tooltip",
-      "lucide-react",
-      "motion",
-    ],
+    dependencies: ["@radix-ui/react-tooltip", "lucide-react", "motion"],
     files: [
       {
         path: "ui/github-contributors.tsx",

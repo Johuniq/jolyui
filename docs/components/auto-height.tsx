@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
 import {
-    motion,
-    type HTMLMotionProps,
-    type LegacyAnimationControls,
-    type TargetAndTransition,
-    type Transition,
-} from 'motion/react';
-import * as React from 'react';
+  type HTMLMotionProps,
+  type LegacyAnimationControls,
+  motion,
+  type TargetAndTransition,
+  type Transition,
+} from "motion/react";
+import type * as React from "react";
 
-import { Slot, WithAsChild } from '@/components/slot';
-import { useAutoHeight } from '@/hooks/use-auto-height';
+import { Slot, type WithAsChild } from "@/components/slot";
+import { useAutoHeight } from "@/hooks/use-auto-height";
 
 type AutoHeightProps = WithAsChild<
   {
@@ -18,14 +18,14 @@ type AutoHeightProps = WithAsChild<
     deps?: React.DependencyList;
     animate?: TargetAndTransition | LegacyAnimationControls;
     transition?: Transition;
-  } & Omit<HTMLMotionProps<'div'>, 'animate'>
+  } & Omit<HTMLMotionProps<"div">, "animate">
 >;
 
 function AutoHeight({
   children,
   deps = [],
   transition = {
-    type: 'spring',
+    type: "spring",
     stiffness: 300,
     damping: 30,
     bounce: 0,
@@ -42,7 +42,7 @@ function AutoHeight({
 
   return (
     <Comp
-      style={{ overflow: 'hidden', ...style }}
+      style={{ overflow: "hidden", ...style }}
       animate={{ height, ...animate }}
       transition={transition}
       {...props}

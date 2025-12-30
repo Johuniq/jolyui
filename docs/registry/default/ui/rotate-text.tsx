@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface RotatingTextProps {
   words: string[];
@@ -42,7 +42,7 @@ const RotatingText = React.forwardRef<HTMLSpanElement, RotatingTextProps>(
         </AnimatePresence>
       </span>
     );
-  }
+  },
 );
 RotatingText.displayName = "RotatingText";
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { GradientBorderCard } from "@/registry/default/ui/gradient-border";
 import { Shield, Sparkles, Zap } from "lucide-react";
+import { GradientBorderCard } from "@/registry/default/ui/gradient-border";
 
 export default function GradientBorderCardDemo() {
   return (
@@ -16,7 +16,7 @@ export default function GradientBorderCardDemo() {
             <Sparkles className="h-5 w-5 text-primary" />
           </div>
           <h3 className="mb-2 font-semibold">Gradient Glow</h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Card with rotating gradient border and glow effect
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function GradientBorderCardDemo() {
             <Zap className="h-5 w-5 text-green-500" />
           </div>
           <h3 className="mb-2 font-semibold">Thick Border</h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Thicker gradient border for emphasis
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function GradientBorderCardDemo() {
             <Shield className="h-5 w-5 text-blue-500" />
           </div>
           <h3 className="mb-2 font-semibold">Strong Glow</h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Higher opacity glow for dramatic effect
           </p>
         </div>

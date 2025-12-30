@@ -88,16 +88,6 @@
       "!**/.next",
       "!**/.source",
       "!**/__registry__"
-    ],
-    "ignore": [
-      "**/node_modules/**",
-      "**/.next/**",
-      "**/.turbo/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/public/r/**",
-      "**/.source/**",
-      "**/__registry__/**"
     ]
   }
 }

@@ -1,22 +1,19 @@
-'use client';
+"use client";
 
 import {
-    motion,
-    type HTMLMotionProps,
-    type TargetAndTransition,
-    type Transition,
-    type Variants,
-} from 'motion/react';
-import * as React from 'react';
+  type HTMLMotionProps,
+  motion,
+  type TargetAndTransition,
+  type Transition,
+  type Variants,
+} from "motion/react";
+import * as React from "react";
 
-import {
-    useIsInView,
-    type UseIsInViewOptions,
-} from '@/hooks/use-is-in-view';
+import { type UseIsInViewOptions, useIsInView } from "@/hooks/use-is-in-view";
 
 type DefaultSplittingTextProps = Omit<
-  HTMLMotionProps<'div'>,
-  'children' | 'initial' | 'animate' | 'transition'
+  HTMLMotionProps<"div">,
+  "children" | "initial" | "animate" | "transition"
 > & {
   initial?: TargetAndTransition;
   animate?: TargetAndTransition;
@@ -27,12 +24,12 @@ type DefaultSplittingTextProps = Omit<
 } & UseIsInViewOptions;
 
 type CharsOrWordsSplittingTextProps = DefaultSplittingTextProps & {
-  type?: 'chars' | 'words';
+  type?: "chars" | "words";
   text: string;
 };
 
 type LinesSplittingTextProps = DefaultSplittingTextProps & {
-  type?: 'lines';
+  type?: "lines";
   text: string[];
 };
 
@@ -43,14 +40,14 @@ type SplittingTextProps =
 const SplittingText: React.FC<SplittingTextProps> = ({
   ref,
   text,
-  type = 'chars',
+  type = "chars",
   initial = { x: 150, opacity: 0 },
   animate = { x: 0, opacity: 1 },
-  transition = { duration: 0.7, ease: 'easeOut' },
+  transition = { duration: 0.7, ease: "easeOut" },
   stagger,
   delay = 0,
   inView = false,
-  inViewMargin = '0px',
+  inViewMargin = "0px",
   inViewOnce = true,
   disableAnimation = false,
   ...props
@@ -61,7 +58,7 @@ const SplittingText: React.FC<SplittingTextProps> = ({
       transition: {
         delayChildren: delay / 1000,
         staggerChildren:
-          stagger ?? (type === 'chars' ? 0.05 : type === 'words' ? 0.2 : 0.3),
+          stagger ?? (type === "chars" ? 0.05 : type === "words" ? 0.2 : 0.3),
       },
     },
   };
@@ -88,7 +85,7 @@ const SplittingText: React.FC<SplittingTextProps> = ({
       <motion.span
         ref={localRef}
         initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
+        animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
         {...props}
       >
@@ -96,7 +93,7 @@ const SplittingText: React.FC<SplittingTextProps> = ({
           <React.Fragment key={`line-${i}`}>
             <motion.span
               variants={itemVariants}
-              style={{ display: 'inline-block' }}
+              style={{ display: "inline-block" }}
             >
               {line}
             </motion.span>
@@ -107,13 +104,13 @@ const SplittingText: React.FC<SplittingTextProps> = ({
     );
   }
 
-  if (type === 'words') {
+  if (type === "words") {
     const tokens = (text as string).match(/\S+\s*/g) || [];
     return (
       <motion.span
         ref={localRef}
         initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
+        animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
         {...props}
       >
@@ -121,11 +118,11 @@ const SplittingText: React.FC<SplittingTextProps> = ({
           <React.Fragment key={i}>
             <motion.span
               variants={itemVariants}
-              style={{ display: 'inline-block', whiteSpace: 'normal' }}
+              style={{ display: "inline-block", whiteSpace: "normal" }}
             >
               {token.trim()}
             </motion.span>
-            {/\s$/.test(token) ? ' ' : null}
+            {/\s$/.test(token) ? " " : null}
           </React.Fragment>
         ))}
       </motion.span>
@@ -142,7 +139,7 @@ const SplittingText: React.FC<SplittingTextProps> = ({
     <motion.span
       ref={localRef}
       initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
+      animate={isInView ? "visible" : "hidden"}
       variants={{
         hidden: {},
         visible: { transition: {} },
@@ -160,17 +157,17 @@ const SplittingText: React.FC<SplittingTextProps> = ({
         return (
           <motion.span
             key={`word-${wi}`}
-            style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+            style={{ display: "inline-block", whiteSpace: "nowrap" }}
             variants={{}}
             transition={{ delayChildren: wordDelay, staggerChildren: perChar }}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
+            animate={isInView ? "visible" : "hidden"}
           >
             {chars.map((ch, ci) => (
               <motion.span
                 key={`ch-${wi}-${ci}`}
                 variants={itemVariants}
-                style={{ display: 'inline-block', whiteSpace: 'pre' }}
+                style={{ display: "inline-block", whiteSpace: "pre" }}
               >
                 {ch}
               </motion.span>

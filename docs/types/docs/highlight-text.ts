@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 
 export type HighlightColor = "primary" | "secondary" | "accent" | "destructive";
 export type HighlightVariant = "underline" | "box" | "circle" | "marker";

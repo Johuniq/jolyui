@@ -1,7 +1,10 @@
 "use client";
 
-import { AnimatedToastProvider, usePromiseToast } from "@/registry/default/ui/animated-toast";
 import { useState } from "react";
+import {
+  AnimatedToastProvider,
+  usePromiseToast,
+} from "@/registry/default/ui/animated-toast";
 
 function PromiseToastDemoContent() {
   const promiseToast = usePromiseToast();
@@ -53,25 +56,25 @@ function PromiseToastDemoContent() {
         Click buttons to simulate async operations with toast feedback.
       </p>
 
-      <div className="flex flex-wrap gap-4 mb-4">
+      <div className="mb-4 flex flex-wrap gap-4">
         <button
           onClick={handleSuccess}
-          className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+          className="rounded-md bg-green-500 px-4 py-2 text-white transition-colors hover:bg-green-600"
         >
           Simulate Success
         </button>
         <button
           onClick={handleError}
-          className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+          className="rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600"
         >
           Simulate Error
         </button>
       </div>
 
       {result && (
-        <div className="p-4 bg-muted rounded-md">
-          <p className="text-sm font-medium">Result:</p>
-          <p className="text-sm text-muted-foreground">{result}</p>
+        <div className="rounded-md bg-muted p-4">
+          <p className="font-medium text-sm">Result:</p>
+          <p className="text-muted-foreground text-sm">{result}</p>
         </div>
       )}
     </div>

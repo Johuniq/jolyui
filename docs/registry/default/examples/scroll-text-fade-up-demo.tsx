@@ -2,8 +2,8 @@ import { ScrollText } from "@/registry/default/ui/scroll-text";
 
 export default function ScrollTextFadeUpDemo() {
   return (
-    <div className="flex items-center justify-center h-[400px] w-full">
-      <ScrollText effect="fadeUp" className="text-4xl font-bold">
+    <div className="flex h-[400px] w-full items-center justify-center">
+      <ScrollText effect="fadeUp" className="font-bold text-4xl">
         Fade Up Animation
       </ScrollText>
     </div>

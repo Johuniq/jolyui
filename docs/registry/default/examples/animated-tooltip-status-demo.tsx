@@ -15,10 +15,10 @@ export default function AnimatedTooltipStatusDemo() {
                 status === "online" && "bg-green-500",
                 status === "away" && "bg-yellow-500",
                 status === "busy" && "bg-red-500",
-                status === "offline" && "bg-gray-400"
+                status === "offline" && "bg-gray-400",
               )}
             />
-            <span className="text-sm font-medium capitalize">{status}</span>
+            <span className="font-medium text-sm capitalize">{status}</span>
           </div>
         </StatusTooltip>
       ))}

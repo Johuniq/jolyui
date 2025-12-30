@@ -7,7 +7,7 @@ export default function VelocityMorphDemo() {
     <div className="flex items-center justify-center">
       <VelocityMorph
         texts={["Hello", "World", "Velocity", "Morph"]}
-        className="text-4xl font-bold text-foreground"
+        className="font-bold text-4xl text-foreground"
       />
     </div>
   );

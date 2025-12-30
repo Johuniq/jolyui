@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface MorphingTextProps {
   words: string[];
@@ -36,7 +36,7 @@ const MorphingText = React.forwardRef<HTMLSpanElement, MorphingTextProps>(
         </AnimatePresence>
       </span>
     );
-  }
+  },
 );
 MorphingText.displayName = "MorphingText";
 export { MorphingText };

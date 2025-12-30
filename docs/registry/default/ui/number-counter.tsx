@@ -1,8 +1,14 @@
-import { cn } from "@/lib/utils";
 import { motion, useInView, useSpring, useTransform } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
-type EasingType = "linear" | "easeOut" | "easeIn" | "easeInOut" | "spring" | "bounce";
+type EasingType =
+  | "linear"
+  | "easeOut"
+  | "easeIn"
+  | "easeInOut"
+  | "spring"
+  | "bounce";
 
 interface NumberCounterProps {
   value: number;
@@ -35,14 +41,19 @@ const formatNumber = (
   value: number,
   decimals: number,
   separator: string,
-  decimalSeparator: string
+  decimalSeparator: string,
 ): string => {
   const fixed = value.toFixed(decimals);
   const [intPart, decPart] = fixed.split(".");
 
-  const formattedInt = (intPart || "").replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+  const formattedInt = (intPart || "").replace(
+    /\B(?=(\d{3})+(?!\d))/g,
+    separator,
+  );
 
-  return decPart ? `${formattedInt}${decimalSeparator}${decPart}` : formattedInt;
+  return decPart
+    ? `${formattedInt}${decimalSeparator}${decPart}`
+    : formattedInt;
 };
 
 // Animated digit component for rolling effect
@@ -64,7 +75,7 @@ const AnimatedDigit = ({
   return (
     <span className="relative inline-block h-[1em] w-[0.6em] overflow-hidden">
       <motion.span
-        className="absolute top-0 left-0 w-full flex flex-col items-center"
+        className="absolute top-0 left-0 flex w-full flex-col items-center"
         initial={{ y: "-100%" }}
         animate={{ y: `${-num * 10}%` }}
         transition={{
@@ -155,7 +166,7 @@ const NumberCounter = React.forwardRef<HTMLSpanElement, NumberCounterProps>(
       once = true,
       formatFn,
     },
-    ref
+    ref,
   ) => {
     const containerRef = React.useRef<HTMLSpanElement>(null);
     const isInView = useInView(containerRef, { once });
@@ -237,7 +248,7 @@ const NumberCounter = React.forwardRef<HTMLSpanElement, NumberCounterProps>(
         {suffix}
       </span>
     );
-  }
+  },
 );
 
 NumberCounter.displayName = "NumberCounter";
@@ -260,7 +271,10 @@ const RollingCounter = React.forwardRef<HTMLSpanElement, RollingCounterProps>(
     const digits = formattedValue.split("");
 
     return (
-      <span ref={containerRef} className={cn("inline-flex tabular-nums", className)}>
+      <span
+        ref={containerRef}
+        className={cn("inline-flex tabular-nums", className)}
+      >
         {prefix && <span>{prefix}</span>}
         <span ref={ref} className="inline-flex">
           {isInView &&
@@ -275,7 +289,7 @@ const RollingCounter = React.forwardRef<HTMLSpanElement, RollingCounterProps>(
         {suffix && <span>{suffix}</span>}
       </span>
     );
-  }
+  },
 );
 
 RollingCounter.displayName = "RollingCounter";
@@ -302,19 +316,19 @@ const CircularCounter = React.forwardRef<HTMLDivElement, CircularCounterProps>(
       color = "hsl(var(--primary))",
       trackColor = "hsl(var(--muted))",
     },
-    ref
+    ref,
   ) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
     const isInView = useInView(containerRef, { once: true });
-    
+
     const springValue = useSpring(0, {
       duration: duration * 1000,
       bounce: 0,
     });
-    
+
     const radius = (size - strokeWidth) / 2;
     const circumference = radius * 2 * Math.PI;
-    
+
     const offset = useTransform(springValue, [0, 100], [circumference, 0]);
     const rounded = useTransform(springValue, (latest) => Math.round(latest));
 
@@ -327,7 +341,10 @@ const CircularCounter = React.forwardRef<HTMLDivElement, CircularCounterProps>(
     return (
       <div
         ref={containerRef}
-        className={cn("relative inline-flex items-center justify-center", className)}
+        className={cn(
+          "relative inline-flex items-center justify-center",
+          className,
+        )}
         style={{ width: size, height: size }}
       >
         <svg width={size} height={size} className="-rotate-90">
@@ -351,8 +368,11 @@ const CircularCounter = React.forwardRef<HTMLDivElement, CircularCounterProps>(
             style={{ strokeDashoffset: offset }}
           />
         </svg>
-        <div ref={ref} className="absolute inset-0 flex items-center justify-center">
-          <span 
+        <div
+          ref={ref}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <span
             className="font-bold tabular-nums leading-none"
             style={{ fontSize: size * 0.22 }}
           >
@@ -361,7 +381,7 @@ const CircularCounter = React.forwardRef<HTMLDivElement, CircularCounterProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 CircularCounter.displayName = "CircularCounter";
@@ -377,7 +397,10 @@ interface StatCounterProps {
 }
 
 const StatCounter = React.forwardRef<HTMLDivElement, StatCounterProps>(
-  ({ value, label, prefix = "", suffix = "", decimals = 0, className }, ref) => {
+  (
+    { value, label, prefix = "", suffix = "", decimals = 0, className },
+    ref,
+  ) => {
     return (
       <div ref={ref} className={cn("text-center", className)}>
         <NumberCounter
@@ -387,21 +410,28 @@ const StatCounter = React.forwardRef<HTMLDivElement, StatCounterProps>(
           decimals={decimals}
           duration={2.5}
           easing="easeOut"
-          className="text-4xl font-bold text-foreground"
+          className="font-bold text-4xl text-foreground"
         />
-        <p className="mt-2 text-sm text-muted-foreground">{label}</p>
+        <p className="mt-2 text-muted-foreground text-sm">{label}</p>
       </div>
     );
-  }
+  },
 );
 
 StatCounter.displayName = "StatCounter";
 
 export {
-    CircularCounter, formatNumber, NumberCounter, RollingCounter, SpringCounter, StatCounter
+  CircularCounter,
+  formatNumber,
+  NumberCounter,
+  RollingCounter,
+  SpringCounter,
+  StatCounter,
 };
 export type {
-    CircularCounterProps, EasingType, NumberCounterProps,
-    RollingCounterProps, StatCounterProps
+  CircularCounterProps,
+  EasingType,
+  NumberCounterProps,
+  RollingCounterProps,
+  StatCounterProps,
 };
-

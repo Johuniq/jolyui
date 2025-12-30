@@ -1,7 +1,7 @@
 "use client";
 
-import { UndoToast } from "@/registry/default/ui/animated-toast";
 import { useState } from "react";
+import { UndoToast } from "@/registry/default/ui/animated-toast";
 
 export default function AnimatedToastUndoDemo() {
   const [showToast, setShowToast] = useState(false);
@@ -23,7 +23,7 @@ export default function AnimatedToastUndoDemo() {
 
       <button
         onClick={deleteItem}
-        className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+        className="rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600"
       >
         Delete Item
       </button>

@@ -18,7 +18,7 @@ const ThemeToogle = () => {
       <div className="flex items-center rounded-full border border-dotted">
         <button
           onClick={() => setTheme("light")}
-          className="bg-black mr-3 rounded-full p-2 text-white dark:bg-background dark:text-white"
+          className="mr-3 rounded-full bg-black p-2 text-white dark:bg-background dark:text-white"
         >
           <Sun className="h-5 w-5" strokeWidth={1} />
           <span className="sr-only">T</span>
@@ -31,7 +31,7 @@ const ThemeToogle = () => {
 
         <button
           onClick={() => setTheme("dark")}
-          className="dark:bg-black ml-3 rounded-full p-2 text-black dark:text-white"
+          className="ml-3 rounded-full p-2 text-black dark:bg-black dark:text-white"
         >
           <Moon className="h-5 w-5" strokeWidth={1} />
           <span className="sr-only">T</span>

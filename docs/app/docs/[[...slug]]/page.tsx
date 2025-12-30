@@ -1,10 +1,3 @@
-import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
-import { DynamicLink } from "@/components/dynamic-link";
-import { Feedback } from "@/components/feedback";
-import { Mdx } from "@/components/mdx-components";
-import { Separator } from "@/components/ui/separator";
-import { onRateAction } from "@/lib/on-rate-action";
-import { source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,
@@ -14,6 +7,13 @@ import {
 } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
+import { DynamicLink } from "@/components/dynamic-link";
+import { Feedback } from "@/components/feedback";
+import { Mdx } from "@/components/mdx-components";
+import { Separator } from "@/components/ui/separator";
+import { onRateAction } from "@/lib/on-rate-action";
+import { source } from "@/lib/source";
 
 interface DocPageParams {
   params: Promise<{
@@ -111,36 +111,34 @@ export default async function DocPage(props: DocPageParams) {
       />
       <DocsPage toc={page.data.toc} full={page.data.full}>
         <div className="flex flex-col gap-2">
-        <DocsTitle>{page.data.title}</DocsTitle>
-        <DocsDescription className="mb-2.5">
-          {page.data.description}
-        </DocsDescription>
-        <div className="flex items-center gap-2 lg:flex-nowrap flex-wrap">
-          {docLink ? <DynamicLink href={docLink}>Docs</DynamicLink> : null}
-          {apiLink ? <DynamicLink href={apiLink}>API</DynamicLink> : null}
-          {(docLink || apiLink) && (
-            <Separator
-              orientation="vertical"
-              className="data-[orientation=vertical]:h-6"
+          <DocsTitle>{page.data.title}</DocsTitle>
+          <DocsDescription className="mb-2.5">
+            {page.data.description}
+          </DocsDescription>
+          <div className="flex flex-wrap items-center gap-2 lg:flex-nowrap">
+            {docLink ? <DynamicLink href={docLink}>Docs</DynamicLink> : null}
+            {apiLink ? <DynamicLink href={apiLink}>API</DynamicLink> : null}
+            {(docLink || apiLink) && (
+              <Separator
+                orientation="vertical"
+                className="data-[orientation=vertical]:h-6"
+              />
+            )}
+            <EditOnGitHub
+              className="border-0 [&_svg]:text-fd-muted-foreground"
+              href={`https://github.com/Johuniq/jolyui/tree/main/docs/content/docs/${params.slug ? `${params.slug.join("/")}.mdx` : "index.mdx"}`}
             />
-          )}
-          <EditOnGitHub
-          className="border-0 [&_svg]:text-fd-muted-foreground"
-          href={`https://github.com/Johuniq/jolyui/tree/main/docs/content/docs/${params.slug ? `${params.slug.join('/')}.mdx` : 'index.mdx'}`}
-        />
-          <CopyMarkdownButton markdownUrl={`${page.url}.mdx`} />
-          <ViewOptions
-            markdownUrl={`${page.url}.mdx`}
-            githubUrl={`https://github.com/johuniq/jolyui/blob/main/docs/content/docs/${page.path}`}
-          />
+            <CopyMarkdownButton markdownUrl={`${page.url}.mdx`} />
+            <ViewOptions
+              markdownUrl={`${page.url}.mdx`}
+              githubUrl={`https://github.com/johuniq/jolyui/blob/main/docs/content/docs/${page.path}`}
+            />
+          </div>
         </div>
-      </div>
-      <DocsBody>
-        <Mdx page={page} />
-      </DocsBody>
-       <Feedback
-        onRateAction={onRateAction}
-      />
+        <DocsBody>
+          <Mdx page={page} />
+        </DocsBody>
+        <Feedback onRateAction={onRateAction} />
       </DocsPage>
     </>
   );

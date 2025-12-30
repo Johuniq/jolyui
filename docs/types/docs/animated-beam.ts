@@ -78,7 +78,7 @@ export interface AnimatedBeamProps {
 /**
  * Props for the BeamContainer component
  */
-export interface BeamContainerProps{
+export interface BeamContainerProps {
   /**
    * The child elements
    */
@@ -88,7 +88,7 @@ export interface BeamContainerProps{
 /**
  * Props for the BeamNode component
  */
-export interface BeamNodeProps{
+export interface BeamNodeProps {
   /**
    * The child elements
    */

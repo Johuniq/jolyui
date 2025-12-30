@@ -11,7 +11,7 @@ export default function AnimatedTooltipAnimationDemo() {
           content={`${animation} animation`}
           animation={animation}
         >
-          <button className="rounded-lg border bg-card px-4 py-2 text-sm font-medium capitalize transition-colors hover:bg-accent">
+          <button className="rounded-lg border bg-card px-4 py-2 font-medium text-sm capitalize transition-colors hover:bg-accent">
             {animation}
           </button>
         </AnimatedTooltip>

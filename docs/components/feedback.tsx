@@ -1,29 +1,29 @@
-'use client';
-import { cva } from 'class-variance-authority';
+"use client";
+import { cva } from "class-variance-authority";
 import {
-    Collapsible,
-    CollapsibleContent,
-} from 'fumadocs-ui/components/ui/collapsible';
-import { ThumbsDown, ThumbsUp } from 'lucide-react';
-import { usePathname } from 'next/navigation';
-import { type SyntheticEvent, useEffect, useState, useTransition } from 'react';
-import { cn } from '../lib/cn';
-import { buttonVariants } from './ui/button';
+  Collapsible,
+  CollapsibleContent,
+} from "fumadocs-ui/components/ui/collapsible";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { type SyntheticEvent, useEffect, useState, useTransition } from "react";
+import { cn } from "../lib/cn";
+import { buttonVariants } from "./ui/button";
 
 const rateButtonVariants = cva(
-  'inline-flex items-center gap-2 px-3 py-2 rounded-full font-medium border text-sm [&_svg]:size-4 disabled:cursor-not-allowed',
+  "inline-flex items-center gap-2 rounded-full border px-3 py-2 font-medium text-sm disabled:cursor-not-allowed [&_svg]:size-4",
   {
     variants: {
       active: {
-        true: 'bg-fd-accent text-fd-accent-foreground [&_svg]:fill-current',
-        false: 'text-fd-muted-foreground',
+        true: "bg-fd-accent text-fd-accent-foreground [&_svg]:fill-current",
+        false: "text-fd-muted-foreground",
       },
     },
   },
 );
 
 export interface Feedback {
-  opinion: 'good' | 'bad';
+  opinion: "good" | "bad";
   url?: string;
   message: string;
 }
@@ -43,8 +43,8 @@ export function Feedback({
 }) {
   const url = usePathname();
   const [previous, setPrevious] = useState<Result | null>(null);
-  const [opinion, setOpinion] = useState<'good' | 'bad' | null>(null);
-  const [message, setMessage] = useState('');
+  const [opinion, setOpinion] = useState<"good" | "bad" | null>(null);
+  const [message, setMessage] = useState("");
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export function Feedback({
           response,
           ...feedback,
         });
-        setMessage('');
+        setMessage("");
         setOpinion(null);
       });
     });
@@ -94,16 +94,16 @@ export function Feedback({
       className="border-y py-3"
     >
       <div className="flex flex-row items-center gap-2">
-        <p className="text-sm font-medium pe-2">How is this guide?</p>
+        <p className="pe-2 font-medium text-sm">How is this guide?</p>
         <button
           disabled={previous !== null}
           className={cn(
             rateButtonVariants({
-              active: activeOpinion === 'good',
+              active: activeOpinion === "good",
             }),
           )}
           onClick={() => {
-            setOpinion('good');
+            setOpinion("good");
           }}
         >
           <ThumbsUp />
@@ -113,11 +113,11 @@ export function Feedback({
           disabled={previous !== null}
           className={cn(
             rateButtonVariants({
-              active: activeOpinion === 'bad',
+              active: activeOpinion === "bad",
             }),
           )}
           onClick={() => {
-            setOpinion('bad');
+            setOpinion("bad");
           }}
         >
           <ThumbsDown />
@@ -126,7 +126,7 @@ export function Feedback({
       </div>
       <CollapsibleContent className="mt-3">
         {previous ? (
-          <div className="px-3 py-6 flex flex-col items-center gap-3 bg-fd-card text-fd-muted-foreground text-sm text-center rounded-xl">
+          <div className="flex flex-col items-center gap-3 rounded-xl bg-fd-card px-3 py-6 text-center text-fd-muted-foreground text-sm">
             <p>Thank you for your feedback!</p>
             <div className="flex flex-row items-center gap-2">
               <a
@@ -135,9 +135,9 @@ export function Feedback({
                 target="_blank"
                 className={cn(
                   buttonVariants({
-                    variant: 'default',
+                    variant: "default",
                   }),
-                  'text-xs',
+                  "text-xs",
                 )}
               >
                 View on GitHub
@@ -146,9 +146,9 @@ export function Feedback({
               <button
                 className={cn(
                   buttonVariants({
-                    variant: 'outline',
+                    variant: "outline",
                   }),
-                  'text-xs',
+                  "text-xs",
                 )}
                 onClick={() => {
                   setOpinion(previous.opinion);
@@ -166,17 +166,20 @@ export function Feedback({
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 resize-none focus-visible:outline-none placeholder:text-fd-muted-foreground"
+              className="resize-none rounded-lg border bg-fd-secondary p-3 text-fd-secondary-foreground placeholder:text-fd-muted-foreground focus-visible:outline-none"
               placeholder="Leave your feedback..."
               onKeyDown={(e) => {
-                if (!e.shiftKey && e.key === 'Enter') {
+                if (!e.shiftKey && e.key === "Enter") {
                   submit(e);
                 }
               }}
             />
             <button
               type="submit"
-              className={cn(buttonVariants({ variant: 'outline' }), 'w-fit px-3')}
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "w-fit px-3",
+              )}
               disabled={isPending}
             >
               Submit

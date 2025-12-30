@@ -1,6 +1,10 @@
-import { AnimatedBeam, BeamContainer, BeamNode } from "@/registry/default/ui/animated-beam";
 import { Circle, Square } from "lucide-react";
 import React from "react";
+import {
+  AnimatedBeam,
+  BeamContainer,
+  BeamNode,
+} from "@/registry/default/ui/animated-beam";
 
 export default function AnimatedBeamCurvedDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -10,7 +14,7 @@ export default function AnimatedBeamCurvedDemo() {
   return (
     <BeamContainer
       ref={containerRef}
-      className="mx-auto w-full flex items-center min-h-screen justify-between rounded-xl p-8"
+      className="mx-auto flex min-h-screen w-full items-center justify-between rounded-xl p-8"
     >
       <BeamNode ref={fromRef} className="h-14 w-14">
         <Circle className="h-6 w-6 text-muted-foreground" />

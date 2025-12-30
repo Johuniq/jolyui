@@ -4,13 +4,13 @@ import NumberFlow from "@number-flow/react";
 import { Star } from "lucide-react";
 import {
   AnimatePresence,
+  type HTMLMotionProps,
   motion,
+  type SpringOptions,
+  type UseInViewOptions,
   useInView,
   useMotionValue,
   useSpring,
-  type HTMLMotionProps,
-  type SpringOptions,
-  type UseInViewOptions,
 } from "motion/react";
 import * as React from "react";
 
@@ -71,7 +71,7 @@ function GitHubStarsButton({
 
   const repoUrl = React.useMemo(
     () => `https://github.com/${username}/${repo}`,
-    [username, repo]
+    [username, repo],
   );
 
   React.useEffect(() => {
@@ -127,12 +127,12 @@ function GitHubStarsButton({
   const renderNumberSegments = (
     segments: string[],
     unit: string,
-    isGhost: boolean
+    isGhost: boolean,
   ) => (
     <span
       className={cn(
         "flex items-center gap-px",
-        isGhost ? "invisible" : "absolute top-0 left-0"
+        isGhost ? "invisible" : "absolute top-0 left-0",
       )}
     >
       {segments.map((segment, index) => (
@@ -151,7 +151,7 @@ function GitHubStarsButton({
       handleDisplayParticles();
       setTimeout(() => window.open(repoUrl, "_blank"), 500);
     },
-    [handleDisplayParticles, repoUrl]
+    [handleDisplayParticles, repoUrl],
   );
 
   if (isLoading) return null;
@@ -166,8 +166,8 @@ function GitHubStarsButton({
       whileHover={{ scale: 1.05 }}
       onClick={handleClick}
       className={cn(
-        "flex items-center gap-2 text-sm bg-primary text-primary-foreground rounded-lg px-4 py-2 h-7 has-[>svg]:px-3 cursor-pointer whitespace-nowrap font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-[18px] shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-        className
+        "flex h-7 shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground text-sm outline-none transition-colors focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg:not([class*='size-'])]:size-[18px] [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        className,
       )}
       {...props}
     >
@@ -182,7 +182,7 @@ function GitHubStarsButton({
           aria-hidden="true"
         />
         <Star
-          className="absolute top-0 left-0 text-yellow-500 fill-yellow-500"
+          className="absolute top-0 left-0 fill-yellow-500 text-yellow-500"
           aria-hidden="true"
           style={{
             clipPath: `inset(${
@@ -213,7 +213,7 @@ function GitHubStarsButton({
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-1 h-1 rounded-full bg-yellow-500"
+                  className="absolute h-1 w-1 rounded-full bg-yellow-500"
                   initial={{ x: "50%", y: "50%", scale: 0, opacity: 0 }}
                   animate={{
                     x: `calc(50% + ${Math.cos((i * Math.PI) / 3) * 30}px)`,
@@ -236,12 +236,12 @@ function GitHubStarsButton({
         {renderNumberSegments(
           ghostFormattedNumber.number,
           ghostFormattedNumber.unit,
-          true
+          true,
         )}
         {renderNumberSegments(
           formattedResult.number,
           formattedResult.unit,
-          false
+          false,
         )}
       </span>
     </motion.a>

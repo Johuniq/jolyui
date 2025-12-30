@@ -1,8 +1,6 @@
 "use client";
 
-import {
-    AnimatedTooltip
-} from "@/components/ui/animated-tooltip";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
 export default function AnimatedTooltipDemo() {
   return (
@@ -14,7 +12,7 @@ export default function AnimatedTooltipDemo() {
           placement={placement}
           animation="slide"
         >
-          <button className="rounded-lg border bg-card px-4 py-2 text-sm font-medium capitalize transition-colors hover:bg-accent">
+          <button className="rounded-lg border bg-card px-4 py-2 font-medium text-sm capitalize transition-colors hover:bg-accent">
             {placement}
           </button>
         </AnimatedTooltip>

@@ -1,11 +1,16 @@
 "use client";
 
-import { AnimatedToastProvider, useAnimatedToast } from "@/registry/default/ui/animated-toast";
+import {
+  AnimatedToastProvider,
+  useAnimatedToast,
+} from "@/registry/default/ui/animated-toast";
 
 function ToastDemoContent() {
   const { addToast } = useAnimatedToast();
 
-  const showToast = (type: "success" | "error" | "warning" | "info" | "default") => {
+  const showToast = (
+    type: "success" | "error" | "warning" | "info" | "default",
+  ) => {
     addToast({
       title: `${type.charAt(0).toUpperCase() + type.slice(1)} Toast`,
       message: `This is a ${type} notification message.`,
@@ -30,37 +35,37 @@ function ToastDemoContent() {
     <div className="flex flex-wrap gap-4">
       <button
         onClick={() => showToast("success")}
-        className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+        className="rounded-md bg-green-500 px-4 py-2 text-white transition-colors hover:bg-green-600"
       >
         Success Toast
       </button>
       <button
         onClick={() => showToast("error")}
-        className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+        className="rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600"
       >
         Error Toast
       </button>
       <button
         onClick={() => showToast("warning")}
-        className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition-colors"
+        className="rounded-md bg-yellow-500 px-4 py-2 text-white transition-colors hover:bg-yellow-600"
       >
         Warning Toast
       </button>
       <button
         onClick={() => showToast("info")}
-        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+        className="rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
       >
         Info Toast
       </button>
       <button
         onClick={() => showToast("default")}
-        className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors"
+        className="rounded-md bg-gray-500 px-4 py-2 text-white transition-colors hover:bg-gray-600"
       >
         Default Toast
       </button>
       <button
         onClick={showToastWithAction}
-        className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors"
+        className="rounded-md bg-purple-500 px-4 py-2 text-white transition-colors hover:bg-purple-600"
       >
         Toast with Action
       </button>

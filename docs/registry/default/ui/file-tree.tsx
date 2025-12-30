@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { ChevronRight, File, Folder, FolderOpen } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 export interface TreeNode {
   id: string;
@@ -58,7 +58,7 @@ export function FileTree({
 }: FileTreeProps) {
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
   const [expandedIds, setExpandedIds] = React.useState<Set<string>>(
-    new Set(expandAllByDefault ? getAllFolderIds(data) : defaultExpandedIds)
+    new Set(expandAllByDefault ? getAllFolderIds(data) : defaultExpandedIds),
   );
 
   const toggleExpanded = React.useCallback((id: string) => {
@@ -78,17 +78,22 @@ export function FileTree({
       setSelectedId(node.id);
       onSelect?.(node);
     },
-    [onSelect]
+    [onSelect],
   );
 
   return (
     <FileTreeContext.Provider
-      value={{ selectedId, setSelectedId: (id) => setSelectedId(id), expandedIds, toggleExpanded }}
+      value={{
+        selectedId,
+        setSelectedId: (id) => setSelectedId(id),
+        expandedIds,
+        toggleExpanded,
+      }}
     >
       <div
         className={cn(
           "rounded-lg border border-border bg-card p-2 font-mono text-sm",
-          className
+          className,
         )}
         role="tree"
         aria-label="File tree"
@@ -132,7 +137,8 @@ function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
   const { selectedId, expandedIds, toggleExpanded } = useFileTree();
   const isExpanded = expandedIds.has(node.id);
   const isSelected = selectedId === node.id;
-  const hasChildren = node.type === "folder" && node.children && node.children.length > 0;
+  const hasChildren =
+    node.type === "folder" && node.children && node.children.length > 0;
 
   const handleClick = () => {
     if (node.type === "folder") {
@@ -169,13 +175,16 @@ function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
   };
 
   return (
-    <li role="treeitem" aria-expanded={node.type === "folder" ? isExpanded : undefined}>
+    <li
+      role="treeitem"
+      aria-expanded={node.type === "folder" ? isExpanded : undefined}
+    >
       <motion.div
         className={cn(
           "group relative flex cursor-pointer select-none items-center gap-1 rounded-md px-2 py-1.5 transition-colors",
           isSelected
             ? "bg-tree-selected-bg text-foreground"
-            : "text-muted-foreground hover:bg-tree-hover hover:text-foreground"
+            : "text-muted-foreground hover:bg-tree-hover hover:text-foreground",
         )}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
@@ -186,7 +195,10 @@ function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
       >
         {/* Indent lines */}
         {level > 0 && (
-          <div className="absolute left-0 top-0 h-full" style={{ width: `${level * 12}px` }}>
+          <div
+            className="absolute top-0 left-0 h-full"
+            style={{ width: `${level * 12}px` }}
+          >
             {Array.from({ length: level }).map((_, i) => (
               <div
                 key={i}

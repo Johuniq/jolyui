@@ -21,7 +21,7 @@ export default function VideoPlayerCaptionsDemo() {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="mx-auto w-full max-w-4xl">
       <VideoPlayer
         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
@@ -29,17 +29,17 @@ export default function VideoPlayerCaptionsDemo() {
         description="Video player with multi-language caption support"
         tracks={tracks}
       />
-      
+
       <div className="mt-4 rounded-lg border bg-card p-4">
-        <h3 className="font-semibold text-sm mb-2">Available Captions</h3>
-        <ul className="text-sm text-muted-foreground space-y-1">
+        <h3 className="mb-2 font-semibold text-sm">Available Captions</h3>
+        <ul className="space-y-1 text-muted-foreground text-sm">
           {tracks.map((track) => (
             <li key={track.srcLang}>
               • {track.label} ({track.srcLang}) {track.default && "(Default)"}
             </li>
           ))}
         </ul>
-        <p className="text-xs text-muted-foreground mt-3">
+        <p className="mt-3 text-muted-foreground text-xs">
           Click the captions icon (C) to toggle or switch languages
         </p>
       </div>

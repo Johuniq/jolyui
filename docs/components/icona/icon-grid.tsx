@@ -1,15 +1,15 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { cn } from "@/lib/cn";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/cn";
 
 interface Icon {
   name: string;
@@ -27,9 +27,13 @@ interface IconGridProps {
 
 export function IconGrid({ icons, onIconClick }: IconGridProps) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
       {icons.map((icon) => (
-        <IconCard key={icon.name} icon={icon} onClick={() => onIconClick(icon)} />
+        <IconCard
+          key={icon.name}
+          icon={icon}
+          onClick={() => onIconClick(icon)}
+        />
       ))}
     </div>
   );
@@ -46,9 +50,9 @@ function IconCard({ icon, onClick }: IconCardProps) {
 
   const handleCopy = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="${icon.width}" height="${icon.height}" viewBox="0 0 ${icon.width} ${icon.height}">${icon.svg}</svg>`;
-    
+
     try {
       await navigator.clipboard.writeText(svgString);
       setCopied(true);
@@ -64,11 +68,11 @@ function IconCard({ icon, onClick }: IconCardProps) {
         <TooltipTrigger asChild>
           <div
             className={cn(
-              "relative group aspect-square rounded-lg border bg-card p-4",
+              "group relative aspect-square rounded-lg border bg-card p-4",
               "flex flex-col items-center justify-center gap-2",
-              "transition-all duration-200 cursor-pointer",
-              "hover:bg-accent hover:border-primary hover:shadow-lg",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              "cursor-pointer transition-all duration-200",
+              "hover:border-primary hover:bg-accent hover:shadow-lg",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
             )}
             onClick={onClick}
             onMouseEnter={() => setShowActions(true)}
@@ -83,27 +87,27 @@ function IconCard({ icon, onClick }: IconCardProps) {
             }}
           >
             {/* Icon */}
-            <div className="flex-1 flex items-center justify-center w-full">
+            <div className="flex w-full flex-1 items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={icon.width}
                 height={icon.height}
                 viewBox={`0 0 ${icon.width} ${icon.height}`}
-                className="w-12 h-12 text-foreground transition-transform group-hover:scale-110"
-                style={{ maxWidth: '100%', maxHeight: '100%' }}
+                className="h-12 w-12 text-foreground transition-transform group-hover:scale-110"
+                style={{ maxWidth: "100%", maxHeight: "100%" }}
                 dangerouslySetInnerHTML={{ __html: icon.svg }}
               />
             </div>
 
             {/* Icon Name */}
-            <div className="text-xs text-center text-muted-foreground truncate w-full px-1">
+            <div className="w-full truncate px-1 text-center text-muted-foreground text-xs">
               {icon.name}
             </div>
 
             {/* Category Badge (for global search) */}
             {icon.categoryDisplay && (
-              <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="px-2 py-0.5 rounded-md bg-primary/90 backdrop-blur-sm text-[10px] font-medium text-primary-foreground shadow-lg">
+              <div className="absolute top-2 left-2 opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="rounded-md bg-primary/90 px-2 py-0.5 font-medium text-[10px] text-primary-foreground shadow-lg backdrop-blur-sm">
                   {icon.categoryDisplay}
                 </div>
               </div>
@@ -117,7 +121,7 @@ function IconCard({ icon, onClick }: IconCardProps) {
                 className={cn(
                   "absolute top-2 right-2 h-6 w-6 opacity-0 group-hover:opacity-100",
                   "transition-opacity duration-200",
-                  copied && "text-green-500"
+                  copied && "text-green-500",
                 )}
                 onClick={handleCopy}
                 aria-label={copied ? "Copied" : "Copy SVG"}

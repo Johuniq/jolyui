@@ -22,7 +22,7 @@ export function PhoneCard({
   mediaType = "video",
 }: PhoneCardProps) {
   return (
-    <div className="relative rounded-[28px] glass-border bg-neutral-900 p-2">
+    <div className="glass-border relative rounded-[28px] bg-neutral-900 p-2">
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
         {mediaType === "video" ? (
           <LazyVideo
@@ -50,11 +50,11 @@ export function PhoneCard({
         <div className="relative z-10 p-3">
           <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
           <div className="space-y-1 px-1">
-            <div className="text-3xl font-bold leading-snug text-white/90">
+            <div className="font-bold text-3xl text-white/90 leading-snug">
               {title}
             </div>
-            <p className="text-xs text-white/70">{sub}</p>
-            <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] uppercase tracking-wider text-lime-300">
+            <p className="text-white/70 text-xs">{sub}</p>
+            <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-2 py-0.5 text-[10px] text-lime-300 uppercase tracking-wider">
               {tone === "calm" ? "Joly UI" : tone}
             </div>
           </div>

@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <div className="w-full">
-      <div className="w-full flex items-center justify-center pt-8 pb-10">
+      <div className="flex w-full items-center justify-center pt-8 pb-10">
         <a href="https://vercel.com/oss">
           <img
             alt="Vercel OSS Program"
@@ -10,10 +10,10 @@ export const Footer = () => {
         </a>
       </div>
 
-      <div className="max-w-7xl mx-auto h-16">
-        <div className="size-full px-4 md:px-6 flex items-center justify-center prose prose-sm text-sm text-muted-foreground">
-          <p className="text-center truncate">
-            Built by{' '}
+      <div className="mx-auto h-16 max-w-7xl">
+        <div className="prose prose-sm flex size-full items-center justify-center px-4 text-muted-foreground text-sm md:px-6">
+          <p className="truncate text-center">
+            Built by{" "}
             <a
               href="https://x.com/johuniq"
               rel="noopener noreferrer"
@@ -21,7 +21,7 @@ export const Footer = () => {
             >
               Johuniq
             </a>
-            . The source code is available on{' '}
+            . The source code is available on{" "}
             <a
               href="https://github.com/johuniq/jolyui"
               rel="noopener noreferrer"

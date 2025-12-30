@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface DockProps {
   /** Distance threshold for magnification effect */
@@ -33,7 +33,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       iconSize = 48,
       distance = 140,
     },
-    ref
+    ref,
   ) => {
     const mouseX = useMotionValue(Infinity);
 
@@ -47,15 +47,15 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
           onMouseLeave={() => mouseX.set(Infinity)}
           className={cn(
             "dock mx-auto flex h-16 items-end gap-2 rounded-2xl border bg-background/80 px-3 pb-2 backdrop-blur-md",
-            "shadow-lg shadow-foreground/5",
-            className
+            "shadow-foreground/5 shadow-lg",
+            className,
           )}
         >
           {children}
         </motion.div>
       </DockContext.Provider>
     );
-  }
+  },
 );
 Dock.displayName = "Dock";
 
@@ -87,7 +87,7 @@ const DockItem = React.forwardRef<HTMLDivElement, DockItemProps>(
     const widthSync = useTransform(
       distanceCalc,
       [-distance, 0, distance],
-      [iconSize, iconSize * maxScale, iconSize]
+      [iconSize, iconSize * maxScale, iconSize],
     );
 
     const width = useSpring(widthSync, {
@@ -103,13 +103,13 @@ const DockItem = React.forwardRef<HTMLDivElement, DockItemProps>(
         onClick={onClick}
         className={cn(
           "dock-item group relative flex aspect-square cursor-pointer items-center justify-center rounded-xl bg-muted transition-colors hover:bg-muted/80",
-          className
+          className,
         )}
       >
         {children}
       </motion.div>
     );
-  }
+  },
 );
 DockItem.displayName = "DockItem";
 
@@ -126,13 +126,13 @@ const DockIcon = React.forwardRef<HTMLDivElement, DockIconProps>(
         className={cn(
           "dock-icon flex h-full w-full items-center justify-center text-foreground",
           "[&>svg]:h-1/2 [&>svg]:w-1/2",
-          className
+          className,
         )}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 DockIcon.displayName = "DockIcon";
 
@@ -147,16 +147,16 @@ const DockLabel = React.forwardRef<HTMLDivElement, DockLabelProps>(
       <div
         ref={ref}
         className={cn(
-          "dock-label pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs text-background opacity-0 transition-opacity group-hover:opacity-100",
-          className
+          "dock-label -top-9 -translate-x-1/2 pointer-events-none absolute left-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-background text-xs opacity-0 transition-opacity group-hover:opacity-100",
+          className,
         )}
       >
         {children}
         {/* Tooltip arrow */}
-        <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-foreground" />
+        <div className="-bottom-1 -translate-x-1/2 absolute left-1/2 h-2 w-2 rotate-45 bg-foreground" />
       </div>
     );
-  }
+  },
 );
 DockLabel.displayName = "DockLabel";
 
@@ -169,15 +169,25 @@ const DockSeparator = React.forwardRef<HTMLDivElement, DockSeparatorProps>(
     return (
       <div
         ref={ref}
-        className={cn("dock-separator mx-1 h-10 w-px self-center bg-border", className)}
+        className={cn(
+          "dock-separator mx-1 h-10 w-px self-center bg-border",
+          className,
+        )}
       />
     );
-  }
+  },
 );
 DockSeparator.displayName = "DockSeparator";
 
 export {
-    Dock, DockIcon, DockItem, DockLabel,
-    DockSeparator, type DockIconProps, type DockItemProps, type DockLabelProps, type DockProps, type DockSeparatorProps
+  Dock,
+  DockIcon,
+  DockItem,
+  DockLabel,
+  DockSeparator,
+  type DockIconProps,
+  type DockItemProps,
+  type DockLabelProps,
+  type DockProps,
+  type DockSeparatorProps,
 };
-

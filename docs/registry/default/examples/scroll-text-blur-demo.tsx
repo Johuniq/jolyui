@@ -2,8 +2,8 @@ import { ScrollText } from "@/registry/default/ui/scroll-text";
 
 export default function ScrollTextBlurDemo() {
   return (
-    <div className="flex items-center justify-center h-[400px] w-full">
-      <ScrollText effect="blur" className="text-4xl font-bold">
+    <div className="flex h-[400px] w-full items-center justify-center">
+      <ScrollText effect="blur" className="font-bold text-4xl">
         Blur Animation
       </ScrollText>
     </div>
