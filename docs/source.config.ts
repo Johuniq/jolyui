@@ -1,10 +1,9 @@
-import { rehypeComponent } from "@/lib/rehype-component";
 import { rehypeCode, remarkGfm, remarkNpm } from "fumadocs-core/mdx-plugins";
 import { fileGenerator, remarkDocGen } from "fumadocs-docgen";
 import {
-    defineConfig,
-    defineDocs,
-    frontmatterSchema,
+  defineConfig,
+  defineDocs,
+  frontmatterSchema,
 } from "fumadocs-mdx/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
@@ -12,6 +11,7 @@ import { codeImport } from "remark-code-import";
 import remarkMath from "remark-math";
 import { createHighlighter } from "shiki";
 import { z } from "zod";
+import { rehypeComponent } from "@/lib/rehype-component";
 
 export default defineConfig({
   mdxOptions: {

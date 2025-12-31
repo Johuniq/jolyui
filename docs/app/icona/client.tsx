@@ -1,5 +1,20 @@
 "use client";
 
+import {
+  ChevronLeft,
+  ChevronRight,
+  Copy,
+  Download,
+  Globe,
+  Loader2,
+  PackageSearch,
+  Palette,
+  Search,
+  Sparkles,
+  TrendingUp,
+  X,
+} from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { IconGrid } from "@/components/icona/icon-grid";
 import { SvgEditorModal } from "@/components/icona/svg-editor-modal";
 import { Footer } from "@/components/landing/footer";
@@ -10,29 +25,14 @@ import { Spotlight } from "@/components/landing/spotlight";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { useGlobalIconSearch } from "@/hooks/use-global-icon-search";
 import { type IconData, useIconLibrary } from "@/hooks/use-icon-library";
-import {
-    ChevronLeft,
-    ChevronRight,
-    Copy,
-    Download,
-    Globe,
-    Loader2,
-    PackageSearch,
-    Palette,
-    Search,
-    Sparkles,
-    TrendingUp,
-    X,
-} from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
 
 interface IconItem {
   name: string;

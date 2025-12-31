@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
 import { ChevronRight, File, Folder, FolderOpen } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 export interface TreeNode {
   id: string;

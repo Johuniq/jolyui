@@ -63,13 +63,14 @@ function Slot<T extends HTMLElement = HTMLElement>({
   ...props
 }: SlotProps<T>) {
   if (!React.isValidElement(children)) return null;
-  
+
   const childType = children.type;
   const isAlreadyMotion =
     typeof childType === "object" &&
     childType !== null &&
     isMotionComponent(childType);
 
+  // biome-ignore lint/correctness/useHookAtTopLevel: useMemo is safe here as it only depends on children
   const Base = React.useMemo(
     () =>
       isAlreadyMotion

@@ -79,6 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         whileHover={{ scale: variant === "link" ? 1 : 1.02 }}
         whileTap={{ scale: variant === "link" ? 1 : 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        // biome-ignore lint/suspicious/noExplicitAny: Motion button requires any for props compatibility
         {...(props as any)}
       >
         {variant !== "link" && variant !== "ghost" && (

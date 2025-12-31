@@ -114,7 +114,6 @@ export function useMdxComponents(
   };
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: fumadocs internal page type
 interface MdxProps {
   page: Page<{ body: React.ComponentType<{ components?: MDXComponents }> }>;
   components?: Partial<MDXComponents>;

@@ -93,6 +93,7 @@ function CopyButton({
 
   const Icon = isCopied ? CheckIcon : CopyIcon;
 
+  // biome-ignore lint/suspicious/noExplicitAny: Button uses motion which requires any for props
   const Button = ButtonPrimitive as any;
 
   return (
