@@ -443,6 +443,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "gooey-text-morphing": {
+      name: "gooey-text-morphing",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/gooey-text-morphing.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/gooey-text-morphing.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -1871,20 +1885,6 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
-    "segmented-button-custom-demo": {
-      name: "segmented-button-custom-demo",
-      description: "",
-      type: "registry:example",
-      registryDependencies: ["segmented-button"],
-      files: [{
-        path: "registry/default/examples/segmented-button-custom-demo.tsx",
-        type: "registry:example",
-        target: ""
-      }],
-      component: React.lazy(() => import("@/registry/default/examples/segmented-button-custom-demo.tsx")),
-      source: "",
-      chunks: []
-    },
     "typewritter-text-demo": {
       name: "typewritter-text-demo",
       description: "",
@@ -2036,6 +2036,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/highlight-text-colors-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "gooey-text-morphing-demo": {
+      name: "gooey-text-morphing-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["gooey-text-morphing"],
+      files: [{
+        path: "registry/default/examples/gooey-text-morphing-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/gooey-text-morphing-demo.tsx")),
       source: "",
       chunks: []
     },

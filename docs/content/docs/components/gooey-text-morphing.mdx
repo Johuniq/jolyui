@@ -1,0 +1,67 @@
+---
+title: Gooey Text Morphing
+description: A smooth, gooey text morphing animation between multiple strings.
+preview: true
+links:
+ api: /docs/components/gooey-text-morphing#api-reference
+ credits: https://x.com/victorwelander_
+---
+
+## Gooey Text Morphing
+
+<ComponentTabs name="gooey-text-morphing-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/gooey-text-morphing"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/gooey-text-morphing.tsx```
+
+    <ComponentSource name="gooey-text-morphing" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { GooeyText } from "@/components/ui/gooey-text-morphing";
+
+function MyComponent() {
+  const texts = ["Hello", "World", "Gooey", "Morph"];
+  
+  return (
+    <GooeyText 
+      texts={texts} 
+      morphTime={1} 
+      cooldownTime={0.5} 
+    />
+  );
+}
+```
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/gooey-text-morphing.ts"
+  name="GooeyTextProps"
+/>
+
+## Notes
+
+- The component uses SVG filters to achieve the "gooey" effect.
+- The `texts` array can contain any number of strings.
+- `morphTime` controls the duration of the transition between words.
+- `cooldownTime` controls how long each word stays visible before morphing again.
+- Ensure the container has enough height to accommodate the text size.
+
+## Credits
+
+Inspired by [Victor Welander](https://x.com/victorwelander_).

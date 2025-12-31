@@ -1239,4 +1239,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "gooey-text-morphing-demo",
+    type: "registry:example",
+    registryDependencies: ["gooey-text-morphing"],
+    files: [
+      {
+        path: "examples/gooey-text-morphing-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

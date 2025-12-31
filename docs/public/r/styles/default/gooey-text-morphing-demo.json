@@ -1,0 +1,15 @@
+{
+  "name": "gooey-text-morphing-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "gooey-text-morphing"
+  ],
+  "files": [
+    {
+      "path": "examples/gooey-text-morphing-demo.tsx",
+      "content": "\"use client\";\n\nimport { GooeyText } from \"@/registry/default/ui/gooey-text-morphing\";\n\nexport default function GooeyTextMorphingDemo() {\n  const texts = [\n    \"Why\",\n    \"is\",\n    \"it\",\n    \"so\",\n    \"satisfying\",\n    \"to\",\n    \"watch?\"\n  ];\n\n  return (\n    <div className=\"flex h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background\">\n      <GooeyText \n        texts={texts} \n        morphTime={1} \n        cooldownTime={0.5}\n        textClassName=\"font-bold tracking-tighter\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

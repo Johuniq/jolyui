@@ -332,4 +332,14 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "gooey-text-morphing",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/gooey-text-morphing.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];
