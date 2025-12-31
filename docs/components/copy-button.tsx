@@ -6,8 +6,8 @@ import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
 
 import {
-    Button as ButtonPrimitive,
-    type ButtonProps as ButtonPrimitiveProps,
+  Button as ButtonPrimitive,
+  type ButtonProps as ButtonPrimitiveProps,
 } from "@/components/ui/button";
 import { useControlledState } from "@/hooks/use-controlled-state";
 import { cn } from "@/lib/utils";
