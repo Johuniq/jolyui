@@ -77,7 +77,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
       resizeObserver.observe(element);
 
       return () => resizeObserver.disconnect();
-    }, [children]);
+    }, []);
 
     React.useEffect(() => {
       if (!animate) {
@@ -90,7 +90,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry && entry.isIntersecting) {
+          if (entry?.isIntersecting) {
             setIsVisible(true);
             observer.disconnect();
           }
@@ -207,7 +207,7 @@ const HighlightText = React.forwardRef<HTMLSpanElement, HighlightTextProps>(
         case "marker": {
           const markerHeight = height + 4;
           const y1 = padding - 2;
-          const y2 = padding + markerHeight;
+          const _y2 = padding + markerHeight;
 
           return (
             <svg style={baseStyles} aria-hidden="true">

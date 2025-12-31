@@ -1,7 +1,7 @@
 "use client";
 
-import { RainbowButton } from "@/registry/default/ui/rainbow-button";
 import { ArrowRight } from "lucide-react";
+import { RainbowButton } from "@/registry/default/ui/rainbow-button";
 
 export default function RainbowButtonDemo() {
   return (

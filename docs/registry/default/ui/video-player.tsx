@@ -84,6 +84,8 @@ const Tooltip = ({
       className="relative inline-flex"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      role="button"
+      tabIndex={0}
     >
       {children}
       <motion.div
@@ -104,9 +106,9 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       src,
       tracks = [],
       poster,
-      title,
-      description,
-      compact = false,
+      title: _title,
+      description: _description,
+      compact: _compact = false,
       chapters = [],
       onTimeUpdate,
       onNextVideo,
@@ -264,7 +266,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
 
     // Format time display
     const formatTime = (time: number) => {
-      if (!time || isNaN(time)) return "0:00";
+      if (!time || Number.isNaN(time)) return "0:00";
       const hours = Math.floor(time / 3600);
       const minutes = Math.floor((time % 3600) / 60);
       const seconds = Math.floor(time % 60);
@@ -346,8 +348,18 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       if (!isFullscreen) {
         if (containerRef.current.requestFullscreen) {
           containerRef.current.requestFullscreen();
-        } else if ((containerRef.current as any).webkitRequestFullscreen) {
-          (containerRef.current as any).webkitRequestFullscreen();
+        } else if (
+          (
+            containerRef.current as HTMLElement & {
+              webkitRequestFullscreen?: () => void;
+            }
+          ).webkitRequestFullscreen
+        ) {
+          (
+            containerRef.current as HTMLElement & {
+              webkitRequestFullscreen?: () => void;
+            }
+          ).webkitRequestFullscreen();
         }
         setIsFullscreen(true);
       } else {
@@ -513,6 +525,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           className={`relative w-full transition-all duration-300 ${isTheaterMode ? "h-screen" : "aspect-video"}`}
         >
           {/* Video Element */}
+          {/* biome-ignore lint/a11y/useMediaCaption: Video player component may not have captions */}
           <video
             ref={videoRef}
             src={currentSrc}
@@ -569,7 +582,13 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           </AnimatePresence>
 
           {/* Click Overlay */}
-          <div className="absolute inset-0 z-10" onClick={handleTap} />
+          <div
+            className="absolute inset-0 z-10"
+            onClick={handleTap}
+            role="button"
+            aria-label="Play/Pause"
+            tabIndex={0}
+          />
 
           {/* Double Tap Animation */}
           <AnimatePresence>
@@ -645,6 +664,9 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
                   onMouseMove={handleProgressHover}
                   onMouseLeave={handleProgressLeave}
                   className="group/progress relative h-1.5 w-full cursor-pointer rounded-full bg-white/20 transition-all hover:h-2"
+                  role="button"
+                  aria-label="Seek"
+                  tabIndex={0}
                 >
                   {/* Buffered indicator */}
                   <div

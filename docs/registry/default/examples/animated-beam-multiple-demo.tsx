@@ -1,10 +1,17 @@
 import {
+  Database,
+  Layout,
+  Lock,
+  Package,
+  Server,
+  Smartphone,
+} from "lucide-react";
+import React from "react";
+import {
   AnimatedBeam,
   BeamContainer,
   BeamNode,
 } from "@/registry/default/ui/animated-beam";
-import { Database, Layout, Lock, Package, Server, Smartphone } from "lucide-react";
-import React from "react";
 
 export default function AnimatedBeamMultipleDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -22,10 +29,15 @@ export default function AnimatedBeamMultipleDemo() {
     >
       {/* Client Layer */}
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={clientRef} className="h-14 w-14 border-2 border-blue-500/20 bg-blue-500/10">
+        <BeamNode
+          ref={clientRef}
+          className="h-14 w-14 border-2 border-blue-500/20 bg-blue-500/10"
+        >
           <Smartphone className="h-6 w-6 text-blue-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Client</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          Client
+        </span>
       </div>
 
       {/* Gateway Layer */}
@@ -36,39 +48,61 @@ export default function AnimatedBeamMultipleDemo() {
         >
           <Server className="h-8 w-8 text-purple-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Gateway</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          Gateway
+        </span>
       </div>
 
       {/* Services Layer */}
       <div className="flex flex-col gap-6">
         <div className="flex items-center gap-3">
-          <BeamNode ref={authRef} className="h-12 w-12 border-2 border-emerald-500/20 bg-emerald-500/10">
+          <BeamNode
+            ref={authRef}
+            className="h-12 w-12 border-2 border-emerald-500/20 bg-emerald-500/10"
+          >
             <Lock className="h-5 w-5 text-emerald-600" />
           </BeamNode>
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Auth</span>
+          <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+            Auth
+          </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <BeamNode ref={ordersRef} className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10">
+          <BeamNode
+            ref={ordersRef}
+            className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10"
+          >
             <Package className="h-5 w-5 text-amber-600" />
           </BeamNode>
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Orders</span>
+          <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+            Orders
+          </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <BeamNode ref={inventoryRef} className="h-12 w-12 border-2 border-rose-500/20 bg-rose-500/10">
+          <BeamNode
+            ref={inventoryRef}
+            className="h-12 w-12 border-2 border-rose-500/20 bg-rose-500/10"
+          >
             <Layout className="h-5 w-5 text-rose-600" />
           </BeamNode>
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Stock</span>
+          <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+            Stock
+          </span>
         </div>
       </div>
 
       {/* Database Layer */}
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={dbRef} className="h-14 w-14 border-2 border-slate-500/20 bg-slate-500/10">
+        <BeamNode
+          ref={dbRef}
+          className="h-14 w-14 border-2 border-slate-500/20 bg-slate-500/10"
+        >
           <Database className="h-6 w-6 text-slate-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">DB</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          DB
+        </span>
       </div>
 
       {/* Connections */}

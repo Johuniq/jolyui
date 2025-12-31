@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 interface RainbowButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

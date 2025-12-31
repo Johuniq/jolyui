@@ -1,14 +1,12 @@
 {
-  "introduction": "Introduction",
-  "installation": "Installation",
-  "mcp": "MCP",
-  "other-animated-registry": "Other Animated Registry",
-  "troubleshooting": "Troubleshooting",
-  "-- Components": {
-    "type": "separator",
-    "title": "Components"
-  },
-  "buttons": "Buttons",
-  "components": "Components",
-  "icona": "Icona"
+  "title": "Docs",
+  "pages": [
+    "introduction",
+    "installation",
+    "mcp",
+    "icona",
+    "other-animated-registry",
+    "troubleshooting",
+    "components"
+  ]
 }

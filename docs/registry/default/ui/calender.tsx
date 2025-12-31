@@ -430,7 +430,7 @@ const TimePicker = React.memo(
             value={displayHours.toString().padStart(2, "0")}
             onClick={(e) => e.stopPropagation()}
             onChange={(e) => {
-              const val = parseInt(e.target.value) || 0;
+              const val = parseInt(e.target.value, 10) || 0;
               if (use24Hour) {
                 updateTime(Math.min(23, Math.max(0, val)), minutes);
               } else {
@@ -495,7 +495,7 @@ const TimePicker = React.memo(
             value={minutes.toString().padStart(2, "0")}
             onClick={(e) => e.stopPropagation()}
             onChange={(e) => {
-              const val = parseInt(e.target.value) || 0;
+              const val = parseInt(e.target.value, 10) || 0;
               updateTime(hours, Math.min(59, Math.max(0, val)));
             }}
             disabled={disabled}
@@ -566,7 +566,7 @@ const MonthPicker = React.memo(
   }) => {
     const currentYear = getYear(currentMonth);
     const currentMonthIndex = getMonth(currentMonth);
-    const sizes = sizeClasses[size];
+    const _sizes = sizeClasses[size];
 
     const isMonthDisabled = useCallback(
       (month: number) => {
@@ -639,7 +639,7 @@ const YearPicker = React.memo(
     onSelect,
     minDate,
     maxDate,
-    size = "md",
+    size: _size = "md",
     disabled,
     prefersReducedMotion,
   }: {
@@ -956,7 +956,7 @@ const CalendarContent = React.memo(
             onChange?.(range);
             setRangeStart(undefined);
             announce(
-              `Range: ${format(range.from!, "PP", { locale })} to ${format(range.to!, "PP", { locale })}`,
+              `Range: ${format(range.from, "PP", { locale })} to ${format(range.to, "PP", { locale })}`,
             );
             if (closeOnSelect) onClose?.();
           }
@@ -1322,6 +1322,7 @@ const CalendarContent = React.memo(
                 showWeekNumbers ? "grid-cols-8" : "grid-cols-7",
               )}
               role="row"
+              tabIndex={-1}
             >
               {showWeekNumbers && (
                 <div
@@ -1330,6 +1331,7 @@ const CalendarContent = React.memo(
                     "flex items-center justify-center font-medium text-muted-foreground text-xs",
                   )}
                   role="columnheader"
+                  tabIndex={-1}
                 >
                   #
                 </div>
@@ -1343,6 +1345,7 @@ const CalendarContent = React.memo(
                     sizes.cell,
                     "flex items-center justify-center font-semibold text-muted-foreground text-xs",
                   )}
+                  tabIndex={-1}
                 >
                   {day}
                 </div>
@@ -1376,6 +1379,7 @@ const CalendarContent = React.memo(
                             "flex items-center justify-center text-muted-foreground text-xs",
                           )}
                           role="rowheader"
+                          tabIndex={-1}
                         >
                           {format(day, "w")}
                         </div>

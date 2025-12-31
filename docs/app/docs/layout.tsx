@@ -11,7 +11,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       sidebar={{
         defaultOpenLevel: 1,
       }}
-      {...(docsOptions as any)}
+      {...docsOptions}
     >
       {children}
     </DocsLayoutImpl>

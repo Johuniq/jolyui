@@ -1,10 +1,10 @@
-import {
-    AnimatedBeam,
-    BeamContainer,
-    BeamNode,
-} from "@/registry/default/ui/animated-beam";
 import { Server, User } from "lucide-react";
 import React from "react";
+import {
+  AnimatedBeam,
+  BeamContainer,
+  BeamNode,
+} from "@/registry/default/ui/animated-beam";
 
 export default function AnimatedBeamBidirectionalDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -18,24 +18,39 @@ export default function AnimatedBeamBidirectionalDemo() {
       className="mx-auto flex w-full items-center justify-between rounded-xl border bg-background p-10 shadow-sm"
     >
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={userARef} className="h-12 w-12 border-2 border-blue-500/20 bg-blue-500/10">
+        <BeamNode
+          ref={userARef}
+          className="h-12 w-12 border-2 border-blue-500/20 bg-blue-500/10"
+        >
           <User className="h-6 w-6 text-blue-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">User A</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          User A
+        </span>
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={serverRef} className="h-16 w-16 border-2 border-purple-500/20 bg-purple-500/10">
+        <BeamNode
+          ref={serverRef}
+          className="h-16 w-16 border-2 border-purple-500/20 bg-purple-500/10"
+        >
           <Server className="h-8 w-8 text-purple-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Relay Server</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          Relay Server
+        </span>
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={userBRef} className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10">
+        <BeamNode
+          ref={userBRef}
+          className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10"
+        >
           <User className="h-6 w-6 text-amber-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">User B</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          User B
+        </span>
       </div>
 
       {/* User A <-> Server */}

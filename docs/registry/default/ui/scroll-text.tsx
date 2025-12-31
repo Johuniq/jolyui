@@ -119,7 +119,7 @@ const ScrollText = React.forwardRef<HTMLDivElement, ScrollTextProps>(
 
     const { scrollYProgress } = useScroll({
       target: ref,
-      offset: offset as any,
+      offset,
     });
 
     const [start, end] = threshold;
@@ -173,25 +173,34 @@ const ScrollText = React.forwardRef<HTMLDivElement, ScrollTextProps>(
     const rawRotateX = useTransform(scrollYProgress, [start, end], [90, 0]);
 
     // Apply spring if needed
-    const opacity = spring ? useSpring(rawOpacity, springOpts) : rawOpacity;
-    const y = spring ? useSpring(rawY, springOpts) : rawY;
-    const yDown = spring ? useSpring(rawYDown, springOpts) : rawYDown;
-    const yParallax = spring
-      ? useSpring(rawYParallax, springOpts)
-      : rawYParallax;
-    const scale = spring ? useSpring(rawScale, springOpts) : rawScale;
-    const scaleUp = spring ? useSpring(rawScaleUp, springOpts) : rawScaleUp;
-    const scaleDown = spring
-      ? useSpring(rawScaleDown, springOpts)
-      : rawScaleDown;
-    const rotate = spring ? useSpring(rawRotate, springOpts) : rawRotate;
-    const blurOpacity = spring
-      ? useSpring(rawBlurOpacity, springOpts)
-      : rawBlurOpacity;
-    const x = spring ? useSpring(rawX, springOpts) : rawX;
-    const xRight = spring ? useSpring(rawXRight, springOpts) : rawXRight;
-    const skew = spring ? useSpring(rawSkew, springOpts) : rawSkew;
-    const rotateX = spring ? useSpring(rawRotateX, springOpts) : rawRotateX;
+    const opacitySpring = useSpring(rawOpacity, springOpts);
+    const ySpring = useSpring(rawY, springOpts);
+    const yDownSpring = useSpring(rawYDown, springOpts);
+    const yParallaxSpring = useSpring(rawYParallax, springOpts);
+    const scaleSpring = useSpring(rawScale, springOpts);
+    const scaleUpSpring = useSpring(rawScaleUp, springOpts);
+    const scaleDownSpring = useSpring(rawScaleDown, springOpts);
+    const rotateSpring = useSpring(rawRotate, springOpts);
+    const blurOpacitySpring = useSpring(rawBlurOpacity, springOpts);
+    const rotateXSpring = useSpring(rawRotateX, springOpts);
+
+    const opacity = spring ? opacitySpring : rawOpacity;
+    const y = spring ? ySpring : rawY;
+    const yDown = spring ? yDownSpring : rawYDown;
+    const yParallax = spring ? yParallaxSpring : rawYParallax;
+    const scale = spring ? scaleSpring : rawScale;
+    const scaleUp = spring ? scaleUpSpring : rawScaleUp;
+    const scaleDown = spring ? scaleDownSpring : rawScaleDown;
+    const rotate = spring ? rotateSpring : rawRotate;
+    const blurOpacity = spring ? blurOpacitySpring : rawBlurOpacity;
+    const rotateX = spring ? rotateXSpring : rawRotateX;
+    const xSpring = useSpring(rawX, springOpts);
+    const xRightSpring = useSpring(rawXRight, springOpts);
+    const skewSpring = useSpring(rawSkew, springOpts);
+
+    const x = spring ? xSpring : rawX;
+    const xRight = spring ? xRightSpring : rawXRight;
+    const skew = spring ? skewSpring : rawSkew;
 
     // Non-springable transforms
     const blur = useTransform(scrollYProgress, [start, end], [10 * speed, 0]);
@@ -323,7 +332,7 @@ const ScrollReveal = React.forwardRef<HTMLDivElement, ScrollRevealProps>(
     React.useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry && entry.isIntersecting) {
+          if (entry?.isIntersecting) {
             setIsInView(true);
             if (once && containerRef.current) {
               observer.unobserve(containerRef.current);

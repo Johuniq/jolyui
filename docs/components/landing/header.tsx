@@ -1,7 +1,7 @@
+import Link from "next/link";
+import { Link as ViewTransitionsLink } from "next-view-transitions";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/lib/theme-toggle";
-import { Link as ViewTransitionsLink } from "next-view-transitions";
-import Link from "next/link";
 
 export function Header() {
   return (

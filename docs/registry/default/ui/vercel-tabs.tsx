@@ -18,7 +18,7 @@ interface VercelTabsProps {
 
 export function VercelTabs({ tabs, defaultTab, className }: VercelTabsProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]!.value);
+  const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]?.value);
   const [hoverStyle, setHoverStyle] = useState({});
   const [activeStyle, setActiveStyle] = useState({ left: "0px", width: "0px" });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -47,7 +47,7 @@ export function VercelTabs({ tabs, defaultTab, className }: VercelTabsProps) {
         width: `${offsetWidth}px`,
       });
     }
-  }, [activeIndex, tabs]);
+  }, [activeIndex]);
 
   useEffect(() => {
     requestAnimationFrame(() => {

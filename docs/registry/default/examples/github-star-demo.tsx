@@ -8,10 +8,11 @@ export default function GitHubStarDemo() {
         <GitHubStarButton owner="facebook" repo="react" />
         <GitHubStarButton owner="vercel" repo="next.js" />
       </div>
-      
-      <div className="text-center space-y-2">
-        <p className="text-sm text-muted-foreground">
-          Real-time GitHub stars with premium rolling animations and particle effects.
+
+      <div className="space-y-2 text-center">
+        <p className="text-muted-foreground text-sm">
+          Real-time GitHub stars with premium rolling animations and particle
+          effects.
         </p>
       </div>
     </div>

@@ -235,6 +235,8 @@ export function ImageComparisonHover({
       )}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      role="button"
+      tabIndex={0}
     >
       {/* After Image */}
       <img
@@ -357,6 +359,8 @@ export function ImageComparisonFade({
         className,
       )}
       onClick={() => setShowBefore(!showBefore)}
+      role="button"
+      tabIndex={0}
     >
       {/* After Image */}
       <img
@@ -540,6 +544,8 @@ export function ImageComparisonLens({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      role="button"
+      tabIndex={0}
     >
       {/* Before Image (Background) */}
       <img

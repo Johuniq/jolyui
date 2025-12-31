@@ -17,7 +17,8 @@ export function ThemeToggle() {
   }
 
   return (
-    <div
+    <button
+      type="button"
       className="cursor-pointer"
       onClick={() => {
         setTheme(theme === "dark" ? "light" : "dark");
@@ -28,6 +29,6 @@ export function ThemeToggle() {
       ) : (
         <Sun className="h-5 w-5 rotate-180 text-white" color="white" />
       )}
-    </div>
+    </button>
   );
 }

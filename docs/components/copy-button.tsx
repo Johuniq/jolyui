@@ -98,7 +98,7 @@ function CopyButton({
       data-slot="copy-button"
       className={cn(buttonVariants({ variant, size, className }))}
       onClick={handleCopy}
-      {...(props as any)}
+      {...props}
     >
       <AnimatePresence mode="popLayout">
         <motion.span

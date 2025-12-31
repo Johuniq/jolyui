@@ -95,9 +95,9 @@ export function useGlobalIconSearch(
                 svg: icon.body,
                 width: icon.width ?? defaultWidth,
                 height: icon.height ?? defaultHeight,
-                category: category!,
-                categoryDisplay: category!
-                  .split("-")
+                category: category,
+                categoryDisplay: category
+                  ?.split("-")
                   .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                   .join(" "),
               }));

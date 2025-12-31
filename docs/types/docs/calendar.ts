@@ -27,7 +27,9 @@ export interface AnimatedCalendarProps
   /**
    * Callback when selection changes.
    */
-  onSelect?: (date: any) => void;
+  onSelect?: (
+    date: Date | { from?: Date; to?: Date } | Date[] | undefined,
+  ) => void;
 
   /**
    * The variant of the buttons in the calendar.

@@ -32,7 +32,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useGlobalIconSearch } from "@/hooks/use-global-icon-search";
-import { useIconLibrary } from "@/hooks/use-icon-library";
+import { type IconData, useIconLibrary } from "@/hooks/use-icon-library";
+
+interface IconItem {
+  name: string;
+  svg: string;
+  width: number;
+  height: number;
+  category: string;
+  categoryDisplay: string;
+}
 
 // Helper function to format category names
 const formatCategoryName = (category: string): string => {
@@ -310,7 +319,7 @@ export default function IconaClient() {
       .filter(([name]) =>
         name.toLowerCase().includes(searchQuery.toLowerCase()),
       )
-      .map(([name, icon]: [string, any]) => ({
+      .map(([name, icon]: [string, IconData]) => ({
         name,
         svg: icon.body as string,
         width: icon.width ?? defaultDimensions.width,
@@ -728,7 +737,7 @@ export default function IconaClient() {
               <>
                 <IconGrid
                   icons={paginatedIcons}
-                  onIconClick={(icon: any) =>
+                  onIconClick={(icon: IconItem) =>
                     setSelectedIcon({
                       ...icon,
                       category: icon.category ?? selectedCategory,

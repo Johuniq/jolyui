@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 /**
  * Represents an individual command item in the palette

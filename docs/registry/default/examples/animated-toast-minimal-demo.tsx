@@ -7,7 +7,7 @@ export default function AnimatedToastMinimalDemo() {
   const [showToast, setShowToast] = useState(false);
 
   const triggerToast = (
-    type: "success" | "error" | "warning" | "info" | "default",
+    _type: "success" | "error" | "warning" | "info" | "default",
   ) => {
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);

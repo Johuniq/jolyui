@@ -69,7 +69,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
 
-    const MotionButton = motion.button as any;
+    const MotionButton = motion.button;
 
     return (
       <MotionButton

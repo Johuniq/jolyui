@@ -1,10 +1,10 @@
+import { Bot, Search, User, Zap } from "lucide-react";
+import React from "react";
 import {
   AnimatedBeam,
   BeamContainer,
   BeamNode,
 } from "@/registry/default/ui/animated-beam";
-import { Bot, Search, User, Zap } from "lucide-react";
-import React from "react";
 
 export default function AnimatedBeamDemo() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -19,31 +19,51 @@ export default function AnimatedBeamDemo() {
       className="mx-auto flex w-full items-center justify-between rounded-xl border bg-background p-10 shadow-sm"
     >
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={userRef} className="h-12 w-12 border-2 border-blue-500/20 bg-blue-500/10">
+        <BeamNode
+          ref={userRef}
+          className="h-12 w-12 border-2 border-blue-500/20 bg-blue-500/10"
+        >
           <User className="h-6 w-6 text-blue-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">User</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          User
+        </span>
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <BeamNode ref={aiRef} className="h-16 w-16 border-2 border-purple-500/20 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+        <BeamNode
+          ref={aiRef}
+          className="h-16 w-16 border-2 border-purple-500/20 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]"
+        >
           <Bot className="h-8 w-8 text-purple-600" />
         </BeamNode>
-        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">AI Agent</span>
+        <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+          AI Agent
+        </span>
       </div>
 
       <div className="flex flex-col gap-8">
         <div className="flex flex-col items-center gap-2">
-          <BeamNode ref={searchRef} className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10">
+          <BeamNode
+            ref={searchRef}
+            className="h-12 w-12 border-2 border-amber-500/20 bg-amber-500/10"
+          >
             <Search className="h-5 w-5 text-amber-600" />
           </BeamNode>
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Search</span>
+          <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+            Search
+          </span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <BeamNode ref={resultRef} className="h-12 w-12 border-2 border-emerald-500/20 bg-emerald-500/10">
+          <BeamNode
+            ref={resultRef}
+            className="h-12 w-12 border-2 border-emerald-500/20 bg-emerald-500/10"
+          >
             <Zap className="h-5 w-5 text-emerald-600" />
           </BeamNode>
-          <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">Result</span>
+          <span className="font-medium text-[10px] text-muted-foreground uppercase tracking-wider">
+            Result
+          </span>
         </div>
       </div>
 

@@ -81,6 +81,7 @@ export default function SegmentedButton({
       ref={containerRef}
       className={`relative inline-flex items-center justify-start rounded-full ${className}`}
       onMouseLeave={() => setHoveredIndex(null)}
+      role="group"
     >
       <motion.div
         className="absolute top-0 h-7 rounded-full bg-black/10 dark:bg-white/15"

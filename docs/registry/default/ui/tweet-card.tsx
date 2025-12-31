@@ -1,4 +1,5 @@
 import { BadgeCheck, Heart, MessageCircle, Repeat2, Share } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,8 +22,8 @@ export interface TweetCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const formatNumber = (num: number): string => {
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-  if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
+  if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
   return num.toString();
 };
 
@@ -67,10 +68,12 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
           {/* Header */}
           <div className="flex items-start gap-3">
             <div className="relative">
-              <img
+              <Image
                 src={author.avatar}
                 alt={author.name}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-tweet-border transition-all duration-300 group-hover:ring-tweet-accent/50"
+                width={48}
+                height={48}
+                className="rounded-full object-cover ring-2 ring-tweet-border transition-all duration-300 group-hover:ring-tweet-accent/50"
               />
               <div className="-bottom-1 -right-1 absolute h-4 w-4 rounded-full bg-tweet-success opacity-0 ring-2 ring-tweet transition-all duration-300 group-hover:opacity-100" />
             </div>

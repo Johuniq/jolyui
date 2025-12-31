@@ -133,7 +133,12 @@ interface TreeNodeItemProps {
   isLast: boolean;
 }
 
-function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
+function TreeNodeItem({
+  node,
+  level,
+  onSelect,
+  isLast: _isLast,
+}: TreeNodeItemProps) {
   const { selectedId, expandedIds, toggleExpanded } = useFileTree();
   const isExpanded = expandedIds.has(node.id);
   const isSelected = selectedId === node.id;
@@ -178,6 +183,7 @@ function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
     <li
       role="treeitem"
       aria-expanded={node.type === "folder" ? isExpanded : undefined}
+      tabIndex={0}
     >
       <motion.div
         className={cn(
@@ -261,7 +267,7 @@ function TreeNodeItem({ node, level, onSelect, isLast }: TreeNodeItemProps) {
             style={{ overflow: "hidden" }}
           >
             <TreeNodeList
-              nodes={node.children!}
+              nodes={node.children}
               level={level + 1}
               onSelect={onSelect}
             />

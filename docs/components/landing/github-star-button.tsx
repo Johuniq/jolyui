@@ -137,7 +137,7 @@ function GitHubStarsButton({
     >
       {segments.map((segment, index) => (
         <React.Fragment key={index}>
-          <NumberFlow value={parseInt(segment)} />
+          <NumberFlow value={parseInt(segment, 10)} />
         </React.Fragment>
       ))}
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { LazyVideo } from "./lazy-video";
 
 export interface PhoneCardProps {
@@ -26,7 +27,7 @@ export function PhoneCard({
       <div className="relative aspect-[9/19] w-full overflow-hidden rounded-2xl bg-black">
         {mediaType === "video" ? (
           <LazyVideo
-            src={videoSrc!}
+            src={videoSrc}
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay={true}
             loop={true}
@@ -35,10 +36,11 @@ export function PhoneCard({
             aria-label={`${title} - ${sub}`}
           />
         ) : (
-          <img
+          <Image
             src={imageSrc}
             alt={`${title} - ${sub}`}
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            className="object-cover"
           />
         )}
 

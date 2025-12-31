@@ -62,7 +62,7 @@ export function Magnetic({
     return () => {
       document.removeEventListener("mousemove", calculateDistance);
     };
-  }, [ref, isHovered, intensity, range]);
+  }, [isHovered, intensity, range, x.set, y.set]);
 
   useEffect(() => {
     if (actionArea === "parent" && ref.current?.parentElement) {

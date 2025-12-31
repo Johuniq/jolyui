@@ -32,7 +32,9 @@ export function LazyVideo({
 
     const prefersReducedMotion =
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-    const saveData = (navigator as any)?.connection?.saveData === true;
+    const saveData =
+      (navigator as unknown as { connection?: { saveData?: boolean } })
+        ?.connection?.saveData === true;
     const shouldAutoplay = autoPlay && !prefersReducedMotion && !saveData;
 
     let observer: IntersectionObserver | null = null;
@@ -47,7 +49,7 @@ export function LazyVideo({
             const playVideo = async () => {
               try {
                 await el.play();
-              } catch (error) {
+              } catch (_error) {
                 // Autoplay might be blocked
                 // console.log("[v0] Autoplay blocked:", error)
               }

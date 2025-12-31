@@ -66,7 +66,7 @@ interface DockItemProps {
 }
 
 const DockItem = React.forwardRef<HTMLDivElement, DockItemProps>(
-  ({ className, children, onClick }, ref) => {
+  ({ className, children, onClick }, _ref) => {
     const context = React.useContext(DockContext);
     const itemRef = React.useRef<HTMLDivElement>(null);
 

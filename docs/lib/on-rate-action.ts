@@ -124,7 +124,7 @@ export async function onRateAction(
       };
     } = await octokit.graphql(`
             mutation {
-              createDiscussion(input: { repositoryId: "${destination.id}", categoryId: "${category!.id}", body: ${JSON.stringify(body)}, title: ${JSON.stringify(title)} }) {
+              createDiscussion(input: { repositoryId: "${destination.id}", categoryId: "${category?.id}", body: ${JSON.stringify(body)}, title: ${JSON.stringify(title)} }) {
                 discussion { id, url }
               }
             }`);

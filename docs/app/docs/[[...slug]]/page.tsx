@@ -84,7 +84,7 @@ export default async function DocPage(props: DocPageParams) {
 
   if (params.slug && params.slug.length > 0) {
     params.slug.forEach((slug, index) => {
-      const url = `https://jolyui.dev/docs/${params.slug!.slice(0, index + 1).join("/")}`;
+      const url = `https://jolyui.dev/docs/${params.slug?.slice(0, index + 1).join("/")}`;
       breadcrumbItems.push({
         name: slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, " "),
         url,

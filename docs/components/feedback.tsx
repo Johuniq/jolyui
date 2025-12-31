@@ -162,7 +162,6 @@ export function Feedback({
         ) : (
           <form className="flex flex-col gap-3" onSubmit={submit}>
             <textarea
-              autoFocus
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}

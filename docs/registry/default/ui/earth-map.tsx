@@ -46,7 +46,7 @@ export function EarthMap() {
         const rects = document.querySelectorAll("#map-svg rect");
         console.log(`[v0] Found ${rects.length} rect elements`);
 
-        rects.forEach((rect, index) => {
+        rects.forEach((rect, _index) => {
           const duration = Math.random() * 1.5 + 0.5; // 0.5-2 seconds (faster)
           const delay = Math.random() * 1; // 0-1 seconds
 

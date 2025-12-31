@@ -31,7 +31,7 @@ function PromiseToastDemoContent() {
         error: (err) => `Error: ${err.message}`,
       });
       setResult(data);
-    } catch (error) {
+    } catch (_error) {
       // Error already handled by toast
     }
   };
@@ -45,7 +45,7 @@ function PromiseToastDemoContent() {
         error: (err) => `Error: ${err.message}`,
       });
       setResult(data);
-    } catch (error) {
+    } catch (_error) {
       // Error already handled by toast
     }
   };

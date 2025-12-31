@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 export interface GitHubStarButtonProps {
   /**
@@ -33,7 +33,13 @@ interface Particle {
   scale: number;
 }
 
-const StarIcon = ({ className, filled }: { className?: string; filled?: boolean }) => (
+const StarIcon = ({
+  className,
+  filled,
+}: {
+  className?: string;
+  filled?: boolean;
+}) => (
   <svg
     viewBox="0 0 16 16"
     className={className}
@@ -55,10 +61,10 @@ const GitHubIcon = ({ className }: { className?: string }) => (
 
 function formatNumber(num: number): string {
   if (num >= 1000000) {
-    return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+    return `${(num / 1000000).toFixed(1).replace(/\.0$/, "")}M`;
   }
   if (num >= 1000) {
-    return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+    return `${(num / 1000).toFixed(1).replace(/\.0$/, "")}k`;
   }
   return num.toLocaleString();
 }
@@ -111,7 +117,10 @@ const AnimatedDigit = ({ digit }: { digit: string }) => {
         }}
       >
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-          <span key={n} className="h-[1em] leading-none flex items-center justify-center">
+          <span
+            key={n}
+            className="flex h-[1em] items-center justify-center leading-none"
+          >
             {n}
           </span>
         ))}
@@ -139,7 +148,7 @@ function StarParticles({ particles }: { particles: Particle[] }) {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute pointer-events-none"
+          className="pointer-events-none absolute"
           initial={{
             opacity: 1,
             scale: particle.scale,
@@ -159,14 +168,19 @@ function StarParticles({ particles }: { particles: Particle[] }) {
             top: particle.y,
           }}
         >
-          <StarIcon className="w-3 h-3 text-star" filled />
+          <StarIcon className="h-3 w-3 text-star" filled />
         </motion.div>
       ))}
     </AnimatePresence>
   );
 }
 
-export function GitHubStarButton({ owner, repo, stars: manualStars, className }: GitHubStarButtonProps) {
+export function GitHubStarButton({
+  owner,
+  repo,
+  stars: manualStars,
+  className,
+}: GitHubStarButtonProps) {
   const { stars, loading } = useGitHubStars(owner, repo, manualStars);
   const [localStars, setLocalStars] = React.useState(0);
   const [isHovered, setIsHovered] = React.useState(false);
@@ -184,8 +198,8 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
     if (!isStarred) {
       e.preventDefault();
       setIsStarred(true);
-      setLocalStars(prev => prev + 1);
-      
+      setLocalStars((prev) => prev + 1);
+
       const centerX = 20;
       const centerY = 20;
 
@@ -199,7 +213,7 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
 
       setParticles(newParticles);
       setTimeout(() => setParticles([]), 800);
-      
+
       // After simulation, navigate to the repo
       setTimeout(() => {
         window.open(`https://github.com/${owner}/${repo}`, "_blank");
@@ -211,13 +225,15 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
 
   if (loading && localStars === 0) {
     return (
-      <div className={cn(
-        "relative inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-card border border-border animate-pulse",
-        className
-      )}>
-        <div className="w-5 h-5 bg-muted rounded-full" />
-        <div className="w-px h-5 bg-border" />
-        <div className="w-20 h-5 bg-muted rounded" />
+      <div
+        className={cn(
+          "relative inline-flex animate-pulse items-center gap-3 rounded-xl border border-border bg-card px-4 py-2.5",
+          className,
+        )}
+      >
+        <div className="h-5 w-5 rounded-full bg-muted" />
+        <div className="h-5 w-px bg-border" />
+        <div className="h-5 w-20 rounded bg-muted" />
       </div>
     );
   }
@@ -229,11 +245,11 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "relative inline-flex items-center gap-3 px-4 py-2.5 rounded-xl",
-        "bg-card border border-border",
-        "shadow-sm hover:shadow-lg transition-all duration-300",
+        "relative inline-flex items-center gap-3 rounded-xl px-4 py-2.5",
+        "border border-border bg-card",
+        "shadow-sm transition-all duration-300 hover:shadow-lg",
         "group cursor-pointer no-underline",
-        className
+        className,
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -243,15 +259,15 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       {/* GitHub Icon */}
-      <GitHubIcon className="w-5 h-5 text-foreground transition-colors" />
+      <GitHubIcon className="h-5 w-5 text-foreground transition-colors" />
 
       {/* Divider */}
-      <div className="w-px h-5 bg-border" />
+      <div className="h-5 w-px bg-border" />
 
       {/* Star Section */}
       <div className="relative flex items-center gap-2">
         <StarParticles particles={particles} />
-        
+
         <motion.div
           className="relative"
           animate={{
@@ -265,12 +281,12 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
         >
           <StarIcon
             className={cn(
-              "w-5 h-5 transition-colors duration-300",
-              isHovered || isStarred ? "text-star" : "text-muted-foreground"
+              "h-5 w-5 transition-colors duration-300",
+              isHovered || isStarred ? "text-star" : "text-muted-foreground",
             )}
             filled={isHovered || isStarred}
           />
-          
+
           {/* Glow effect */}
           <motion.div
             className="absolute inset-0 blur-lg"
@@ -278,21 +294,21 @@ export function GitHubStarButton({ owner, repo, stars: manualStars, className }:
             animate={{ opacity: isHovered || isStarred ? 0.8 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <StarIcon className="w-5 h-5 text-star-glow" filled />
+            <StarIcon className="h-5 w-5 text-star-glow" filled />
           </motion.div>
         </motion.div>
 
         {/* Divider */}
 
         {/* Count */}
-        <div className="min-w-[3rem] text-sm font-mono font-semibold text-foreground tabular-nums">
+        <div className="min-w-[3rem] font-mono font-semibold text-foreground text-sm tabular-nums">
           <RollingNumber value={localStars} />
         </div>
       </div>
 
       {/* Hover shimmer effect */}
       <motion.div
-        className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none"
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}

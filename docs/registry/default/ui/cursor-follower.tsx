@@ -365,7 +365,7 @@ interface CursorMorphProps {
 
 export function CursorMorph({
   defaultSize = 16,
-  hoverSize = 60,
+  hoverSize: _hoverSize = 60,
   color = "hsl(var(--primary))",
   className,
 }: CursorMorphProps) {

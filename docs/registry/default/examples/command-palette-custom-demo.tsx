@@ -1,7 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { CommandPalette } from "@/registry/default/ui/command-palette";
 import {
   Bell,
   Github,
@@ -14,9 +12,11 @@ import {
   Shield,
   Twitter,
   User,
-  Zap
+  Zap,
 } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { CommandPalette } from "@/registry/default/ui/command-palette";
 
 export default function CommandPaletteCustomDemo() {
   const [open, setOpen] = useState(false);
@@ -150,18 +150,19 @@ export default function CommandPaletteCustomDemo() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] gap-4">
-      <div className="p-8 rounded-2xl border bg-card shadow-sm max-w-md text-center space-y-4 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-primary/20">
-          <div className="h-full bg-primary animate-progress w-1/3" />
+    <div className="flex min-h-[400px] flex-col items-center justify-center gap-4">
+      <div className="relative max-w-md space-y-4 overflow-hidden rounded-2xl border bg-card p-8 text-center shadow-sm">
+        <div className="absolute top-0 left-0 h-1 w-full bg-primary/20">
+          <div className="h-full w-1/3 animate-progress bg-primary" />
         </div>
-        
-        <div className="mx-auto w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-          <Zap className="w-6 h-6 text-primary" />
+
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+          <Zap className="h-6 w-6 text-primary" />
         </div>
         <h3 className="font-semibold text-lg">Advanced Command Center</h3>
-        <p className="text-sm text-muted-foreground">
-          Try the new <strong>Sub-menus</strong>! Navigate to "System Settings" to see nested commands.
+        <p className="text-muted-foreground text-sm">
+          Try the new <strong>Sub-menus</strong>! Navigate to "System Settings"
+          to see nested commands.
         </p>
         <div className="flex flex-col gap-2">
           <Button onClick={() => setOpen(true)} className="w-full">
@@ -172,7 +173,7 @@ export default function CommandPaletteCustomDemo() {
           </p>
         </div>
       </div>
-      
+
       <CommandPalette
         open={open}
         onOpenChange={handleOpenChange}

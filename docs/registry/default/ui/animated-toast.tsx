@@ -7,6 +7,7 @@ import {
   X,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
@@ -380,10 +381,12 @@ export function NotificationToast({
           <div className="p-4">
             <div className="flex items-start gap-3">
               {avatar ? (
-                <img
+                <Image
                   src={avatar}
                   alt=""
-                  className="h-10 w-10 rounded-full object-cover"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
                 />
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">

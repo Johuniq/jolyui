@@ -1,7 +1,8 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type Placement =
@@ -49,7 +50,7 @@ export function AnimatedTooltip({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const calculatePosition = () => {
+  const calculatePosition = useCallback(() => {
     if (!triggerRef.current || !tooltipRef.current) return;
 
     const triggerRect = triggerRef.current.getBoundingClientRect();
@@ -98,7 +99,7 @@ export function AnimatedTooltip({
     y = Math.max(8, Math.min(y, window.innerHeight - tooltipRect.height - 8));
 
     setPosition({ x, y });
-  };
+  }, [placement, offset]);
 
   useEffect(() => {
     if (isVisible) {
@@ -110,7 +111,7 @@ export function AnimatedTooltip({
       window.removeEventListener("scroll", calculatePosition);
       window.removeEventListener("resize", calculatePosition);
     };
-  }, [isVisible]);
+  }, [isVisible, calculatePosition]);
 
   const handleMouseEnter = () => {
     if (disabled) return;
@@ -161,7 +162,6 @@ export function AnimatedTooltip({
           hidden: { opacity: 0, scale: 0.5 },
           visible: { opacity: 1, scale: 1 },
         };
-      case "fade":
       default:
         return {
           hidden: { opacity: 0 },
@@ -204,16 +204,17 @@ export function AnimatedTooltip({
 
   return (
     <>
-      <div
+      <button
         ref={triggerRef}
         className={cn("inline-block", className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onFocus={handleMouseEnter}
         onBlur={handleMouseLeave}
+        type="button"
       >
         {children}
-      </div>
+      </button>
 
       <AnimatePresence>
         {isVisible && (
@@ -276,11 +277,7 @@ export function RichTooltip({
         <div className="rounded-lg border bg-card text-card-foreground shadow-xl">
           {image && (
             <div className="h-32 w-full overflow-hidden">
-              <img
-                src={image}
-                alt={title}
-                className="h-full w-full object-cover"
-              />
+              <Image src={image} alt={title} fill className="object-cover" />
             </div>
           )}
           <div className="p-3">
@@ -381,7 +378,7 @@ export function ConfirmTooltip({
   message,
   onConfirm,
   onCancel,
-  placement = "top",
+  placement: _placement = "top",
   confirmText = "Confirm",
   cancelText = "Cancel",
 }: ConfirmTooltipProps) {
@@ -399,12 +396,13 @@ export function ConfirmTooltip({
 
   return (
     <>
-      <div
+      <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="inline-block cursor-pointer"
       >
         {children}
-      </div>
+      </button>
 
       <AnimatePresence>
         {isOpen && (
@@ -516,6 +514,8 @@ export function FloatingLabel({
       <div
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        role="button"
+        tabIndex={0}
       >
         {children}
       </div>

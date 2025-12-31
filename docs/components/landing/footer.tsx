@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 export const Footer = () => {
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-center pt-8 pb-10">
         <a href="https://vercel.com/oss">
-          <img
+          <Image
             alt="Vercel OSS Program"
             src="https://vercel.com/oss/program-badge.svg"
+            width={100}
+            height={50}
           />
         </a>
       </div>

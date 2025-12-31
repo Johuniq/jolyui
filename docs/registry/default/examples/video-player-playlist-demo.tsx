@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { VideoPlayer } from "@/registry/default/ui/video-player";
 
@@ -70,10 +71,11 @@ export default function VideoPlayerPlaylistDemo() {
           >
             <div className="relative h-24 w-40 overflow-hidden rounded-md bg-muted">
               {video.poster && (
-                <img
+                <Image
                   src={video.poster}
                   alt={video.title}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               )}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40">
