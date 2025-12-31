@@ -1,15 +1,14 @@
+import { cn } from "@/lib/utils";
 import {
-  AlertCircle,
-  AlertTriangle,
-  Bell,
-  CheckCircle,
-  Info,
-  X,
+    AlertCircle,
+    AlertTriangle,
+    Bell,
+    CheckCircle,
+    Info,
+    X,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
 import * as React from "react";
-import { cn } from "@/lib/utils";
 
 // Toast Types
 type ToastType = "success" | "error" | "warning" | "info" | "default";
@@ -381,7 +380,8 @@ export function NotificationToast({
           <div className="p-4">
             <div className="flex items-start gap-3">
               {avatar ? (
-                <Image
+                // biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx
+                <img
                   src={avatar}
                   alt=""
                   width={40}

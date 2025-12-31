@@ -1,16 +1,15 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
-import { motion } from "motion/react";
-import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ExternalLink } from "lucide-react";
+import { motion } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
 
 interface Contributor {
   id: number;
@@ -161,7 +160,8 @@ export function GitHubContributors({
                         onClick={(e) => e.stopPropagation()}
                         aria-label={`${c.login} GitHub profile`}
                       >
-                        <Image
+                        {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
+                        <img
                           src={c.avatar_url}
                           alt={c.login}
                           width={40}
@@ -187,7 +187,8 @@ export function GitHubContributors({
                       >
                         <div className="flex items-center gap-3">
                           <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-md border">
-                            <Image
+                            {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
+                            <img
                               src={c.avatar_url}
                               alt={c.login}
                               width={48}

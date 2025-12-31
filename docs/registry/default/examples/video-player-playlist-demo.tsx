@@ -1,8 +1,6 @@
 "use client";
-
-import Image from "next/image";
-import { useState } from "react";
 import { VideoPlayer } from "@/registry/default/ui/video-player";
+import { useState } from "react";
 
 const playlist = [
   {
@@ -71,11 +69,12 @@ export default function VideoPlayerPlaylistDemo() {
           >
             <div className="relative h-24 w-40 overflow-hidden rounded-md bg-muted">
               {video.poster && (
-                <Image
+                // biome-ignore lint/a11y/useAltText: alt provided inline
+                // biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx
+                <img
                   src={video.poster}
                   alt={video.title}
-                  fill
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               )}
               <div className="absolute inset-0 flex items-center justify-center bg-black/40">

@@ -1,9 +1,8 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
 
 type Placement =
   | "top"
@@ -46,7 +45,7 @@ export function AnimatedTooltip({
 }: AnimatedTooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const triggerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -277,7 +276,8 @@ export function RichTooltip({
         <div className="rounded-lg border bg-card text-card-foreground shadow-xl">
           {image && (
             <div className="h-32 w-full overflow-hidden">
-              <Image src={image} alt={title} fill className="object-cover" />
+              {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
+              <img src={image} alt={title} className="h-full w-full object-cover" />
             </div>
           )}
           <div className="p-3">
@@ -563,14 +563,15 @@ export function StatusTooltip({
 }
 
 export type {
-  AnimatedTooltipProps,
-  Animation,
-  ConfirmTooltipProps,
-  FloatingLabelProps,
-  HoverCardTooltipProps,
-  IconTooltipProps,
-  Placement,
-  RichTooltipProps,
-  StatusTooltipProps,
-  TooltipGroupProps,
+    AnimatedTooltipProps,
+    Animation,
+    ConfirmTooltipProps,
+    FloatingLabelProps,
+    HoverCardTooltipProps,
+    IconTooltipProps,
+    Placement,
+    RichTooltipProps,
+    StatusTooltipProps,
+    TooltipGroupProps
 };
+

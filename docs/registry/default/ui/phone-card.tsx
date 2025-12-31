@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import { LazyVideo } from "./lazy-video";
 
 export interface PhoneCardProps {
@@ -36,11 +34,12 @@ export function PhoneCard({
             aria-label={`${title} - ${sub}`}
           />
         ) : (
-          <Image
+          // biome-ignore lint/a11y/useAltText: alt provided inline
+          // biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx
+          <img
             src={imageSrc}
             alt={`${title} - ${sub}`}
-            fill
-            className="object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         )}
 

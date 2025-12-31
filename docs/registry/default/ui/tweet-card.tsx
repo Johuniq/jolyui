@@ -1,7 +1,6 @@
-import { BadgeCheck, Heart, MessageCircle, Repeat2, Share } from "lucide-react";
-import Image from "next/image";
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import { BadgeCheck, Heart, MessageCircle, Repeat2, Share } from "lucide-react";
+import * as React from "react";
 
 export interface TweetCardProps extends React.HTMLAttributes<HTMLDivElement> {
   author: {
@@ -68,7 +67,8 @@ const TweetCard = React.forwardRef<HTMLDivElement, TweetCardProps>(
           {/* Header */}
           <div className="flex items-start gap-3">
             <div className="relative">
-              <Image
+              {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
+              <img
                 src={author.avatar}
                 alt={author.name}
                 width={48}

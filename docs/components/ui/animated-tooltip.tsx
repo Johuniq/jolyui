@@ -1,8 +1,7 @@
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
 
 type Placement =
   | "top"
@@ -282,11 +281,11 @@ export function RichTooltip({
         <div className="rounded-lg border bg-card text-card-foreground shadow-xl">
           {image && (
             <div className="h-32 w-full overflow-hidden">
-              <Image
+              {/* biome-ignore lint/a11y/useAltText: alt is provided via title */}
+              {/* biome-ignore lint/performance/noImgElement: next/image causes ESM issues with fumadocs-mdx */}
+              <img
                 src={image}
                 alt={title}
-                width={280}
-                height={128}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -580,14 +579,15 @@ export function StatusTooltip({
 }
 
 export type {
-  AnimatedTooltipProps,
-  Animation,
-  ConfirmTooltipProps,
-  FloatingLabelProps,
-  HoverCardTooltipProps,
-  IconTooltipProps,
-  Placement,
-  RichTooltipProps,
-  StatusTooltipProps,
-  TooltipGroupProps,
+    AnimatedTooltipProps,
+    Animation,
+    ConfirmTooltipProps,
+    FloatingLabelProps,
+    HoverCardTooltipProps,
+    IconTooltipProps,
+    Placement,
+    RichTooltipProps,
+    StatusTooltipProps,
+    TooltipGroupProps
 };
+
