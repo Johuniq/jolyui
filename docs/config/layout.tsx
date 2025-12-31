@@ -1,10 +1,10 @@
+import type { DocsLayoutProps } from "fumadocs-ui/layouts/notebook";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 import XIcon from "@/components/icons/x-icon";
 import { GitHubStarsButton } from "@/components/landing/github-star-button";
 import { Logo } from "@/components/logo";
 import { siteConfig } from "@/config/site";
 import { source } from "@/lib/source";
-import type { DocsLayoutProps } from "fumadocs-ui/layouts/notebook";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 export const baseOptions: BaseLayoutProps = {
   nav: {

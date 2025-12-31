@@ -1,3 +1,13 @@
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+  EditOnGitHub,
+  PageLastUpdate,
+} from "fumadocs-ui/layouts/notebook/page";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
 import { DynamicLink } from "@/components/dynamic-link";
 import { Feedback } from "@/components/feedback";
@@ -5,16 +15,6 @@ import { Mdx } from "@/components/mdx-components";
 import { Separator } from "@/components/ui/separator";
 import { onRateAction } from "@/lib/on-rate-action";
 import { source } from "@/lib/source";
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-  EditOnGitHub,
-  PageLastUpdate
-} from "fumadocs-ui/layouts/notebook/page";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 
 interface DocPageParams {
   params: Promise<{
@@ -109,16 +109,17 @@ export default async function DocPage(props: DocPageParams) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <DocsPage toc={page.data.toc}
-      tableOfContent={{ style: "clerk" }}
-      full={page.data.full}
+      <DocsPage
+        toc={page.data.toc}
+        tableOfContent={{ style: "clerk" }}
+        full={page.data.full}
       >
         <div className="flex flex-col gap-2">
           <DocsTitle>{page.data.title}</DocsTitle>
           <DocsDescription className="mb-2.5">
             {page.data.description}
           </DocsDescription>
-            {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} />}
+          {lastModifiedTime && <PageLastUpdate date={lastModifiedTime} />}
           <div className="flex flex-wrap items-center gap-2 lg:flex-nowrap">
             {docLink ? <DynamicLink href={docLink}>Docs</DynamicLink> : null}
             {apiLink ? <DynamicLink href={apiLink}>API</DynamicLink> : null}
