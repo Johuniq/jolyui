@@ -33,6 +33,6 @@ jobs:
           title: "chore(release): version packages"
           publish: pnpm changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Trusted Publishing (OIDC) is configured - no NPM_TOKEN needed
        
