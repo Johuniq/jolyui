@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { type HTMLMotionProps, isMotionComponent, motion } from "motion/react";
 import * as React from "react";
-import { cn } from "@/lib/utils";
 
 type AnyProps = Record<string, unknown>;
 
@@ -62,20 +62,21 @@ function Slot<T extends HTMLElement = HTMLElement>({
   ref,
   ...props
 }: SlotProps<T>) {
+  if (!React.isValidElement(children)) return null;
+  
+  const childType = children.type;
   const isAlreadyMotion =
-    typeof children.type === "object" &&
-    children.type !== null &&
-    isMotionComponent(children.type);
+    typeof childType === "object" &&
+    childType !== null &&
+    isMotionComponent(childType);
 
   const Base = React.useMemo(
     () =>
       isAlreadyMotion
-        ? (children.type as React.ElementType)
-        : motion.create(children.type as React.ElementType),
-    [isAlreadyMotion, children.type],
+        ? (childType as React.ElementType)
+        : motion.create(childType as React.ElementType),
+    [isAlreadyMotion, childType],
   );
-
-  if (!React.isValidElement(children)) return null;
 
   const { ref: childRef, ...childProps } = children.props as AnyProps;
 
@@ -87,9 +88,10 @@ function Slot<T extends HTMLElement = HTMLElement>({
 }
 
 export {
-  Slot,
-  type AnyProps,
-  type DOMMotionProps,
-  type SlotProps,
-  type WithAsChild,
+    Slot,
+    type AnyProps,
+    type DOMMotionProps,
+    type SlotProps,
+    type WithAsChild
 };
+

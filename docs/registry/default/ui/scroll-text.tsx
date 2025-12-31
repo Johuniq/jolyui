@@ -1,12 +1,12 @@
+import { cn } from "@/lib/utils";
 import {
-  type MotionValue,
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
+    type MotionValue,
+    motion,
+    useScroll,
+    useSpring,
+    useTransform,
 } from "motion/react";
 import * as React from "react";
-import { cn } from "@/lib/utils";
 
 // ============================================================================
 // TYPES
@@ -119,7 +119,7 @@ const ScrollText = React.forwardRef<HTMLDivElement, ScrollTextProps>(
 
     const { scrollYProgress } = useScroll({
       target: ref,
-      offset,
+      offset: offset as ["start end", "end start"],
     });
 
     const [start, end] = threshold;
@@ -643,24 +643,25 @@ StickyScrollText.displayName = "StickyScrollText";
 // ============================================================================
 
 export {
-  HorizontalScrollText,
-  ParallaxText,
-  ScrollFade,
-  ScrollProgressText,
-  ScrollReveal,
-  ScrollScale,
-  ScrollText,
-  StickyScrollText,
+    HorizontalScrollText,
+    ParallaxText,
+    ScrollFade,
+    ScrollProgressText,
+    ScrollReveal,
+    ScrollScale,
+    ScrollText,
+    StickyScrollText
 };
 
-export type {
-  HorizontalScrollTextProps,
-  ParallaxTextProps,
-  ScrollEffect,
-  ScrollFadeProps,
-  ScrollProgressTextProps,
-  ScrollRevealProps,
-  ScrollScaleProps,
-  ScrollTextProps,
-  StickyScrollTextProps,
-};
+    export type {
+        HorizontalScrollTextProps,
+        ParallaxTextProps,
+        ScrollEffect,
+        ScrollFadeProps,
+        ScrollProgressTextProps,
+        ScrollRevealProps,
+        ScrollScaleProps,
+        ScrollTextProps,
+        StickyScrollTextProps
+    };
+

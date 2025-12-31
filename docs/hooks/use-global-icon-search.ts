@@ -6,8 +6,8 @@ interface IconResult {
   svg: string;
   width: number;
   height: number;
-  category: string;
-  categoryDisplay: string;
+  category?: string;
+  categoryDisplay?: string;
 }
 
 interface IconData {

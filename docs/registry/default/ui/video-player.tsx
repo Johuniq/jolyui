@@ -1,34 +1,34 @@
 "use client";
 
 import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-  Loader2,
-  Maximize,
-  Maximize2,
-  MessageCircle,
-  Minimize,
-  MoreVertical,
-  Pause,
-  PictureInPicture2,
-  Play,
-  Repeat,
-  RotateCcw,
-  RotateCw,
-  Settings,
-  Volume2,
-  VolumeX,
+    ChevronLeft,
+    ChevronRight,
+    ChevronsLeft,
+    ChevronsRight,
+    Loader2,
+    Maximize,
+    Maximize2,
+    MessageCircle,
+    Minimize,
+    MoreVertical,
+    Pause,
+    PictureInPicture2,
+    Play,
+    Repeat,
+    RotateCcw,
+    RotateCw,
+    Settings,
+    Volume2,
+    VolumeX,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import type React from "react";
 import {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
+    forwardRef,
+    useEffect,
+    useImperativeHandle,
+    useRef,
+    useState,
 } from "react";
 
 interface QualitySource {
@@ -359,7 +359,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             containerRef.current as HTMLElement & {
               webkitRequestFullscreen?: () => void;
             }
-          ).webkitRequestFullscreen();
+          ).webkitRequestFullscreen?.();
         }
         setIsFullscreen(true);
       } else {

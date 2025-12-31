@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-interface IconData {
+export interface IconData {
   body: string;
   width?: number;
   height?: number;

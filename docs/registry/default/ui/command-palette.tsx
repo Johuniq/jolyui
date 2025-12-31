@@ -1,18 +1,18 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import {
-  ChevronRight,
-  Clock,
-  CornerDownLeft,
-  Loader2,
-  type LucideIcon,
-  Search,
-  X,
+    ChevronRight,
+    Clock,
+    CornerDownLeft,
+    Loader2,
+    type LucideIcon,
+    Search,
+    X,
 } from "lucide-react";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import type React from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
 
 export interface CommandItem {
   id: string;
@@ -215,7 +215,7 @@ export function CommandPalette({
           {
             id: item.id,
             title: item.label,
-            groups: item.children,
+            groups: item.children || [],
           },
         ]);
         setQuery("");
@@ -397,6 +397,7 @@ export function CommandPalette({
                       );
                       const isSelected = currentItemIndex === selectedIndex;
                       const item = flatItem.item;
+                      if (!item) return null;
                       const Icon = item.icon;
                       const highlightedLabel = highlightMatches(
                         item.label,

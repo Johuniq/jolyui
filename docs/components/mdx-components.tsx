@@ -1,5 +1,8 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Kbd } from "@/components/ui/kbd";
+import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
 import type { Page } from "fumadocs-core/source";
-import type { DocOut } from "fumadocs-mdx/runtime/next";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { Heading } from "fumadocs-ui/components/heading";
 import { Step, Steps } from "fumadocs-ui/components/steps";
@@ -9,10 +12,6 @@ import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type * as React from "react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Kbd } from "@/components/ui/kbd";
-import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
-import { cn } from "@/lib/utils";
 
 const ComponentSource = dynamic(() =>
   import("@/components/component-source").then((mod) => ({
@@ -115,8 +114,9 @@ export function useMdxComponents(
   };
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: fumadocs internal page type
 interface MdxProps {
-  page: Page<DocOut>;
+  page: Page<{ body: React.ComponentType<{ components?: MDXComponents }> }>;
   components?: Partial<MDXComponents>;
 }
 

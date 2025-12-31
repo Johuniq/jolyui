@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import * as React from "react";
 
 interface GooeyTextProps {
   texts: string[];
@@ -74,9 +74,9 @@ export function GooeyText({
         if (shouldIncrementIndex) {
           textIndex = (textIndex + 1) % texts.length;
           if (text1Ref.current && text2Ref.current) {
-            text1Ref.current.textContent = texts[textIndex % texts.length];
+            text1Ref.current.textContent = texts[textIndex % texts.length] ?? "";
             text2Ref.current.textContent =
-              texts[(textIndex + 1) % texts.length];
+              texts[(textIndex + 1) % texts.length] ?? "";
           }
         }
         doMorph();
