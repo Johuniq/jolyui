@@ -18,11 +18,11 @@
       "outputs": []
     },
     "typecheck": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "jolyui.dev#generate:content"],
       "outputs": []
     },
     "docs#typecheck": {
-      "dependsOn": ["^build", "docs#generate:content"],
+      "dependsOn": ["^build", "jolyui.dev#generate:content"],
       "outputs": []
     },
     "generate:content": {
