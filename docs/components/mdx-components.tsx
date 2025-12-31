@@ -115,7 +115,8 @@ export function useMdxComponents(
 }
 
 interface MdxProps {
-  page: Page<{ body: React.ComponentType<{ components?: MDXComponents }> }>;
+  // biome-ignore lint/suspicious/noExplicitAny: Page type is complex, any is acceptable here
+  page: Page<any>;
   components?: Partial<MDXComponents>;
 }
 

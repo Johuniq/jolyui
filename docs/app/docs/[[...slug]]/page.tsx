@@ -36,10 +36,10 @@ export async function generateMetadata(
   if (!page) return {};
 
   const pageUrl = `https://jolyui.dev${page.url}`;
-  const ogImage = `https://jolyui.dev/api/og?title=${encodeURIComponent(page.data.title)}`;
+  const ogImage = `https://jolyui.dev/api/og?title=${encodeURIComponent(page.data.title || "JolyUI")}`;
 
   return {
-    title: page.data.title,
+    title: page.data.title || "JolyUI",
     description: page.data.description,
     alternates: {
       canonical: pageUrl,
@@ -73,8 +73,8 @@ export default async function DocPage(props: DocPageParams) {
 
   if (!page) notFound();
 
-  const docLink = page.data.links?.doc;
-  const apiLink = page.data.links?.api;
+  const docLink = undefined; // page.data.links?.doc;
+  const apiLink = undefined; // page.data.links?.api;
 
   // Breadcrumb structured data
   const breadcrumbItems = [
@@ -109,7 +109,7 @@ export default async function DocPage(props: DocPageParams) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <DocsPage toc={page.data.toc} full={page.data.full}>
+      <DocsPage>
         <div className="flex flex-col gap-2">
           <DocsTitle>{page.data.title}</DocsTitle>
           <DocsDescription className="mb-2.5">
