@@ -1,0 +1,15 @@
+{
+  "name": "feedback-widget-custom-label-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "feedback-widget"
+  ],
+  "files": [
+    {
+      "path": "examples/feedback-widget-custom-label-demo.tsx",
+      "content": "\"use client\";\n\nimport { FeedbackWidget } from \"@/registry/default/ui/feedback-widget\";\n\nexport default function FeedbackWidgetCustomLabelDemo() {\n  return (\n    <div className=\"relative flex h-[400px] w-full items-center justify-center bg-zinc-950\">\n      <FeedbackWidget\n        label=\"Rate your experience\"\n        placeholder=\"Tell us what you think...\"\n        onSubmit={(data) => {\n          console.log(\"Feedback submitted:\", data);\n        }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1250,4 +1250,26 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "feedback-widget-demo",
+    type: "registry:example",
+    registryDependencies: ["feedback-widget"],
+    files: [
+      {
+        path: "examples/feedback-widget-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "feedback-widget-custom-label-demo",
+    type: "registry:example",
+    registryDependencies: ["feedback-widget"],
+    files: [
+      {
+        path: "examples/feedback-widget-custom-label-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

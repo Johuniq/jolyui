@@ -1,0 +1,48 @@
+---
+title: Feedback Widget
+description: A feedback widget with emoji ratings and a text area inspired from Vercel.
+preview: true
+links:
+ api: /docs/components/feedback-widget#api-reference
+---
+
+<ComponentTabs name="feedback-widget-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/feedback-widget"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+        motion react-markdown @radix-ui/react-toggle-group
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="feedback-widget" />
+  </Step>
+</Steps>
+
+## Custom Label
+
+<ComponentTabs name="feedback-widget-custom-label-demo" />
+
+## API Reference
+
+The main file tree component that renders a hierarchical structure of files and folders.
+
+<AutoTypeTable
+  path="./types/docs/feedback-widget.ts"
+  name="FeedbackWidgetProps"
+/>

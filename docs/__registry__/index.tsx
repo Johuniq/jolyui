@@ -457,6 +457,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "feedback-widget": {
+      name: "feedback-widget",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/feedback-widget.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/feedback-widget.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -2050,6 +2064,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/gooey-text-morphing-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "feedback-widget-demo": {
+      name: "feedback-widget-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["feedback-widget"],
+      files: [{
+        path: "registry/default/examples/feedback-widget-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/feedback-widget-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "feedback-widget-custom-label-demo": {
+      name: "feedback-widget-custom-label-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["feedback-widget"],
+      files: [{
+        path: "registry/default/examples/feedback-widget-custom-label-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/feedback-widget-custom-label-demo.tsx")),
       source: "",
       chunks: []
     },

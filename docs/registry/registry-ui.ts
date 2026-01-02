@@ -342,4 +342,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "feedback-widget",
+    type: "registry:ui",
+    dependencies: ["motion", "react-markdown", "@radix-ui/react-toggle-group"],
+    files: [
+      {
+        path: "ui/feedback-widget.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];
