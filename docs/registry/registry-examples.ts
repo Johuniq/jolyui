@@ -74,6 +74,18 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "dock-social-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["dock"],
+    files: [
+      {
+        path: "examples/dock-social-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "image-comparison-demo",
     type: "registry:example",
     registryDependencies: ["image-comparison"],
