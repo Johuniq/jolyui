@@ -1,0 +1,123 @@
+---
+title: Image Sphere
+description: An interactive 3D sphere grid that displays images with drag rotation, momentum physics, and click-to-expand functionality.
+preview: true
+links:
+ api: /docs/components/image-sphere#api-reference
+---
+
+## Basic Usage
+
+<ComponentTabs name="image-sphere-demo" />
+
+## Auto Rotate
+
+Enable automatic rotation for a dynamic, hands-free display.
+
+<ComponentTabs name="image-sphere-autorotate-demo" />
+
+## Large Gallery
+
+Display more images with adjusted sizing for better visibility.
+
+<ComponentTabs name="image-sphere-large-demo" />
+
+## Custom Configuration
+
+Customize drag sensitivity, momentum, and visual properties.
+
+<ComponentTabs name="image-sphere-custom-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/image-sphere"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     lucide-react
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/image-sphere.tsx```
+
+    <ComponentSource name="image-sphere" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import SphereImageGrid from "@/components/ui/image-sphere";
+
+const images = [
+  {
+    id: "1",
+    src: "https://example.com/image1.jpg",
+    alt: "Image 1",
+    title: "Title",
+    description: "Description",
+  },
+  // Add more images...
+];
+
+export default function MyComponent() {
+  return (
+    <SphereImageGrid
+      images={images}
+      containerSize={400}
+      sphereRadius={180}
+      autoRotate={true}
+    />
+  );
+}
+```
+
+## API Reference
+
+### SphereImageGrid
+
+<AutoTypeTable
+  path="./types/docs/image-sphere.ts"
+  name="SphereImageGridProps"
+/>
+
+### ImageData
+
+<AutoTypeTable
+  path="./types/docs/image-sphere.ts"
+  name="ImageData"
+/>
+
+### Position3D
+
+<AutoTypeTable
+  path="./types/docs/image-sphere.ts"
+  name="Position3D"
+/>
+
+### SphericalPosition
+
+<AutoTypeTable
+  path="./types/docs/image-sphere.ts"
+  name="SphericalPosition"
+/>
+
+## Notes
+
+- The sphere uses **Fibonacci distribution** for even image placement across the surface
+- Supports both **mouse and touch interactions** for drag-based rotation
+- Images smoothly **fade out** when rotating to the back of the sphere
+- Click on any image to open a **spotlight modal** with title and description
+- Built-in **momentum physics** provides natural deceleration after dragging
+- **Collision detection** prevents image overlap during rotation
+- Auto-rotate can be interrupted by user interaction and resumes automatically
+- Responsive container sizing with configurable perspective for 3D depth

@@ -1,0 +1,18 @@
+{
+  "name": "image-sphere-custom-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "image-sphere"
+  ],
+  "files": [
+    {
+      "path": "examples/image-sphere-custom-demo.tsx",
+      "content": "import SphereImageGrid from \"@/registry/default/ui/image-sphere\";\n\nconst techLogos = [\n  {\n    id: \"1\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg\",\n    alt: \"React\",\n    title: \"React\",\n    description: \"A JavaScript library for building user interfaces\",\n  },\n  {\n    id: \"2\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg\",\n    alt: \"TypeScript\",\n    title: \"TypeScript\",\n    description: \"JavaScript with syntax for types\",\n  },\n  {\n    id: \"3\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg\",\n    alt: \"Next.js\",\n    title: \"Next.js\",\n    description: \"The React Framework for the Web\",\n  },\n  {\n    id: \"4\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg\",\n    alt: \"Node.js\",\n    title: \"Node.js\",\n    description: \"JavaScript runtime built on V8\",\n  },\n  {\n    id: \"5\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg\",\n    alt: \"Python\",\n    title: \"Python\",\n    description: \"A programming language that lets you work quickly\",\n  },\n  {\n    id: \"6\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg\",\n    alt: \"Docker\",\n    title: \"Docker\",\n    description: \"Develop, Ship, and Run Anywhere\",\n  },\n  {\n    id: \"7\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg\",\n    alt: \"Kubernetes\",\n    title: \"Kubernetes\",\n    description: \"Production-Grade Container Orchestration\",\n  },\n  {\n    id: \"8\",\n    src: \"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg\",\n    alt: \"PostgreSQL\",\n    title: \"PostgreSQL\",\n    description: \"The World's Most Advanced Open Source Database\",\n  },\n];\n\nexport default function ImageSphereCustomDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <SphereImageGrid\n        images={techLogos}\n        containerSize={350}\n        sphereRadius={150}\n        dragSensitivity={0.7}\n        momentumDecay={0.92}\n        baseImageScale={0.15}\n        hoverScale={1.3}\n        autoRotate={true}\n        autoRotateSpeed={0.5}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

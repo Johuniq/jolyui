@@ -50,6 +50,42 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "animated-theme-toggle-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["animated-theme-toggle"],
+    files: [
+      {
+        path: "examples/animated-theme-toggle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-theme-toggle-sizes-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["animated-theme-toggle"],
+    files: [
+      {
+        path: "examples/animated-theme-toggle-sizes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "animated-theme-toggle-navbar-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["animated-theme-toggle"],
+    files: [
+      {
+        path: "examples/animated-theme-toggle-navbar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "dock-demo",
     type: "registry:example",
     dependencies: ["lucide-react"],
@@ -57,6 +93,54 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/dock-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "expanded-map-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["expanded-map"],
+    files: [
+      {
+        path: "examples/expanded-map-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "expanded-map-locations-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["expanded-map"],
+    files: [
+      {
+        path: "examples/expanded-map-locations-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "expanded-map-dark-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["expanded-map"],
+    files: [
+      {
+        path: "examples/expanded-map-dark-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "expanded-map-zoom-demo",
+    type: "registry:example",
+    dependencies: ["motion"],
+    registryDependencies: ["expanded-map"],
+    files: [
+      {
+        path: "examples/expanded-map-zoom-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -1280,6 +1364,98 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/feedback-widget-custom-label-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-sphere-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["image-sphere"],
+    files: [
+      {
+        path: "examples/image-sphere-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-sphere-autorotate-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["image-sphere"],
+    files: [
+      {
+        path: "examples/image-sphere-autorotate-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-sphere-large-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["image-sphere"],
+    files: [
+      {
+        path: "examples/image-sphere-large-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "image-sphere-custom-demo",
+    type: "registry:example",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["image-sphere"],
+    files: [
+      {
+        path: "examples/image-sphere-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hover-preview-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-preview"],
+    files: [
+      {
+        path: "examples/hover-preview-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hover-preview-portfolio-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-preview"],
+    files: [
+      {
+        path: "examples/hover-preview-portfolio-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hover-preview-product-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-preview"],
+    files: [
+      {
+        path: "examples/hover-preview-product-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hover-preview-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-preview"],
+    files: [
+      {
+        path: "examples/hover-preview-custom-demo.tsx",
         type: "registry:example",
       },
     ],

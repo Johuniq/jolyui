@@ -1,0 +1,93 @@
+---
+title: Expanded Map
+description: An interactive location card that expands to reveal a real map view with smooth 3D tilt animations and coordinate-based tile rendering.
+preview: true
+links:
+ api: /docs/components/expanded-map#api-reference
+---
+
+## Basic Usage
+
+Click the card to expand and reveal the map.
+
+<ComponentTabs name="expanded-map-demo" />
+
+## Different Locations
+
+Display any location by providing latitude and longitude coordinates.
+
+<ComponentTabs name="expanded-map-locations-demo" />
+
+## Dark Map Style
+
+Use the dark Carto tile provider for a sleek dark map appearance.
+
+<ComponentTabs name="expanded-map-dark-demo" />
+
+## Zoom Levels
+
+Control the map detail with different zoom levels (1-18).
+
+<ComponentTabs name="expanded-map-zoom-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/expanded-map"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/expanded-map.tsx```
+
+    <ComponentSource name="expanded-map" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { LocationMap } from "@/components/ui/expanded-map"
+
+export default function MyComponent() {
+  return (
+    <LocationMap
+      location="New York, NY"
+      latitude={40.7128}
+      longitude={-74.006}
+    />
+  )
+}
+```
+
+
+## API Reference
+
+### LocationMap
+
+<AutoTypeTable
+  path="./types/docs/expanded-map.ts"
+  name="LocationMapProps"
+/>
+
+## Notes
+
+- Uses **real map tiles** from OpenStreetMap or Carto tile providers
+- **3D tilt effect** follows cursor movement with spring physics
+- **Click to expand** reveals the full map with animated marker
+- Coordinates are **automatically formatted** with N/S/E/W directions
+- Map tiles are **preloaded** for smooth transitions
+- Supports **three tile providers**: OpenStreetMap, Carto Light, and Carto Dark
+- **Zoom levels 1-18** control map detail (higher = more zoomed in)
+- Uses **Web Mercator projection** for accurate coordinate conversion

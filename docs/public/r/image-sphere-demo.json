@@ -1,0 +1,18 @@
+{
+  "name": "image-sphere-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "image-sphere"
+  ],
+  "files": [
+    {
+      "path": "examples/image-sphere-demo.tsx",
+      "content": "import SphereImageGrid from \"@/registry/default/ui/image-sphere\";\n\nconst sampleImages = [\n  {\n    id: \"1\",\n    src: \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop\",\n    alt: \"User avatar 1\",\n    title: \"Alex Johnson\",\n    description: \"Senior Software Engineer\",\n  },\n  {\n    id: \"2\",\n    src: \"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop\",\n    alt: \"User avatar 2\",\n    title: \"Sarah Miller\",\n    description: \"Product Designer\",\n  },\n  {\n    id: \"3\",\n    src: \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop\",\n    alt: \"User avatar 3\",\n    title: \"Michael Chen\",\n    description: \"Data Scientist\",\n  },\n  {\n    id: \"4\",\n    src: \"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop\",\n    alt: \"User avatar 4\",\n    title: \"Emma Wilson\",\n    description: \"UX Researcher\",\n  },\n  {\n    id: \"5\",\n    src: \"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop\",\n    alt: \"User avatar 5\",\n    title: \"David Brown\",\n    description: \"Frontend Developer\",\n  },\n  {\n    id: \"6\",\n    src: \"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop\",\n    alt: \"User avatar 6\",\n    title: \"Lisa Anderson\",\n    description: \"Marketing Lead\",\n  },\n  {\n    id: \"7\",\n    src: \"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop\",\n    alt: \"User avatar 7\",\n    title: \"James Taylor\",\n    description: \"DevOps Engineer\",\n  },\n  {\n    id: \"8\",\n    src: \"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop\",\n    alt: \"User avatar 8\",\n    title: \"Olivia Davis\",\n    description: \"Project Manager\",\n  },\n];\n\nexport default function ImageSphereDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <SphereImageGrid\n        images={sampleImages}\n        containerSize={400}\n        sphereRadius={180}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

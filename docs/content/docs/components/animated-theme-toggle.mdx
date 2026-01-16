@@ -1,0 +1,91 @@
+---
+title: Animated Theme Toggle
+description: A beautifully animated theme toggle button that transitions between sun and moon icons with smooth path animations.
+preview: true
+links:
+ api: /docs/components/animated-theme-toggle#api-reference
+---
+
+## Basic Usage
+
+<ComponentTabs name="animated-theme-toggle-demo" />
+
+## Different Sizes
+
+<ComponentTabs name="animated-theme-toggle-sizes-demo" />
+
+## In Navbar
+
+<ComponentTabs name="animated-theme-toggle-navbar-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/animated-theme-toggle"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+     motion next-themes
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/animated-theme-toggle.tsx```
+
+    <ComponentSource name="animated-theme-toggle" />
+  </Step>
+  <Step>
+    Make sure you have the `ThemeProvider` set up in your app. In your root layout:
+
+    ```tsx
+    import { ThemeProvider } from "next-themes"
+
+    export default function RootLayout({ children }) {
+      return (
+        <html lang="en" suppressHydrationWarning>
+          <body>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              {children}
+            </ThemeProvider>
+          </body>
+        </html>
+      )
+    }
+    ```
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { AnimatedThemeToggle } from "@/components/ui/animated-theme-toggle"
+
+export default function MyComponent() {
+  return <AnimatedThemeToggle />
+}
+```
+
+## API Reference
+
+### AnimatedThemeToggle
+
+<AutoTypeTable
+  path="./types/docs/animated-theme-toggle.ts"
+  name="AnimatedThemeToggleProps"
+/>
+
+## Notes
+
+- Uses **Framer Motion** for smooth SVG path animations
+- **Sun-to-moon** transition with synchronized path length animations
+- Built on top of the **Button** component for consistent styling
+- Includes **hover and focus states** out of the box
+- The toggle uses **internal state** by default - integrate with your theme provider for actual theme switching
+- SVG paths animate with **coordinated timing** for a polished effect

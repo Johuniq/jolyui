@@ -1,0 +1,15 @@
+{
+  "name": "hover-preview-portfolio-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hover-preview"
+  ],
+  "files": [
+    {
+      "path": "examples/hover-preview-portfolio-demo.tsx",
+      "content": "import {\n  HoverPreviewLink,\n  HoverPreviewProvider,\n} from \"@/registry/default/ui/hover-preview\"\n\nconst portfolioData = {\n  project1: {\n    image: \"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=560&h=320&fit=crop\",\n    title: \"E-Commerce Platform\",\n    subtitle: \"Full-stack Next.js application with Stripe integration\",\n  },\n  project2: {\n    image: \"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=560&h=320&fit=crop\",\n    title: \"Analytics Dashboard\",\n    subtitle: \"Real-time data visualization with D3.js\",\n  },\n  project3: {\n    image: \"https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=560&h=320&fit=crop\",\n    title: \"Developer Tools\",\n    subtitle: \"CLI utilities and VS Code extensions\",\n  },\n  project4: {\n    image: \"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=560&h=320&fit=crop\",\n    title: \"Mobile App\",\n    subtitle: \"Cross-platform React Native application\",\n  },\n}\n\nexport default function HoverPreviewPortfolioDemo() {\n  return (\n    <HoverPreviewProvider data={portfolioData} className=\"p-8\">\n      <div className=\"max-w-2xl space-y-4\">\n        <h2 className=\"text-2xl font-bold text-foreground\">Featured Projects</h2>\n        <p className=\"text-lg leading-relaxed text-muted-foreground\">\n          Check out my recent work including the{\" \"}\n          <HoverPreviewLink previewKey=\"project1\">E-Commerce Platform</HoverPreviewLink>,\n          a comprehensive{\" \"}\n          <HoverPreviewLink previewKey=\"project2\">Analytics Dashboard</HoverPreviewLink>,\n          various{\" \"}\n          <HoverPreviewLink previewKey=\"project3\">Developer Tools</HoverPreviewLink>,\n          and a cross-platform{\" \"}\n          <HoverPreviewLink previewKey=\"project4\">Mobile App</HoverPreviewLink>.\n        </p>\n      </div>\n    </HoverPreviewProvider>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

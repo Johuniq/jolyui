@@ -1,0 +1,18 @@
+{
+  "name": "animated-theme-toggle-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "animated-theme-toggle"
+  ],
+  "files": [
+    {
+      "path": "examples/animated-theme-toggle-demo.tsx",
+      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\"\n\nexport default function AnimatedThemeToggleDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <AnimatedThemeToggle />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

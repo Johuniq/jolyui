@@ -37,6 +37,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "animated-theme-toggle": {
+      name: "animated-theme-toggle",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["button"],
+      files: [{
+        path: "registry/default/ui/animated-theme-toggle.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/animated-theme-toggle.tsx")),
+      source: "",
+      chunks: []
+    },
     "animated-table": {
       name: "animated-table",
       description: "",
@@ -62,6 +76,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/ui/bento-grid.tsx")),
+      source: "",
+      chunks: []
+    },
+    "expanded-map": {
+      name: "expanded-map",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/expanded-map.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/expanded-map.tsx")),
       source: "",
       chunks: []
     },
@@ -471,6 +499,34 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "image-sphere": {
+      name: "image-sphere",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/image-sphere.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/image-sphere.tsx")),
+      source: "",
+      chunks: []
+    },
+    "hover-preview": {
+      name: "hover-preview",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/hover-preview.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/hover-preview.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -555,6 +611,48 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "animated-theme-toggle-demo": {
+      name: "animated-theme-toggle-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-theme-toggle"],
+      files: [{
+        path: "registry/default/examples/animated-theme-toggle-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-theme-toggle-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-theme-toggle-sizes-demo": {
+      name: "animated-theme-toggle-sizes-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-theme-toggle"],
+      files: [{
+        path: "registry/default/examples/animated-theme-toggle-sizes-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-theme-toggle-sizes-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "animated-theme-toggle-navbar-demo": {
+      name: "animated-theme-toggle-navbar-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["animated-theme-toggle"],
+      files: [{
+        path: "registry/default/examples/animated-theme-toggle-navbar-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/animated-theme-toggle-navbar-demo.tsx")),
+      source: "",
+      chunks: []
+    },
     "dock-demo": {
       name: "dock-demo",
       description: "",
@@ -569,6 +667,62 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "expanded-map-demo": {
+      name: "expanded-map-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["expanded-map"],
+      files: [{
+        path: "registry/default/examples/expanded-map-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/expanded-map-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "expanded-map-locations-demo": {
+      name: "expanded-map-locations-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["expanded-map"],
+      files: [{
+        path: "registry/default/examples/expanded-map-locations-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/expanded-map-locations-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "expanded-map-dark-demo": {
+      name: "expanded-map-dark-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["expanded-map"],
+      files: [{
+        path: "registry/default/examples/expanded-map-dark-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/expanded-map-dark-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "expanded-map-zoom-demo": {
+      name: "expanded-map-zoom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["expanded-map"],
+      files: [{
+        path: "registry/default/examples/expanded-map-zoom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/expanded-map-zoom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
     "dock-macos-demo": {
       name: "dock-macos-demo",
       description: "",
@@ -580,6 +734,20 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/dock-macos-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "dock-social-demo": {
+      name: "dock-social-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["dock"],
+      files: [{
+        path: "registry/default/examples/dock-social-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/dock-social-demo.tsx")),
       source: "",
       chunks: []
     },
@@ -2092,6 +2260,118 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/feedback-widget-custom-label-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-sphere-demo": {
+      name: "image-sphere-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-sphere"],
+      files: [{
+        path: "registry/default/examples/image-sphere-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-sphere-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-sphere-autorotate-demo": {
+      name: "image-sphere-autorotate-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-sphere"],
+      files: [{
+        path: "registry/default/examples/image-sphere-autorotate-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-sphere-autorotate-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-sphere-large-demo": {
+      name: "image-sphere-large-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-sphere"],
+      files: [{
+        path: "registry/default/examples/image-sphere-large-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-sphere-large-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "image-sphere-custom-demo": {
+      name: "image-sphere-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["image-sphere"],
+      files: [{
+        path: "registry/default/examples/image-sphere-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/image-sphere-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "hover-preview-demo": {
+      name: "hover-preview-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["hover-preview"],
+      files: [{
+        path: "registry/default/examples/hover-preview-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/hover-preview-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "hover-preview-portfolio-demo": {
+      name: "hover-preview-portfolio-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["hover-preview"],
+      files: [{
+        path: "registry/default/examples/hover-preview-portfolio-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/hover-preview-portfolio-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "hover-preview-product-demo": {
+      name: "hover-preview-product-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["hover-preview"],
+      files: [{
+        path: "registry/default/examples/hover-preview-product-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/hover-preview-product-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "hover-preview-custom-demo": {
+      name: "hover-preview-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["hover-preview"],
+      files: [{
+        path: "registry/default/examples/hover-preview-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/hover-preview-custom-demo.tsx")),
       source: "",
       chunks: []
     },

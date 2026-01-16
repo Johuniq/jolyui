@@ -1,0 +1,115 @@
+---
+title: Hover Preview
+description: Display contextual preview cards when hovering over links or text, perfect for portfolios, product showcases, and content-rich pages.
+preview: true
+links:
+ api: /docs/components/hover-preview#api-reference
+---
+
+## Basic Usage
+
+<ComponentTabs name="hover-preview-demo" />
+
+## Portfolio Links
+
+Perfect for showcasing projects in a portfolio or case studies.
+
+<ComponentTabs name="hover-preview-portfolio-demo" />
+
+## Product List
+
+Display product previews in e-commerce or catalog pages.
+
+<ComponentTabs name="hover-preview-product-demo" />
+
+## Custom Styling
+
+Customize card appearance, cursor offset, and link styles.
+
+<ComponentTabs name="hover-preview-custom-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/hover-preview"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project. ```component/ui/hover-preview.tsx```
+
+    <ComponentSource name="hover-preview" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  HoverPreviewProvider,
+  HoverPreviewLink,
+} from "@/components/ui/hover-preview"
+
+const previewData = {
+  project1: {
+    image: "https://example.com/image.jpg",
+    title: "Project Title",
+    subtitle: "Project description",
+  },
+  // Add more items...
+}
+
+export default function MyComponent() {
+  return (
+    <HoverPreviewProvider data={previewData}>
+      <p>
+        Check out my <HoverPreviewLink previewKey="project1">awesome project</HoverPreviewLink>.
+      </p>
+    </HoverPreviewProvider>
+  )
+}
+```
+
+## API Reference
+
+### HoverPreviewProvider
+
+<AutoTypeTable
+  path="./types/docs/hover-preview.ts"
+  name="HoverPreviewProviderProps"
+/>
+
+### HoverPreviewLink
+
+<AutoTypeTable
+  path="./types/docs/hover-preview.ts"
+  name="HoverPreviewLinkProps"
+/>
+
+### PreviewData
+
+<AutoTypeTable
+  path="./types/docs/hover-preview.ts"
+  name="PreviewData"
+/>
+
+### HoverPreviewCardProps
+
+<AutoTypeTable
+  path="./types/docs/hover-preview.ts"
+  name="HoverPreviewCardProps"
+/>
+
+## Notes
+
+- Uses **React Context** to share hover state between provider and links
+- Preview card **follows cursor** with smart boundary detection
+- Cards automatically **reposition** to stay within viewport
+- Images are **preloaded** by default for instant display
+- Supports **custom styling** for both links and preview cards
+- Works with any number of **hoverable links** within a provider
+- **Accessible** - links maintain proper focus states and semantics

@@ -37,6 +37,23 @@
       ]
     },
     {
+      "name": "animated-theme-toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion",
+        "next-themes"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "ui/animated-theme-toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "animated-table",
       "type": "registry:ui",
       "dependencies": [
@@ -56,6 +73,19 @@
       "files": [
         {
           "path": "ui/bento-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expanded-map",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "ui/expanded-map.tsx",
           "type": "registry:ui"
         }
       ]
@@ -444,6 +474,29 @@
       ]
     },
     {
+      "name": "image-sphere",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "ui/image-sphere.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-preview",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "ui/hover-preview.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
@@ -706,6 +759,54 @@
       ]
     },
     {
+      "name": "animated-theme-toggle-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "animated-theme-toggle"
+      ],
+      "files": [
+        {
+          "path": "examples/animated-theme-toggle-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggle-sizes-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "animated-theme-toggle"
+      ],
+      "files": [
+        {
+          "path": "examples/animated-theme-toggle-sizes-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "animated-theme-toggle-navbar-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "animated-theme-toggle"
+      ],
+      "files": [
+        {
+          "path": "examples/animated-theme-toggle-navbar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dock-demo",
       "type": "registry:example",
       "dependencies": [
@@ -722,6 +823,70 @@
       ]
     },
     {
+      "name": "expanded-map-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "expanded-map"
+      ],
+      "files": [
+        {
+          "path": "examples/expanded-map-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "expanded-map-locations-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "expanded-map"
+      ],
+      "files": [
+        {
+          "path": "examples/expanded-map-locations-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "expanded-map-dark-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "expanded-map"
+      ],
+      "files": [
+        {
+          "path": "examples/expanded-map-dark-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "expanded-map-zoom-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "expanded-map"
+      ],
+      "files": [
+        {
+          "path": "examples/expanded-map-zoom-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dock-macos-demo",
       "type": "registry:example",
       "dependencies": [
@@ -733,6 +898,22 @@
       "files": [
         {
           "path": "examples/dock-macos-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dock-social-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dock"
+      ],
+      "files": [
+        {
+          "path": "examples/dock-social-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2170,6 +2351,122 @@
       "files": [
         {
           "path": "examples/feedback-widget-custom-label-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-sphere-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "image-sphere"
+      ],
+      "files": [
+        {
+          "path": "examples/image-sphere-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-sphere-autorotate-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "image-sphere"
+      ],
+      "files": [
+        {
+          "path": "examples/image-sphere-autorotate-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-sphere-large-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "image-sphere"
+      ],
+      "files": [
+        {
+          "path": "examples/image-sphere-large-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "image-sphere-custom-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "image-sphere"
+      ],
+      "files": [
+        {
+          "path": "examples/image-sphere-custom-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-preview-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hover-preview"
+      ],
+      "files": [
+        {
+          "path": "examples/hover-preview-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-preview-portfolio-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hover-preview"
+      ],
+      "files": [
+        {
+          "path": "examples/hover-preview-portfolio-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-preview-product-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hover-preview"
+      ],
+      "files": [
+        {
+          "path": "examples/hover-preview-product-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-preview-custom-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hover-preview"
+      ],
+      "files": [
+        {
+          "path": "examples/hover-preview-custom-demo.tsx",
           "type": "registry:example"
         }
       ]

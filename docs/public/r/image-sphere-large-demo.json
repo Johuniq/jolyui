@@ -1,0 +1,18 @@
+{
+  "name": "image-sphere-large-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "image-sphere"
+  ],
+  "files": [
+    {
+      "path": "examples/image-sphere-large-demo.tsx",
+      "content": "import SphereImageGrid from \"@/registry/default/ui/image-sphere\";\n\nconst sampleImages = Array.from({ length: 20 }, (_, i) => ({\n  id: `${i + 1}`,\n  src: `https://picsum.photos/seed/${i + 1}/150/150`,\n  alt: `Image ${i + 1}`,\n  title: `Image ${i + 1}`,\n  description: `This is image number ${i + 1} in the gallery`,\n}));\n\nexport default function ImageSphereLargeDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <SphereImageGrid\n        images={sampleImages}\n        containerSize={500}\n        sphereRadius={220}\n        baseImageScale={0.1}\n        autoRotate={true}\n        autoRotateSpeed={0.2}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

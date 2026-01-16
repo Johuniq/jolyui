@@ -1,0 +1,15 @@
+{
+  "name": "hover-preview-product-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hover-preview"
+  ],
+  "files": [
+    {
+      "path": "examples/hover-preview-product-demo.tsx",
+      "content": "import {\n  HoverPreviewLink,\n  HoverPreviewProvider,\n} from \"@/registry/default/ui/hover-preview\"\n\nconst productData = {\n  laptop: {\n    image: \"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=560&h=320&fit=crop\",\n    title: \"MacBook Pro\",\n    subtitle: \"Apple M3 Pro chip, 18GB RAM, 512GB SSD\",\n  },\n  headphones: {\n    image: \"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=560&h=320&fit=crop\",\n    title: \"Sony WH-1000XM5\",\n    subtitle: \"Industry-leading noise cancellation\",\n  },\n  camera: {\n    image: \"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=560&h=320&fit=crop\",\n    title: \"Sony A7 IV\",\n    subtitle: \"Full-frame mirrorless camera\",\n  },\n  watch: {\n    image: \"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=560&h=320&fit=crop\",\n    title: \"Apple Watch Ultra\",\n    subtitle: \"The most rugged Apple Watch ever\",\n  },\n}\n\nexport default function HoverPreviewProductDemo() {\n  return (\n    <HoverPreviewProvider data={productData} className=\"p-8\">\n      <div className=\"max-w-3xl\">\n        <h2 className=\"mb-6 text-2xl font-bold text-foreground\">Top Picks This Week</h2>\n        <ul className=\"space-y-3 text-lg text-muted-foreground\">\n          <li className=\"flex items-center gap-2\">\n            <span className=\"text-primary\">→</span>\n            <HoverPreviewLink previewKey=\"laptop\">MacBook Pro</HoverPreviewLink>\n            <span className=\"text-sm\">- Starting at $1,999</span>\n          </li>\n          <li className=\"flex items-center gap-2\">\n            <span className=\"text-primary\">→</span>\n            <HoverPreviewLink previewKey=\"headphones\">Sony WH-1000XM5</HoverPreviewLink>\n            <span className=\"text-sm\">- $349</span>\n          </li>\n          <li className=\"flex items-center gap-2\">\n            <span className=\"text-primary\">→</span>\n            <HoverPreviewLink previewKey=\"camera\">Sony A7 IV</HoverPreviewLink>\n            <span className=\"text-sm\">- $2,498</span>\n          </li>\n          <li className=\"flex items-center gap-2\">\n            <span className=\"text-primary\">→</span>\n            <HoverPreviewLink previewKey=\"watch\">Apple Watch Ultra</HoverPreviewLink>\n            <span className=\"text-sm\">- $799</span>\n          </li>\n        </ul>\n      </div>\n    </HoverPreviewProvider>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

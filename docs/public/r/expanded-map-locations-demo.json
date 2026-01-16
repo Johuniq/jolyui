@@ -1,0 +1,18 @@
+{
+  "name": "expanded-map-locations-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "expanded-map"
+  ],
+  "files": [
+    {
+      "path": "examples/expanded-map-locations-demo.tsx",
+      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\"\n\nexport default function ExpandedMapLocationsDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12\">\n      <LocationMap\n        location=\"New York, NY\"\n        latitude={40.7128}\n        longitude={-74.006}\n      />\n      <LocationMap\n        location=\"London, UK\"\n        latitude={51.5074}\n        longitude={-0.1278}\n      />\n      <LocationMap\n        location=\"Tokyo, Japan\"\n        latitude={35.6762}\n        longitude={139.6503}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

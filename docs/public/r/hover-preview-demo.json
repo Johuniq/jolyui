@@ -1,0 +1,15 @@
+{
+  "name": "hover-preview-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hover-preview"
+  ],
+  "files": [
+    {
+      "path": "examples/hover-preview-demo.tsx",
+      "content": "import {\n  HoverPreviewLink,\n  HoverPreviewProvider,\n} from \"@/registry/default/ui/hover-preview\"\n\nconst previewData = {\n  midjourney: {\n    image: \"https://images.unsplash.com/photo-1695144244472-a4543101ef35?w=560&h=320&fit=crop\",\n    title: \"Midjourney\",\n    subtitle: \"Create stunning AI-generated artwork\",\n  },\n  stable: {\n    image: \"https://images.unsplash.com/photo-1712002641088-9d76f9080889?w=560&h=320&fit=crop\",\n    title: \"Stable Diffusion\",\n    subtitle: \"Open-source generative AI model\",\n  },\n  leonardo: {\n    image: \"https://images.unsplash.com/photo-1718241905696-cb34c2c07bed?w=560&h=320&fit=crop\",\n    title: \"Leonardo AI\",\n    subtitle: \"Production-ready creative assets\",\n  },\n}\n\nexport default function HoverPreviewDemo() {\n  return (\n    <HoverPreviewProvider data={previewData} className=\"p-8\">\n      <p className=\"max-w-2xl text-lg leading-relaxed text-muted-foreground\">\n        Explore{\" \"}\n        <HoverPreviewLink previewKey=\"midjourney\">Midjourney</HoverPreviewLink>{\" \"}\n        for breathtaking AI-generated artwork and illustrations. For open-source\n        freedom try{\" \"}\n        <HoverPreviewLink previewKey=\"stable\">Stable Diffusion</HoverPreviewLink>{\" \"}\n        or generate production assets with{\" \"}\n        <HoverPreviewLink previewKey=\"leonardo\">Leonardo AI</HoverPreviewLink>.\n      </p>\n    </HoverPreviewProvider>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

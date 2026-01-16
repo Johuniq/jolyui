@@ -1,0 +1,18 @@
+{
+  "name": "expanded-map-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [
+    "expanded-map"
+  ],
+  "files": [
+    {
+      "path": "examples/expanded-map-demo.tsx",
+      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\"\n\nexport default function ExpandedMapDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-12\">\n      <LocationMap />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

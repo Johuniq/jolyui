@@ -13,6 +13,18 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "animated-theme-toggle",
+    type: "registry:ui",
+    dependencies: ["motion", "next-themes"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "ui/animated-theme-toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "animated-table",
     type: "registry:ui",
     dependencies: ["lucide-react", "motion"],
@@ -29,6 +41,17 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/bento-grid.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "expanded-map",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/expanded-map.tsx",
         type: "registry:ui",
       },
     ],
@@ -349,6 +372,27 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/feedback-widget.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "image-sphere",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "ui/image-sphere.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "hover-preview",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/hover-preview.tsx",
         type: "registry:ui",
       },
     ],

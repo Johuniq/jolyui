@@ -1,0 +1,15 @@
+{
+  "name": "hover-preview-custom-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hover-preview"
+  ],
+  "files": [
+    {
+      "path": "examples/hover-preview-custom-demo.tsx",
+      "content": "import {\n  HoverPreviewLink,\n  HoverPreviewProvider,\n} from \"@/registry/default/ui/hover-preview\"\n\nconst teamData = {\n  alex: {\n    image: \"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=560&h=320&fit=crop\",\n    title: \"Alex Johnson\",\n    subtitle: \"CEO & Founder\",\n  },\n  sarah: {\n    image: \"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=560&h=320&fit=crop\",\n    title: \"Sarah Miller\",\n    subtitle: \"Head of Design\",\n  },\n  michael: {\n    image: \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=560&h=320&fit=crop\",\n    title: \"Michael Chen\",\n    subtitle: \"Lead Engineer\",\n  },\n}\n\nexport default function HoverPreviewCustomDemo() {\n  return (\n    <HoverPreviewProvider\n      data={teamData}\n      cardProps={{\n        width: 350,\n        borderRadius: 24,\n        className: \"bg-gradient-to-br from-card to-card/80\",\n      }}\n      cursorOffset={30}\n      className=\"p-8\"\n    >\n      <div className=\"max-w-2xl space-y-4\">\n        <h2 className=\"text-2xl font-bold text-foreground\">Meet Our Team</h2>\n        <p className=\"text-lg leading-relaxed text-muted-foreground\">\n          Our leadership team includes{\" \"}\n          <HoverPreviewLink previewKey=\"alex\" className=\"text-blue-500 hover:text-blue-400\">\n            Alex Johnson\n          </HoverPreviewLink>\n          ,{\" \"}\n          <HoverPreviewLink previewKey=\"sarah\" className=\"text-purple-500 hover:text-purple-400\">\n            Sarah Miller\n          </HoverPreviewLink>\n          , and{\" \"}\n          <HoverPreviewLink previewKey=\"michael\" className=\"text-green-500 hover:text-green-400\">\n            Michael Chen\n          </HoverPreviewLink>\n          .\n        </p>\n      </div>\n    </HoverPreviewProvider>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}
