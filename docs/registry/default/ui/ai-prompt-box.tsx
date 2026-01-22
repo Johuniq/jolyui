@@ -28,10 +28,18 @@ const styles = `
   }
 `;
 
-// Inject styles into document
-const styleSheet = document.createElement("style");
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
+// Hook to inject styles on client only
+const useStyleInjection = () => {
+  React.useEffect(() => {
+    const styleId = "ai-prompt-box-styles";
+    if (typeof document !== "undefined" && !document.getElementById(styleId)) {
+      const styleSheet = document.createElement("style");
+      styleSheet.id = styleId;
+      styleSheet.innerText = styles;
+      document.head.appendChild(styleSheet);
+    }
+  }, []);
+};
 
 // Textarea Component
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -442,6 +450,10 @@ interface PromptInputBoxProps {
 }
 export const PromptInputBox = React.forwardRef((props: PromptInputBoxProps, ref: React.Ref<HTMLDivElement>) => {
   const { onSend = () => {}, isLoading = false, placeholder = "Type your message here...", className } = props;
+  
+  // Inject styles on client only
+  useStyleInjection();
+  
   const [input, setInput] = React.useState("");
   const [files, setFiles] = React.useState<File[]>([]);
   const [filePreviews, setFilePreviews] = React.useState<{ [key: string]: string }>({});
