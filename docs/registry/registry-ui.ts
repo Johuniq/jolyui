@@ -413,4 +413,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "date-wheel-picker",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/date-wheel-picker.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];
+

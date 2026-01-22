@@ -14,6 +14,7 @@
     "character-morph",
     "code-block",
     "command-palette",
+    "date-wheel-picker",
     "dock",
     "expanded-map",
     "feedback-widget",
@@ -39,4 +40,5 @@
     "video-player"
   ]
 }
+
 

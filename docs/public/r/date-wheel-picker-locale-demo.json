@@ -1,0 +1,15 @@
+{
+  "name": "date-wheel-picker-locale-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "date-wheel-picker"
+  ],
+  "files": [
+    {
+      "path": "examples/date-wheel-picker-locale-demo.tsx",
+      "content": "\"use client\";\n\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\nimport { useState } from \"react\";\n\nexport default function DateWheelPickerLocaleDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">English (US)</span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"en-US\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">French</span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"fr-FR\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">German</span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"de-DE\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

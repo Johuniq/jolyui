@@ -1,0 +1,15 @@
+{
+  "name": "date-wheel-picker-sizes-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "date-wheel-picker"
+  ],
+  "files": [
+    {
+      "path": "examples/date-wheel-picker-sizes-demo.tsx",
+      "content": "\"use client\";\n\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\nimport { useState } from \"react\";\n\nexport default function DateWheelPickerSizesDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">Small</span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"sm\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">Medium (default)</span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"md\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"text-sm font-medium text-muted-foreground\">Large</span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"lg\" />\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

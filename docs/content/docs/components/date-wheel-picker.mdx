@@ -1,0 +1,64 @@
+---
+title: Date Wheel Picker
+description: An iOS-style date wheel picker with smooth 3D rotation animations, drag gestures, and keyboard navigation support.
+preview: true
+links:
+ api: /docs/components/date-wheel-picker#api-reference
+---
+
+<ComponentTabs name="date-wheel-picker-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/date-wheel-picker"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+     Install the following dependencies:
+
+     ```package-install
+        motion
+     ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="date-wheel-picker" />
+  </Step>
+</Steps>
+
+## Features
+
+- **3D Wheel Effect**: Smooth perspective-based rotation for a realistic wheel appearance
+- **Drag Gestures**: Drag to scroll through options with momentum
+- **Scroll Support**: Mouse wheel scrolling for quick navigation
+- **Keyboard Navigation**: Full keyboard support (Arrow keys, Home, End, Page Up/Down)
+- **Locale Support**: Automatic month name localization
+- **Multiple Sizes**: Small, medium, and large size variants
+- **Accessible**: Proper ARIA attributes and keyboard handling
+
+## Sizes
+
+The picker supports three sizes: `sm`, `md` (default), and `lg`.
+
+<ComponentTabs name="date-wheel-picker-sizes-demo" />
+
+## Locale Support
+
+Pass a locale string to display month names in different languages.
+
+<ComponentTabs name="date-wheel-picker-locale-demo" />
+
+## API Reference
+
+<AutoTypeTable
+  path="./types/docs/date-wheel-picker.ts"
+  name="DateWheelPickerProps"
+/>

@@ -1482,4 +1482,38 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "date-wheel-picker-demo",
+    type: "registry:example",
+    registryDependencies: ["date-wheel-picker"],
+    files: [
+      {
+        path: "examples/date-wheel-picker-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "date-wheel-picker-sizes-demo",
+    type: "registry:example",
+    registryDependencies: ["date-wheel-picker"],
+    files: [
+      {
+        path: "examples/date-wheel-picker-sizes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "date-wheel-picker-locale-demo",
+    type: "registry:example",
+    registryDependencies: ["date-wheel-picker"],
+    files: [
+      {
+        path: "examples/date-wheel-picker-locale-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
+

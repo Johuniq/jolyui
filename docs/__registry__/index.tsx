@@ -541,6 +541,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "date-wheel-picker": {
+      name: "date-wheel-picker",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/date-wheel-picker.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/date-wheel-picker.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -2414,6 +2428,48 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/ai-prompt-box-loading-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "date-wheel-picker-demo": {
+      name: "date-wheel-picker-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["date-wheel-picker"],
+      files: [{
+        path: "registry/default/examples/date-wheel-picker-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/date-wheel-picker-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "date-wheel-picker-sizes-demo": {
+      name: "date-wheel-picker-sizes-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["date-wheel-picker"],
+      files: [{
+        path: "registry/default/examples/date-wheel-picker-sizes-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/date-wheel-picker-sizes-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "date-wheel-picker-locale-demo": {
+      name: "date-wheel-picker-locale-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["date-wheel-picker"],
+      files: [{
+        path: "registry/default/examples/date-wheel-picker-locale-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/date-wheel-picker-locale-demo.tsx")),
       source: "",
       chunks: []
     },
