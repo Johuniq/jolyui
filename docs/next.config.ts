@@ -53,6 +53,10 @@ const nextConfig: NextConfig = {
         destination: "/r/:name.json",
       },
       {
+        source: "/r/:name((?!index|registry|styles/|.*\\.json$).*)",
+        destination: "/r/:name.json",
+      },
+      {
         source: "/docs/:path*.mdx",
         destination: "/llms.mdx/:path*",
       },
