@@ -16,20 +16,23 @@ const registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
 const Index: Record<string, any> = {};
 for (const style of styles) {
   Index[style.name] = {};
-  // @ts-ignore
+  // @ts-expect-error
   for (const item of registry.items) {
-    const files = item.files?.map((file: any) => {
+    const files =
+      item.files?.map((file: any) => {
         const filePath = typeof file === "string" ? file : file.path;
         return {
-           ...(typeof file === "string" ? { path: file, type: "registry:ui" } : file),
-           path: `registry/${style.name}/${filePath}`
+          ...(typeof file === "string"
+            ? { path: file, type: "registry:ui" }
+            : file),
+          path: `registry/${style.name}/${filePath}`,
         };
-     }) || [];
-     
-     Index[style.name][item.name] = {
-        ...item,
-        files
-     };
+      }) || [];
+
+    Index[style.name][item.name] = {
+      ...item,
+      files,
+    };
   }
 }
 
