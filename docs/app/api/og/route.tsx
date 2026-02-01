@@ -1,5 +1,5 @@
-import { ImageResponse } from "next/og";
 import { siteConfig } from "@/config/site";
+import { ImageResponse } from "next/og";
 
 // Use edge runtime for better performance
 export const runtime = "edge";
@@ -19,9 +19,9 @@ export async function GET(request: Request) {
       >
         {/* SVG Gradient Background */}
         <svg
-          width="1280"
-          height="720"
-          viewBox="0 0 1280 720"
+          width="1200"
+          height="630"
+          viewBox="0 0 1200 630"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{
@@ -77,7 +77,7 @@ export async function GET(request: Request) {
               <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
             </filter>
           </defs>
-          <rect width="1280" height="720" fill="#000000" />
+          <rect width="1200" height="630" fill="#000000" />
           <g filter="url(#blur)">
             <ellipse cx="256" cy="216" rx="400" ry="400" fill="url(#grad1)" />
             <ellipse cx="1024" cy="144" rx="360" ry="360" fill="url(#grad2)" />
@@ -111,8 +111,8 @@ export async function GET(request: Request) {
         </div>
       </div>,
       {
-        width: 1280,
-        height: 720,
+        width: 1200,
+        height: 630,
       },
     );
   } catch (error) {

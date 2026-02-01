@@ -74,18 +74,26 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+    ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/icon.png",
   },
   manifest: "/manifest.json",
   alternates: {
     canonical: siteConfig.url,
+    types: {
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+    },
   },
   referrer: "origin-when-cross-origin",
   other: {
     "google-site-verification": "aMge83vXxVisFvKFhWT-omdQLHLuI04VK1ZSHBJP83U",
     "msvalidate.01": "117FCF20377F6D1208898A5975FB202C",
     "yandex-verification": "41d61d50cc2a5e88",
+    "pinterest-site-verification": "",
   },
 };
 

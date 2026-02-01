@@ -1,13 +1,3 @@
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-  EditOnGitHub,
-  PageLastUpdate,
-} from "fumadocs-ui/layouts/notebook/page";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
 import { DynamicLink } from "@/components/dynamic-link";
 import { Feedback } from "@/components/feedback";
@@ -15,6 +5,16 @@ import { Mdx } from "@/components/mdx-components";
 import { Separator } from "@/components/ui/separator";
 import { onRateAction } from "@/lib/on-rate-action";
 import { source } from "@/lib/source";
+import {
+    DocsBody,
+    DocsDescription,
+    DocsPage,
+    DocsTitle,
+    EditOnGitHub,
+    PageLastUpdate,
+} from "fumadocs-ui/layouts/notebook/page";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface DocPageParams {
   params: Promise<{
@@ -39,31 +39,70 @@ export async function generateMetadata(
   const pageUrl = `https://jolyui.dev${page.url}`;
   const ogImage = `https://jolyui.dev/api/og?title=${encodeURIComponent(page.data.title || "JolyUI")}`;
 
+  // Determine if this is a component page for better keyword targeting
+  const isComponentPage = params.slug?.[0] === "components";
+  const componentKeywords = isComponentPage
+    ? [
+        `${page.data.title} component`,
+        `react ${page.data.title}`,
+        `${page.data.title} shadcn`,
+        `${page.data.title} tailwind`,
+        `${page.data.title} ui`,
+      ]
+    : [];
+
   return {
     title: page.data.title || "JolyUI",
     description: page.data.description,
+    keywords: [
+      page.data.title,
+      "react component",
+      "shadcn ui",
+      "tailwind css",
+      "accessible",
+      ...componentKeywords,
+    ],
     alternates: {
       canonical: pageUrl,
     },
     openGraph: {
-      title: page.data.title,
+      title: `${page.data.title} | Joly UI`,
       description: page.data.description,
       url: pageUrl,
       type: "article",
+      siteName: "Joly UI",
+      locale: "en_US",
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: page.data.title,
+          alt: `${page.data.title} - Joly UI Component`,
         },
       ],
+      ...(page.data.lastModified && {
+        publishedTime: new Date(page.data.lastModified).toISOString(),
+        modifiedTime: new Date(page.data.lastModified).toISOString(),
+      }),
+      authors: ["johuniq"],
     },
     twitter: {
       card: "summary_large_image",
-      title: page.data.title,
+      title: `${page.data.title} | Joly UI`,
       description: page.data.description,
       images: [ogImage],
+      creator: "@johuniq",
+      site: "@johuniq",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
@@ -103,11 +142,51 @@ export default async function DocPage(props: DocPageParams) {
     })),
   };
 
+  // TechArticle schema for component documentation
+  const isComponentPage = params.slug?.[0] === "components";
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": isComponentPage ? "TechArticle" : "Article",
+    headline: page.data.title,
+    description: page.data.description,
+    url: `https://jolyui.dev${page.url}`,
+    image: `https://jolyui.dev/api/og?title=${encodeURIComponent(page.data.title || "JolyUI")}`,
+    author: {
+      "@type": "Person",
+      name: "johuniq",
+      url: "https://johuniq.tech",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Joly UI",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://jolyui.dev/icon.png",
+      },
+    },
+    ...(lastModifiedTime && {
+      datePublished: new Date(lastModifiedTime).toISOString(),
+      dateModified: new Date(lastModifiedTime).toISOString(),
+    }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://jolyui.dev${page.url}`,
+    },
+    ...(isComponentPage && {
+      proficiencyLevel: "Beginner",
+      dependencies: "React, Tailwind CSS, shadcn/ui",
+    }),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <DocsPage
         toc={page.data.toc}
