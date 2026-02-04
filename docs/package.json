@@ -1,9 +1,9 @@
 {
-  "name": "jolyui.dev",
+  "name": "docs",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm generate:content && next build",
+    "build": "next build",
     "generate:content": "fumadocs-mdx",
     "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
     "validate:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/validate-registry.mts",

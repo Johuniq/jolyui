@@ -9,6 +9,14 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", ".nuxt/**", ".source/**"]
     },
+    "docs#build": {
+      "dependsOn": ["^build", "docs#build:registry", "docs#generate:content"],
+      "outputs": [".next/**", ".source/**"]
+    },
+    "build:registry": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/r/**"]
+    },
     "lint": {
       "cache": false,
       "outputs": []
@@ -18,11 +26,11 @@
       "outputs": []
     },
     "typecheck": {
-      "dependsOn": ["^build", "jolyui.dev#generate:content"],
+      "dependsOn": ["^build", "docs#generate:content"],
       "outputs": []
     },
     "docs#typecheck": {
-      "dependsOn": ["^build", "jolyui.dev#generate:content"],
+      "dependsOn": ["^build", "docs#generate:content"],
       "outputs": []
     },
     "generate:content": {
