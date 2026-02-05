@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
 
 interface MagneticTextProps {
   text: string;
@@ -23,7 +23,7 @@ export function MagneticText({
 
   const mousePos = useRef({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const updateSize = () => {
