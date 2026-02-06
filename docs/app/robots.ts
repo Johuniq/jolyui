@@ -16,6 +16,7 @@ export default function robots(): MetadataRoute.Robots {
           "/*.json$",
           "/_vercel/",
         ],
+        crawlDelay: 1, // Add delay to reduce request volume
       },
       {
         userAgent: "Googlebot",
@@ -67,6 +68,31 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "CCBot",
+        disallow: ["/"],
+      },
+      // Block other aggressive/unwanted bots
+      {
+        userAgent: "AhrefsBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "SemrushBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "MJ12bot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "DotBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "PetalBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "Bytespider",
         disallow: ["/"],
       },
     ],
