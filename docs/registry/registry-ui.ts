@@ -445,4 +445,16 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "falling-text",
+    type: "registry:ui",
+    dependencies: ["matter-js"],
+    devDependencies: ["@types/matter-js"],
+    files: [
+      {
+        path: "ui/falling-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

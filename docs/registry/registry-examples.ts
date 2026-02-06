@@ -1559,4 +1559,52 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "falling-text-demo",
+    type: "registry:example",
+    dependencies: ["matter-js"],
+    registryDependencies: ["falling-text"],
+    files: [
+      {
+        path: "examples/falling-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "falling-text-scroll-demo",
+    type: "registry:example",
+    dependencies: ["matter-js"],
+    registryDependencies: ["falling-text"],
+    files: [
+      {
+        path: "examples/falling-text-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "falling-text-click-demo",
+    type: "registry:example",
+    dependencies: ["matter-js"],
+    registryDependencies: ["falling-text"],
+    files: [
+      {
+        path: "examples/falling-text-click-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "falling-text-custom-physics-demo",
+    type: "registry:example",
+    dependencies: ["matter-js"],
+    registryDependencies: ["falling-text", "button"],
+    files: [
+      {
+        path: "examples/falling-text-custom-physics-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

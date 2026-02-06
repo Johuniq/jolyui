@@ -1,0 +1,103 @@
+---
+title: Falling Text
+description: A physics-based text animation component that makes words fall and interact with realistic physics. Supports multiple triggers, customizable physics, and mouse interactions.
+preview: true
+links:
+ api: /docs/components/falling-text#api-reference
+---
+
+<ComponentTabs name="falling-text-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/falling-text"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Install the required dependencies:
+
+    ```package-install
+    npm install matter-js
+    ```
+
+    ```package-install
+    npm install -D @types/matter-js
+    ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="falling-text" />
+  </Step>
+</Steps>
+
+## Layout
+
+```tsx
+import FallingText from "@/components/ui/falling-text";
+
+<FallingText
+  text="Your text here"
+  highlightWords={["highlight", "these"]}
+  trigger="auto"
+/>
+```
+
+## Examples
+
+### Scroll Triggered
+
+The animation can be triggered when the component scrolls into view.
+
+<ComponentTabs name="falling-text-scroll-demo" />
+
+### Click Triggered
+
+Trigger the falling animation on click for interactive experiences.
+
+<ComponentTabs name="falling-text-click-demo" />
+
+### Custom Physics
+
+Customize the physics simulation with different gravity, bounce, and friction settings.
+
+<ComponentTabs name="falling-text-custom-physics-demo" />
+
+## API Reference
+
+### FallingText
+
+The main component that creates a physics-based falling text animation.
+
+<AutoTypeTable
+  path="./types/docs/falling-text.ts"
+  name="FallingTextProps"
+/>
+
+## Physics Options
+
+The `physicsOptions` prop allows you to customize the physics behavior:
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `restitution` | `number` | `0.8` | Bounciness of words (0-1) |
+| `frictionAir` | `number` | `0.01` | Air resistance |
+| `friction` | `number` | `0.2` | Surface friction |
+| `density` | `number` | `0.001` | Mass density of words |
+
+## Initial Velocity
+
+Control the initial velocity when words start falling:
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `x` | `number` | `5` | Horizontal velocity range |
+| `y` | `number` | `0` | Vertical velocity range |
+| `angular` | `number` | `0.05` | Angular velocity range |
