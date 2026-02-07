@@ -47,7 +47,7 @@ export function Header() {
                   {/* Desktop Navigation Links */}
                   <div className="hidden items-center gap-4 sm:flex">
                     <ViewTransitionsLink
-                      href="/docs/components/creative/animated-beam"
+                      href="/docs/components"
                       className="text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                     >
                       Components
