@@ -128,9 +128,7 @@ export const Hero = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="w-full" asChild>
-                <Link href="/docs/components">
-                  Browse Components
-                </Link>
+                <Link href="/docs/components">Browse Components</Link>
               </Button>
             </motion.div>
           </MotionEffect>
