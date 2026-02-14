@@ -540,6 +540,45 @@
       ]
     },
     {
+      "name": "morphing-cursor",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "ui/morphing-cursor.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "falling-text",
+      "type": "registry:ui",
+      "dependencies": [
+        "matter-js"
+      ],
+      "devDependencies": [
+        "@types/matter-js"
+      ],
+      "files": [
+        {
+          "path": "ui/falling-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "shutter-text",
+      "type": "registry:ui",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "ui/shutter-text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [
@@ -2588,6 +2627,162 @@
       "files": [
         {
           "path": "examples/liquid-metal-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "morphing-cursor-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "morphing-cursor"
+      ],
+      "files": [
+        {
+          "path": "examples/morphing-cursor-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "morphing-cursor-custom-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "morphing-cursor"
+      ],
+      "files": [
+        {
+          "path": "examples/morphing-cursor-custom-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "morphing-cursor-styled-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "morphing-cursor"
+      ],
+      "files": [
+        {
+          "path": "examples/morphing-cursor-styled-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "falling-text-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "matter-js"
+      ],
+      "registryDependencies": [
+        "falling-text"
+      ],
+      "files": [
+        {
+          "path": "examples/falling-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "falling-text-scroll-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "matter-js"
+      ],
+      "registryDependencies": [
+        "falling-text"
+      ],
+      "files": [
+        {
+          "path": "examples/falling-text-scroll-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "falling-text-click-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "matter-js"
+      ],
+      "registryDependencies": [
+        "falling-text"
+      ],
+      "files": [
+        {
+          "path": "examples/falling-text-click-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "falling-text-custom-physics-demo",
+      "type": "registry:example",
+      "dependencies": [
+        "matter-js"
+      ],
+      "registryDependencies": [
+        "falling-text",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "examples/falling-text-custom-physics-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shutter-text-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "shutter-text"
+      ],
+      "files": [
+        {
+          "path": "examples/shutter-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shutter-text-scroll-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "shutter-text"
+      ],
+      "files": [
+        {
+          "path": "examples/shutter-text-scroll-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shutter-text-click-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "shutter-text"
+      ],
+      "files": [
+        {
+          "path": "examples/shutter-text-click-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "shutter-text-hover-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "shutter-text"
+      ],
+      "files": [
+        {
+          "path": "examples/shutter-text-hover-demo.tsx",
           "type": "registry:example"
         }
       ]

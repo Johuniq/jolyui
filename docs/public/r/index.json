@@ -514,5 +514,44 @@
         "type": "registry:ui"
       }
     ]
+  },
+  {
+    "name": "morphing-cursor",
+    "type": "registry:ui",
+    "files": [
+      {
+        "path": "ui/morphing-cursor.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "falling-text",
+    "type": "registry:ui",
+    "dependencies": [
+      "matter-js"
+    ],
+    "devDependencies": [
+      "@types/matter-js"
+    ],
+    "files": [
+      {
+        "path": "ui/falling-text.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
+    "name": "shutter-text",
+    "type": "registry:ui",
+    "dependencies": [
+      "motion"
+    ],
+    "files": [
+      {
+        "path": "ui/shutter-text.tsx",
+        "type": "registry:ui"
+      }
+    ]
   }
 ]

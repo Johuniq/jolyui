@@ -1,0 +1,20 @@
+{
+  "name": "pricing-01-four-plans-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pricing-01",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/pricing-01-four-plans-demo.tsx",
+      "content": "import { Pricing, type PricingPlan } from \"@/registry/default/ui/pricing-01\"\n\nconst plans: PricingPlan[] = [\n  {\n    name: \"Free\",\n    description: \"Perfect for individuals\",\n    price: { monthly: 0, yearly: 0 },\n    features: [\"1 user\", \"3 projects\", \"Basic features\"],\n    cta: \"Get Started\",\n    highlighted: false,\n  },\n  {\n    name: \"Pro\",\n    description: \"For professionals\",\n    price: { monthly: 19, yearly: 15 },\n    features: [\"5 users\", \"Unlimited projects\", \"All features\", \"Priority support\"],\n    cta: \"Upgrade\",\n    highlighted: true,\n  },\n  {\n    name: \"Team\",\n    description: \"For teams\",\n    price: { monthly: 49, yearly: 39 },\n    features: [\"Unlimited users\", \"All Pro features\", \"Team management\", \"Dedicated support\"],\n    cta: \"Contact Us\",\n    highlighted: false,\n  },\n  {\n    name: \"Enterprise\",\n    description: \"For large organizations\",\n    price: { monthly: 199, yearly: 159 },\n    features: [\"Custom everything\", \"SLA\", \"Dedicated account manager\", \"Advanced security\"],\n    cta: \"Contact Sales\",\n    highlighted: false,\n  },\n]\n\nexport default function PricingFourPlansDemo() {\n  return (\n    <div className=\"py-24 px-4\">\n      <Pricing plans={plans} defaultBillingCycle=\"yearly\" />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

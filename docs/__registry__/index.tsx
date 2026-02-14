@@ -569,6 +569,48 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "morphing-cursor": {
+      name: "morphing-cursor",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/morphing-cursor.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/morphing-cursor.tsx")),
+      source: "",
+      chunks: []
+    },
+    "falling-text": {
+      name: "falling-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/falling-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/falling-text.tsx")),
+      source: "",
+      chunks: []
+    },
+    "shutter-text": {
+      name: "shutter-text",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/shutter-text.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/shutter-text.tsx")),
+      source: "",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       description: "",
@@ -2498,6 +2540,160 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/liquid-metal-button-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morphing-cursor-demo": {
+      name: "morphing-cursor-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morphing-cursor"],
+      files: [{
+        path: "registry/default/examples/morphing-cursor-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morphing-cursor-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morphing-cursor-custom-demo": {
+      name: "morphing-cursor-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morphing-cursor"],
+      files: [{
+        path: "registry/default/examples/morphing-cursor-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morphing-cursor-custom-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "morphing-cursor-styled-demo": {
+      name: "morphing-cursor-styled-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["morphing-cursor"],
+      files: [{
+        path: "registry/default/examples/morphing-cursor-styled-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/morphing-cursor-styled-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "falling-text-demo": {
+      name: "falling-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["falling-text"],
+      files: [{
+        path: "registry/default/examples/falling-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/falling-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "falling-text-scroll-demo": {
+      name: "falling-text-scroll-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["falling-text"],
+      files: [{
+        path: "registry/default/examples/falling-text-scroll-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/falling-text-scroll-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "falling-text-click-demo": {
+      name: "falling-text-click-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["falling-text"],
+      files: [{
+        path: "registry/default/examples/falling-text-click-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/falling-text-click-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "falling-text-custom-physics-demo": {
+      name: "falling-text-custom-physics-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["falling-text","button"],
+      files: [{
+        path: "registry/default/examples/falling-text-custom-physics-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/falling-text-custom-physics-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "shutter-text-demo": {
+      name: "shutter-text-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["shutter-text"],
+      files: [{
+        path: "registry/default/examples/shutter-text-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/shutter-text-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "shutter-text-scroll-demo": {
+      name: "shutter-text-scroll-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["shutter-text"],
+      files: [{
+        path: "registry/default/examples/shutter-text-scroll-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/shutter-text-scroll-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "shutter-text-click-demo": {
+      name: "shutter-text-click-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["shutter-text"],
+      files: [{
+        path: "registry/default/examples/shutter-text-click-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/shutter-text-click-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "shutter-text-hover-demo": {
+      name: "shutter-text-hover-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["shutter-text"],
+      files: [{
+        path: "registry/default/examples/shutter-text-hover-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/shutter-text-hover-demo.tsx")),
       source: "",
       chunks: []
     },

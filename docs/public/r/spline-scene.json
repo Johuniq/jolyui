@@ -1,0 +1,15 @@
+{
+  "name": "spline-scene",
+  "type": "registry:ui",
+  "dependencies": [
+    "@splinetool/react-spline"
+  ],
+  "files": [
+    {
+      "path": "ui/spline-scene.tsx",
+      "content": "\"use client\"\n\nimport { Suspense, lazy } from \"react\"\nconst Spline = lazy(() => import(\"@splinetool/react-spline\"))\n\ninterface SplineSceneProps {\n  scene: string\n  className?: string\n}\n\nexport function SplineScene({ scene, className }: SplineSceneProps) {\n  return (\n    <Suspense\n      fallback={\n        <div className=\"w-full h-full flex items-center justify-center bg-black/5 rounded-lg\">\n          <div className=\"animate-spin rounded-full h-8 w-8 border-b-2 border-primary\"></div>\n        </div>\n      }\n    >\n      <Spline scene={scene} className={className} />\n    </Suspense>\n  )\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

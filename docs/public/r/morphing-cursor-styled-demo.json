@@ -1,0 +1,15 @@
+{
+  "name": "morphing-cursor-styled-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "morphing-cursor"
+  ],
+  "files": [
+    {
+      "path": "examples/morphing-cursor-styled-demo.tsx",
+      "content": "import { MagneticText } from \"@/registry/default/ui/morphing-cursor\";\n\nexport default function MorphingCursorStyledDemo() {\n  return (\n    <div className=\"flex min-h-[300px] items-center justify-center\">\n      <MagneticText\n        text=\"HOVER ME\"\n        hoverText=\"MAGIC\"\n        className=\"rounded-2xl bg-muted/50 p-8\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

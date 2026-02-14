@@ -457,4 +457,15 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "shutter-text",
+    type: "registry:ui",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "ui/shutter-text.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
 ];

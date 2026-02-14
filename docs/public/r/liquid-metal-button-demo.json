@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/liquid-metal-button-demo.tsx",
-      "content": "\"use client\"\n\nimport { LiquidMetalButton } from \"@/registry/default/ui/liquid-metal-button\"\n\nexport default function LiquidMetalButtonDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-8\">\n      <div className=\"flex items-center gap-8\">\n        <LiquidMetalButton label=\"Get Started\" />\n        <LiquidMetalButton viewMode=\"icon\" />\n      </div>\n    </div>\n  )\n}\n",
+      "content": "\"use client\";\n\nimport { LiquidMetalButton } from \"@/registry/default/ui/liquid-metal-button\";\n\nexport default function LiquidMetalButtonDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 p-8\">\n      <div className=\"flex items-center gap-8\">\n        <LiquidMetalButton label=\"Get Started\" />\n        <LiquidMetalButton viewMode=\"icon\" />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }

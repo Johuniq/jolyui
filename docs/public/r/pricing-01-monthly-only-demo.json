@@ -1,0 +1,20 @@
+{
+  "name": "pricing-01-monthly-only-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pricing-01",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/pricing-01-monthly-only-demo.tsx",
+      "content": "import { Pricing, type PricingPlan } from \"@/registry/default/ui/pricing-01\"\n\nconst monthlyPlans: PricingPlan[] = [\n  {\n    name: \"Starter\",\n    description: \"For small projects\",\n    price: { monthly: 29, yearly: 29 },\n    features: [\"10 users\", \"50 projects\", \"50GB storage\"],\n    cta: \"Subscribe\",\n    highlighted: false,\n  },\n  {\n    name: \"Business\",\n    description: \"For growing teams\",\n    price: { monthly: 99, yearly: 99 },\n    features: [\"Unlimited users\", \"Unlimited projects\", \"500GB storage\", \"Priority support\"],\n    cta: \"Subscribe\",\n    highlighted: true,\n  },\n]\n\nexport default function PricingMonthlyOnlyDemo() {\n  return (\n    <div className=\"py-24 px-4\">\n      <Pricing\n        plans={monthlyPlans}\n        showBillingToggle={false}\n        heading=\"Simple monthly pricing\"\n        description=\"No annual commitment required\"\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

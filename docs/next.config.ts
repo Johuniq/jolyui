@@ -82,12 +82,13 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Cache registry JSON files for 1 hour with stale-while-revalidate
+        // Cache registry JSON files aggressively - they only change on deploy
         source: "/r/:path*.json",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, s-maxage=3600, stale-while-revalidate=86400",
+            value:
+              "public, s-maxage=604800, stale-while-revalidate=2592000, max-age=86400",
           },
         ],
       },

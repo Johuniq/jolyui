@@ -1,0 +1,20 @@
+{
+  "name": "pricing-01-custom-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "pricing-01",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/pricing-01-custom-demo.tsx",
+      "content": "import { Pricing, type PricingPlan } from \"@/registry/default/ui/pricing-01\"\n\nconst customPlans: PricingPlan[] = [\n  {\n    name: \"Basic\",\n    description: \"Essential features for getting started\",\n    price: { monthly: 9, yearly: 7 },\n    features: [\"5 users\", \"50 projects\", \"10GB storage\", \"Email support\"],\n    cta: \"Start Trial\",\n    highlighted: false,\n  },\n  {\n    name: \"Professional\",\n    description: \"Advanced tools for professionals\",\n    price: { monthly: 49, yearly: 39 },\n    features: [\n      \"Unlimited users\",\n      \"Unlimited projects\",\n      \"100GB storage\",\n      \"Priority support\",\n      \"Advanced analytics\",\n      \"Custom branding\",\n    ],\n    cta: \"Get Started\",\n    highlighted: true,\n  },\n]\n\nexport default function PricingCustomDemo() {\n  return (\n    <div className=\"py-24 px-4\">\n      <Pricing\n        plans={customPlans}\n        heading=\"Choose your plan\"\n        description=\"Flexible pricing for teams of all sizes\"\n        yearlyDiscount={25}\n        onPlanSelect={(plan) => console.log(\"Selected plan:\", plan.name)}\n      />\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

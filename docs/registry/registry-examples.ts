@@ -1607,4 +1607,48 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "shutter-text-demo",
+    type: "registry:example",
+    registryDependencies: ["shutter-text"],
+    files: [
+      {
+        path: "examples/shutter-text-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "shutter-text-scroll-demo",
+    type: "registry:example",
+    registryDependencies: ["shutter-text"],
+    files: [
+      {
+        path: "examples/shutter-text-scroll-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "shutter-text-click-demo",
+    type: "registry:example",
+    registryDependencies: ["shutter-text"],
+    files: [
+      {
+        path: "examples/shutter-text-click-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "shutter-text-hover-demo",
+    type: "registry:example",
+    registryDependencies: ["shutter-text"],
+    files: [
+      {
+        path: "examples/shutter-text-hover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

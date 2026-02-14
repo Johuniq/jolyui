@@ -1,0 +1,15 @@
+{
+  "name": "pricing-01-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "pricing-01"
+  ],
+  "files": [
+    {
+      "path": "examples/pricing-01-demo.tsx",
+      "content": "import { Pricing } from \"@/registry/default/ui/pricing-01\"\nimport type { PricingPlan } from \"@/registry/default/ui/pricing-01\"\n\nconst plans: PricingPlan[] = [\n  {\n    name: \"Starter\",\n    description: \"Perfect for side projects and small teams\",\n    price: { monthly: 0, yearly: 0 },\n    features: [\n      \"3 team members\",\n      \"10 projects\",\n      \"Basic analytics\",\n      \"Community support\",\n      \"1GB storage\",\n    ],\n    cta: \"Get Started\",\n    highlighted: false,\n  },\n  {\n    name: \"Pro\",\n    description: \"For growing teams that need more power\",\n    price: { monthly: 29, yearly: 24 },\n    features: [\n      \"Unlimited team members\",\n      \"Unlimited projects\",\n      \"Advanced analytics\",\n      \"Priority support\",\n      \"100GB storage\",\n      \"Custom domains\",\n      \"API access\",\n    ],\n    cta: \"Start Free Trial\",\n    highlighted: true,\n  },\n  {\n    name: \"Enterprise\",\n    description: \"For organizations with advanced needs\",\n    price: { monthly: 99, yearly: 79 },\n    features: [\n      \"Everything in Pro\",\n      \"SSO & SAML\",\n      \"Dedicated support\",\n      \"SLA guarantee\",\n      \"Unlimited storage\",\n      \"Custom integrations\",\n      \"Audit logs\",\n    ],\n    cta: \"Contact Sales\",\n    highlighted: false,\n  },\n]\n\nexport default function PricingDemo() {\n  return (\n    <Pricing\n      plans={plans}\n      title=\"Simple, transparent pricing\"\n      subtitle=\"Start free, scale as you grow. No hidden fees, no surprises.\"\n      onPlanSelect={(plan) => console.log(\"Selected:\", plan.name)}\n    />\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

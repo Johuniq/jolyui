@@ -1,0 +1,20 @@
+{
+  "name": "sticky-navbar-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "sticky-navbar",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/sticky-navbar-demo.tsx",
+      "content": "import { Button } from \"@/components/ui/button\"\nimport {\n    MobileNav,\n    MobileNavHeader,\n    MobileNavMenu,\n    MobileNavToggle,\n    NavActions,\n    Navbar,\n    NavBody,\n    NavItems,\n    NavLogo,\n} from \"@/registry/default/ui/sticky-navbar\"\nimport { useState } from \"react\"\n\nexport default function StickyNavbarDemo() {\n  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)\n\n  const navItems = [\n    { name: \"Features\", link: \"#features\" },\n    { name: \"Pricing\", link: \"#pricing\" },\n    { name: \"Docs\", link: \"#docs\" },\n    { name: \"Blog\", link: \"#blog\" },\n  ]\n\n  return (\n    <div className=\"relative h-[600px] w-full overflow-auto\">\n      <Navbar>\n        {/* Desktop Nav */}\n        <NavBody>\n          <NavLogo href=\"#\">\n            <div className=\"flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 dark:bg-white\">\n              <span className=\"text-sm font-bold text-white dark:text-zinc-950\">\n                A\n              </span>\n            </div>\n            <span className=\"hidden font-semibold sm:block\">Apex</span>\n          </NavLogo>\n\n          <NavItems items={navItems} />\n\n          <NavActions>\n            <Button variant=\"ghost\" size=\"sm\">\n              Sign In\n            </Button>\n            <Button size=\"sm\" className=\"rounded-full\">\n              Get Started\n            </Button>\n          </NavActions>\n        </NavBody>\n\n        {/* Mobile Nav */}\n        <MobileNav>\n          <MobileNavHeader>\n            <NavLogo href=\"#\">\n              <div className=\"flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 dark:bg-white\">\n                <span className=\"text-sm font-bold text-white dark:text-zinc-950\">\n                  A\n                </span>\n              </div>\n              <span className=\"font-semibold\">Apex</span>\n            </NavLogo>\n            <MobileNavToggle\n              isOpen={mobileMenuOpen}\n              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}\n            />\n          </MobileNavHeader>\n\n          <MobileNavMenu\n            isOpen={mobileMenuOpen}\n            onClose={() => setMobileMenuOpen(false)}\n          >\n            {navItems.map((item) => (\n              <a\n                key={item.name}\n                href={item.link}\n                className=\"rounded-lg px-4 py-3 text-sm transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800\"\n                onClick={() => setMobileMenuOpen(false)}\n              >\n                {item.name}\n              </a>\n            ))}\n            <hr className=\"my-2 border-zinc-200 dark:border-zinc-800\" />\n            <Button\n              variant=\"ghost\"\n              className=\"w-full justify-start\"\n              onClick={() => setMobileMenuOpen(false)}\n            >\n              Sign In\n            </Button>\n            <Button\n              className=\"w-full rounded-full\"\n              onClick={() => setMobileMenuOpen(false)}\n            >\n              Get Started\n            </Button>\n          </MobileNavMenu>\n        </MobileNav>\n      </Navbar>\n\n      {/* Demo Content */}\n      <div className=\"space-y-4 px-4 pt-32\">\n        <h1 className=\"text-4xl font-bold\">Scroll to see the navbar effect</h1>\n        {Array.from({ length: 20 }).map((_, i) => (\n          <p key={i} className=\"text-muted-foreground\">\n            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do\n            eiusmod tempor incididunt ut labore et dolore magna aliqua.\n          </p>\n        ))}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "falling-text-click-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "matter-js"
+  ],
+  "registryDependencies": [
+    "falling-text"
+  ],
+  "files": [
+    {
+      "path": "examples/falling-text-click-demo.tsx",
+      "content": "\"use client\";\n\nimport FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextClickDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Click to trigger the falling effect\n      </p>\n      <FallingText\n        text=\"Click anywhere to watch the words fall and bounce\"\n        highlightWords={[\"Click\", \"fall\", \"bounce\"]}\n        trigger=\"click\"\n        fontSize=\"1.75rem\"\n        physicsOptions={{\n          restitution: 0.9,\n          frictionAir: 0.005,\n        }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

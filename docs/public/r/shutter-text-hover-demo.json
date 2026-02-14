@@ -1,0 +1,15 @@
+{
+  "name": "shutter-text-hover-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "shutter-text"
+  ],
+  "files": [
+    {
+      "path": "examples/shutter-text-hover-demo.tsx",
+      "content": "\"use client\";\n\nimport ShutterText from \"@/registry/default/ui/shutter-text\";\n\nexport default function ShutterTextHoverDemo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Hover to trigger the shutter effect\n      </p>\n      <ShutterText\n        text=\"HOVER\"\n        trigger=\"hover\"\n        className=\"cursor-pointer text-8xl\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

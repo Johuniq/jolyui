@@ -1,0 +1,15 @@
+{
+  "name": "hero-banner-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hero-banner"
+  ],
+  "files": [
+    {
+      "path": "examples/hero-banner-demo.tsx",
+      "content": "\"use client\";\n\nimport ResponsiveHeroBanner from \"@/registry/default/ui/hero-banner\";\n\nexport default function HeroBannerDemo() {\n  return <ResponsiveHeroBanner />;\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

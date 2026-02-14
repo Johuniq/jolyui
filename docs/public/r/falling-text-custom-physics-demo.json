@@ -1,0 +1,19 @@
+{
+  "name": "falling-text-custom-physics-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "matter-js"
+  ],
+  "registryDependencies": [
+    "falling-text",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "examples/falling-text-custom-physics-demo.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextCustomPhysicsDemo() {\n  const [resetKey, setResetKey] = useState(0);\n\n  return (\n    <div className=\"flex min-h-[450px] w-full flex-col items-center justify-center gap-4\">\n      <Button variant=\"outline\" onClick={() => setResetKey((k) => k + 1)}>\n        Reset Animation\n      </Button>\n      <FallingText\n        text=\"Custom physics with high bounce and low gravity\"\n        highlightWords={[\"Custom\", \"physics\", \"bounce\", \"gravity\"]}\n        trigger=\"auto\"\n        fontSize=\"1.5rem\"\n        gravity={0.5}\n        resetKey={resetKey}\n        highlightClassName=\"text-purple-500 font-bold\"\n        physicsOptions={{\n          restitution: 0.95,\n          frictionAir: 0.001,\n          friction: 0.1,\n          density: 0.0005,\n        }}\n        initialVelocity={{\n          x: 10,\n          y: 5,\n          angular: 0.1,\n        }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

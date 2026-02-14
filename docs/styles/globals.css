@@ -412,10 +412,6 @@
     background-size: 20px 20px;
   }
 }
-/* Icona Page Animations */
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
 
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out forwards;

@@ -1,0 +1,18 @@
+{
+  "name": "glowing-button-interactive-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "glowing-button"
+  ],
+  "files": [
+    {
+      "path": "examples/glowing-button-interactive-demo.tsx",
+      "content": "import { GlowingButton } from \"@/registry/default/ui/glowing-button\";\nimport { Sparkles, Zap } from \"lucide-react\";\n\nexport default function GlowingButtonInteractiveDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <GlowingButton variant=\"purple\" glow=\"intense\">\n        <Sparkles className=\"w-4 h-4\" />\n        Magic Button\n      </GlowingButton>\n      <GlowingButton variant=\"orange\" glow=\"intense\">\n        <Zap className=\"w-4 h-4\" />\n        Lightning Fast\n      </GlowingButton>\n      <GlowingButton variant=\"rainbow\" size=\"lg\" glow=\"intense\">\n        Get Started Free\n      </GlowingButton>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

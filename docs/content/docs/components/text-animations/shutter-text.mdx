@@ -1,0 +1,82 @@
+---
+title: Shutter Text
+description: A cinematic shutter-style text reveal animation with layered color slices that sweep across each character. Supports auto, scroll, click, and hover triggers.
+preview: true
+links:
+ api: /docs/components/shutter-text#api-reference
+---
+
+<ComponentTabs name="shutter-text-demo" />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/shutter-text"
+
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Install the required dependencies:
+
+    ```package-install
+    npm install motion
+    ```
+  </Step>
+  <Step>
+    Copy and paste the following code into your project.
+
+    <ComponentSource name="shutter-text" />
+  </Step>
+</Steps>
+
+## Layout
+
+```tsx
+import ShutterText from "@/components/ui/shutter-text";
+
+<ShutterText text="IMMERSE" trigger="auto" className="text-7xl" />
+```
+
+## Examples
+
+### Scroll Triggered
+
+The animation triggers when the component scrolls into view.
+
+<ComponentTabs name="shutter-text-scroll-demo" />
+
+### Click Triggered
+
+Trigger the shutter animation on click for interactive experiences.
+
+<ComponentTabs name="shutter-text-click-demo" />
+
+### Hover Triggered
+
+Trigger the shutter animation on hover for subtle interactivity.
+
+<ComponentTabs name="shutter-text-hover-demo" />
+
+## API Reference
+
+### ShutterText
+
+The main component that creates a layered shutter text reveal animation.
+
+<AutoTypeTable
+  path="./types/docs/shutter-text.ts"
+  name="ShutterTextProps"
+/>
+
+## Notes
+
+- Font size is controlled via `className` (e.g. `text-7xl`), making the component fully composable.
+- Each character is animated independently with staggered timing for a cinematic reveal.
+- Three colored slice layers (top, middle, bottom) sweep across each character during the reveal.
+- The component extends standard `div` props — you can pass any HTML div attribute.
+- Works with both light and dark themes out of the box.

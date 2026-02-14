@@ -1,0 +1,15 @@
+{
+  "name": "hero-banner-custom-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hero-banner"
+  ],
+  "files": [
+    {
+      "path": "examples/hero-banner-custom-demo.tsx",
+      "content": "\"use client\";\n\nimport ResponsiveHeroBanner from \"@/registry/default/ui/hero-banner\";\n\nexport default function HeroBannerCustomDemo() {\n  return (\n    <ResponsiveHeroBanner\n      badgeLabel=\"Launch\"\n      badgeText=\"New Collection Available Now\"\n      title=\"Explore the Future\"\n      titleLine2=\"of Innovation\"\n      description=\"Discover cutting-edge solutions designed to transform your world. Experience innovation that pushes boundaries and redefines possibilities.\"\n      primaryButtonText=\"Start Exploring\"\n      secondaryButtonText=\"Learn More\"\n      partnersTitle=\"Trusted by leading innovators worldwide\"\n    />\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

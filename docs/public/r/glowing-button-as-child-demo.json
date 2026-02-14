@@ -1,0 +1,15 @@
+{
+  "name": "glowing-button-as-child-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "glowing-button"
+  ],
+  "files": [
+    {
+      "path": "examples/glowing-button-as-child-demo.tsx",
+      "content": "import { GlowingButton } from \"@/registry/default/ui/glowing-button\";\nimport Link from \"next/link\";\n\nexport default function GlowingButtonAsChildDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <GlowingButton asChild variant=\"purple\">\n        <Link href=\"/docs\">View Documentation</Link>\n      </GlowingButton>\n      <GlowingButton asChild variant=\"pink\">\n        <a href=\"https://github.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          GitHub\n        </a>\n      </GlowingButton>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

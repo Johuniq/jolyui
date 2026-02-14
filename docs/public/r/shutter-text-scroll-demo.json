@@ -1,0 +1,15 @@
+{
+  "name": "shutter-text-scroll-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "shutter-text"
+  ],
+  "files": [
+    {
+      "path": "examples/shutter-text-scroll-demo.tsx",
+      "content": "\"use client\";\n\nimport ShutterText from \"@/registry/default/ui/shutter-text\";\n\nexport default function ShutterTextScrollDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Scroll down to trigger the animation\n      </p>\n      <ShutterText text=\"SHUTTER\" trigger=\"scroll\" className=\"text-7xl\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

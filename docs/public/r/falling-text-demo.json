@@ -1,0 +1,18 @@
+{
+  "name": "falling-text-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "matter-js"
+  ],
+  "registryDependencies": [
+    "falling-text"
+  ],
+  "files": [
+    {
+      "path": "examples/falling-text-demo.tsx",
+      "content": "import FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center\">\n      <FallingText\n        text=\"Jolyui makes building interfaces fun and interactive\"\n        highlightWords={[\"Jolyui\", \"fun\", \"interactive\"]}\n        trigger=\"auto\"\n        fontSize=\"2rem\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

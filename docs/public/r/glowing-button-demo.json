@@ -1,0 +1,15 @@
+{
+  "name": "glowing-button-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "glowing-button"
+  ],
+  "files": [
+    {
+      "path": "examples/glowing-button-demo.tsx",
+      "content": "import { GlowingButton } from \"@/registry/default/ui/glowing-button\";\n\nexport default function GlowingButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <GlowingButton>Get Started</GlowingButton>\n      <GlowingButton variant=\"purple\">Learn More</GlowingButton>\n      <GlowingButton variant=\"pink\">Try Now</GlowingButton>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "glowing-button-glow-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "glowing-button"
+  ],
+  "files": [
+    {
+      "path": "examples/glowing-button-glow-demo.tsx",
+      "content": "import { GlowingButton } from \"@/registry/default/ui/glowing-button\";\n\nexport default function GlowingButtonGlowDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <GlowingButton glow=\"none\">No Glow</GlowingButton>\n        <span className=\"text-xs text-muted-foreground\">none</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <GlowingButton glow=\"subtle\">Subtle</GlowingButton>\n        <span className=\"text-xs text-muted-foreground\">subtle</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <GlowingButton glow=\"medium\">Medium</GlowingButton>\n        <span className=\"text-xs text-muted-foreground\">medium</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <GlowingButton glow=\"intense\">Intense</GlowingButton>\n        <span className=\"text-xs text-muted-foreground\">intense</span>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

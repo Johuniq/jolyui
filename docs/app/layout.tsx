@@ -6,7 +6,6 @@ import { siteConfig } from "@/config/site";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { Databuddy } from "@databuddy/sdk/react";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -244,7 +243,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://assets.onedollarstats.com" />
+
         <meta
           name="theme-color"
           content="#1da1f2"
@@ -286,11 +285,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontMono.variable,
         )}
       >
-        <Script
-          defer
-          data-site-id="jolyui.dev"
-          src="https://assets.onedollarstats.com/tracker.js"
-        />
         <TailwindIndicator />
         <Toaster />
         <ReactScan />
@@ -304,7 +298,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           {children}
           <Analytics />
-          <Databuddy clientId="D0oKAXYLs73J3RyJh4Gt-" enableBatching={true} />
         </Providers>
       </body>
     </html>

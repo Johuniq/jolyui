@@ -10,7 +10,7 @@ export async function GET(request: Request) {
 
     const title = searchParams.get("title") ?? siteConfig.name;
 
-    return new ImageResponse(
+    const response = new ImageResponse(
       <div
         tw="flex flex-col w-full h-full items-center justify-center relative"
         style={{
@@ -115,6 +115,14 @@ export async function GET(request: Request) {
         height: 630,
       },
     );
+
+    // Cache OG images aggressively - they rarely change
+    response.headers.set(
+      "Cache-Control",
+      "public, s-maxage=86400, stale-while-revalidate=604800, max-age=3600",
+    );
+
+    return response;
   } catch (error) {
     console.error("Error generating OG image:", error);
     return new Response("Failed to generate OG image", { status: 500 });

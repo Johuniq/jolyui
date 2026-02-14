@@ -1,0 +1,15 @@
+{
+  "name": "spline-scene-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "spline-scene"
+  ],
+  "files": [
+    {
+      "path": "examples/spline-scene-demo.tsx",
+      "content": "import { SplineScene } from \"@/registry/default/ui/spline-scene\";\n\nexport default function SplineSceneDemo() {\n  return (\n    <div className=\"w-full h-[400px] rounded-lg overflow-hidden border\">\n      <SplineScene\n        scene=\"https://prod.spline.design/UbM7F-HZcyTbZ4y3/scene.splinecode\"\n        className=\"w-full h-full\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

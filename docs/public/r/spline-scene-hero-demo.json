@@ -1,0 +1,15 @@
+{
+  "name": "spline-scene-hero-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "spline-scene"
+  ],
+  "files": [
+    {
+      "path": "examples/spline-scene-hero-demo.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Card } from \"@/components/ui/card\";\nimport { SplineScene } from \"@/registry/default/ui/spline-scene\";\nimport { ArrowRight, CheckCircle } from \"lucide-react\";\n\nexport default function SplineSceneHeroDemo() {\n  return (\n      <section className=\"relative min-h-screen flex items-center justify-center overflow-hidden bg-black\">\n        <div className=\"container mx-auto px-4\">\n          <Card className=\"w-full h-[500px] bg-black/[0.96] relative overflow-hidden border-none\">\n            <div className=\"flex h-full\">\n              {/* Left content */}\n              <div className=\"flex-1 p-8 relative z-10 flex flex-col justify-center\">\n                <h1 className=\"text-4xl md:text-5xl font-bold text-white bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text\">\n                  Results and Costs Reduced by AI\n                </h1>\n                <p className=\"mt-4 text-neutral-300 max-w-lg\">\n                  We help businesses automate workflows, build intelligent chatbots, and integrate AI agents that work\n                  24/7 to boost productivity and drive growth.\n                </p>\n\n                <div className=\"flex flex-col sm:flex-row gap-4 mt-8\">\n                  <Button size=\"lg\" className=\"bg-white text-black hover:bg-gray-100\">\n                    Book Free Consultation\n                    <ArrowRight className=\"ml-2 h-4 w-4\" />\n                  </Button>\n                  <Button\n                    size=\"lg\"\n                    variant=\"outline\"\n                    className=\"border-neutral-600 text-neutral-300 hover:bg-neutral-800 bg-transparent\"\n                  >\n                    View Case Studies\n                  </Button>\n                </div>\n\n                <div className=\"flex items-center gap-8 text-sm text-neutral-400 mt-6\">\n                  <div className=\"flex items-center gap-2\">\n                    <CheckCircle className=\"h-4 w-4 text-green-400\" />\n                    <span>No Setup Fees</span>\n                  </div>\n                  <div className=\"flex items-center gap-2\">\n                    <CheckCircle className=\"h-4 w-4 text-green-400\" />\n                    <span>30-Day ROI Guarantee</span>\n                  </div>\n                </div>\n              </div>\n\n              {/* Right content */}\n              <div className=\"flex-1 relative\">\n                <SplineScene\n                  scene=\"https://prod.spline.design/UbM7F-HZcyTbZ4y3/scene.splinecode\"\n                  className=\"w-full h-full\"\n                />\n              </div>\n            </div>\n          </Card>\n        </div>\n      </section>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

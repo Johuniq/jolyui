@@ -25,18 +25,6 @@ interface CopyMarkdownButtonProps {
 function CopyMarkdownButton({ markdownUrl }: CopyMarkdownButtonProps) {
   const [isLoading, setLoading] = React.useState(false);
 
-  const onContentPrefetch = React.useCallback(async () => {
-    if (markdownCache.has(markdownUrl)) return;
-
-    try {
-      const response = await fetch(markdownUrl);
-      const content = await response.text();
-      markdownCache.set(markdownUrl, content);
-    } catch {
-      // Silently fail prefetch, will retry on actual copy
-    }
-  }, [markdownUrl]);
-
   const [checked, onClick] = useCopyButton(async () => {
     const cached = markdownCache.get(markdownUrl);
     if (cached) {
@@ -61,9 +49,6 @@ function CopyMarkdownButton({ markdownUrl }: CopyMarkdownButtonProps) {
       size="sm"
       className="h-7 text-xs [&_svg:not([class*='size-'])]:size-3"
       onClick={onClick}
-      onFocus={onContentPrefetch}
-      onMouseEnter={onContentPrefetch}
-      onTouchStart={onContentPrefetch}
       disabled={isLoading}
     >
       {checked ? <Check /> : <Copy />}

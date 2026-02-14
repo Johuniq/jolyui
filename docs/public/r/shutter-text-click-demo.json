@@ -1,0 +1,15 @@
+{
+  "name": "shutter-text-click-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "shutter-text"
+  ],
+  "files": [
+    {
+      "path": "examples/shutter-text-click-demo.tsx",
+      "content": "\"use client\";\n\nimport ShutterText from \"@/registry/default/ui/shutter-text\";\n\nexport default function ShutterTextClickDemo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Click to trigger the shutter effect\n      </p>\n      <ShutterText\n        text=\"CLICK ME\"\n        trigger=\"click\"\n        className=\"cursor-pointer text-7xl\"\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

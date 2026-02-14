@@ -1,0 +1,15 @@
+{
+  "name": "glowing-button-sizes-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "glowing-button"
+  ],
+  "files": [
+    {
+      "path": "examples/glowing-button-sizes-demo.tsx",
+      "content": "import { GlowingButton } from \"@/registry/default/ui/glowing-button\";\n\nexport default function GlowingButtonSizesDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <GlowingButton size=\"sm\">Small</GlowingButton>\n      <GlowingButton size=\"default\">Default</GlowingButton>\n      <GlowingButton size=\"lg\">Large</GlowingButton>\n    </div>\n  );\n}\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ]
+}

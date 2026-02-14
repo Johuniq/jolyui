@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/date-wheel-picker-demo.tsx",
-      "content": "\"use client\";\n\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\nimport { useState } from \"react\";\n\nexport default function DateWheelPickerDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex h-[300px] w-full flex-col items-center justify-center gap-4\">\n      <DateWheelPicker value={date} onChange={setDate} />\n      <p className=\"text-sm text-muted-foreground\">\n        Selected: {date.toLocaleDateString()}\n      </p>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\n\nexport default function DateWheelPickerDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex h-[300px] w-full flex-col items-center justify-center gap-4\">\n      <DateWheelPicker value={date} onChange={setDate} />\n      <p className=\"text-muted-foreground text-sm\">\n        Selected: {date.toLocaleDateString()}\n      </p>\n    </div>\n  );\n}\n",
       "type": "registry:example",
       "target": ""
     }
