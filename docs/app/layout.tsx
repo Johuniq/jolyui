@@ -260,7 +260,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <meta name="msvalidate.01" content="117FCF20377F6D1208898A5975FB202C" />
         <meta name="yandex-verification" content="41d61d50cc2a5e88" />
-        <meta name="google-adsense-account" content="ca-pub-2309572222775779"/>
+        <meta name="google-adsense-account" content="ca-pub-2309572222775779" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
