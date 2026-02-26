@@ -176,8 +176,10 @@ export function CommandPalette({
     setSelectedIndex(0);
   }, []);
 
-  // Keyboard shortcut to open
+  // Keyboard shortcut to open (only in uncontrolled mode)
   useEffect(() => {
+    if (controlledOpen !== undefined) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
@@ -187,7 +189,7 @@ export function CommandPalette({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, setOpen]);
+  }, [isOpen, setOpen, controlledOpen]);
 
   // Focus input when opened
   useEffect(() => {

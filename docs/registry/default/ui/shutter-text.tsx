@@ -22,7 +22,7 @@ export default function ShutterText({
 }: ShutterTextProps) {
   const [count, setCount] = useState(0);
   const [active, setActive] = useState(
-    trigger === "auto" || trigger === "click" || trigger === "hover"
+    trigger === "auto" || trigger === "click" || trigger === "hover",
   );
   const [animating, setAnimating] = useState(trigger === "auto");
   const ref = useRef<HTMLDivElement>(null);
