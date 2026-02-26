@@ -21,7 +21,10 @@ export default function ShutterText({
   ...props
 }: ShutterTextProps) {
   const [count, setCount] = useState(0);
-  const [active, setActive] = useState(trigger === "auto");
+  const [active, setActive] = useState(
+    trigger === "auto" || trigger === "click" || trigger === "hover"
+  );
+  const [animating, setAnimating] = useState(trigger === "auto");
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false, amount: 0.5 });
   const characters = text.split("");
@@ -30,10 +33,12 @@ export default function ShutterText({
   useEffect(() => {
     if (trigger === "scroll" && isInView) {
       setActive(true);
+      setAnimating(true);
       setCount((c) => c + 1);
     }
     if (trigger === "scroll" && !isInView) {
       setActive(false);
+      setAnimating(false);
     }
   }, [trigger, isInView]);
 
@@ -41,27 +46,28 @@ export default function ShutterText({
   useEffect(() => {
     if (trigger === "auto") {
       setActive(true);
+      setAnimating(true);
       setCount((c) => c + 1);
     }
   }, [trigger]);
 
   const handleClick = useCallback(() => {
     if (trigger === "click") {
-      setActive(true);
+      setAnimating(true);
       setCount((c) => c + 1);
     }
   }, [trigger]);
 
   const handleMouseEnter = useCallback(() => {
     if (trigger === "hover") {
-      setActive(true);
+      setAnimating(true);
       setCount((c) => c + 1);
     }
   }, [trigger]);
 
   const handleMouseLeave = useCallback(() => {
     if (trigger === "hover") {
-      setActive(false);
+      setAnimating(false);
     }
   }, [trigger]);
 
@@ -77,7 +83,7 @@ export default function ShutterText({
       {...props}
     >
       <AnimatePresence mode="wait">
-        {active && (
+        {animating ? (
           <motion.span
             key={count}
             className="flex flex-wrap items-center justify-center"
@@ -148,6 +154,19 @@ export default function ShutterText({
               </span>
             ))}
           </motion.span>
+        ) : (
+          <span className="flex flex-wrap items-center justify-center">
+            {characters.map((char, i) => (
+              <span
+                key={i}
+                className="relative inline-block overflow-hidden px-[0.1vw]"
+              >
+                <span className="inline-block font-black text-zinc-900 leading-none tracking-tighter dark:text-white">
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              </span>
+            ))}
+          </span>
         )}
       </AnimatePresence>
     </div>
