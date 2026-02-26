@@ -7,9 +7,9 @@ import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-
 import type * as React from "react";
 
 export const metadata: Metadata = {
@@ -299,6 +299,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           {children}
           <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
