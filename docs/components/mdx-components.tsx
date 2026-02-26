@@ -1,3 +1,7 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Kbd } from "@/components/ui/kbd";
+import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
+import { cn } from "@/lib/utils";
 import type { Page } from "fumadocs-core/source";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { Heading } from "fumadocs-ui/components/heading";
@@ -8,10 +12,6 @@ import type { MDXComponents } from "mdx/types";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type * as React from "react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Kbd } from "@/components/ui/kbd";
-import { Table, TableCell, TableHead, TableRow } from "@/components/ui/table";
-import { cn } from "@/lib/utils";
 
 const ComponentSource = dynamic(() =>
   import("@/components/component-source").then((mod) => ({
@@ -41,6 +41,11 @@ const PropsTable = dynamic(() =>
 const KeyboardShortcutsTable = dynamic(() =>
   import("@/components/keyboard-shortcuts-table").then((mod) => ({
     default: mod.KeyboardShortcutsTable,
+  })),
+);
+const AdBanner = dynamic(() =>
+  import("@/components/ad-banner").then((mod) => ({
+    default: mod.AdBanner,
   })),
 );
 
@@ -105,6 +110,7 @@ export function useMdxComponents(
     CSSVariablesTable,
     PropsTable,
     KeyboardShortcutsTable,
+    AdBanner,
   };
 }
 
