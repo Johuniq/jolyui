@@ -41,6 +41,12 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
+      url: "https://formkitcn.jolyui.dev?ref=jolyui",
+      text: "Form Builder",
+      external: true,
+    },
+    {
+      type: "main",
       url: "https://www.jolyui.dev/llms-full.txt",
       text: "llms-full.txt",
       external: true,

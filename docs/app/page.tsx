@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Footer } from "@/components/landing/footer";
+import { FormKitCNPopup } from "@/components/landing/formkitcn-popup";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
 import { Spotlight } from "@/components/landing/spotlight";
@@ -33,6 +34,7 @@ export default function HomePage() {
 
   return (
     <main className={cn("relative h-dvh", !isLoaded && "overflow-y-hidden")}>
+      <FormKitCNPopup />
       {/* SEO-friendly content for search engine crawlers - visually hidden but accessible */}
       <div className="sr-only">
         <h1>Joly UI - 50+ Free shadcn/ui Components for React & Next.js</h1>

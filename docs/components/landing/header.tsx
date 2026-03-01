@@ -79,6 +79,17 @@ export function Header() {
                         New
                       </span>
                     </Link>
+
+                    <Link
+                      href="https://formkitcn.jolyui.dev?ref=jolyui"
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                    >
+                      Form Builder
+                      <span className="rounded-lg border border-green-500 px-1 py-0.5 text-[10px] text-green-500 dark:border-green-400 dark:text-green-400">
+                        New
+                      </span>
+                    </Link>
                   </div>
                 </div>
 
