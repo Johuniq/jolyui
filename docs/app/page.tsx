@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 import { Footer } from "@/components/landing/footer";
-import { FormKitCNPopup } from "@/components/landing/formkitcn-popup";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
+import { FormKitCNPopup } from "@/components/landing/popup-banner";
 import { Spotlight } from "@/components/landing/spotlight";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 const CONTENT_VARIANTS = {
   hidden: {

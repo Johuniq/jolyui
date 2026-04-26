@@ -4,7 +4,7 @@ import { ArrowRight, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "formkitcn-popup-dismissed";
+const STORAGE_KEY = "fr-vibe-coders-popup-dismissed";
 
 export function FormKitCNPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,6 +49,15 @@ export function FormKitCNPopup() {
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
+          <div className="mb-5 w-full overflow-hidden rounded-xl border border-border/50 bg-muted/30 p-2 shadow-sm">
+            <img
+              src="https://raw.githubusercontent.com/Johuniq/wavee/main/src/assets/app_screenshot.png"
+              alt="Wavee app screenshot"
+              className="h-auto w-full rounded-lg object-cover"
+              loading="lazy"
+            />
+          </div>
+
           {/* Badge */}
           <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1 font-medium text-green-600 text-xs dark:text-green-400">
             <span className="size-1.5 animate-pulse rounded-full bg-green-500" />
@@ -57,35 +66,32 @@ export function FormKitCNPopup() {
 
           {/* Title */}
           <h2 className="mb-3 font-semibold text-2xl tracking-tight">
-            FormKit
-            <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent">
-              CN
-            </span>
+            Wavee
           </h2>
 
           {/* Description */}
-          <p className="mb-2 text-muted-foreground text-sm leading-relaxed">
-            Drag-and-drop form builder powered by{" "}
-            <span className="font-medium text-foreground">shadcn/ui</span>.
+          <p className="mb-2 text-muted-foreground text-base leading-relaxed">
+            If typing slows you down, Wavee lets you hold a hotkey, speak
+            naturally, and place polished text right where your cursor is.
           </p>
-          <p className="mb-6 text-muted-foreground text-sm leading-relaxed">
-            Build, preview, and export production-ready React forms with Zod
-            validation — instantly.
+          <p className="mb-6 text-muted-foreground text-base leading-relaxed">
+            It helps you capture ideas, reply faster, and write technical text
+            without leaving the app you are already using.
           </p>
 
           {/* CTA */}
           <Link
-            href="https://formkitcn.jolyui.dev?ref=jolyui-popup"
+            href="https://github.com/Johuniq/wavee/releases/latest"
             target="_blank"
             onClick={handleClose}
             className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-medium text-primary-foreground text-sm transition-all hover:opacity-90"
           >
-            Try FormKitCN
+            Download Wavee
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
 
           <p className="mt-4 text-muted-foreground/60 text-xs">
-            Free &amp; open-source
+            Local-first and open source on GitHub
           </p>
         </div>
       </div>
