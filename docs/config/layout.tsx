@@ -47,6 +47,12 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
+      url: "https://github.com/Johuniq/wavee/releases/latest",
+      text: "Wavee",
+      external: true,
+    },
+    {
+      type: "main",
       url: "https://www.jolyui.dev/llms-full.txt",
       text: "llms-full.txt",
       external: true,

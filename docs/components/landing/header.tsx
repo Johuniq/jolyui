@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Link as ViewTransitionsLink } from "next-view-transitions";
 import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/lib/theme-toggle";
+import { Link as ViewTransitionsLink } from "next-view-transitions";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -86,6 +86,17 @@ export function Header() {
                       className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                     >
                       Form Builder
+                      <span className="rounded-lg border border-green-500 px-1 py-0.5 text-[10px] text-green-500 dark:border-green-400 dark:text-green-400">
+                        New
+                      </span>
+                    </Link>
+
+                    <Link
+                      href="https://github.com/Johuniq/wavee/releases/latest"
+                      target="_blank"
+                      className="flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                    >
+                      Wavee
                       <span className="rounded-lg border border-green-500 px-1 py-0.5 text-[10px] text-green-500 dark:border-green-400 dark:text-green-400">
                         New
                       </span>

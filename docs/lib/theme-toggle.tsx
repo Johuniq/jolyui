@@ -19,15 +19,15 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="cursor-pointer"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background text-foreground shadow-sm transition-colors hover:bg-accent"
       onClick={() => {
         setTheme(theme === "dark" ? "light" : "dark");
       }}
     >
       {theme === "light" ? (
-        <Moon className="h-5 w-5 text-black" />
+        <Moon className="size-5 text-slate-700 dark:text-slate-200" />
       ) : (
-        <Sun className="h-5 w-5 rotate-180 text-white" color="white" />
+        <Sun className="size-5 rotate-180 text-amber-500 dark:text-amber-300" />
       )}
     </button>
   );
