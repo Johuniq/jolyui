@@ -1,15 +1,47 @@
 import { Checkout } from "@polar-sh/nextjs";
-
-const polarServer =
-  process.env.POLAR_SERVER === "production" ? "production" : "sandbox";
+import { NextResponse } from "next/server";
 
 // Products are read from the `?products=` query param on each request
 // (see `polarCheckoutUrl()` in `lib/polar.ts`). The handler is product-agnostic
 // so we don't pass any product IDs into the config itself.
-export const GET = Checkout({
+
+const polarServer =
+  process.env.POLAR_SERVER === "production" ? "production" : "sandbox";
+
+const innerCheckout = Checkout({
   accessToken: process.env.POLAR_ACCESS_TOKEN,
   successUrl: process.env.POLAR_SUCCESS_URL ?? "/donate/thank-you",
   returnUrl: "/donate",
   server: polarServer,
   theme: "dark",
 });
+
+export const GET = async (request: Request) => {
+  // Fail fast with a useful error if Polar isn't configured server-side.
+  // Without this the SDK throws deep inside the request handler and the
+  // browser just sees a generic 500.
+  if (!process.env.POLAR_ACCESS_TOKEN) {
+    console.error(
+      "[polar/checkout] POLAR_ACCESS_TOKEN is not configured on the server",
+    );
+    return NextResponse.json(
+      {
+        error:
+          "Polar.sh is not configured on this deployment. Set POLAR_ACCESS_TOKEN in your environment.",
+      },
+      { status: 503 },
+    );
+  }
+
+  try {
+    return await innerCheckout(request);
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("[polar/checkout] failed:", message);
+    return NextResponse.json(
+      { error: "Failed to create Polar checkout session." },
+      { status: 500 },
+    );
+  }
+};
