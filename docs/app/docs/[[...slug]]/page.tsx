@@ -9,6 +9,7 @@ import {
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
+import { DonationBanner } from "@/components/donation-banner";
 import { DynamicLink } from "@/components/dynamic-link";
 import { Feedback } from "@/components/feedback";
 import { Mdx } from "@/components/mdx-components";
@@ -190,7 +191,7 @@ export default async function DocPage(props: DocPageParams) {
       />
       <DocsPage
         toc={page.data.toc}
-        tableOfContent={{ style: "clerk" }}
+        tableOfContent={{ style: "clerk", banner: <DonationBanner /> }}
         full={page.data.full}
       >
         <div className="flex flex-col gap-2">

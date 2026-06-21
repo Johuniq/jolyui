@@ -1673,4 +1673,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "infinite-ribbon-preview-demo",
+    type: "registry:example",
+    registryDependencies: ["infinite-ribbon"],
+    files: [
+      {
+        path: "examples/infinite-ribbon-preview-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

@@ -2739,5 +2739,19 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "infinite-ribbon-preview-demo": {
+      name: "infinite-ribbon-preview-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["infinite-ribbon"],
+      files: [{
+        path: "registry/default/examples/infinite-ribbon-preview-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/infinite-ribbon-preview-demo.tsx")),
+      source: "",
+      chunks: []
+    },
   },
 }

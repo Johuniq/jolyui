@@ -1,3 +1,4 @@
+import { DonationBanner } from "@/components/donation-banner";
 import XIcon from "@/components/icons/x-icon";
 import { GitHubStarsButton } from "@/components/landing/github-star-button";
 import { Logo } from "@/components/logo";
@@ -65,5 +66,6 @@ export const docsOptions: DocsLayoutProps = {
   tree: source.pageTree,
   sidebar: {
     defaultOpenLevel: 3,
+    banner: <DonationBanner variant="pill" />,
   },
 };

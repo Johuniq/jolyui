@@ -33,6 +33,10 @@ export const Footer = () => {
             >
               GitHub
             </a>
+            . Enjoying Joly UI?{" "}
+            <a href="/donate" rel="noopener">
+              Buy us a coffee
+            </a>
             .
           </p>
         </div>
