@@ -1,0 +1,63 @@
+---
+title: Infinite Ribbon
+description: Continuous marquee-style scrolling ribbon for React. Pure CSS keyframes, zero dependencies, fully customizable speed, direction, rotation and repeat count. Perfect for hero banners, announcements and ticker effects.
+preview: true
+links:
+ api: /docs/components/infinite-ribbon#api-reference
+---
+
+<ComponentTabs name="infinite-ribbon-demo" />
+
+<AdBanner />
+
+## Installation
+
+### CLI
+
+```package-install
+npx shadcn@latest add "https://jolyui.dev/r/infinite-ribbon"
+```
+
+### Manual
+
+<Steps>
+  <Step>
+    Copy and paste the following code into your project `component/ui/infinite-ribbon.tsx`
+    <ComponentSource name="infinite-ribbon" />
+  </Step>
+</Steps>
+
+## Usage
+
+```tsx
+import { InfiniteRibbon } from "@/components/ui/infinite-ribbon";
+
+<InfiniteRibbon repeat={5} duration={12}>
+  ✦ JolyUI · Infinite Ribbon · Build beautiful interfaces ✦
+</InfiniteRibbon>
+```
+
+## Examples
+
+### Variants
+
+<ComponentTabs name="infinite-ribbon-custom-demo" />
+
+## API Reference
+
+### InfiniteRibbon Props
+
+<AutoTypeTable
+  path="./types/docs/infinite-ribbon.ts"
+  name="InfiniteRibbonProps"
+/>
+
+## Notes
+
+- Pure CSS keyframe animation — no `motion` or other runtime libraries required
+- Track is internally duplicated (`repeat * 2`) for seamless looping
+- `reverse` flips the scroll direction without changing the visual order
+- `rotation` lets you tilt the ribbon for diagonal marquee effects
+- `prefers-reduced-motion` is honored — animation duration collapses to 1ms
+- Children are wrapped in a `sr-only` accessible label so the ribbon stays screen-reader friendly
+- Great for hero announcements, news tickers, promotional banners and CTA strips

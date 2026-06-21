@@ -513,6 +513,20 @@ export const Index: Record<string, any> = {
       source: "",
       chunks: []
     },
+    "infinite-ribbon": {
+      name: "infinite-ribbon",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [{
+        path: "registry/default/ui/infinite-ribbon.tsx",
+        type: "registry:ui",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/ui/infinite-ribbon.tsx")),
+      source: "",
+      chunks: []
+    },
     "hover-preview": {
       name: "hover-preview",
       description: "",
@@ -2694,6 +2708,34 @@ export const Index: Record<string, any> = {
         target: ""
       }],
       component: React.lazy(() => import("@/registry/default/examples/shutter-text-hover-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "infinite-ribbon-demo": {
+      name: "infinite-ribbon-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["infinite-ribbon"],
+      files: [{
+        path: "registry/default/examples/infinite-ribbon-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/infinite-ribbon-demo.tsx")),
+      source: "",
+      chunks: []
+    },
+    "infinite-ribbon-custom-demo": {
+      name: "infinite-ribbon-custom-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: ["infinite-ribbon"],
+      files: [{
+        path: "registry/default/examples/infinite-ribbon-custom-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }],
+      component: React.lazy(() => import("@/registry/default/examples/infinite-ribbon-custom-demo.tsx")),
       source: "",
       chunks: []
     },

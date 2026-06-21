@@ -388,6 +388,16 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "infinite-ribbon",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/infinite-ribbon.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "hover-preview",
     type: "registry:ui",
     files: [
