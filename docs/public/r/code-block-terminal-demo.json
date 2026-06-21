@@ -1,15 +1,15 @@
 {
   "name": "code-block-terminal-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-terminal-demo.tsx",
-      "content": "import { TerminalBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <TerminalBlock\n        title=\"Terminal\"\n        commands={[\n          { command: \"npm install jolyui\", output: \"added 1 package in 2.3s\" },\n          {\n            command: \"npm run dev\",\n            output:\n              \"VITE v5.0.0 ready in 300 ms\\n\\n➜  Local: http://localhost:5173/\",\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { TerminalBlock } from \"@/registry/default/ui/code-block\";\r\n\r\nexport default function CodeBlockTerminalDemo() {\r\n  return (\r\n    <div className=\"w-full max-w-3xl\">\r\n      <TerminalBlock\r\n        title=\"Terminal\"\r\n        commands={[\r\n          { command: \"npm install jolyui\", output: \"added 1 package in 2.3s\" },\r\n          {\r\n            command: \"npm run dev\",\r\n            output:\r\n              \"VITE v5.0.0 ready in 300 ms\\n\\n➜  Local: http://localhost:5173/\",\r\n          },\r\n        ]}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

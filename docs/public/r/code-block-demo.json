@@ -1,15 +1,15 @@
 {
   "name": "code-block-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-demo.tsx",
-      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nconst code = `import React from \"react\";\n\nfunction HelloWorld() {\n  return (\n    <div className=\"p-4 rounded-lg bg-primary text-primary-foreground\">\n      <h1>Hello, World!</h1>\n      <p>This is a simple React component.</p>\n    </div>\n  );\n}\n\nexport default HelloWorld;`;\n\nexport default function CodeBlockDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeBlock\n        code={code}\n        language=\"tsx\"\n        title=\"HelloWorld.tsx\"\n        highlightLines={[6]}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\r\n\r\nconst code = `import React from \"react\";\r\n\r\nfunction HelloWorld() {\r\n  return (\r\n    <div className=\"p-4 rounded-lg bg-primary text-primary-foreground\">\r\n      <h1>Hello, World!</h1>\r\n      <p>This is a simple React component.</p>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default HelloWorld;`;\r\n\r\nexport default function CodeBlockDemo() {\r\n  return (\r\n    <div className=\"w-full max-w-3xl\">\r\n      <CodeBlock\r\n        code={code}\r\n        language=\"tsx\"\r\n        title=\"HelloWorld.tsx\"\r\n        highlightLines={[6]}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

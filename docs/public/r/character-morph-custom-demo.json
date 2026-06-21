@@ -1,15 +1,15 @@
 {
   "name": "character-morph-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "character-morph"
   ],
   "files": [
     {
       "path": "examples/character-morph-custom-demo.tsx",
-      "content": "\"use client\";\n\nimport { CharacterMorph } from \"@/registry/default/ui/character-morph\";\n\nexport default function CharacterMorphCustomDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Morph</h3>\n        <CharacterMorph\n          texts={[\"Code\", \"Hack\", \"Debug\", \"Fix\"]}\n          interval={2000}\n          staggerDelay={0.02}\n          charDuration={0.3}\n          className=\"font-mono text-2xl text-primary\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Morph</h3>\n        <CharacterMorph\n          texts={[\"Design\", \"Create\", \"Build\", \"Deploy\"]}\n          interval={4000}\n          staggerDelay={0.05}\n          charDuration={0.8}\n          className=\"font-bold text-3xl text-destructive\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { CharacterMorph } from \"@/registry/default/ui/character-morph\";\r\n\r\nexport default function CharacterMorphCustomDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Morph</h3>\r\n        <CharacterMorph\r\n          texts={[\"Code\", \"Hack\", \"Debug\", \"Fix\"]}\r\n          interval={2000}\r\n          staggerDelay={0.02}\r\n          charDuration={0.3}\r\n          className=\"font-mono text-2xl text-primary\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Morph</h3>\r\n        <CharacterMorph\r\n          texts={[\"Design\", \"Create\", \"Build\", \"Deploy\"]}\r\n          interval={4000}\r\n          staggerDelay={0.05}\r\n          charDuration={0.8}\r\n          className=\"font-bold text-3xl text-destructive\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

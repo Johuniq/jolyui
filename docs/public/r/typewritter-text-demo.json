@@ -1,15 +1,15 @@
 {
   "name": "typewritter-text-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "typewritter-text"
   ],
   "files": [
     {
       "path": "examples/typewritter-text-demo.tsx",
-      "content": "\"use client\";\n\nimport { TypewriterText } from \"@/registry/default/ui/typewritter-text\";\n\nexport default function TypewritterTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <TypewriterText\n        words={[\"Hello\", \"World\", \"Typewriter\", \"Effect\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TypewriterText } from \"@/registry/default/ui/typewritter-text\";\r\n\r\nexport default function TypewritterTextDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <TypewriterText\r\n        words={[\"Hello\", \"World\", \"Typewriter\", \"Effect\"]}\r\n        className=\"font-bold text-4xl text-foreground\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "scroll-progress-text-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "scroll-text"
   ],
   "files": [
     {
       "path": "examples/scroll-progress-text-demo.tsx",
-      "content": "import { ScrollProgressText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollProgressTextDemo() {\n  return (\n    <div className=\"mx-auto w-full max-w-3xl px-4 py-20\">\n      <ScrollProgressText\n        text=\"As you scroll down, this text will light up character by character, creating a beautiful reading experience that guides the user's eye through the content.\"\n        className=\"font-bold text-4xl leading-tight\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { ScrollProgressText } from \"@/registry/default/ui/scroll-text\";\r\n\r\nexport default function ScrollProgressTextDemo() {\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-3xl px-4 py-20\">\r\n      <ScrollProgressText\r\n        text=\"As you scroll down, this text will light up character by character, creating a beautiful reading experience that guides the user's eye through the content.\"\r\n        className=\"font-bold text-4xl leading-tight\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "rotate-text-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "rotate-text"
   ],
   "files": [
     {
       "path": "examples/rotate-text-demo.tsx",
-      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\n\nexport default function RotateTextDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <RotatingText\n        words={[\"Hello\", \"World\", \"Rotate\", \"Text\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\r\n\r\nexport default function RotateTextDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <RotatingText\r\n        words={[\"Hello\", \"World\", \"Rotate\", \"Text\"]}\r\n        className=\"font-bold text-4xl text-foreground\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

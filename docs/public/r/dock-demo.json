@@ -1,6 +1,5 @@
 {
   "name": "dock-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/dock-demo.tsx",
-      "content": "import { Calculator, Calendar, Compass, Mail, Music } from \"lucide-react\";\nimport {\n  Dock,\n  DockIcon,\n  DockItem,\n  DockLabel,\n} from \"@/registry/default/ui/dock\";\n\nexport default function DockDemo() {\n  return (\n    <div className=\"flex h-32 items-end justify-center\">\n      <Dock>\n        <DockItem>\n          <DockIcon>\n            <Compass />\n          </DockIcon>\n          <DockLabel>Safari</DockLabel>\n        </DockItem>\n\n        <DockItem>\n          <DockIcon>\n            <Mail />\n          </DockIcon>\n          <DockLabel>Mail</DockLabel>\n        </DockItem>\n\n        <DockItem>\n          <DockIcon>\n            <Calendar />\n          </DockIcon>\n          <DockLabel>Calendar</DockLabel>\n        </DockItem>\n\n        <DockItem>\n          <DockIcon>\n            <Music />\n          </DockIcon>\n          <DockLabel>Music</DockLabel>\n        </DockItem>\n\n        <DockItem>\n          <DockIcon>\n            <Calculator />\n          </DockIcon>\n          <DockLabel>Calculator</DockLabel>\n        </DockItem>\n      </Dock>\n    </div>\n  );\n}\n",
+      "content": "import { Calculator, Calendar, Compass, Mail, Music } from \"lucide-react\";\r\nimport {\r\n  Dock,\r\n  DockIcon,\r\n  DockItem,\r\n  DockLabel,\r\n} from \"@/registry/default/ui/dock\";\r\n\r\nexport default function DockDemo() {\r\n  return (\r\n    <div className=\"flex h-32 items-end justify-center\">\r\n      <Dock>\r\n        <DockItem>\r\n          <DockIcon>\r\n            <Compass />\r\n          </DockIcon>\r\n          <DockLabel>Safari</DockLabel>\r\n        </DockItem>\r\n\r\n        <DockItem>\r\n          <DockIcon>\r\n            <Mail />\r\n          </DockIcon>\r\n          <DockLabel>Mail</DockLabel>\r\n        </DockItem>\r\n\r\n        <DockItem>\r\n          <DockIcon>\r\n            <Calendar />\r\n          </DockIcon>\r\n          <DockLabel>Calendar</DockLabel>\r\n        </DockItem>\r\n\r\n        <DockItem>\r\n          <DockIcon>\r\n            <Music />\r\n          </DockIcon>\r\n          <DockLabel>Music</DockLabel>\r\n        </DockItem>\r\n\r\n        <DockItem>\r\n          <DockIcon>\r\n            <Calculator />\r\n          </DockIcon>\r\n          <DockLabel>Calculator</DockLabel>\r\n        </DockItem>\r\n      </Dock>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

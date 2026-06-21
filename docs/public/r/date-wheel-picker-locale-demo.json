@@ -1,15 +1,15 @@
 {
   "name": "date-wheel-picker-locale-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "date-wheel-picker"
   ],
   "files": [
     {
       "path": "examples/date-wheel-picker-locale-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\n\nexport default function DateWheelPickerLocaleDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">\n          English (US)\n        </span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"en-US\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">\n          French\n        </span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"fr-FR\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">\n          German\n        </span>\n        <DateWheelPicker value={date} onChange={setDate} locale=\"de-DE\" />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\r\n\r\nexport default function DateWheelPickerLocaleDemo() {\r\n  const [date, setDate] = useState<Date>(new Date());\r\n\r\n  return (\r\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">\r\n          English (US)\r\n        </span>\r\n        <DateWheelPicker value={date} onChange={setDate} locale=\"en-US\" />\r\n      </div>\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">\r\n          French\r\n        </span>\r\n        <DateWheelPicker value={date} onChange={setDate} locale=\"fr-FR\" />\r\n      </div>\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">\r\n          German\r\n        </span>\r\n        <DateWheelPicker value={date} onChange={setDate} locale=\"de-DE\" />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

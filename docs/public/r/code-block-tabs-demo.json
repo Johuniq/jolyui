@@ -1,15 +1,15 @@
 {
   "name": "code-block-tabs-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-tabs-demo.tsx",
-      "content": "import { FileJson, FileType } from \"lucide-react\";\nimport { CodeTabs } from \"@/registry/default/ui/code-block\";\n\nconst tsCode = `interface User {\n  id: number;\n  name: string;\n  email: string;\n}`;\n\nconst jsonCode = `{\n  \"id\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n}`;\n\nexport default function CodeBlockTabsDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeTabs\n        tabs={[\n          {\n            label: \"types.ts\",\n            code: tsCode,\n            language: \"typescript\",\n            icon: <FileType className=\"h-4 w-4\" />,\n          },\n          {\n            label: \"data.json\",\n            code: jsonCode,\n            language: \"json\",\n            icon: <FileJson className=\"h-4 w-4\" />,\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { FileJson, FileType } from \"lucide-react\";\r\nimport { CodeTabs } from \"@/registry/default/ui/code-block\";\r\n\r\nconst tsCode = `interface User {\r\n  id: number;\r\n  name: string;\r\n  email: string;\r\n}`;\r\n\r\nconst jsonCode = `{\r\n  \"id\": 1,\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\"\r\n}`;\r\n\r\nexport default function CodeBlockTabsDemo() {\r\n  return (\r\n    <div className=\"w-full max-w-3xl\">\r\n      <CodeTabs\r\n        tabs={[\r\n          {\r\n            label: \"types.ts\",\r\n            code: tsCode,\r\n            language: \"typescript\",\r\n            icon: <FileType className=\"h-4 w-4\" />,\r\n          },\r\n          {\r\n            label: \"data.json\",\r\n            code: jsonCode,\r\n            language: \"json\",\r\n            icon: <FileJson className=\"h-4 w-4\" />,\r\n          },\r\n        ]}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

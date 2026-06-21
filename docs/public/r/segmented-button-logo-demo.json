@@ -1,15 +1,15 @@
 {
   "name": "segmented-button-logo-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "segmented-button"
   ],
   "files": [
     {
       "path": "examples/segmented-button-logo-demo.tsx",
-      "content": "\"use client\";\n\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonLogoDemo() {\n  const logoTabs = [\n    { id: \"dashboard\", label: \"Dashboard\" },\n    { id: \"logo\", isLogo: true },\n    { id: \"profile\", label: \"Profile\" },\n  ];\n\n  return (\n    <SegmentedButton\n      buttons={logoTabs}\n      defaultActive=\"dashboard\"\n      onChange={(activeId) => console.log(\"Active section:\", activeId)}\n    />\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\r\n\r\nexport default function SegmentedButtonLogoDemo() {\r\n  const logoTabs = [\r\n    { id: \"dashboard\", label: \"Dashboard\" },\r\n    { id: \"logo\", isLogo: true },\r\n    { id: \"profile\", label: \"Profile\" },\r\n  ];\r\n\r\n  return (\r\n    <SegmentedButton\r\n      buttons={logoTabs}\r\n      defaultActive=\"dashboard\"\r\n      onChange={(activeId) => console.log(\"Active section:\", activeId)}\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

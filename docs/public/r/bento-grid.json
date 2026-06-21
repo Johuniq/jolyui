@@ -1,12 +1,12 @@
 {
   "name": "bento-grid",
-  "type": "registry:ui",
   "files": [
     {
       "path": "ui/bento-grid.tsx",
-      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface BentoGridProps extends React.HTMLAttributes<HTMLDivElement> {\n  children: React.ReactNode;\n}\n\nconst BentoGrid = React.forwardRef<HTMLDivElement, BentoGridProps>(\n  ({ className, children, ...props }, ref) => {\n    return (\n      <div\n        ref={ref}\n        className={cn(\n          \"grid auto-rows-[minmax(180px,1fr)] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3\",\n          className,\n        )}\n        {...props}\n      >\n        {children}\n      </div>\n    );\n  },\n);\nBentoGrid.displayName = \"BentoGrid\";\n\nexport { BentoGrid };\n",
+      "content": "import * as React from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface BentoGridProps extends React.HTMLAttributes<HTMLDivElement> {\r\n  children: React.ReactNode;\r\n}\r\n\r\nconst BentoGrid = React.forwardRef<HTMLDivElement, BentoGridProps>(\r\n  ({ className, children, ...props }, ref) => {\r\n    return (\r\n      <div\r\n        ref={ref}\r\n        className={cn(\r\n          \"grid auto-rows-[minmax(180px,1fr)] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3\",\r\n          className,\r\n        )}\r\n        {...props}\r\n      >\r\n        {children}\r\n      </div>\r\n    );\r\n  },\r\n);\r\nBentoGrid.displayName = \"BentoGrid\";\r\n\r\nexport { BentoGrid };\r\n",
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

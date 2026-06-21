@@ -1,15 +1,15 @@
 {
   "name": "morphing-cursor-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "morphing-cursor"
   ],
   "files": [
     {
       "path": "examples/morphing-cursor-custom-demo.tsx",
-      "content": "import { MagneticText } from \"@/registry/default/ui/morphing-cursor\";\n\nexport default function MorphingCursorCustomDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-12\">\n      <MagneticText text=\"DESIGN\" hoverText=\"CREATE\" />\n      <MagneticText text=\"BUILD\" hoverText=\"LAUNCH\" />\n    </div>\n  );\n}\n",
+      "content": "import { MagneticText } from \"@/registry/default/ui/morphing-cursor\";\r\n\r\nexport default function MorphingCursorCustomDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-12\">\r\n      <MagneticText text=\"DESIGN\" hoverText=\"CREATE\" />\r\n      <MagneticText text=\"BUILD\" hoverText=\"LAUNCH\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

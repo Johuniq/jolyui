@@ -1,15 +1,15 @@
 {
   "name": "magnetic-action-area-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "magnetic"
   ],
   "files": [
     {
       "path": "examples/magnetic-action-area-demo.tsx",
-      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\n\nexport default function MagneticActionAreaDemo() {\n  return (\n    <div className=\"flex min-h-[400px] flex-col items-center justify-center gap-12\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <p className=\"text-muted-foreground text-sm\">Self (hover the button)</p>\n        <Magnetic actionArea=\"self\">\n          <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n            Self Action Area\n          </button>\n        </Magnetic>\n      </div>\n\n      <div className=\"flex flex-col items-center gap-2\">\n        <p className=\"text-muted-foreground text-sm\">\n          Parent (hover the container)\n        </p>\n        <div className=\"rounded-lg border-2 border-muted-foreground/30 border-dashed p-8\">\n          <Magnetic actionArea=\"parent\">\n            <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n              Parent Action Area\n            </button>\n          </Magnetic>\n        </div>\n      </div>\n\n      <div className=\"flex flex-col items-center gap-2\">\n        <p className=\"text-muted-foreground text-sm\">Global (always active)</p>\n        <Magnetic actionArea=\"global\">\n          <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n            Global Action Area\n          </button>\n        </Magnetic>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\r\n\r\nexport default function MagneticActionAreaDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[400px] flex-col items-center justify-center gap-12\">\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <p className=\"text-muted-foreground text-sm\">Self (hover the button)</p>\r\n        <Magnetic actionArea=\"self\">\r\n          <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n            Self Action Area\r\n          </button>\r\n        </Magnetic>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Parent (hover the container)\r\n        </p>\r\n        <div className=\"rounded-lg border-2 border-muted-foreground/30 border-dashed p-8\">\r\n          <Magnetic actionArea=\"parent\">\r\n            <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n              Parent Action Area\r\n            </button>\r\n          </Magnetic>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <p className=\"text-muted-foreground text-sm\">Global (always active)</p>\r\n        <Magnetic actionArea=\"global\">\r\n          <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n            Global Action Area\r\n          </button>\r\n        </Magnetic>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

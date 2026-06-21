@@ -1,15 +1,15 @@
 {
   "name": "magnetic-intensity-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "magnetic"
   ],
   "files": [
     {
       "path": "examples/magnetic-intensity-demo.tsx",
-      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\n\nexport default function MagneticIntensityDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-8\">\n      <Magnetic intensity={0.3}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          Low (0.3)\n        </button>\n      </Magnetic>\n      <Magnetic intensity={0.6}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          Medium (0.6)\n        </button>\n      </Magnetic>\n      <Magnetic intensity={1.2}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          High (1.2)\n        </button>\n      </Magnetic>\n    </div>\n  );\n}\n",
+      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\r\n\r\nexport default function MagneticIntensityDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-8\">\r\n      <Magnetic intensity={0.3}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          Low (0.3)\r\n        </button>\r\n      </Magnetic>\r\n      <Magnetic intensity={0.6}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          Medium (0.6)\r\n        </button>\r\n      </Magnetic>\r\n      <Magnetic intensity={1.2}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          High (1.2)\r\n        </button>\r\n      </Magnetic>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

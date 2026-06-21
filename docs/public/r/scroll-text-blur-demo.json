@@ -1,15 +1,15 @@
 {
   "name": "scroll-text-blur-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "scroll-text"
   ],
   "files": [
     {
       "path": "examples/scroll-text-blur-demo.tsx",
-      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextBlurDemo() {\n  return (\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\n      <ScrollText effect=\"blur\" className=\"font-bold text-4xl\">\n        Blur Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\r\n\r\nexport default function ScrollTextBlurDemo() {\r\n  return (\r\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\r\n      <ScrollText effect=\"blur\" className=\"font-bold text-4xl\">\r\n        Blur Animation\r\n      </ScrollText>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

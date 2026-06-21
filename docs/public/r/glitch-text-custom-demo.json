@@ -1,15 +1,15 @@
 {
   "name": "glitch-text-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "glitch-text"
   ],
   "files": [
     {
       "path": "examples/glitch-text-custom-demo.tsx",
-      "content": "\"use client\";\n\nimport { GlitchText } from \"@/registry/default/ui/glitch-text\";\n\nexport default function GlitchTextCustomDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Glitch</h3>\n        <GlitchText\n          words={[\"Code\", \"Hack\", \"Debug\", \"Fix\"]}\n          interval={1500}\n          glitchDuration={200}\n          className=\"font-mono text-2xl text-primary\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Glitch</h3>\n        <GlitchText\n          words={[\"Design\", \"Create\", \"Build\", \"Deploy\"]}\n          interval={5000}\n          glitchDuration={500}\n          className=\"font-bold text-3xl text-destructive\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { GlitchText } from \"@/registry/default/ui/glitch-text\";\r\n\r\nexport default function GlitchTextCustomDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Glitch</h3>\r\n        <GlitchText\r\n          words={[\"Code\", \"Hack\", \"Debug\", \"Fix\"]}\r\n          interval={1500}\r\n          glitchDuration={200}\r\n          className=\"font-mono text-2xl text-primary\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Glitch</h3>\r\n        <GlitchText\r\n          words={[\"Design\", \"Create\", \"Build\", \"Deploy\"]}\r\n          interval={5000}\r\n          glitchDuration={500}\r\n          className=\"font-bold text-3xl text-destructive\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

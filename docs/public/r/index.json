@@ -1,7 +1,6 @@
 [
   {
     "name": "animated-beam",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react"
     ],
@@ -10,11 +9,11 @@
         "path": "ui/animated-beam.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "animated-theme-toggle",
-    "type": "registry:ui",
     "dependencies": [
       "motion",
       "next-themes"
@@ -27,11 +26,11 @@
         "path": "ui/animated-theme-toggle.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "animated-table",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion"
@@ -41,21 +40,21 @@
         "path": "ui/animated-table.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "bento-grid",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/bento-grid.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "expanded-map",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -64,11 +63,11 @@
         "path": "ui/expanded-map.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "button",
-    "type": "registry:ui",
     "dependencies": [
       "@radix-ui/react-slot",
       "class-variance-authority",
@@ -79,11 +78,11 @@
         "path": "ui/button.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "dock",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion"
@@ -93,11 +92,11 @@
         "path": "ui/dock.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "image-comparison",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -106,11 +105,11 @@
         "path": "ui/image-comparison.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "animated-tooltip",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -119,11 +118,11 @@
         "path": "ui/animated-tooltip.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "animated-toast",
-    "type": "registry:ui",
     "dependencies": [
       "motion",
       "lucide-react"
@@ -133,11 +132,11 @@
         "path": "ui/animated-toast.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "rainbow-button",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -146,11 +145,11 @@
         "path": "ui/rainbow-button.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "file-tree",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion"
@@ -160,11 +159,11 @@
         "path": "ui/file-tree.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "github-contributors",
-    "type": "registry:ui",
     "dependencies": [
       "@radix-ui/react-tooltip",
       "lucide-react",
@@ -175,11 +174,11 @@
         "path": "ui/github-contributors.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "glitch-text",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -188,11 +187,11 @@
         "path": "ui/glitch-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "phone-card",
-    "type": "registry:ui",
     "registryDependencies": [
       "lazy-video"
     ],
@@ -201,11 +200,11 @@
         "path": "ui/phone-card.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "rotate-text",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -214,31 +213,31 @@
         "path": "ui/rotate-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "lazy-video",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/lazy-video.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "vercel-tabs",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/vercel-tabs.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "magnetic",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -247,11 +246,11 @@
         "path": "ui/magnetic.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "video-player",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion"
@@ -261,11 +260,11 @@
         "path": "ui/video-player.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "calender",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion",
@@ -276,11 +275,11 @@
         "path": "ui/calender.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "character-morph",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -289,11 +288,11 @@
         "path": "ui/character-morph.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "code-block",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion",
@@ -304,11 +303,11 @@
         "path": "ui/code-block.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "text-morphing",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -317,11 +316,11 @@
         "path": "ui/text-morphing.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "scroll-text",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -330,11 +329,11 @@
         "path": "ui/scroll-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "segmented-button",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -343,11 +342,11 @@
         "path": "ui/segmented-button.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "typewritter-text",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -356,11 +355,11 @@
         "path": "ui/typewritter-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "velocity-morph",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -369,11 +368,11 @@
         "path": "ui/velocity-morph.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "number-counter",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -382,11 +381,11 @@
         "path": "ui/number-counter.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "highlight-text",
-    "type": "registry:ui",
     "dependencies": [
       "class-variance-authority"
     ],
@@ -395,11 +394,11 @@
         "path": "ui/highlight-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "command-palette",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "motion"
@@ -409,11 +408,11 @@
         "path": "ui/command-palette.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "github-star",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -422,21 +421,21 @@
         "path": "ui/github-star.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "gooey-text-morphing",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/gooey-text-morphing.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "feedback-widget",
-    "type": "registry:ui",
     "dependencies": [
       "motion",
       "react-markdown",
@@ -447,11 +446,11 @@
         "path": "ui/feedback-widget.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "image-sphere",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react"
     ],
@@ -460,21 +459,31 @@
         "path": "ui/image-sphere.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
+  },
+  {
+    "name": "infinite-ribbon",
+    "files": [
+      {
+        "path": "ui/infinite-ribbon.tsx",
+        "type": "registry:ui"
+      }
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "hover-preview",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/hover-preview.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "ai-prompt-box",
-    "type": "registry:ui",
     "dependencies": [
       "motion",
       "@radix-ui/react-dialog",
@@ -486,11 +495,11 @@
         "path": "ui/ai-prompt-box.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "date-wheel-picker",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -499,11 +508,11 @@
         "path": "ui/date-wheel-picker.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "liquid-metal-button",
-    "type": "registry:ui",
     "dependencies": [
       "lucide-react",
       "@paper-design/shaders"
@@ -513,21 +522,21 @@
         "path": "ui/liquid-metal-button.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "morphing-cursor",
-    "type": "registry:ui",
     "files": [
       {
         "path": "ui/morphing-cursor.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "falling-text",
-    "type": "registry:ui",
     "dependencies": [
       "matter-js"
     ],
@@ -539,11 +548,11 @@
         "path": "ui/falling-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   },
   {
     "name": "shutter-text",
-    "type": "registry:ui",
     "dependencies": [
       "motion"
     ],
@@ -552,6 +561,7 @@
         "path": "ui/shutter-text.tsx",
         "type": "registry:ui"
       }
-    ]
+    ],
+    "type": "registry:ui"
   }
 ]

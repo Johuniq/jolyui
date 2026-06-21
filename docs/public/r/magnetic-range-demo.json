@@ -1,15 +1,15 @@
 {
   "name": "magnetic-range-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "magnetic"
   ],
   "files": [
     {
       "path": "examples/magnetic-range-demo.tsx",
-      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\n\nexport default function MagneticRangeDemo() {\n  return (\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-8\">\n      <Magnetic range={50}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          Small Range (50px)\n        </button>\n      </Magnetic>\n      <Magnetic range={100}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          Medium Range (100px)\n        </button>\n      </Magnetic>\n      <Magnetic range={200}>\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\n          Large Range (200px)\n        </button>\n      </Magnetic>\n    </div>\n  );\n}\n",
+      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\r\n\r\nexport default function MagneticRangeDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[300px] flex-wrap items-center justify-center gap-8\">\r\n      <Magnetic range={50}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          Small Range (50px)\r\n        </button>\r\n      </Magnetic>\r\n      <Magnetic range={100}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          Medium Range (100px)\r\n        </button>\r\n      </Magnetic>\r\n      <Magnetic range={200}>\r\n        <button className=\"rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground text-sm shadow-lg\">\r\n          Large Range (200px)\r\n        </button>\r\n      </Magnetic>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

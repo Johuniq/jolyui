@@ -1,15 +1,15 @@
 {
   "name": "typewritter-text-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "typewritter-text"
   ],
   "files": [
     {
       "path": "examples/typewritter-text-custom-demo.tsx",
-      "content": "\"use client\";\n\nimport { TypewriterText } from \"@/registry/default/ui/typewritter-text\";\n\nexport default function TypewritterTextCustomDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Typing</h3>\n        <TypewriterText\n          words={[\"Code\", \"Build\", \"Deploy\", \"Scale\"]}\n          typingSpeed={50}\n          deletingSpeed={25}\n          pauseDuration={1000}\n          className=\"font-mono text-2xl text-primary\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Typing</h3>\n        <TypewriterText\n          words={[\"Design\", \"Create\", \"Innovate\", \"Inspire\"]}\n          typingSpeed={200}\n          deletingSpeed={100}\n          pauseDuration={3000}\n          className=\"font-bold text-3xl text-destructive\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { TypewriterText } from \"@/registry/default/ui/typewritter-text\";\r\n\r\nexport default function TypewritterTextCustomDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Typing</h3>\r\n        <TypewriterText\r\n          words={[\"Code\", \"Build\", \"Deploy\", \"Scale\"]}\r\n          typingSpeed={50}\r\n          deletingSpeed={25}\r\n          pauseDuration={1000}\r\n          className=\"font-mono text-2xl text-primary\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Typing</h3>\r\n        <TypewriterText\r\n          words={[\"Design\", \"Create\", \"Innovate\", \"Inspire\"]}\r\n          typingSpeed={200}\r\n          deletingSpeed={100}\r\n          pauseDuration={3000}\r\n          className=\"font-bold text-3xl text-destructive\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

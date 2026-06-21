@@ -1,15 +1,15 @@
 {
   "name": "calendar-presets-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "calender"
   ],
   "files": [
     {
       "path": "examples/calendar-presets-demo.tsx",
-      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarPresetsDemo() {\n  const [date, setDate] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Calendar with Presets</h3>\n      <AnimatedCalendar\n        mode=\"range\"\n        onChange={(val) => setDate(val as Date | undefined)}\n        showPresets\n        placeholder=\"Select a date\"\n      />\n      {date && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {date.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "content": "import { useState } from \"react\";\r\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\r\n\r\nexport default function CalendarPresetsDemo() {\r\n  const [date, setDate] = useState<Date>();\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <h3 className=\"font-medium text-sm\">Calendar with Presets</h3>\r\n      <AnimatedCalendar\r\n        mode=\"range\"\r\n        onChange={(val) => setDate(val as Date | undefined)}\r\n        showPresets\r\n        placeholder=\"Select a date\"\r\n      />\r\n      {date && (\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Selected: {date.toLocaleDateString()}\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

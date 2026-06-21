@@ -1,15 +1,15 @@
 {
   "name": "segmented-button-controlled-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "segmented-button"
   ],
   "files": [
     {
       "path": "examples/segmented-button-controlled-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\n\nexport default function SegmentedButtonControlledDemo() {\n  const [activeTab, setActiveTab] = useState(\"settings\");\n\n  const tabs = [\n    { id: \"overview\", label: \"Overview\" },\n    { id: \"analytics\", label: \"Analytics\" },\n    { id: \"settings\", label: \"Settings\" },\n  ];\n\n  return (\n    <div className=\"space-y-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Active tab: <span className=\"font-mono\">{activeTab}</span>\n      </p>\n      <SegmentedButton\n        buttons={tabs}\n        defaultActive={activeTab}\n        onChange={setActiveTab}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport SegmentedButton from \"@/registry/default/ui/segmented-button\";\r\n\r\nexport default function SegmentedButtonControlledDemo() {\r\n  const [activeTab, setActiveTab] = useState(\"settings\");\r\n\r\n  const tabs = [\r\n    { id: \"overview\", label: \"Overview\" },\r\n    { id: \"analytics\", label: \"Analytics\" },\r\n    { id: \"settings\", label: \"Settings\" },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <p className=\"text-muted-foreground text-sm\">\r\n        Active tab: <span className=\"font-mono\">{activeTab}</span>\r\n      </p>\r\n      <SegmentedButton\r\n        buttons={tabs}\r\n        defaultActive={activeTab}\r\n        onChange={setActiveTab}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

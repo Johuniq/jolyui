@@ -1,15 +1,15 @@
 {
   "name": "animated-tooltip-animation-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "animated-tooltip"
   ],
   "files": [
     {
       "path": "examples/animated-tooltip-animation-demo.tsx",
-      "content": "\"use client\";\n\nimport { AnimatedTooltip } from \"@/components/ui/animated-tooltip\";\n\nexport default function AnimatedTooltipAnimationDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\n      {([\"fade\", \"scale\", \"slide\", \"spring\"] as const).map((animation) => (\n        <AnimatedTooltip\n          key={animation}\n          content={`${animation} animation`}\n          animation={animation}\n        >\n          <button className=\"rounded-lg border bg-card px-4 py-2 font-medium text-sm capitalize transition-colors hover:bg-accent\">\n            {animation}\n          </button>\n        </AnimatedTooltip>\n      ))}\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { AnimatedTooltip } from \"@/components/ui/animated-tooltip\";\r\n\r\nexport default function AnimatedTooltipAnimationDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\r\n      {([\"fade\", \"scale\", \"slide\", \"spring\"] as const).map((animation) => (\r\n        <AnimatedTooltip\r\n          key={animation}\r\n          content={`${animation} animation`}\r\n          animation={animation}\r\n        >\r\n          <button className=\"rounded-lg border bg-card px-4 py-2 font-medium text-sm capitalize transition-colors hover:bg-accent\">\r\n            {animation}\r\n          </button>\r\n        </AnimatedTooltip>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

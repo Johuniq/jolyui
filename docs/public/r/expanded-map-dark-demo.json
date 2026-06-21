@@ -1,6 +1,5 @@
 {
   "name": "expanded-map-dark-demo",
-  "type": "registry:example",
   "dependencies": [
     "motion"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/expanded-map-dark-demo.tsx",
-      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\";\n\nexport default function ExpandedMapDarkDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-12\">\n      <LocationMap\n        location=\"Paris, France\"\n        latitude={48.8566}\n        longitude={2.3522}\n        tileProvider=\"carto-dark\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\";\r\n\r\nexport default function ExpandedMapDarkDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-12\">\r\n      <LocationMap\r\n        location=\"Paris, France\"\r\n        latitude={48.8566}\r\n        longitude={2.3522}\r\n        tileProvider=\"carto-dark\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

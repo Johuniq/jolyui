@@ -1,6 +1,5 @@
 {
   "name": "expanded-map-locations-demo",
-  "type": "registry:example",
   "dependencies": [
     "motion"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/expanded-map-locations-demo.tsx",
-      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\";\n\nexport default function ExpandedMapLocationsDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12\">\n      <LocationMap\n        location=\"New York, NY\"\n        latitude={40.7128}\n        longitude={-74.006}\n      />\n      <LocationMap\n        location=\"London, UK\"\n        latitude={51.5074}\n        longitude={-0.1278}\n      />\n      <LocationMap\n        location=\"Tokyo, Japan\"\n        latitude={35.6762}\n        longitude={139.6503}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { LocationMap } from \"@/registry/default/ui/expanded-map\";\r\n\r\nexport default function ExpandedMapLocationsDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-12\">\r\n      <LocationMap\r\n        location=\"New York, NY\"\r\n        latitude={40.7128}\r\n        longitude={-74.006}\r\n      />\r\n      <LocationMap\r\n        location=\"London, UK\"\r\n        latitude={51.5074}\r\n        longitude={-0.1278}\r\n      />\r\n      <LocationMap\r\n        location=\"Tokyo, Japan\"\r\n        latitude={35.6762}\r\n        longitude={139.6503}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

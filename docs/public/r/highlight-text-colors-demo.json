@@ -1,15 +1,15 @@
 {
   "name": "highlight-text-colors-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "highlight-text"
   ],
   "files": [
     {
       "path": "examples/highlight-text-colors-demo.tsx",
-      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextColorsDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8 py-10\">\n      <div className=\"text-xl\">\n        Primary color:{\" \"}\n        <HighlightText color=\"primary\">Important text</HighlightText>\n      </div>\n      <div className=\"text-xl\">\n        Secondary color:{\" \"}\n        <HighlightText color=\"secondary\">Subtle detail</HighlightText>\n      </div>\n      <div className=\"text-xl\">\n        Accent color:{\" \"}\n        <HighlightText color=\"accent\">Special feature</HighlightText>\n      </div>\n      <div className=\"text-xl\">\n        Destructive color:{\" \"}\n        <HighlightText color=\"destructive\">Warning message</HighlightText>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\r\n\r\nexport default function HighlightTextColorsDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8 py-10\">\r\n      <div className=\"text-xl\">\r\n        Primary color:{\" \"}\r\n        <HighlightText color=\"primary\">Important text</HighlightText>\r\n      </div>\r\n      <div className=\"text-xl\">\r\n        Secondary color:{\" \"}\r\n        <HighlightText color=\"secondary\">Subtle detail</HighlightText>\r\n      </div>\r\n      <div className=\"text-xl\">\r\n        Accent color:{\" \"}\r\n        <HighlightText color=\"accent\">Special feature</HighlightText>\r\n      </div>\r\n      <div className=\"text-xl\">\r\n        Destructive color:{\" \"}\r\n        <HighlightText color=\"destructive\">Warning message</HighlightText>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

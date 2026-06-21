@@ -1,15 +1,15 @@
 {
   "name": "shutter-text-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "shutter-text"
   ],
   "files": [
     {
       "path": "examples/shutter-text-demo.tsx",
-      "content": "import ShutterText from \"@/registry/default/ui/shutter-text\";\n\nexport default function ShutterTextDemo() {\n  return (\n    <div className=\"flex min-h-[300px] w-full items-center justify-center\">\n      <ShutterText text=\"IMMERSE\" className=\"text-7xl\" />\n    </div>\n  );\n}\n",
+      "content": "import ShutterText from \"@/registry/default/ui/shutter-text\";\r\n\r\nexport default function ShutterTextDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[300px] w-full items-center justify-center\">\r\n      <ShutterText text=\"IMMERSE\" className=\"text-7xl\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

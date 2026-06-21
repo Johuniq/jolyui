@@ -1,6 +1,5 @@
 {
   "name": "animated-tooltip-icon-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-tooltip-icon-demo.tsx",
-      "content": "\"use client\";\n\nimport { Home, Mail, Search, Settings, User } from \"lucide-react\";\nimport { TooltipGroup } from \"@/components/ui/animated-tooltip\";\n\nexport default function AnimatedTooltipIconDemo() {\n  return (\n    <div className=\"flex justify-center\">\n      <TooltipGroup\n        items={[\n          { icon: <Home className=\"h-4 w-4\" />, label: \"Home\", shortcut: \"H\" },\n          {\n            icon: <Search className=\"h-4 w-4\" />,\n            label: \"Search\",\n            shortcut: \"⌘K\",\n          },\n          {\n            icon: <Mail className=\"h-4 w-4\" />,\n            label: \"Messages\",\n            shortcut: \"M\",\n          },\n          {\n            icon: <Settings className=\"h-4 w-4\" />,\n            label: \"Settings\",\n            shortcut: \"S\",\n          },\n          {\n            icon: <User className=\"h-4 w-4\" />,\n            label: \"Profile\",\n            shortcut: \"P\",\n          },\n        ]}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { Home, Mail, Search, Settings, User } from \"lucide-react\";\r\nimport { TooltipGroup } from \"@/components/ui/animated-tooltip\";\r\n\r\nexport default function AnimatedTooltipIconDemo() {\r\n  return (\r\n    <div className=\"flex justify-center\">\r\n      <TooltipGroup\r\n        items={[\r\n          { icon: <Home className=\"h-4 w-4\" />, label: \"Home\", shortcut: \"H\" },\r\n          {\r\n            icon: <Search className=\"h-4 w-4\" />,\r\n            label: \"Search\",\r\n            shortcut: \"⌘K\",\r\n          },\r\n          {\r\n            icon: <Mail className=\"h-4 w-4\" />,\r\n            label: \"Messages\",\r\n            shortcut: \"M\",\r\n          },\r\n          {\r\n            icon: <Settings className=\"h-4 w-4\" />,\r\n            label: \"Settings\",\r\n            shortcut: \"S\",\r\n          },\r\n          {\r\n            icon: <User className=\"h-4 w-4\" />,\r\n            label: \"Profile\",\r\n            shortcut: \"P\",\r\n          },\r\n        ]}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

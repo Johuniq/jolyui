@@ -1,15 +1,15 @@
 {
   "name": "image-comparison-lens-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "image-comparison"
   ],
   "files": [
     {
       "path": "examples/image-comparison-lens-demo.tsx",
-      "content": "import { ImageComparisonLens } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonLensDemo() {\n  return (\n    <ImageComparisonLens\n      beforeImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop\"\n      className=\"aspect-video w-full\"\n      lensSize={180}\n    />\n  );\n}\n",
+      "content": "import { ImageComparisonLens } from \"@/registry/default/ui/image-comparison\";\r\n\r\nexport default function ImageComparisonLensDemo() {\r\n  return (\r\n    <ImageComparisonLens\r\n      beforeImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop&sat=-100\"\r\n      afterImage=\"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=450&fit=crop\"\r\n      className=\"aspect-video w-full\"\r\n      lensSize={180}\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

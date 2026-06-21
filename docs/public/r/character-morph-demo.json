@@ -1,15 +1,15 @@
 {
   "name": "character-morph-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "character-morph"
   ],
   "files": [
     {
       "path": "examples/character-morph-demo.tsx",
-      "content": "\"use client\";\n\nimport { CharacterMorph } from \"@/registry/default/ui/character-morph\";\n\nexport default function CharacterMorphDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <CharacterMorph\n        texts={[\"Hello\", \"World\", \"Morph\", \"Effect\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { CharacterMorph } from \"@/registry/default/ui/character-morph\";\r\n\r\nexport default function CharacterMorphDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <CharacterMorph\r\n        texts={[\"Hello\", \"World\", \"Morph\", \"Effect\"]}\r\n        className=\"font-bold text-4xl text-foreground\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

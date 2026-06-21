@@ -1,6 +1,5 @@
 {
   "name": "falling-text-custom-physics-demo",
-  "type": "registry:example",
   "dependencies": [
     "matter-js"
   ],
@@ -11,9 +10,10 @@
   "files": [
     {
       "path": "examples/falling-text-custom-physics-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/registry/default/ui/button\";\nimport FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextCustomPhysicsDemo() {\n  const [resetKey, setResetKey] = useState(0);\n\n  return (\n    <div className=\"flex min-h-[450px] w-full flex-col items-center justify-center gap-4\">\n      <Button variant=\"outline\" onClick={() => setResetKey((k) => k + 1)}>\n        Reset Animation\n      </Button>\n      <FallingText\n        text=\"Custom physics with high bounce and low gravity\"\n        highlightWords={[\"Custom\", \"physics\", \"bounce\", \"gravity\"]}\n        trigger=\"auto\"\n        fontSize=\"1.5rem\"\n        gravity={0.5}\n        resetKey={resetKey}\n        highlightClassName=\"text-purple-500 font-bold\"\n        physicsOptions={{\n          restitution: 0.95,\n          frictionAir: 0.001,\n          friction: 0.1,\n          density: 0.0005,\n        }}\n        initialVelocity={{\n          x: 10,\n          y: 5,\n          angular: 0.1,\n        }}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\nimport FallingText from \"@/registry/default/ui/falling-text\";\r\n\r\nexport default function FallingTextCustomPhysicsDemo() {\r\n  const [resetKey, setResetKey] = useState(0);\r\n\r\n  return (\r\n    <div className=\"flex min-h-[450px] w-full flex-col items-center justify-center gap-4\">\r\n      <Button variant=\"outline\" onClick={() => setResetKey((k) => k + 1)}>\r\n        Reset Animation\r\n      </Button>\r\n      <FallingText\r\n        text=\"Custom physics with high bounce and low gravity\"\r\n        highlightWords={[\"Custom\", \"physics\", \"bounce\", \"gravity\"]}\r\n        trigger=\"auto\"\r\n        fontSize=\"1.5rem\"\r\n        gravity={0.5}\r\n        resetKey={resetKey}\r\n        highlightClassName=\"text-purple-500 font-bold\"\r\n        physicsOptions={{\r\n          restitution: 0.95,\r\n          frictionAir: 0.001,\r\n          friction: 0.1,\r\n          density: 0.0005,\r\n        }}\r\n        initialVelocity={{\r\n          x: 10,\r\n          y: 5,\r\n          angular: 0.1,\r\n        }}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

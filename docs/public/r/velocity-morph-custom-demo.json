@@ -1,15 +1,15 @@
 {
   "name": "velocity-morph-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "velocity-morph"
   ],
   "files": [
     {
       "path": "examples/velocity-morph-custom-demo.tsx",
-      "content": "\"use client\";\n\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\n\nexport default function VelocityMorphCustomDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Morphing</h3>\n        <VelocityMorph\n          texts={[\"CODE\", \"BUILD\", \"DEPLOY\", \"SCALE\"]}\n          interval={1500}\n          className=\"font-mono text-2xl text-primary\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Morphing</h3>\n        <VelocityMorph\n          texts={[\"DESIGN\", \"CREATE\", \"INNOVATE\", \"INSPIRE\"]}\n          interval={5000}\n          className=\"font-bold text-3xl text-destructive\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\r\n\r\nexport default function VelocityMorphCustomDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Morphing</h3>\r\n        <VelocityMorph\r\n          texts={[\"CODE\", \"BUILD\", \"DEPLOY\", \"SCALE\"]}\r\n          interval={1500}\r\n          className=\"font-mono text-2xl text-primary\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Morphing</h3>\r\n        <VelocityMorph\r\n          texts={[\"DESIGN\", \"CREATE\", \"INNOVATE\", \"INSPIRE\"]}\r\n          interval={5000}\r\n          className=\"font-bold text-3xl text-destructive\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

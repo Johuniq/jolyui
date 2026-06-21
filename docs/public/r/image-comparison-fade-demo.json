@@ -1,15 +1,15 @@
 {
   "name": "image-comparison-fade-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "image-comparison"
   ],
   "files": [
     {
       "path": "examples/image-comparison-fade-demo.tsx",
-      "content": "import { ImageComparisonFade } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonFadeDemo() {\n  return (\n    <ImageComparisonFade\n      beforeImage=\"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop&sat=-100\"\n      afterImage=\"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop\"\n      beforeLabel=\"Before\"\n      afterLabel=\"After\"\n      className=\"aspect-[3/2] w-full\"\n    />\n  );\n}\n",
+      "content": "import { ImageComparisonFade } from \"@/registry/default/ui/image-comparison\";\r\n\r\nexport default function ImageComparisonFadeDemo() {\r\n  return (\r\n    <ImageComparisonFade\r\n      beforeImage=\"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop&sat=-100\"\r\n      afterImage=\"https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop\"\r\n      beforeLabel=\"Before\"\r\n      afterLabel=\"After\"\r\n      className=\"aspect-[3/2] w-full\"\r\n    />\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

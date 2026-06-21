@@ -1,15 +1,15 @@
 {
   "name": "ai-prompt-box-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "ai-prompt-box"
   ],
   "files": [
     {
       "path": "examples/ai-prompt-box-demo.tsx",
-      "content": "\"use client\";\n\nimport { PromptInputBox } from \"@/registry/default/ui/ai-prompt-box\";\n\nexport default function AiPromptBoxDemo() {\n  return (\n    <div className=\"relative flex h-[300px] w-full items-center justify-center\">\n      <PromptInputBox\n        onSend={(message, files) => {\n          console.log(\"Message:\", message);\n          console.log(\"Files:\", files);\n        }}\n        placeholder=\"Ask me anything...\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { PromptInputBox } from \"@/registry/default/ui/ai-prompt-box\";\r\n\r\nexport default function AiPromptBoxDemo() {\r\n  return (\r\n    <div className=\"relative flex h-[300px] w-full items-center justify-center\">\r\n      <PromptInputBox\r\n        onSend={(message, files) => {\r\n          console.log(\"Message:\", message);\r\n          console.log(\"Files:\", files);\r\n        }}\r\n        placeholder=\"Ask me anything...\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

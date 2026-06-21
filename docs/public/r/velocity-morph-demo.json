@@ -1,15 +1,15 @@
 {
   "name": "velocity-morph-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "velocity-morph"
   ],
   "files": [
     {
       "path": "examples/velocity-morph-demo.tsx",
-      "content": "\"use client\";\n\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\n\nexport default function VelocityMorphDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <VelocityMorph\n        texts={[\"Hello\", \"World\", \"Velocity\", \"Morph\"]}\n        className=\"font-bold text-4xl text-foreground\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { VelocityMorph } from \"@/registry/default/ui/velocity-morph\";\r\n\r\nexport default function VelocityMorphDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <VelocityMorph\r\n        texts={[\"Hello\", \"World\", \"Velocity\", \"Morph\"]}\r\n        className=\"font-bold text-4xl text-foreground\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

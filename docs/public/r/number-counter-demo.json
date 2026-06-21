@@ -1,15 +1,15 @@
 {
   "name": "number-counter-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "number-counter"
   ],
   "files": [
     {
       "path": "examples/number-counter-demo.tsx",
-      "content": "import { NumberCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function NumberCounterDemo() {\n  return (\n    <div className=\"flex w-full flex-col items-center justify-center gap-8 py-20\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-2 font-medium text-muted-foreground text-sm\">\n          Basic Counter\n        </h3>\n        <NumberCounter\n          value={1234.56}\n          decimals={2}\n          prefix=\"$\"\n          className=\"font-bold text-4xl\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-2 font-medium text-muted-foreground text-sm\">\n          Large Number\n        </h3>\n        <NumberCounter\n          value={1000000}\n          prefix=\"+\"\n          className=\"font-bold text-4xl text-primary\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { NumberCounter } from \"@/registry/default/ui/number-counter\";\r\n\r\nexport default function NumberCounterDemo() {\r\n  return (\r\n    <div className=\"flex w-full flex-col items-center justify-center gap-8 py-20\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-2 font-medium text-muted-foreground text-sm\">\r\n          Basic Counter\r\n        </h3>\r\n        <NumberCounter\r\n          value={1234.56}\r\n          decimals={2}\r\n          prefix=\"$\"\r\n          className=\"font-bold text-4xl\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-2 font-medium text-muted-foreground text-sm\">\r\n          Large Number\r\n        </h3>\r\n        <NumberCounter\r\n          value={1000000}\r\n          prefix=\"+\"\r\n          className=\"font-bold text-4xl text-primary\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

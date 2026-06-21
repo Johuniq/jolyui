@@ -1,15 +1,15 @@
 {
   "name": "ai-prompt-box-loading-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "ai-prompt-box"
   ],
   "files": [
     {
       "path": "examples/ai-prompt-box-loading-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { PromptInputBox } from \"@/registry/default/ui/ai-prompt-box\";\n\nexport default function AiPromptBoxLoadingDemo() {\n  const [isLoading, setIsLoading] = useState(false);\n\n  const handleSend = (message: string) => {\n    setIsLoading(true);\n    console.log(\"Sending:\", message);\n    // Simulate API call\n    setTimeout(() => {\n      setIsLoading(false);\n    }, 3000);\n  };\n\n  return (\n    <div className=\"relative flex h-[300px] w-full items-center justify-center\">\n      <PromptInputBox\n        onSend={handleSend}\n        isLoading={isLoading}\n        placeholder=\"Send a message to see loading state...\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { PromptInputBox } from \"@/registry/default/ui/ai-prompt-box\";\r\n\r\nexport default function AiPromptBoxLoadingDemo() {\r\n  const [isLoading, setIsLoading] = useState(false);\r\n\r\n  const handleSend = (message: string) => {\r\n    setIsLoading(true);\r\n    console.log(\"Sending:\", message);\r\n    // Simulate API call\r\n    setTimeout(() => {\r\n      setIsLoading(false);\r\n    }, 3000);\r\n  };\r\n\r\n  return (\r\n    <div className=\"relative flex h-[300px] w-full items-center justify-center\">\r\n      <PromptInputBox\r\n        onSend={handleSend}\r\n        isLoading={isLoading}\r\n        placeholder=\"Send a message to see loading state...\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

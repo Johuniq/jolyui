@@ -1,6 +1,5 @@
 {
   "name": "animated-theme-toggle-navbar-demo",
-  "type": "registry:example",
   "dependencies": [
     "motion"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-theme-toggle-navbar-demo.tsx",
-      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\n\nexport default function AnimatedThemeToggleNavbarDemo() {\n  return (\n    <div className=\"flex w-full max-w-2xl items-center justify-between rounded-lg border bg-card p-4\">\n      <div className=\"flex items-center gap-2\">\n        <div className=\"h-8 w-8 rounded-full bg-primary\" />\n        <span className=\"font-semibold text-foreground\">MyApp</span>\n      </div>\n      <nav className=\"hidden items-center gap-6 md:flex\">\n        <a\n          href=\"/\"\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\n        >\n          Home\n        </a>\n        <a\n          href=\"/\"\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\n        >\n          Features\n        </a>\n        <a\n          href=\"/\"\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\n        >\n          Pricing\n        </a>\n        <a\n          href=\"/\"\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\n        >\n          About\n        </a>\n      </nav>\n      <AnimatedThemeToggle />\n    </div>\n  );\n}\n",
+      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\r\n\r\nexport default function AnimatedThemeToggleNavbarDemo() {\r\n  return (\r\n    <div className=\"flex w-full max-w-2xl items-center justify-between rounded-lg border bg-card p-4\">\r\n      <div className=\"flex items-center gap-2\">\r\n        <div className=\"h-8 w-8 rounded-full bg-primary\" />\r\n        <span className=\"font-semibold text-foreground\">MyApp</span>\r\n      </div>\r\n      <nav className=\"hidden items-center gap-6 md:flex\">\r\n        <a\r\n          href=\"/\"\r\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n        >\r\n          Home\r\n        </a>\r\n        <a\r\n          href=\"/\"\r\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n        >\r\n          Features\r\n        </a>\r\n        <a\r\n          href=\"/\"\r\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n        >\r\n          Pricing\r\n        </a>\r\n        <a\r\n          href=\"/\"\r\n          className=\"text-muted-foreground text-sm hover:text-foreground\"\r\n        >\r\n          About\r\n        </a>\r\n      </nav>\r\n      <AnimatedThemeToggle />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

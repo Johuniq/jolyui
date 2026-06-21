@@ -1,15 +1,15 @@
 {
   "name": "text-morphing",
-  "type": "registry:ui",
   "dependencies": [
     "motion"
   ],
   "files": [
     {
       "path": "ui/text-morphing.tsx",
-      "content": "import { AnimatePresence, motion } from \"motion/react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface MorphingTextProps {\n  words: string[];\n  className?: string;\n  interval?: number;\n  animationDuration?: number;\n}\n\nconst MorphingText = React.forwardRef<HTMLSpanElement, MorphingTextProps>(\n  ({ words, className, interval = 3000, animationDuration = 0.5 }, ref) => {\n    const [currentIndex, setCurrentIndex] = React.useState(0);\n\n    React.useEffect(() => {\n      const timer = setInterval(() => {\n        setCurrentIndex((prev) => (prev + 1) % words.length);\n      }, interval);\n      return () => clearInterval(timer);\n    }, [words.length, interval]);\n\n    return (\n      <span ref={ref} className={cn(\"relative inline-block\", className)}>\n        <AnimatePresence mode=\"wait\">\n          <motion.span\n            key={currentIndex}\n            initial={{ opacity: 0, y: 20, filter: \"blur(8px)\" }}\n            animate={{ opacity: 1, y: 0, filter: \"blur(0px)\" }}\n            exit={{ opacity: 0, y: -20, filter: \"blur(8px)\" }}\n            transition={{ duration: animationDuration, ease: \"easeInOut\" }}\n            className=\"inline-block\"\n          >\n            {words[currentIndex]}\n          </motion.span>\n        </AnimatePresence>\n      </span>\n    );\n  },\n);\nMorphingText.displayName = \"MorphingText\";\nexport { MorphingText };\n",
+      "content": "import { AnimatePresence, motion } from \"motion/react\";\r\nimport * as React from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface MorphingTextProps {\r\n  words: string[];\r\n  className?: string;\r\n  interval?: number;\r\n  animationDuration?: number;\r\n}\r\n\r\nconst MorphingText = React.forwardRef<HTMLSpanElement, MorphingTextProps>(\r\n  ({ words, className, interval = 3000, animationDuration = 0.5 }, ref) => {\r\n    const [currentIndex, setCurrentIndex] = React.useState(0);\r\n\r\n    React.useEffect(() => {\r\n      const timer = setInterval(() => {\r\n        setCurrentIndex((prev) => (prev + 1) % words.length);\r\n      }, interval);\r\n      return () => clearInterval(timer);\r\n    }, [words.length, interval]);\r\n\r\n    return (\r\n      <span ref={ref} className={cn(\"relative inline-block\", className)}>\r\n        <AnimatePresence mode=\"wait\">\r\n          <motion.span\r\n            key={currentIndex}\r\n            initial={{ opacity: 0, y: 20, filter: \"blur(8px)\" }}\r\n            animate={{ opacity: 1, y: 0, filter: \"blur(0px)\" }}\r\n            exit={{ opacity: 0, y: -20, filter: \"blur(8px)\" }}\r\n            transition={{ duration: animationDuration, ease: \"easeInOut\" }}\r\n            className=\"inline-block\"\r\n          >\r\n            {words[currentIndex]}\r\n          </motion.span>\r\n        </AnimatePresence>\r\n      </span>\r\n    );\r\n  },\r\n);\r\nMorphingText.displayName = \"MorphingText\";\r\nexport { MorphingText };\r\n",
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

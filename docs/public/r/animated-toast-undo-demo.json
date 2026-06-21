@@ -1,6 +1,5 @@
 {
   "name": "animated-toast-undo-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-toast-undo-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { UndoToast } from \"@/registry/default/ui/animated-toast\";\n\nexport default function AnimatedToastUndoDemo() {\n  const [showToast, setShowToast] = useState(false);\n  const [message, setMessage] = useState(\"Item deleted\");\n\n  const deleteItem = () => {\n    setMessage(\"Item deleted\");\n    setShowToast(true);\n  };\n\n  const undoDelete = () => {\n    setMessage(\"Deletion undone!\");\n    setTimeout(() => setMessage(\"Item deleted\"), 2000);\n  };\n\n  return (\n    <div className=\"p-8\">\n      <p className=\"mb-4 text-muted-foreground\">{message}</p>\n\n      <button\n        onClick={deleteItem}\n        className=\"rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600\"\n      >\n        Delete Item\n      </button>\n\n      <UndoToast\n        open={showToast}\n        onClose={() => setShowToast(false)}\n        onUndo={undoDelete}\n        message=\"Item deleted successfully\"\n        duration={5000}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { UndoToast } from \"@/registry/default/ui/animated-toast\";\r\n\r\nexport default function AnimatedToastUndoDemo() {\r\n  const [showToast, setShowToast] = useState(false);\r\n  const [message, setMessage] = useState(\"Item deleted\");\r\n\r\n  const deleteItem = () => {\r\n    setMessage(\"Item deleted\");\r\n    setShowToast(true);\r\n  };\r\n\r\n  const undoDelete = () => {\r\n    setMessage(\"Deletion undone!\");\r\n    setTimeout(() => setMessage(\"Item deleted\"), 2000);\r\n  };\r\n\r\n  return (\r\n    <div className=\"p-8\">\r\n      <p className=\"mb-4 text-muted-foreground\">{message}</p>\r\n\r\n      <button\r\n        onClick={deleteItem}\r\n        className=\"rounded-md bg-red-500 px-4 py-2 text-white transition-colors hover:bg-red-600\"\r\n      >\r\n        Delete Item\r\n      </button>\r\n\r\n      <UndoToast\r\n        open={showToast}\r\n        onClose={() => setShowToast(false)}\r\n        onUndo={undoDelete}\r\n        message=\"Item deleted successfully\"\r\n        duration={5000}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

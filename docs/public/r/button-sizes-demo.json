@@ -1,15 +1,15 @@
 {
   "name": "button-sizes-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "button"
   ],
   "files": [
     {
       "path": "examples/button-sizes-demo.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonSizesDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"default\">Default</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport default function ButtonSizesDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button size=\"sm\">Small</Button>\r\n      <Button size=\"default\">Default</Button>\r\n      <Button size=\"lg\">Large</Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,6 +1,5 @@
 {
   "name": "theme-midnight",
-  "type": "registry:theme",
   "files": [],
   "cssVars": {
     "light": {
@@ -55,5 +54,6 @@
       "chart-4": "240 1% 42%",
       "chart-5": "240 2% 26%"
     }
-  }
+  },
+  "type": "registry:theme"
 }

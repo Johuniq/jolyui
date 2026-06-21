@@ -1,6 +1,5 @@
 {
   "name": "animated-toast-notification-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-toast-notification-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { NotificationToast } from \"@/registry/default/ui/animated-toast\";\n\nexport default function AnimatedToastNotificationDemo() {\n  const [showToast, setShowToast] = useState(false);\n\n  const showNotification = () => {\n    setShowToast(true);\n  };\n\n  return (\n    <div className=\"p-8\">\n      <button\n        onClick={showNotification}\n        className=\"rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600\"\n      >\n        Show Notification\n      </button>\n\n      <NotificationToast\n        open={showToast}\n        onClose={() => setShowToast(false)}\n        title=\"New Message\"\n        message=\"You have received a new message from John Doe. Check it out!\"\n        avatar=\"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face\"\n        time=\"2 min ago\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { NotificationToast } from \"@/registry/default/ui/animated-toast\";\r\n\r\nexport default function AnimatedToastNotificationDemo() {\r\n  const [showToast, setShowToast] = useState(false);\r\n\r\n  const showNotification = () => {\r\n    setShowToast(true);\r\n  };\r\n\r\n  return (\r\n    <div className=\"p-8\">\r\n      <button\r\n        onClick={showNotification}\r\n        className=\"rounded-md bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600\"\r\n      >\r\n        Show Notification\r\n      </button>\r\n\r\n      <NotificationToast\r\n        open={showToast}\r\n        onClose={() => setShowToast(false)}\r\n        title=\"New Message\"\r\n        message=\"You have received a new message from John Doe. Check it out!\"\r\n        avatar=\"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face\"\r\n        time=\"2 min ago\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

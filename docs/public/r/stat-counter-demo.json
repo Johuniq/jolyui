@@ -1,15 +1,15 @@
 {
   "name": "stat-counter-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "number-counter"
   ],
   "files": [
     {
       "path": "examples/stat-counter-demo.tsx",
-      "content": "import { StatCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function StatCounterDemo() {\n  return (\n    <div className=\"mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 py-20 md:grid-cols-3\">\n      <StatCounter\n        value={15000}\n        label=\"Active Users\"\n        prefix=\"+\"\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n      <StatCounter\n        value={98.5}\n        label=\"Satisfaction Rate\"\n        suffix=\"%\"\n        decimals={1}\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n      <StatCounter\n        value={2500}\n        label=\"Revenue\"\n        prefix=\"$\"\n        className=\"rounded-xl bg-secondary/20 p-6\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { StatCounter } from \"@/registry/default/ui/number-counter\";\r\n\r\nexport default function StatCounterDemo() {\r\n  return (\r\n    <div className=\"mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 py-20 md:grid-cols-3\">\r\n      <StatCounter\r\n        value={15000}\r\n        label=\"Active Users\"\r\n        prefix=\"+\"\r\n        className=\"rounded-xl bg-secondary/20 p-6\"\r\n      />\r\n      <StatCounter\r\n        value={98.5}\r\n        label=\"Satisfaction Rate\"\r\n        suffix=\"%\"\r\n        decimals={1}\r\n        className=\"rounded-xl bg-secondary/20 p-6\"\r\n      />\r\n      <StatCounter\r\n        value={2500}\r\n        label=\"Revenue\"\r\n        prefix=\"$\"\r\n        className=\"rounded-xl bg-secondary/20 p-6\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

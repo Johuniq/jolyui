@@ -1,15 +1,15 @@
 {
   "name": "highlight-text-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "highlight-text"
   ],
   "files": [
     {
       "path": "examples/highlight-text-demo.tsx",
-      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center py-20\">\n      <h1 className=\"max-w-2xl text-center font-bold text-4xl leading-relaxed tracking-tight\">\n        Make your text <HighlightText>stand out</HighlightText> with animated\n        highlights.\n      </h1>\n    </div>\n  );\n}\n",
+      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\r\n\r\nexport default function HighlightTextDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center py-20\">\r\n      <h1 className=\"max-w-2xl text-center font-bold text-4xl leading-relaxed tracking-tight\">\r\n        Make your text <HighlightText>stand out</HighlightText> with animated\r\n        highlights.\r\n      </h1>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

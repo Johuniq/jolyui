@@ -1,15 +1,15 @@
 {
   "name": "rainbow-button-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "rainbow-button"
   ],
   "files": [
     {
       "path": "examples/rainbow-button-demo.tsx",
-      "content": "\"use client\";\n\nimport { ArrowRight } from \"lucide-react\";\nimport { RainbowButton } from \"@/registry/default/ui/rainbow-button\";\n\nexport default function RainbowButtonDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <RainbowButton className=\"group\">\n        Get Started\n        <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\n      </RainbowButton>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { ArrowRight } from \"lucide-react\";\r\nimport { RainbowButton } from \"@/registry/default/ui/rainbow-button\";\r\n\r\nexport default function RainbowButtonDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-8\">\r\n      <RainbowButton className=\"group\">\r\n        Get Started\r\n        <ArrowRight className=\"ml-2 h-4 w-4 transition-transform group-hover:translate-x-1\" />\r\n      </RainbowButton>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

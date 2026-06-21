@@ -1,6 +1,5 @@
 {
   "name": "button-icon-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/button-icon-demo.tsx",
-      "content": "import { ChevronRight } from \"lucide-react\";\nimport { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonIconDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button>\n        <ChevronRight />\n        With Icon\n      </Button>\n      <Button size=\"icon\">\n        <ChevronRight />\n      </Button>\n    </div>\n  );\n}\n",
+      "content": "import { ChevronRight } from \"lucide-react\";\r\nimport { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport default function ButtonIconDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button>\r\n        <ChevronRight />\r\n        With Icon\r\n      </Button>\r\n      <Button size=\"icon\">\r\n        <ChevronRight />\r\n      </Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

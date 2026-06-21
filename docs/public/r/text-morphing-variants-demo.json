@@ -1,15 +1,15 @@
 {
   "name": "text-morphing-variants-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "text-morphing"
   ],
   "files": [
     {
       "path": "examples/text-morphing-variants-demo.tsx",
-      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/ui/text-morphing\";\n\nexport default function TextMorphingVariantsDemo() {\n  return (\n    <div className=\"space-y-8\">\n      <div className=\"text-center\">\n        <h2 className=\"mb-2 font-semibold text-2xl\">Fast Animation</h2>\n        <p className=\"text-lg\">\n          Experience{\" \"}\n          <MorphingText\n            words={[\"speed\", \"velocity\", \"rapidity\", \"quickness\"]}\n            interval={1500}\n            animationDuration={0.3}\n            className=\"font-bold text-red-500\"\n          />{\" \"}\n          like never before\n        </p>\n      </div>\n\n      <div className=\"text-center\">\n        <h2 className=\"mb-2 font-semibold text-2xl\">Slow & Elegant</h2>\n        <p className=\"text-lg\">\n          Enjoy{\" \"}\n          <MorphingText\n            words={[\"grace\", \"elegance\", \"beauty\", \"poetry\"]}\n            interval={4000}\n            animationDuration={1.2}\n            className=\"font-bold text-purple-500\"\n          />{\" \"}\n          in motion\n        </p>\n      </div>\n\n      <div className=\"text-center\">\n        <h2 className=\"mb-2 font-semibold text-2xl\">Tech Terms</h2>\n        <p className=\"text-lg\">\n          Powered by{\" \"}\n          <MorphingText\n            words={[\"React\", \"TypeScript\", \"Next.js\", \"Tailwind\"]}\n            interval={2500}\n            className=\"font-mono text-cyan-500\"\n          />\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { MorphingText } from \"@/registry/default/ui/text-morphing\";\r\n\r\nexport default function TextMorphingVariantsDemo() {\r\n  return (\r\n    <div className=\"space-y-8\">\r\n      <div className=\"text-center\">\r\n        <h2 className=\"mb-2 font-semibold text-2xl\">Fast Animation</h2>\r\n        <p className=\"text-lg\">\r\n          Experience{\" \"}\r\n          <MorphingText\r\n            words={[\"speed\", \"velocity\", \"rapidity\", \"quickness\"]}\r\n            interval={1500}\r\n            animationDuration={0.3}\r\n            className=\"font-bold text-red-500\"\r\n          />{\" \"}\r\n          like never before\r\n        </p>\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h2 className=\"mb-2 font-semibold text-2xl\">Slow & Elegant</h2>\r\n        <p className=\"text-lg\">\r\n          Enjoy{\" \"}\r\n          <MorphingText\r\n            words={[\"grace\", \"elegance\", \"beauty\", \"poetry\"]}\r\n            interval={4000}\r\n            animationDuration={1.2}\r\n            className=\"font-bold text-purple-500\"\r\n          />{\" \"}\r\n          in motion\r\n        </p>\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h2 className=\"mb-2 font-semibold text-2xl\">Tech Terms</h2>\r\n        <p className=\"text-lg\">\r\n          Powered by{\" \"}\r\n          <MorphingText\r\n            words={[\"React\", \"TypeScript\", \"Next.js\", \"Tailwind\"]}\r\n            interval={2500}\r\n            className=\"font-mono text-cyan-500\"\r\n          />\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

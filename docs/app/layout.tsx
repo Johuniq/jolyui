@@ -9,6 +9,7 @@ import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
+import { ViewTransitions } from "next-view-transitions";
 import Script from "next/script";
 import type * as React from "react";
 
@@ -297,7 +298,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange: true,
           }}
         >
-          {children}
+          <ViewTransitions>{children}</ViewTransitions>
           <Analytics />
           <SpeedInsights />
         </Providers>

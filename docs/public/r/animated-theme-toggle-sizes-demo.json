@@ -1,6 +1,5 @@
 {
   "name": "animated-theme-toggle-sizes-demo",
-  "type": "registry:example",
   "dependencies": [
     "motion"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-theme-toggle-sizes-demo.tsx",
-      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\n\nexport default function AnimatedThemeToggleSizesDemo() {\n  return (\n    <div className=\"flex items-center justify-center gap-4 p-8\">\n      <AnimatedThemeToggle className=\"h-8 w-8\" />\n      <AnimatedThemeToggle className=\"h-10 w-10\" />\n      <AnimatedThemeToggle className=\"h-12 w-12\" />\n    </div>\n  );\n}\n",
+      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\r\n\r\nexport default function AnimatedThemeToggleSizesDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center gap-4 p-8\">\r\n      <AnimatedThemeToggle className=\"h-8 w-8\" />\r\n      <AnimatedThemeToggle className=\"h-10 w-10\" />\r\n      <AnimatedThemeToggle className=\"h-12 w-12\" />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

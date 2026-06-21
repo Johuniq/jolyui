@@ -1,15 +1,15 @@
 {
   "name": "image-comparison-vertical-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "image-comparison"
   ],
   "files": [
     {
       "path": "examples/image-comparison-vertical-demo.tsx",
-      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\n\nexport default function ImageComparisonVerticalDemo() {\n  return (\n    <div className=\"mx-auto max-w-md\">\n      <ImageComparison\n        beforeImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop&sat=-100\"\n        afterImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop\"\n        beforeLabel=\"Top\"\n        afterLabel=\"Bottom\"\n        orientation=\"vertical\"\n        className=\"aspect-[3/4] w-full\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { ImageComparison } from \"@/registry/default/ui/image-comparison\";\r\n\r\nexport default function ImageComparisonVerticalDemo() {\r\n  return (\r\n    <div className=\"mx-auto max-w-md\">\r\n      <ImageComparison\r\n        beforeImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop&sat=-100\"\r\n        afterImage=\"https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=700&fit=crop\"\r\n        beforeLabel=\"Top\"\r\n        afterLabel=\"Bottom\"\r\n        orientation=\"vertical\"\r\n        className=\"aspect-[3/4] w-full\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "calendar-range-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "calender"
   ],
   "files": [
     {
       "path": "examples/calendar-range-demo.tsx",
-      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarRangeDemo() {\n  const [dateRange, setDateRange] = useState<{\n    from: Date | undefined;\n    to: Date | undefined;\n  }>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date Range Selection</h3>\n      <AnimatedCalendar\n        mode=\"range\"\n        value={dateRange}\n        onChange={setDateRange}\n        placeholder=\"Select date range\"\n      />\n      {dateRange?.from && dateRange?.to && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {dateRange.from.toLocaleDateString()} -{\" \"}\n          {dateRange.to.toLocaleDateString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "content": "import { useState } from \"react\";\r\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\r\n\r\nexport default function CalendarRangeDemo() {\r\n  const [dateRange, setDateRange] = useState<{\r\n    from: Date | undefined;\r\n    to: Date | undefined;\r\n  }>();\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <h3 className=\"font-medium text-sm\">Date Range Selection</h3>\r\n      <AnimatedCalendar\r\n        mode=\"range\"\r\n        value={dateRange}\r\n        onChange={setDateRange}\r\n        placeholder=\"Select date range\"\r\n      />\r\n      {dateRange?.from && dateRange?.to && (\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Selected: {dateRange.from.toLocaleDateString()} -{\" \"}\r\n          {dateRange.to.toLocaleDateString()}\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

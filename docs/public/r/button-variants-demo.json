@@ -1,15 +1,15 @@
 {
   "name": "button-variants-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "button"
   ],
   "files": [
     {
       "path": "examples/button-variants-demo.tsx",
-      "content": "import { Button } from \"@/registry/default/ui/button\";\n\nexport default function ButtonVariantsDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-4\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"link\">Link</Button>\n      <Button variant=\"shimmer\">Shimmer</Button>\n      <Button variant=\"glow\">Glow</Button>\n    </div>\n  );\n}\n",
+      "content": "import { Button } from \"@/registry/default/ui/button\";\r\n\r\nexport default function ButtonVariantsDemo() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button variant=\"default\">Default</Button>\r\n      <Button variant=\"destructive\">Destructive</Button>\r\n      <Button variant=\"outline\">Outline</Button>\r\n      <Button variant=\"secondary\">Secondary</Button>\r\n      <Button variant=\"ghost\">Ghost</Button>\r\n      <Button variant=\"link\">Link</Button>\r\n      <Button variant=\"shimmer\">Shimmer</Button>\r\n      <Button variant=\"glow\">Glow</Button>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

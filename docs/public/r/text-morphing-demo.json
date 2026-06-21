@@ -1,15 +1,15 @@
 {
   "name": "text-morphing-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "text-morphing"
   ],
   "files": [
     {
       "path": "examples/text-morphing-demo.tsx",
-      "content": "\"use client\";\n\nimport { MorphingText } from \"@/registry/default/ui/text-morphing\";\n\nexport default function TextMorphingDemo() {\n  return (\n    <div className=\"flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"mb-4 font-bold text-4xl\">\n          Build{\" \"}\n          <MorphingText\n            words={[\"beautiful\", \"amazing\", \"stunning\", \"incredible\"]}\n            className=\"text-blue-600\"\n          />{\" \"}\n          interfaces\n        </h1>\n        <p className=\"text-lg text-muted-foreground\">\n          Create{\" \"}\n          <MorphingText\n            words={[\"responsive\", \"accessible\", \"performant\", \"modern\"]}\n            interval={2000}\n            className=\"text-green-600\"\n          />{\" \"}\n          web experiences\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { MorphingText } from \"@/registry/default/ui/text-morphing\";\r\n\r\nexport default function TextMorphingDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center\">\r\n      <div className=\"text-center\">\r\n        <h1 className=\"mb-4 font-bold text-4xl\">\r\n          Build{\" \"}\r\n          <MorphingText\r\n            words={[\"beautiful\", \"amazing\", \"stunning\", \"incredible\"]}\r\n            className=\"text-blue-600\"\r\n          />{\" \"}\r\n          interfaces\r\n        </h1>\r\n        <p className=\"text-lg text-muted-foreground\">\r\n          Create{\" \"}\r\n          <MorphingText\r\n            words={[\"responsive\", \"accessible\", \"performant\", \"modern\"]}\r\n            interval={2000}\r\n            className=\"text-green-600\"\r\n          />{\" \"}\r\n          web experiences\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

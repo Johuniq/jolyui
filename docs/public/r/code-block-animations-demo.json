@@ -1,15 +1,15 @@
 {
   "name": "code-block-animations-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-animations-demo.tsx",
-      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nconst code = `// Wait for the animation...\nconsole.log(\"Hello!\");`;\n\nexport default function CodeBlockAnimationsDemo() {\n  return (\n    <div className=\"grid w-full max-w-3xl gap-8 md:grid-cols-2\">\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Fade In</h3>\n        <CodeBlock\n          code={code}\n          language=\"typescript\"\n          animation=\"fadeIn\"\n          key=\"fade\"\n        />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Slide In</h3>\n        <CodeBlock\n          code={code}\n          language=\"typescript\"\n          animation=\"slideIn\"\n          key=\"slide\"\n        />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Highlight</h3>\n        <CodeBlock\n          code={code}\n          language=\"typescript\"\n          animation=\"highlight\"\n          key=\"highlight\"\n        />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">\n          Typewriter\n        </h3>\n        <CodeBlock\n          code={code}\n          language=\"typescript\"\n          animation=\"typewriter\"\n          key=\"typewriter\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\r\n\r\nconst code = `// Wait for the animation...\r\nconsole.log(\"Hello!\");`;\r\n\r\nexport default function CodeBlockAnimationsDemo() {\r\n  return (\r\n    <div className=\"grid w-full max-w-3xl gap-8 md:grid-cols-2\">\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Fade In</h3>\r\n        <CodeBlock\r\n          code={code}\r\n          language=\"typescript\"\r\n          animation=\"fadeIn\"\r\n          key=\"fade\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Slide In</h3>\r\n        <CodeBlock\r\n          code={code}\r\n          language=\"typescript\"\r\n          animation=\"slideIn\"\r\n          key=\"slide\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Highlight</h3>\r\n        <CodeBlock\r\n          code={code}\r\n          language=\"typescript\"\r\n          animation=\"highlight\"\r\n          key=\"highlight\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">\r\n          Typewriter\r\n        </h3>\r\n        <CodeBlock\r\n          code={code}\r\n          language=\"typescript\"\r\n          animation=\"typewriter\"\r\n          key=\"typewriter\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "circular-counter-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "number-counter"
   ],
   "files": [
     {
       "path": "examples/circular-counter-demo.tsx",
-      "content": "import { CircularCounter } from \"@/registry/default/ui/number-counter\";\n\nexport default function CircularCounterDemo() {\n  return (\n    <div className=\"flex w-full flex-wrap items-center justify-center gap-16 rounded-xl border border-neutral-800 bg-neutral-950 py-12\">\n      <div className=\"flex flex-col items-center gap-4\">\n        <CircularCounter\n          value={75}\n          size={160}\n          strokeWidth={12}\n          className=\"text-white\"\n          color=\"white\"\n          trackColor=\"rgba(255,255,255,0.1)\"\n        />\n        <span className=\"font-medium text-neutral-400 text-sm\">\n          Project Completion\n        </span>\n      </div>\n\n      <div className=\"flex flex-col items-center gap-4\">\n        <CircularCounter\n          value={92}\n          size={120}\n          strokeWidth={8}\n          className=\"text-white\"\n          color=\"#22c55e\" // green-500\n          trackColor=\"rgba(255,255,255,0.1)\"\n        />\n        <span className=\"font-medium text-neutral-400 text-sm\">\n          Success Rate\n        </span>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { CircularCounter } from \"@/registry/default/ui/number-counter\";\r\n\r\nexport default function CircularCounterDemo() {\r\n  return (\r\n    <div className=\"flex w-full flex-wrap items-center justify-center gap-16 rounded-xl border border-neutral-800 bg-neutral-950 py-12\">\r\n      <div className=\"flex flex-col items-center gap-4\">\r\n        <CircularCounter\r\n          value={75}\r\n          size={160}\r\n          strokeWidth={12}\r\n          className=\"text-white\"\r\n          color=\"white\"\r\n          trackColor=\"rgba(255,255,255,0.1)\"\r\n        />\r\n        <span className=\"font-medium text-neutral-400 text-sm\">\r\n          Project Completion\r\n        </span>\r\n      </div>\r\n\r\n      <div className=\"flex flex-col items-center gap-4\">\r\n        <CircularCounter\r\n          value={92}\r\n          size={120}\r\n          strokeWidth={8}\r\n          className=\"text-white\"\r\n          color=\"#22c55e\" // green-500\r\n          trackColor=\"rgba(255,255,255,0.1)\"\r\n        />\r\n        <span className=\"font-medium text-neutral-400 text-sm\">\r\n          Success Rate\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

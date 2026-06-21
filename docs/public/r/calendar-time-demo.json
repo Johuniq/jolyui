@@ -1,15 +1,15 @@
 {
   "name": "calendar-time-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "calender"
   ],
   "files": [
     {
       "path": "examples/calendar-time-demo.tsx",
-      "content": "import { useState } from \"react\";\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\n\nexport default function CalendarTimeDemo() {\n  const [dateTime, setDateTime] = useState<Date>();\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <h3 className=\"font-medium text-sm\">Date & Time Selection</h3>\n      <AnimatedCalendar\n        mode=\"single\"\n        value={dateTime}\n        onChange={setDateTime}\n        showTime\n        placeholder=\"Select date and time\"\n      />\n      {dateTime && (\n        <p className=\"text-muted-foreground text-sm\">\n          Selected: {dateTime.toLocaleString()}\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "content": "import { useState } from \"react\";\r\nimport { AnimatedCalendar } from \"@/registry/default/ui/calender\";\r\n\r\nexport default function CalendarTimeDemo() {\r\n  const [dateTime, setDateTime] = useState<Date>();\r\n\r\n  return (\r\n    <div className=\"flex flex-col gap-3\">\r\n      <h3 className=\"font-medium text-sm\">Date & Time Selection</h3>\r\n      <AnimatedCalendar\r\n        mode=\"single\"\r\n        value={dateTime}\r\n        onChange={setDateTime}\r\n        showTime\r\n        placeholder=\"Select date and time\"\r\n      />\r\n      {dateTime && (\r\n        <p className=\"text-muted-foreground text-sm\">\r\n          Selected: {dateTime.toLocaleString()}\r\n        </p>\r\n      )}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

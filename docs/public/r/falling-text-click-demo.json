@@ -1,6 +1,5 @@
 {
   "name": "falling-text-click-demo",
-  "type": "registry:example",
   "dependencies": [
     "matter-js"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/falling-text-click-demo.tsx",
-      "content": "\"use client\";\n\nimport FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextClickDemo() {\n  return (\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Click to trigger the falling effect\n      </p>\n      <FallingText\n        text=\"Click anywhere to watch the words fall and bounce\"\n        highlightWords={[\"Click\", \"fall\", \"bounce\"]}\n        trigger=\"click\"\n        fontSize=\"1.75rem\"\n        physicsOptions={{\n          restitution: 0.9,\n          frictionAir: 0.005,\n        }}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport FallingText from \"@/registry/default/ui/falling-text\";\r\n\r\nexport default function FallingTextClickDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[400px] w-full flex-col items-center justify-center gap-4\">\r\n      <p className=\"text-muted-foreground text-sm\">\r\n        Click to trigger the falling effect\r\n      </p>\r\n      <FallingText\r\n        text=\"Click anywhere to watch the words fall and bounce\"\r\n        highlightWords={[\"Click\", \"fall\", \"bounce\"]}\r\n        trigger=\"click\"\r\n        fontSize=\"1.75rem\"\r\n        physicsOptions={{\r\n          restitution: 0.9,\r\n          frictionAir: 0.005,\r\n        }}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "video-player-quality-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "video-player"
   ],
   "files": [
     {
       "path": "examples/video-player-quality-demo.tsx",
-      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\n\nexport default function VideoPlayerQualityDemo() {\n  const qualitySources = [\n    {\n      quality: \"1080p\",\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\",\n    },\n    {\n      quality: \"720p\",\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\",\n    },\n    {\n      quality: \"480p\",\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4\",\n    },\n  ];\n\n  return (\n    <div className=\"mx-auto w-full max-w-4xl\">\n      <VideoPlayer\n        src={qualitySources}\n        poster=\"https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217\"\n        title=\"Multi-Quality Video\"\n        description=\"Switch between different quality options using the settings menu\"\n      />\n\n      <div className=\"mt-4 rounded-lg border bg-card p-4\">\n        <h3 className=\"mb-2 font-semibold text-sm\">Available Qualities</h3>\n        <ul className=\"space-y-1 text-muted-foreground text-sm\">\n          {qualitySources.map((source) => (\n            <li key={source.quality}>• {source.quality}</li>\n          ))}\n        </ul>\n        <p className=\"mt-3 text-muted-foreground text-xs\">\n          Click the settings icon to switch between quality options\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { VideoPlayer } from \"@/registry/default/ui/video-player\";\r\n\r\nexport default function VideoPlayerQualityDemo() {\r\n  const qualitySources = [\r\n    {\r\n      quality: \"1080p\",\r\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\",\r\n    },\r\n    {\r\n      quality: \"720p\",\r\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4\",\r\n    },\r\n    {\r\n      quality: \"480p\",\r\n      src: \"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4\",\r\n    },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"mx-auto w-full max-w-4xl\">\r\n      <VideoPlayer\r\n        src={qualitySources}\r\n        poster=\"https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217\"\r\n        title=\"Multi-Quality Video\"\r\n        description=\"Switch between different quality options using the settings menu\"\r\n      />\r\n\r\n      <div className=\"mt-4 rounded-lg border bg-card p-4\">\r\n        <h3 className=\"mb-2 font-semibold text-sm\">Available Qualities</h3>\r\n        <ul className=\"space-y-1 text-muted-foreground text-sm\">\r\n          {qualitySources.map((source) => (\r\n            <li key={source.quality}>• {source.quality}</li>\r\n          ))}\r\n        </ul>\r\n        <p className=\"mt-3 text-muted-foreground text-xs\">\r\n          Click the settings icon to switch between quality options\r\n        </p>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "name": "magnetic-cards-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "magnetic"
   ],
   "files": [
     {
       "path": "examples/magnetic-cards-demo.tsx",
-      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\n\nexport default function MagneticCardsDemo() {\n  const cards = [\n    { title: \"Design\", description: \"Beautiful UI components\", icon: \"🎨\" },\n    {\n      title: \"Development\",\n      description: \"Clean and efficient code\",\n      icon: \"💻\",\n    },\n    { title: \"Animation\", description: \"Smooth interactions\", icon: \"✨\" },\n  ];\n\n  return (\n    <div className=\"flex min-h-[400px] flex-wrap items-center justify-center gap-6 p-8\">\n      {cards.map((card, index) => (\n        <Magnetic key={index} intensity={0.4} range={120}>\n          <div className=\"flex h-48 w-56 flex-col items-center justify-center gap-3 rounded-xl border bg-card p-6 shadow-lg transition-shadow hover:shadow-xl\">\n            <span className=\"text-4xl\">{card.icon}</span>\n            <h3 className=\"font-semibold text-lg\">{card.title}</h3>\n            <p className=\"text-center text-muted-foreground text-sm\">\n              {card.description}\n            </p>\n          </div>\n        </Magnetic>\n      ))}\n    </div>\n  );\n}\n",
+      "content": "import { Magnetic } from \"@/registry/default/ui/magnetic\";\r\n\r\nexport default function MagneticCardsDemo() {\r\n  const cards = [\r\n    { title: \"Design\", description: \"Beautiful UI components\", icon: \"🎨\" },\r\n    {\r\n      title: \"Development\",\r\n      description: \"Clean and efficient code\",\r\n      icon: \"💻\",\r\n    },\r\n    { title: \"Animation\", description: \"Smooth interactions\", icon: \"✨\" },\r\n  ];\r\n\r\n  return (\r\n    <div className=\"flex min-h-[400px] flex-wrap items-center justify-center gap-6 p-8\">\r\n      {cards.map((card, index) => (\r\n        <Magnetic key={index} intensity={0.4} range={120}>\r\n          <div className=\"flex h-48 w-56 flex-col items-center justify-center gap-3 rounded-xl border bg-card p-6 shadow-lg transition-shadow hover:shadow-xl\">\r\n            <span className=\"text-4xl\">{card.icon}</span>\r\n            <h3 className=\"font-semibold text-lg\">{card.title}</h3>\r\n            <p className=\"text-center text-muted-foreground text-sm\">\r\n              {card.description}\r\n            </p>\r\n          </div>\r\n        </Magnetic>\r\n      ))}\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

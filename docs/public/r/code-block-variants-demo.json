@@ -1,15 +1,15 @@
 {
   "name": "code-block-variants-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-variants-demo.tsx",
-      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nconst code = `function calculateSum(a: number, b: number): number {\n  return a + b;\n}`;\n\nexport default function CodeBlockVariantsDemo() {\n  return (\n    <div className=\"grid w-full max-w-3xl gap-8\">\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Default</h3>\n        <CodeBlock code={code} language=\"typescript\" variant=\"default\" />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Terminal</h3>\n        <CodeBlock code={code} language=\"typescript\" variant=\"terminal\" />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Minimal</h3>\n        <CodeBlock code={code} language=\"typescript\" variant=\"minimal\" />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Gradient</h3>\n        <CodeBlock code={code} language=\"typescript\" variant=\"gradient\" />\n      </div>\n\n      <div className=\"space-y-2\">\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Glass</h3>\n        <div className=\"rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-8\">\n          <CodeBlock code={code} language=\"typescript\" variant=\"glass\" />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\r\n\r\nconst code = `function calculateSum(a: number, b: number): number {\r\n  return a + b;\r\n}`;\r\n\r\nexport default function CodeBlockVariantsDemo() {\r\n  return (\r\n    <div className=\"grid w-full max-w-3xl gap-8\">\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Default</h3>\r\n        <CodeBlock code={code} language=\"typescript\" variant=\"default\" />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Terminal</h3>\r\n        <CodeBlock code={code} language=\"typescript\" variant=\"terminal\" />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Minimal</h3>\r\n        <CodeBlock code={code} language=\"typescript\" variant=\"minimal\" />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Gradient</h3>\r\n        <CodeBlock code={code} language=\"typescript\" variant=\"gradient\" />\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <h3 className=\"font-medium text-muted-foreground text-sm\">Glass</h3>\r\n        <div className=\"rounded-xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-8\">\r\n          <CodeBlock code={code} language=\"typescript\" variant=\"glass\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

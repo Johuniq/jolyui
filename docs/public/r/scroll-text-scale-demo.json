@@ -1,15 +1,15 @@
 {
   "name": "scroll-text-scale-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "scroll-text"
   ],
   "files": [
     {
       "path": "examples/scroll-text-scale-demo.tsx",
-      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\n\nexport default function ScrollTextScaleDemo() {\n  return (\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\n      <ScrollText effect=\"scale\" className=\"font-bold text-4xl\">\n        Scale Animation\n      </ScrollText>\n    </div>\n  );\n}\n",
+      "content": "import { ScrollText } from \"@/registry/default/ui/scroll-text\";\r\n\r\nexport default function ScrollTextScaleDemo() {\r\n  return (\r\n    <div className=\"flex h-[400px] w-full items-center justify-center\">\r\n      <ScrollText effect=\"scale\" className=\"font-bold text-4xl\">\r\n        Scale Animation\r\n      </ScrollText>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

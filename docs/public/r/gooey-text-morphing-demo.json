@@ -1,15 +1,15 @@
 {
   "name": "gooey-text-morphing-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "gooey-text-morphing"
   ],
   "files": [
     {
       "path": "examples/gooey-text-morphing-demo.tsx",
-      "content": "\"use client\";\n\nimport { GooeyText } from \"@/registry/default/ui/gooey-text-morphing\";\n\nexport default function GooeyTextMorphingDemo() {\n  const texts = [\"Why\", \"is\", \"it\", \"so\", \"satisfying\", \"to\", \"watch?\"];\n\n  return (\n    <div className=\"flex h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background\">\n      <GooeyText\n        texts={texts}\n        morphTime={1}\n        cooldownTime={0.5}\n        textClassName=\"font-bold tracking-tighter\"\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { GooeyText } from \"@/registry/default/ui/gooey-text-morphing\";\r\n\r\nexport default function GooeyTextMorphingDemo() {\r\n  const texts = [\"Why\", \"is\", \"it\", \"so\", \"satisfying\", \"to\", \"watch?\"];\r\n\r\n  return (\r\n    <div className=\"flex h-[300px] w-full items-center justify-center overflow-hidden rounded-xl border bg-background\">\r\n      <GooeyText\r\n        texts={texts}\r\n        morphTime={1}\r\n        cooldownTime={0.5}\r\n        textClassName=\"font-bold tracking-tighter\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

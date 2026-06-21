@@ -1,6 +1,5 @@
 {
   "name": "theme-emerald",
-  "type": "registry:theme",
   "files": [],
   "cssVars": {
     "light": {
@@ -55,5 +54,6 @@
       "chart-4": "137 55% 15%",
       "chart-5": "141 40% 9%"
     }
-  }
+  },
+  "type": "registry:theme"
 }

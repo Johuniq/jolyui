@@ -1,6 +1,5 @@
 {
   "name": "theme-daylight",
-  "type": "registry:theme",
   "files": [],
   "cssVars": {
     "light": {
@@ -55,5 +54,6 @@
       "chart-4": "31 41% 48%",
       "chart-5": "35 43% 53%"
     }
-  }
+  },
+  "type": "registry:theme"
 }

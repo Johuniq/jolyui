@@ -1,6 +1,5 @@
 {
   "name": "animated-theme-toggle-demo",
-  "type": "registry:example",
   "dependencies": [
     "motion"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/animated-theme-toggle-demo.tsx",
-      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\n\nexport default function AnimatedThemeToggleDemo() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <AnimatedThemeToggle />\n    </div>\n  );\n}\n",
+      "content": "import { AnimatedThemeToggle } from \"@/registry/default/ui/animated-theme-toggle\";\r\n\r\nexport default function AnimatedThemeToggleDemo() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-8\">\r\n      <AnimatedThemeToggle />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

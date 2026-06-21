@@ -1,15 +1,15 @@
 {
   "name": "date-wheel-picker-sizes-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "date-wheel-picker"
   ],
   "files": [
     {
       "path": "examples/date-wheel-picker-sizes-demo.tsx",
-      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\n\nexport default function DateWheelPickerSizesDemo() {\n  const [date, setDate] = useState<Date>(new Date());\n\n  return (\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">Small</span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"sm\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">\n          Medium (default)\n        </span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"md\" />\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <span className=\"font-medium text-muted-foreground text-sm\">Large</span>\n        <DateWheelPicker value={date} onChange={setDate} size=\"lg\" />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\nimport { DateWheelPicker } from \"@/registry/default/ui/date-wheel-picker\";\r\n\r\nexport default function DateWheelPickerSizesDemo() {\r\n  const [date, setDate] = useState<Date>(new Date());\r\n\r\n  return (\r\n    <div className=\"relative flex w-full flex-col items-center justify-center gap-8 py-8\">\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">Small</span>\r\n        <DateWheelPicker value={date} onChange={setDate} size=\"sm\" />\r\n      </div>\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">\r\n          Medium (default)\r\n        </span>\r\n        <DateWheelPicker value={date} onChange={setDate} size=\"md\" />\r\n      </div>\r\n      <div className=\"flex flex-col items-center gap-2\">\r\n        <span className=\"font-medium text-muted-foreground text-sm\">Large</span>\r\n        <DateWheelPicker value={date} onChange={setDate} size=\"lg\" />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

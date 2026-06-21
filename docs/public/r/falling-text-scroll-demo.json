@@ -1,6 +1,5 @@
 {
   "name": "falling-text-scroll-demo",
-  "type": "registry:example",
   "dependencies": [
     "matter-js"
   ],
@@ -10,9 +9,10 @@
   "files": [
     {
       "path": "examples/falling-text-scroll-demo.tsx",
-      "content": "\"use client\";\n\nimport FallingText from \"@/registry/default/ui/falling-text\";\n\nexport default function FallingTextScrollDemo() {\n  return (\n    <div className=\"flex min-h-[500px] w-full flex-col items-center justify-center gap-4\">\n      <p className=\"text-muted-foreground text-sm\">\n        Scroll down to trigger the animation\n      </p>\n      <FallingText\n        text=\"Physics based text animation triggered on scroll\"\n        highlightWords={[\"Physics\", \"animation\", \"scroll\"]}\n        trigger=\"scroll\"\n        fontSize=\"1.5rem\"\n        gravity={1.5}\n      />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport FallingText from \"@/registry/default/ui/falling-text\";\r\n\r\nexport default function FallingTextScrollDemo() {\r\n  return (\r\n    <div className=\"flex min-h-[500px] w-full flex-col items-center justify-center gap-4\">\r\n      <p className=\"text-muted-foreground text-sm\">\r\n        Scroll down to trigger the animation\r\n      </p>\r\n      <FallingText\r\n        text=\"Physics based text animation triggered on scroll\"\r\n        highlightWords={[\"Physics\", \"animation\", \"scroll\"]}\r\n        trigger=\"scroll\"\r\n        fontSize=\"1.5rem\"\r\n        gravity={1.5}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

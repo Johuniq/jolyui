@@ -1,15 +1,15 @@
 {
   "name": "highlight-text-variants-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "highlight-text"
   ],
   "files": [
     {
       "path": "examples/highlight-text-variants-demo.tsx",
-      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\n\nexport default function HighlightTextVariantsDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-12 py-10\">\n      <div className=\"font-medium text-2xl\">\n        This is an <HighlightText variant=\"underline\">underline</HighlightText>{\" \"}\n        highlight.\n      </div>\n      <div className=\"font-medium text-2xl\">\n        This is a <HighlightText variant=\"box\">box</HighlightText> highlight.\n      </div>\n      <div className=\"font-medium text-2xl\">\n        This is a <HighlightText variant=\"circle\">circle</HighlightText>{\" \"}\n        highlight.\n      </div>\n      <div className=\"font-medium text-2xl\">\n        This is a <HighlightText variant=\"marker\">marker</HighlightText>{\" \"}\n        highlight.\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { HighlightText } from \"@/registry/default/ui/highlight-text\";\r\n\r\nexport default function HighlightTextVariantsDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-12 py-10\">\r\n      <div className=\"font-medium text-2xl\">\r\n        This is an <HighlightText variant=\"underline\">underline</HighlightText>{\" \"}\r\n        highlight.\r\n      </div>\r\n      <div className=\"font-medium text-2xl\">\r\n        This is a <HighlightText variant=\"box\">box</HighlightText> highlight.\r\n      </div>\r\n      <div className=\"font-medium text-2xl\">\r\n        This is a <HighlightText variant=\"circle\">circle</HighlightText>{\" \"}\r\n        highlight.\r\n      </div>\r\n      <div className=\"font-medium text-2xl\">\r\n        This is a <HighlightText variant=\"marker\">marker</HighlightText>{\" \"}\r\n        highlight.\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

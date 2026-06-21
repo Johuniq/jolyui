@@ -1,15 +1,15 @@
 {
   "name": "code-block-compare-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-compare-demo.tsx",
-      "content": "import { CodeCompare } from \"@/registry/default/ui/code-block\";\n\nconst beforeCode = `function add(a, b) {\n  return a + b;\n}`;\n\nconst afterCode = `function add(a: number, b: number): number {\n  return a + b;\n}`;\n\nexport default function CodeBlockCompareDemo() {\n  return (\n    <div className=\"w-full max-w-4xl\">\n      <CodeCompare\n        before={beforeCode}\n        after={afterCode}\n        language=\"typescript\"\n        beforeTitle=\"JavaScript\"\n        afterTitle=\"TypeScript\"\n        showDiff={true}\n      />\n    </div>\n  );\n}\n",
+      "content": "import { CodeCompare } from \"@/registry/default/ui/code-block\";\r\n\r\nconst beforeCode = `function add(a, b) {\r\n  return a + b;\r\n}`;\r\n\r\nconst afterCode = `function add(a: number, b: number): number {\r\n  return a + b;\r\n}`;\r\n\r\nexport default function CodeBlockCompareDemo() {\r\n  return (\r\n    <div className=\"w-full max-w-4xl\">\r\n      <CodeCompare\r\n        before={beforeCode}\r\n        after={afterCode}\r\n        language=\"typescript\"\r\n        beforeTitle=\"JavaScript\"\r\n        afterTitle=\"TypeScript\"\r\n        showDiff={true}\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

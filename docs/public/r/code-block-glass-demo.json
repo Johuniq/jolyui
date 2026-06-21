@@ -1,15 +1,15 @@
 {
   "name": "code-block-glass-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "code-block"
   ],
   "files": [
     {
       "path": "examples/code-block-glass-demo.tsx",
-      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\n\nexport default function CodeBlockTerminalDemo() {\n  return (\n    <div className=\"w-full max-w-3xl\">\n      <CodeBlock\n        code={`const greeting = \"Hello, jolyui!\";\nconsole.log(greeting);\n\n// Supports multiple themes!`}\n        language=\"typescript\"\n        variant=\"glass\"\n        theme=\"dracula\"\n        animation=\"highlight\"\n      />\n    </div>\n  );\n}\n",
+      "content": "import { CodeBlock } from \"@/registry/default/ui/code-block\";\r\n\r\nexport default function CodeBlockTerminalDemo() {\r\n  return (\r\n    <div className=\"w-full max-w-3xl\">\r\n      <CodeBlock\r\n        code={`const greeting = \"Hello, jolyui!\";\r\nconsole.log(greeting);\r\n\r\n// Supports multiple themes!`}\r\n        language=\"typescript\"\r\n        variant=\"glass\"\r\n        theme=\"dracula\"\r\n        animation=\"highlight\"\r\n      />\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

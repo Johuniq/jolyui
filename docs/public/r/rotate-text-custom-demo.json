@@ -1,15 +1,15 @@
 {
   "name": "rotate-text-custom-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "rotate-text"
   ],
   "files": [
     {
       "path": "examples/rotate-text-custom-demo.tsx",
-      "content": "\"use client\";\n\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\n\nexport default function RotateTextCustomDemo() {\n  return (\n    <div className=\"flex flex-col items-center justify-center gap-8\">\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Rotation</h3>\n        <RotatingText\n          words={[\"Code\", \"Build\", \"Deploy\", \"Scale\"]}\n          interval={1000}\n          className=\"font-mono text-2xl text-primary\"\n        />\n      </div>\n\n      <div className=\"text-center\">\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Rotation</h3>\n        <RotatingText\n          words={[\"Design\", \"Create\", \"Innovate\", \"Inspire\"]}\n          interval={4000}\n          className=\"font-bold text-3xl text-destructive\"\n        />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\r\n\r\nimport { RotatingText } from \"@/registry/default/ui/rotate-text\";\r\n\r\nexport default function RotateTextCustomDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-8\">\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Fast Rotation</h3>\r\n        <RotatingText\r\n          words={[\"Code\", \"Build\", \"Deploy\", \"Scale\"]}\r\n          interval={1000}\r\n          className=\"font-mono text-2xl text-primary\"\r\n        />\r\n      </div>\r\n\r\n      <div className=\"text-center\">\r\n        <h3 className=\"mb-4 font-semibold text-lg\">Slow Rotation</h3>\r\n        <RotatingText\r\n          words={[\"Design\", \"Create\", \"Innovate\", \"Inspire\"]}\r\n          interval={4000}\r\n          className=\"font-bold text-3xl text-destructive\"\r\n        />\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
       "type": "registry:example",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:example"
 }

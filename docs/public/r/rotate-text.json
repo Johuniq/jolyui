@@ -1,15 +1,15 @@
 {
   "name": "rotate-text",
-  "type": "registry:ui",
   "dependencies": [
     "motion"
   ],
   "files": [
     {
       "path": "ui/rotate-text.tsx",
-      "content": "import { AnimatePresence, motion } from \"motion/react\";\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface RotatingTextProps {\n  words: string[];\n  className?: string;\n  interval?: number;\n}\n\nconst RotatingText = React.forwardRef<HTMLSpanElement, RotatingTextProps>(\n  ({ words, className, interval = 2000 }, ref) => {\n    const [currentIndex, setCurrentIndex] = React.useState(0);\n\n    React.useEffect(() => {\n      const timer = setInterval(() => {\n        setCurrentIndex((prev) => (prev + 1) % words.length);\n      }, interval);\n      return () => clearInterval(timer);\n    }, [words.length, interval]);\n\n    return (\n      <span\n        ref={ref}\n        className={cn(\"relative inline-flex overflow-hidden\", className)}\n      >\n        <AnimatePresence mode=\"popLayout\">\n          <motion.span\n            key={currentIndex}\n            initial={{ y: \"100%\", opacity: 0 }}\n            animate={{ y: 0, opacity: 1 }}\n            exit={{ y: \"-100%\", opacity: 0 }}\n            transition={{\n              type: \"spring\",\n              stiffness: 300,\n              damping: 30,\n            }}\n            className=\"inline-block\"\n          >\n            {words[currentIndex]}\n          </motion.span>\n        </AnimatePresence>\n      </span>\n    );\n  },\n);\nRotatingText.displayName = \"RotatingText\";\n\nexport { RotatingText };\n",
+      "content": "import { AnimatePresence, motion } from \"motion/react\";\r\nimport * as React from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\n\r\ninterface RotatingTextProps {\r\n  words: string[];\r\n  className?: string;\r\n  interval?: number;\r\n}\r\n\r\nconst RotatingText = React.forwardRef<HTMLSpanElement, RotatingTextProps>(\r\n  ({ words, className, interval = 2000 }, ref) => {\r\n    const [currentIndex, setCurrentIndex] = React.useState(0);\r\n\r\n    React.useEffect(() => {\r\n      const timer = setInterval(() => {\r\n        setCurrentIndex((prev) => (prev + 1) % words.length);\r\n      }, interval);\r\n      return () => clearInterval(timer);\r\n    }, [words.length, interval]);\r\n\r\n    return (\r\n      <span\r\n        ref={ref}\r\n        className={cn(\"relative inline-flex overflow-hidden\", className)}\r\n      >\r\n        <AnimatePresence mode=\"popLayout\">\r\n          <motion.span\r\n            key={currentIndex}\r\n            initial={{ y: \"100%\", opacity: 0 }}\r\n            animate={{ y: 0, opacity: 1 }}\r\n            exit={{ y: \"-100%\", opacity: 0 }}\r\n            transition={{\r\n              type: \"spring\",\r\n              stiffness: 300,\r\n              damping: 30,\r\n            }}\r\n            className=\"inline-block\"\r\n          >\r\n            {words[currentIndex]}\r\n          </motion.span>\r\n        </AnimatePresence>\r\n      </span>\r\n    );\r\n  },\r\n);\r\nRotatingText.displayName = \"RotatingText\";\r\n\r\nexport { RotatingText };\r\n",
       "type": "registry:ui",
       "target": ""
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
