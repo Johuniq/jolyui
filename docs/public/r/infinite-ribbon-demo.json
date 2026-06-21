@@ -1,0 +1,15 @@
+{
+  "name": "infinite-ribbon-demo",
+  "registryDependencies": [
+    "infinite-ribbon"
+  ],
+  "files": [
+    {
+      "path": "examples/infinite-ribbon-demo.tsx",
+      "content": "\"use client\";\r\n\r\nimport { InfiniteRibbon } from \"@/registry/default/ui/infinite-ribbon\";\r\n\r\nexport default function InfiniteRibbonDemo() {\r\n  return (\r\n    <div className=\"relative w-full overflow-hidden rounded-md border bg-background\">\r\n      <InfiniteRibbon className=\"bg-yellow-400 text-black dark:bg-yellow-500\">\r\n        ✦ JolyUI · Infinite Ribbon · Build beautiful interfaces ✦\r\n      </InfiniteRibbon>\r\n      <div className=\"h-32\" />\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ],
+  "type": "registry:example"
+}

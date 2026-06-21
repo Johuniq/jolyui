@@ -1,0 +1,15 @@
+{
+  "name": "infinite-ribbon-preview-demo",
+  "registryDependencies": [
+    "infinite-ribbon"
+  ],
+  "files": [
+    {
+      "path": "examples/infinite-ribbon-preview-demo.tsx",
+      "content": "\"use client\";\r\n\r\nimport { InfiniteRibbon } from \"@/registry/default/ui/infinite-ribbon\";\r\n\r\nexport function InfiniteRibbonPreview() {\r\n  return (\r\n    <div className=\"relative flex h-72 w-full items-center justify-center overflow-hidden rounded-md border bg-background\">\r\n      <InfiniteRibbon\r\n        className=\"absolute bg-foreground text-background\"\r\n        duration={42}\r\n        rotation={5}\r\n      >\r\n        Craft crisp dashboards, lively landing pages, and polished product\r\n        flows with components that feel ready from the first click.\r\n      </InfiniteRibbon>\r\n      <InfiniteRibbon\r\n        className=\"absolute bg-foreground text-background\"\r\n        duration={42}\r\n        reverse\r\n        rotation={-5}\r\n      >\r\n        Craft crisp dashboards, lively landing pages, and polished product\r\n        flows with components that feel ready from the first click.\r\n      </InfiniteRibbon>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default InfiniteRibbonPreview;\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ],
+  "type": "registry:example"
+}

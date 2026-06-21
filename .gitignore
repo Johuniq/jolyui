@@ -2,7 +2,7 @@
 node_modules
 .pnp
 .pnp.js
-
+.puku
 # Build outputs
 dist
 build

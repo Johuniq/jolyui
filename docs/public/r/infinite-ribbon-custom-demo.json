@@ -1,0 +1,15 @@
+{
+  "name": "infinite-ribbon-custom-demo",
+  "registryDependencies": [
+    "infinite-ribbon"
+  ],
+  "files": [
+    {
+      "path": "examples/infinite-ribbon-custom-demo.tsx",
+      "content": "\"use client\";\r\n\r\nimport { InfiniteRibbon } from \"@/registry/default/ui/infinite-ribbon\";\r\n\r\nexport default function InfiniteRibbonCustomDemo() {\r\n  return (\r\n    <div className=\"flex w-full max-w-3xl flex-col items-stretch gap-6\">\r\n      <div className=\"space-y-2\">\r\n        <p className=\"font-medium text-sm\">Slow forward ribbon</p>\r\n        <div className=\"relative overflow-hidden rounded-md border bg-background\">\r\n          <InfiniteRibbon repeat={4} duration={20}>\r\n            🚀 Launch faster · Ship more · Sleep better 🚀\r\n          </InfiniteRibbon>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <p className=\"font-medium text-sm\">Fast reverse ribbon</p>\r\n        <div className=\"relative overflow-hidden rounded-md border bg-background\">\r\n          <InfiniteRibbon\r\n            repeat={6}\r\n            duration={6}\r\n            reverse\r\n            className=\"bg-pink-500 text-white dark:bg-pink-600\"\r\n          >\r\n            ⚡ Fast · Furious · Animated ⚡ Fast · Furious · Animated ⚡\r\n          </InfiniteRibbon>\r\n        </div>\r\n      </div>\r\n\r\n      <div className=\"space-y-2\">\r\n        <p className=\"font-medium text-sm\">Tilted marquee</p>\r\n        <div className=\"relative h-20 overflow-hidden rounded-md border bg-muted/30\">\r\n          <div className=\"absolute inset-0 flex items-center\">\r\n            <InfiniteRibbon\r\n              repeat={3}\r\n              duration={12}\r\n              rotation={-3}\r\n              className=\"w-full bg-emerald-400 text-black dark:bg-emerald-500\"\r\n            >\r\n              🎉 JolyUI · Hand-crafted components for React 🎉\r\n            </InfiniteRibbon>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:example",
+      "target": ""
+    }
+  ],
+  "type": "registry:example"
+}

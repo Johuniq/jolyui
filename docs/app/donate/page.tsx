@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
+import { polarCheckoutUrl } from "@/lib/polar";
 
 export const metadata: Metadata = {
   title: "Support Joly UI",
@@ -54,7 +55,7 @@ export default function DonatePage() {
         </p>
 
         <Button asChild size="lg" className="mt-8 !pr-5">
-          <Link href="/api/polar/checkout">
+          <Link href={polarCheckoutUrl()}>
             Donate with Polar
             <HeartIcon className="!size-5" />
           </Link>

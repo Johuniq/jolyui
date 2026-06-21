@@ -1,0 +1,12 @@
+{
+  "name": "infinite-ribbon",
+  "files": [
+    {
+      "path": "ui/infinite-ribbon.tsx",
+      "content": "import type * as React from \"react\";\r\n\r\nimport { cn } from \"@/lib/utils\";\r\n\r\nexport interface InfiniteRibbonProps {\r\n  repeat?: number;\r\n  duration?: number;\r\n  reverse?: boolean;\r\n  rotation?: number;\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}\r\n\r\nconst ribbonAnimationStyles = `\r\n@keyframes iconiq-infinite-ribbon {\r\n  from {\r\n    transform: translateX(0);\r\n  }\r\n  to {\r\n    transform: translateX(-50%);\r\n  }\r\n}\r\n\r\n@keyframes iconiq-infinite-ribbon-reverse {\r\n  from {\r\n    transform: translateX(-50%);\r\n  }\r\n  to {\r\n    transform: translateX(0);\r\n  }\r\n}\r\n\r\n@media (prefers-reduced-motion: reduce) {\r\n  .iconiq-infinite-ribbon-track {\r\n    animation-duration: 1ms !important;\r\n    animation-iteration-count: 1 !important;\r\n  }\r\n}\r\n`;\r\n\r\nexport function InfiniteRibbon({\r\n  repeat = 5,\r\n  duration = 10,\r\n  reverse = false,\r\n  rotation = 0,\r\n  children,\r\n  className,\r\n}: InfiniteRibbonProps) {\r\n  const repeatCount = Math.max(1, Math.floor(repeat));\r\n  const animationName = reverse\r\n    ? \"iconiq-infinite-ribbon-reverse\"\r\n    : \"iconiq-infinite-ribbon\";\r\n\r\n  return (\r\n    <div\r\n      className={cn(\r\n        \"w-full max-w-full overflow-hidden bg-foreground py-1 text-background text-lg\",\r\n        className\r\n      )}\r\n      style={{ transform: `rotate(${rotation}deg)` }}\r\n    >\r\n      <span className=\"sr-only\">{children}</span>\r\n      <div\r\n        aria-hidden=\"true\"\r\n        className=\"iconiq-infinite-ribbon-track flex w-max whitespace-nowrap\"\r\n        style={\r\n          {\r\n            \"--ribbon-duration\": `${Math.max(0.1, duration)}s`,\r\n            animation: `${animationName} var(--ribbon-duration) linear infinite`,\r\n          } as React.CSSProperties\r\n        }\r\n      >\r\n        {Array.from({ length: repeatCount * 2 }, (_, index) => (\r\n          <span className=\"mr-8 inline-block select-none\" key={index}>\r\n            {children}\r\n          </span>\r\n        ))}\r\n      </div>\r\n      <style>{ribbonAnimationStyles}</style>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { useMounted } from "@/hooks/use-mounted";
+import { polarCheckoutUrl } from "@/lib/polar";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "jolyui:donation-banner:dismissed-at";
@@ -100,7 +101,7 @@ export function DonationBanner({ variant = "card", className }: DonationBannerPr
           variant="ghost"
           className="h-6 px-2 text-xs"
         >
-          <Link href="/api/polar/checkout">Donate</Link>
+          <Link href={polarCheckoutUrl()}>Donate</Link>
         </Button>
         <button
           type="button"
@@ -148,7 +149,7 @@ export function DonationBanner({ variant = "card", className }: DonationBannerPr
         size="sm"
         className="w-full !pr-3.5"
       >
-        <Link href="/api/polar/checkout">
+        <Link href={polarCheckoutUrl()}>
           Donate
           <HeartIcon className="!size-4 fill-current" />
         </Link>
