@@ -43,9 +43,9 @@ const KeyboardShortcutsTable = dynamic(() =>
     default: mod.KeyboardShortcutsTable,
   })),
 );
-const AdBanner = dynamic(() =>
-  import("@/components/ad-banner").then((mod) => ({
-    default: mod.AdBanner,
+const DonationBanner = dynamic(() =>
+  import("@/components/donation-banner").then((mod) => ({
+    default: mod.DonationBanner,
   })),
 );
 
@@ -110,7 +110,7 @@ export function useMdxComponents(
     CSSVariablesTable,
     PropsTable,
     KeyboardShortcutsTable,
-    AdBanner,
+    DonationBanner,
   };
 }
 
