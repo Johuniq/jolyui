@@ -8,10 +8,17 @@ import { NextResponse } from "next/server";
 const polarServer =
   process.env.POLAR_SERVER === "production" ? "production" : "sandbox";
 
+// The Polar SDK calls `new URL(successUrl)` and `new URL(returnUrl)` on these,
+// so they must be absolute URLs (origin + path). Falling back to a relative
+// path (e.g. "/donate/thank-you") throws "Invalid URL" inside the SDK.
+const baseUrl = process.env.POLAR_SUCCESS_URL
+  ? new URL(process.env.POLAR_SUCCESS_URL).origin
+  : process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
 const innerCheckout = Checkout({
   accessToken: process.env.POLAR_ACCESS_TOKEN,
-  successUrl: process.env.POLAR_SUCCESS_URL ?? "/donate/thank-you",
-  returnUrl: "/donate",
+  successUrl: `${baseUrl}/donate/thank-you`,
+  returnUrl: `${baseUrl}/donate`,
   server: polarServer,
   theme: "dark",
 });
