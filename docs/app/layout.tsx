@@ -271,6 +271,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           src="https://www.googletagmanager.com/gtag/js?id=G-FTPBGQYHF7"
           strategy="afterInteractive"
         />
+  <script src="https://replisona.johuniq.tech/widget/widget.js?v=e1e7db3b48d7" data-agent-id="01a02fea-8d95-7023-a56c-cc42a2ad51b0" async></script>
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
