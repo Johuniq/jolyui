@@ -12,7 +12,7 @@
 <br />
 Built for [shadcn/ui](https://ui.shadcn.com) and compatible with Next.js.
 
-[Documentation](https://jolyui.dev) · [Components](https://jolyui.dev/docs/components) · [Contributing](CONTRIBUTING.md)
+[Documentation](https://jolyui.dev) · [Components](https://jolyui.dev/docs/components) · [Contributing](CONTRIBUTING.md) · [21st.dev](https://21st.dev/@johuniq)
 
 </div>
 
