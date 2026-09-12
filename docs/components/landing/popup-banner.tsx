@@ -1,14 +1,15 @@
 "use client";
 
-import { Twitter, X } from "lucide-react";
+import { Github, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "tw-follow-popup-dismissed";
-const TWITTER_USERNAME = "@johuniq";
-const TWITTER_URL = "https://x.com/johuniq";
+const STORAGE_KEY = "wavee-popup-dismissed";
+const WAVEE_GITHUB_URL = "https://github.com/Johuniq/wavee";
+const WAVEE_LOGO_URL =
+  "https://github.com/Johuniq/wavee/raw/main/src/assets/logo.png";
 
-export function FormKitCNPopup() {
+export function WaveePopup() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -51,47 +52,44 @@ export function FormKitCNPopup() {
 
         {/* Content */}
         <div className="flex flex-col items-center text-center">
-          {/* Avatar + X branding */}
+          {/* Logo */}
           <div className="mb-5 relative flex items-center justify-center">
-            <div className="absolute inset-0 -z-10 h-20 w-20 rounded-full bg-gradient-to-br from-sky-400 via-blue-400 to-indigo-500 opacity-20 blur-xl filter" />
+            <div className="absolute inset-0 -z-10 h-20 w-20 rounded-full bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-500 opacity-20 blur-xl filter" />
             <img
-              src="https://unavatar.io/twitter/johuniq"
-              alt="@johuniq"
+              src={WAVEE_LOGO_URL}
+              alt="Wavee"
               className="h-20 w-20 rounded-full border-2 border-border object-cover shadow-lg"
               loading="lazy"
             />
-            <div className="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-sky-500 text-white">
-              <Twitter className="size-4" />
-            </div>
           </div>
 
           {/* Badge */}
-          <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-sky-500/10 px-3 py-1 font-medium text-sky-600 text-xs dark:text-sky-400">
-            <Twitter className="size-3" />
-            {TWITTER_USERNAME}
+          <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-purple-500/10 px-3 py-1 font-medium text-purple-600 text-xs dark:text-purple-400">
+            <Github className="size-3" />
+            Made by Johuniq
           </span>
 
           {/* Title */}
           <h2 className="mb-2 font-semibold text-2xl tracking-tight">
-            Follow on X (Twitter)
+            Wavee — Voice to Cursor
           </h2>
 
           <p className="mb-6 text-muted-foreground text-base leading-relaxed">
-            Want bite-sized tips on shadcn/ui, React, and Next.js? Follow{" "}
-            <span className="font-medium text-foreground">{TWITTER_USERNAME}</span>{" "}
-            for weekly nuggets that make you a better developer.
+            Wavee is a local-first desktop dictation app for Windows, macOS, and
+            Linux. Hold a hotkey, speak naturally, and Wavee turns your voice
+            into polished text that can be inserted right where your cursor is.
           </p>
 
           {/* CTA */}
           <Link
-            href={TWITTER_URL}
+            href={WAVEE_GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
-            className="group inline-flex items-center gap-2 rounded-lg bg-sky-500 px-5 py-2.5 font-medium text-white text-sm transition-all hover:brightness-110"
+            className="group inline-flex items-center gap-2 rounded-lg bg-purple-500 px-5 py-2.5 font-medium text-white text-sm transition-all hover:brightness-110"
           >
-            Follow on X
-            <Twitter className="size-4 transition-transform group-hover:translate-x-0.5" />
+            View on GitHub
+            <Github className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
       </div>
