@@ -4,12 +4,12 @@ import { Github, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "wavee-popup-dismissed";
-const WAVEE_GITHUB_URL = "https://github.com/Johuniq/wavee";
-const WAVEE_LOGO_URL =
-  "https://github.com/Johuniq/wavee/raw/main/src/assets/logo.png";
+const STORAGE_KEY = "whisprtypr-popup-dismissed";
+const WHISPRTYPR_URL = "https://whisprtypr.app";
+const WHISPRTYPR_LOGO_URL =
+  "https://whisprtypr.app/logo.png";
 
-export function WaveePopup() {
+export function WhisprtyprPopup() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -56,8 +56,8 @@ export function WaveePopup() {
           <div className="mb-5 relative flex items-center justify-center">
             <div className="absolute inset-0 -z-10 h-20 w-20 rounded-full bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-500 opacity-20 blur-xl filter" />
             <img
-              src={WAVEE_LOGO_URL}
-              alt="Wavee"
+              src={WHISPRTYPR_LOGO_URL}
+              alt="Whisprtypr"
               className="h-20 w-20 rounded-full border-2 border-border object-cover shadow-lg"
               loading="lazy"
             />
@@ -71,24 +71,24 @@ export function WaveePopup() {
 
           {/* Title */}
           <h2 className="mb-2 font-semibold text-2xl tracking-tight">
-            Wavee — Voice to Cursor
+            Whisprtypr — Voice to Text
           </h2>
 
           <p className="mb-6 text-muted-foreground text-base leading-relaxed">
-            Wavee is a local-first desktop dictation app for Windows, macOS, and
-            Linux. Hold a hotkey, speak naturally, and Wavee turns your voice
+            Whisprtypr is a local-first desktop dictation app for Windows, macOS, and
+            Linux. Hold a hotkey, speak naturally, and Whisprtypr turns your voice
             into polished text that can be inserted right where your cursor is.
           </p>
 
           {/* CTA */}
           <Link
-            href={WAVEE_GITHUB_URL}
+            href={WHISPRTYPR_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClose}
             className="group inline-flex items-center gap-2 rounded-lg bg-purple-500 px-5 py-2.5 font-medium text-white text-sm transition-all hover:brightness-110"
           >
-            View on GitHub
+            Visit Whisprtypr
             <Github className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
