@@ -3,7 +3,6 @@
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
-import { WhisprtyprPopup } from "@/components/landing/popup-banner";
 import { Spotlight } from "@/components/landing/spotlight";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
@@ -34,7 +33,6 @@ export default function HomePage() {
 
   return (
     <main className={cn("relative h-dvh", !isLoaded && "overflow-y-hidden")}>
-      <WhisprtyprPopup />
       {/* SEO-friendly content for search engine crawlers - visually hidden but accessible */}
       <div className="sr-only">
         <h1>Joly UI - 50+ Free shadcn/ui Components for React & Next.js</h1>

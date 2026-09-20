@@ -1,3 +1,11 @@
+import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
+import { DonationBanner } from "@/components/donation-banner";
+import { DynamicLink } from "@/components/dynamic-link";
+import { Feedback } from "@/components/feedback";
+import { Mdx } from "@/components/mdx-components";
+import { Separator } from "@/components/ui/separator";
+import { onRateAction } from "@/lib/on-rate-action";
+import { source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,
@@ -8,14 +16,6 @@ import {
 } from "fumadocs-ui/layouts/notebook/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CopyMarkdownButton, ViewOptions } from "@/components/doc-actions";
-import { DonationBanner } from "@/components/donation-banner";
-import { DynamicLink } from "@/components/dynamic-link";
-import { Feedback } from "@/components/feedback";
-import { Mdx } from "@/components/mdx-components";
-import { Separator } from "@/components/ui/separator";
-import { onRateAction } from "@/lib/on-rate-action";
-import { source } from "@/lib/source";
 
 interface DocPageParams {
   params: Promise<{
@@ -192,6 +192,7 @@ export default async function DocPage(props: DocPageParams) {
       <DocsPage
         toc={page.data.toc}
         tableOfContent={{ style: "clerk", banner: <DonationBanner /> }}
+
         full={page.data.full}
       >
         <div className="flex flex-col gap-2">

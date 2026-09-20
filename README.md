@@ -16,6 +16,14 @@ Built for [shadcn/ui](https://ui.shadcn.com) and compatible with Next.js.
 
 </div>
 
+<div align="center">
+
+<a href="https://whisprtypr.app">
+  <img src="https://downloads.whisprtypr.app/whisprtypr_banner.png" alt="Whisprtypr - Voice to Text Anywhere" width="720" />
+</a>
+
+</div>
+
 ## ✨ Features
 
 - **Beautifully Designed**: Crafted with attention to detail and aesthetics.

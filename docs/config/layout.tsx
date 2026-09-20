@@ -48,8 +48,8 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
-      url: "https://github.com/Johuniq/wavee/releases/latest",
-      text: "Wavee",
+      url: "https://whisprtypr.app",
+      text: "Whisprtypr",
       external: true,
     },
     {
