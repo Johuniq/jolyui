@@ -18,7 +18,7 @@ Built for [shadcn/ui](https://ui.shadcn.com) and compatible with Next.js.
 
 <div align="center">
 
-<a href="https://whisprtypr.app">
+<a href="https://whisprtypr.app?ref=jolyui">
   <img src="https://downloads.whisprtypr.app/whisprtypr_banner.png" alt="Whisprtypr - Voice to Text Anywhere" width="720" />
 </a>
 

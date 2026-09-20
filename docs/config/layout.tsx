@@ -48,7 +48,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       type: "main",
-      url: "https://whisprtypr.app",
+      url: "https://whisprtypr.app?ref=jolyui",
       text: "Whisprtypr",
       external: true,
     },

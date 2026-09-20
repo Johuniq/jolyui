@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "whisprtypr-popup-dismissed";
-const WHISPRTYPR_URL = "https://whisprtypr.app";
+const WHISPRTYPR_URL = "https://whisprtypr.app?ref=jolyui";
 const WHISPRTYPR_LOGO_URL =
-  "https://whisprtypr.app/logo.png";
+  "https://whisprtypr.app?ref=jolyui/logo.png";
 
 export function WhisprtyprPopup() {
   const [isOpen, setIsOpen] = useState(false);
